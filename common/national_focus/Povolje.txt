@@ -1,0 +1,265 @@
+focus_tree = {
+	id = Povolje
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = POV
+		}
+	}
+	default = no
+	focus = {
+		id = POV_Ekon1
+		icon = GFX_goal_generic_consumer_goods
+		cost = 0
+		x = 3
+		y = 0
+
+	}
+	focus = {
+		id = POV_Polit1
+		icon = GFX_goal_generic_position_armies
+		cost = 0
+		x = 16
+		y = 0
+
+				completion_reward = {
+					add_political_power = 150
+
+					}
+
+	}
+	focus = {
+		id = POV_Doj6
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 0
+		mutually_exclusive = {
+			focus = POV_Doj7
+		}
+		x = 19
+		y = 5
+
+	}
+	focus = {
+		id = POV_Ekon2
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 0
+		prerequisite = {
+			focus = POV_Ekon1
+		}
+		x = 1
+		y = 1
+
+	}
+	focus = {
+		id = POV_Ekon4
+		icon = GFX_goal_generic_production
+		cost = 0
+		prerequisite = {
+			focus = POV_Ekon1
+		}
+		x = 3
+		y = 1
+
+	}
+	focus = {
+		id = POV_Ekon5
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 0
+		prerequisite = {
+			focus = POV_Ekon4
+		}
+		x = 3
+		y = 2
+
+	}
+	focus = {
+		id = POV_Ekon7
+		icon = GFX_goal_generic_construct_military
+		cost = 0
+		prerequisite = {
+			focus = POV_Ekon5
+		}
+		x = 3
+		y = 3
+
+	}
+	focus = {
+		id = POV_Ekon6
+		icon = GFX_goal_generic_fortify_city
+		cost = 0
+		prerequisite = {
+			focus = POV_Ekon7
+		}
+		x = 3
+		y = 4
+
+	}
+	focus = {
+		id = POV_Ekon3
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 0
+		prerequisite = {
+			focus = POV_Ekon1
+		}
+		x = 5
+		y = 1
+
+	}
+	focus = {
+		id = POV_Gavril1
+		icon = GFX_goal_support_fascism
+		cost = 0
+		prerequisite = {
+			focus = POV_Polit1
+		}
+		mutually_exclusive = {
+			focus = POV_Doj1
+		}
+		x = 12
+		y = 1
+
+				completion_reward = {
+					add_political_power = 10
+					add_popularity = { ideology = fascism popularity = 10 }
+
+					}
+
+
+	}
+	focus = {
+		id = POV_Doj1
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 0
+		prerequisite = {
+			focus = POV_Polit1
+		}
+		mutually_exclusive = {
+			focus = POV_Gavril1
+		}
+		x = 20
+		y = 1
+				completion_reward = {
+					add_political_power = 10
+					add_popularity = { ideology = neutrality popularity = 10 }
+
+					}
+
+
+	}
+	focus = {
+		id = POV_Doj2
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 0
+		prerequisite = {
+			focus = POV_Doj1
+		}
+		x = 20
+		y = 2
+
+	}
+	focus = {
+		id = POV_Doj3
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 0
+		prerequisite = {
+			focus = POV_Doj2
+		}
+		mutually_exclusive = {
+			focus = POV_Doj4
+		}
+		x = 19
+		y = 3
+
+	}
+	focus = {
+		id = POV_Doj4
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 0
+		prerequisite = {
+			focus = POV_Doj2
+		}
+		mutually_exclusive = {
+			focus = POV_Doj3
+		}
+		x = 21
+		y = 3
+
+	}
+	focus = {
+		id = POV_Doj5
+		icon = GFX_goal_anschluss
+		cost = 0
+		prerequisite = {
+			focus = POV_Doj3
+			focus = POV_Doj4
+		}
+		x = 20
+		y = 4
+
+	}
+	focus = {
+		id = POV_Doj7
+		icon = GFX_goal_anti_comintern_pact
+		cost = 0
+		prerequisite = {
+			focus = POV_Doj5
+		}
+		mutually_exclusive = {
+			focus = POV_Doj6
+		}
+		x = 21
+		y = 5
+
+	}
+	focus = {
+		id = POV_Femboy1
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 0
+		prerequisite = {
+			focus = POV_Doj1
+		}
+		x = 25
+		y = 2
+
+	}
+	focus = {
+		id = POV_Femboy3
+		icon = GFX_goal_generic_major_war
+		cost = 0
+		prerequisite = {
+			focus = POV_Femboy1
+		}
+		mutually_exclusive = {
+			focus = POV_Femboy2
+		}
+		x = 24
+		y = 3
+
+	}
+	focus = {
+		id = POV_Femboy2
+		icon = GFX_goal_generic_improve_relations
+		cost = 0
+		prerequisite = {
+			focus = POV_Femboy1
+		}
+		mutually_exclusive = {
+			focus = POV_Femboy3
+		}
+		x = 26
+		y = 3
+
+	}
+	focus = {
+		id = POV_Doj8
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 0
+		prerequisite = {
+			focus = POV_Doj7
+		}
+		x = 20
+		y = 6
+
+	}
+}

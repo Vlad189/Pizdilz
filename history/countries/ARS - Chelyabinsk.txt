@@ -1,0 +1,56 @@
+capital = 572 ##Наша столица
+
+oob = "ARS_1936" ##GEG - Тег, заменить
+
+set_research_slots = 3 #Количество ячеек исследования
+
+# Технологии, какие будут открыты при старте
+set_technology = {
+	infantry_weapons = 2
+	infantry_weapons1 = 2
+	tech_recon = 2
+	tech_support = 2		
+	tech_engineers = 1
+	tech_military_police = 3
+
+}
+
+set_politics = {
+	ruling_party = fascism ##Рулевая партия
+	last_election = "1936.1.1" ##Последние выборы (если есть)
+	election_frequency = 48 ##Через сколько проводят выборы
+	elections_allowed = no ##Есть ли выборы
+}
+
+set_popularities = {
+	democratic = 0  ##Демократия
+	neutrality = 0 ##Нейтралитет
+	communism = 0 ##Коммунизм
+	fascism = 100 ##Фашизм
+}
+
+create_country_leader = {
+    name = "Arslan Djolin"
+    desc = ""
+    picture = "Arslan.dds"
+    expire = "1995.1.1"
+    ideology = fascism
+    traits = {
+        #
+    }
+}
+
+# Лидер Страны
+create_country_leader = {
+    name = "Oslenok"
+    desc = ""
+    picture = "gfx/leaders/Osel.dds" #Картинка
+    expire = "2000.1.1" #Когда умрет
+    ideology = communism
+	##За какую Идеологию (входит в types у коммунистов)
+
+    traits = {
+        #
+    }
+}
+}

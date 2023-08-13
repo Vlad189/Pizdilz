@@ -1,0 +1,17 @@
+characters={
+
+	POV_Dojean = { #POV
+		name = POV_Dojean
+		portraits = {
+			civilian = {
+				large = GFX_portrait_POV_Dojean
+			}
+		}
+		country_leader = {
+			ideology = despotism 
+			traits = { }
+			expire = "1995.1.1.1"
+
+		}
+	}
+}
