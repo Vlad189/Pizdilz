@@ -12,15 +12,16 @@ characters={
 			traits = { }
 			expire = "1995.1.1.1"
 
+
              POV_Gavrilov = { #POV
-		name = POV_Dojean
+		name = POV_Gavrilov
 		portraits = {
 			civilian = {
 				large = GFX_portrait_POV_Gavrilov
 			}
 		}
 		country_leader = {
-			ideology = fascism
+			ideology = rexism
 			traits = { }
 			expire = "1995.1.1.1"
 
