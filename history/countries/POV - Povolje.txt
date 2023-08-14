@@ -2,9 +2,6 @@ capital = 239 ##Наша столица
 
 oob = "POV_1936" ##
 
-
-recruit_character = POV_Dojean
-
 set_research_slots = 4 #Количество ячеек исследования
 
 # Технологии, какие будут открыты при старте
@@ -54,6 +51,8 @@ create_country_leader = {
     }
 }
 
+recruit_character = POV_Dojean
+recruit_character = POV_Gavrilov
 
 create_field_marshal = {
 	name = " Du "
@@ -75,5 +74,4 @@ create_field_marshal = {
 	defense_skill = 5
 	planning_skill = 5
 	logistics_skill = 5
-}
-}
+   }
