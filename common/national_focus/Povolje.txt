@@ -249,7 +249,6 @@ instant_build = yes
 }
 
 }
-
 	}
 	focus = {
 	id = POV_Gavril1
@@ -265,7 +264,6 @@ instant_build = yes
 	y = 1
 	completion_reward = {
 		add_political_power = 10
-                set_ruling_party = fascism
 		add_popularity = {
 			ideology = fascism
 			popularity = 10
@@ -277,6 +275,7 @@ instant_build = yes
 			        }
 		}
 	}
+        }
 	focus = {
 		id = POV_Gavril2
 		icon = GFX_goal_anti_comintern_pact
