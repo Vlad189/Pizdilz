@@ -20,9 +20,7 @@ defined_text = {
         }
         localization_key = "sp_event_gavrilovputch_REMARK"
     }
-	
-   }
-
+  }
 #Quotes
 defined_text = {
     name = get_super_event_quote
@@ -31,7 +29,7 @@ defined_text = {
         trigger = {
             has_global_flag = gavrilov_putch
         }
-        localization_key = "sp_event_Second_World_War_QUOTE"
+        localization_key = "sp_event_gavrilovputch_QUOTE"
     }
  }
  }
