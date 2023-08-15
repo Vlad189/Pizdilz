@@ -1,0 +1,16 @@
+characters = {
+	ARS_Arslan = {
+		name= ARS_Arslan
+		portraits = {
+			civilian={
+				large = GFX_portrait_ARS_Arslan
+			}
+		}
+		country_leader = {
+
+			ideology = nazism
+			traits = { Autocratic Imperialist }
+			expire = "1995.1.1.1"
+		
+		}
+	}

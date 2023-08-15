@@ -15,29 +15,56 @@ focus_tree = {
 		x = 3
 		y = 0
 
-	}
+completion_reward = {
+
+	829 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes
+}
+}
+
+236 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes
+}
+}
+
+257 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes
+}
+}
+
+}
+
+	
 	focus = {
 		id = POV_Polit1
 		icon = GFX_goal_generic_position_armies
 		cost = 0
 		x = 16
 		y = 0
-
 				completion_reward = {
-					add_political_power = 150
-
+						add_political_power = 150
 					}
+
 
 	}
 	focus = {
-		id = POV_Doj6
-		icon = GFX_goal_molotov_ribbentrop_pact
+		id = POV_Motor
+		icon = GFX_goal_generic_army_motorized
 		cost = 0
-		mutually_exclusive = {
-			focus = POV_Doj7
-		}
-		x = 19
-		y = 5
+		x = 15
+		y = 3
 
 	}
 	focus = {
@@ -50,6 +77,30 @@ focus_tree = {
 		x = 1
 		y = 1
 
+completion_reward = {
+
+401 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes
+}
+}
+
+260 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes
+
+}
+
+}
+	}
+}
+
 	}
 	focus = {
 		id = POV_Ekon4
@@ -60,6 +111,51 @@ focus_tree = {
 		}
 		x = 3
 		y = 1
+
+completion_reward = {
+
+255 = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes
+}
+}
+
+251 = {
+add_building_construction = {
+type = infrastructure
+level = 3
+instant_build = yes
+}
+}
+
+217 = {
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+
+236 = {
+add_building_construction = {
+type = infrastructure
+level = 4
+instant_build = yes
+}
+}
+
+265 = {
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+
+}
 
 	}
 	focus = {
@@ -72,6 +168,35 @@ focus_tree = {
 		x = 3
 		y = 2
 
+completion_reward = {
+
+
+401 = {
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+
+217 = {
+add_building_construction = {
+type = infrastructure
+level = 4
+instant_build = yes
+}
+}
+
+245 = {
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+
+}
+
 	}
 	focus = {
 		id = POV_Ekon7
@@ -82,6 +207,13 @@ focus_tree = {
 		}
 		x = 3
 		y = 3
+
+completion_reward = {
+
+
+
+
+}
 
 	}
 	focus = {
@@ -105,6 +237,19 @@ focus_tree = {
 		x = 5
 		y = 1
 
+completion_reward = {
+
+260 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes
+}
+}
+
+}
+
 	}
 	focus = {
 		id = POV_Gavril1
@@ -116,15 +261,39 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = POV_Doj1
 		}
-		x = 12
+		x = 11
 		y = 1
-
 				completion_reward = {
-					add_political_power = 10
-					add_popularity = { ideology = fascism popularity = 10 }
-
+						add_political_power = 10
+						add_popularity = {
+								ideology = fascism
+								popularity = 10
+							}
 					}
 
+
+	}
+	focus = {
+		id = POV_Gavril2
+		icon = GFX_goal_anti_comintern_pact
+		cost = 0
+		prerequisite = {
+			focus = POV_Gavril1
+		}
+		x = 11
+		y = 2
+
+	}
+	focus = {
+		id = POV_Gavril3
+		icon = GFX_goal_generic_army_tanks
+		cost = 0
+		prerequisite = {
+			focus = POV_Gavril2
+			focus = POV_Motor
+		}
+		x = 11
+		y = 3
 
 	}
 	focus = {
@@ -140,9 +309,11 @@ focus_tree = {
 		x = 20
 		y = 1
 				completion_reward = {
-					add_political_power = 10
-					add_popularity = { ideology = neutrality popularity = 10 }
-
+						add_political_power = 10
+						add_popularity = {
+								ideology = neutrality
+								popularity = 10
+							}
 					}
 
 
@@ -164,6 +335,7 @@ focus_tree = {
 		cost = 0
 		prerequisite = {
 			focus = POV_Doj2
+			focus = POV_Motor
 		}
 		mutually_exclusive = {
 			focus = POV_Doj4
@@ -235,6 +407,20 @@ focus_tree = {
 		}
 		x = 24
 		y = 3
+
+	}
+	focus = {
+		id = POV_Doj6
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 0
+		prerequisite = {
+			focus = POV_Doj5
+		}
+		mutually_exclusive = {
+			focus = POV_Doj7
+		}
+		x = 19
+		y = 5
 
 	}
 	focus = {

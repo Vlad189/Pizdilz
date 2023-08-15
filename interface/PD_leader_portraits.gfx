@@ -8212,16 +8212,28 @@ spriteTypes = {
 		texturefile = "gfx/leaders/ITA/portrait_MNT_blazo_dukanovic.dds"
 	}
 	
-
+	###POV###
 		spriteType = {
 		name = "GFX_portrait_POV_Dojean"
 		texturefile = "gfx/leaders/POV/POV_Dojean.dds"
 	}
 
-	
+		spriteType = {
+		name = "GFX_portrait_POV_Gavrilov"
+		texturefile = "gfx/leaders/POV/POV_Gavrilov.dds"
+	}
+
+	###AMB###
 		spriteType = {
 		name = "GFX_portrait_Osen"
 		texturefile = "gfx/leaders/AMB/Osen.dds"
+	}
+
+	###ARS###
+
+		spriteType = {
+		name = "GFX_portrait_ARS_Arslan"
+		texturefile = "gfx/leaders/ARS/ARS_Arslan.dds"
 	}
 
 }
