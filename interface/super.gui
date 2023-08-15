@@ -1,0 +1,25 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "sp_event_window"	
+		position = { x = 0 y = 0 }	
+		size = { width = 600 height = 510 }
+		orientation = center
+		origo = center
+		moveable = no
+		click_to_front = no
+		clipping = no
+
+		background = {
+			name = "Background"	
+			spriteType = "GFX_sp_event_window"
+		}
+		
+		iconType = {
+			name = "Super_Event_Image_gavrilovputch"
+			spriteType = "GFX_sp_event_gavrilovputch"
+			position = {x = 0 y = 0}
+		}
+		
+		}
+	}
