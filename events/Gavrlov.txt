@@ -31,8 +31,5 @@ country_event = {	#gavrilovputch
         set_global_flag = gavrilov_putch
 		set_global_flag = Super_Event_Visible
 		
-		
-		#gavr Flag
-		set_global_flag = gavrilov_putch
 	}
 }

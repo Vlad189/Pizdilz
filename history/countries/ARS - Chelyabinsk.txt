@@ -2,6 +2,8 @@ capital = 572 ##Наша столица
 
 oob = "ARS_1936" ##GEG - Тег, заменить
 
+recruit_character = ARS_Arslan
+
 set_research_slots = 3 #Количество ячеек исследования
 
 # Технологии, какие будут открыты при старте

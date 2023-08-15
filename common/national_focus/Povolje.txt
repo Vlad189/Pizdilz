@@ -249,33 +249,35 @@ instant_build = yes
 }
 
 }
+
 	}
-	focus = {
-	id = POV_Gavril1
-	icon = GFX_goal_support_fascism
-	cost = 0
-	prerequisite = {
-		focus = POV_Polit1
-	}
-	mutually_exclusive = {
-		focus = POV_Doj1
-	}
-	x = 11
-	y = 1
-	completion_reward = {
-		add_political_power = 10
-		add_popularity = {
-			ideology = fascism
-			popularity = 10
-		}
-		hidden_effect = {
-			country_event = {
-				id = super.1
-				hours = 4
-			        }
-		}
-	}
+focus = {
+    id = POV_Gavril1
+    icon = GFX_goal_support_fascism
+    cost = 0
+    prerequisite = {
+        focus = POV_Polit1
+    }
+    mutually_exclusive = {
+        focus = POV_Doj1
+    }
+    x = 11
+    y = 1
+    completion_reward = {
+        add_political_power = 10
+        set_politics = { ruling_party = fascism elections_allowed = no  }
+        add_popularity = {
+            ideology = fascism
+            popularity = 10
         }
+          country_event = {
+                id = super.1
+                hours = 4
+            }
+        }
+    }
+}
+}
 	focus = {
 		id = POV_Gavril2
 		icon = GFX_goal_anti_comintern_pact

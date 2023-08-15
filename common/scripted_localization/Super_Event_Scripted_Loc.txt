@@ -31,5 +31,5 @@ defined_text = {
         }
         localization_key = "sp_event_gavrilovputch_QUOTE"
     }
- }
+   }
  }
