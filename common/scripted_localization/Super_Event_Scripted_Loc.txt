@@ -6,13 +6,13 @@ defined_text = {
         trigger = {
             has_global_flag = gavrilov_putch
         }
-        localization_key = "sp_event_gavrilovputch"
+        localization_key = "sp_event_gavrilov_putch"
     }
 }
 
 # Remarks
 defined_text = {
-    name = get_super_event_remark_gavrilovputch
+    name = get_super_event_remark_gavrilov_putch
     
     text = {
         trigger = {
