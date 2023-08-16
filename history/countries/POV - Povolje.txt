@@ -2,12 +2,9 @@ capital = 239 ##Наша столица
 
 oob = "POV_1936" ##
 
-
+set_research_slots = 4 #Количество ячеек исследования
 recruit_character = POV_Dojean
 recruit_character = POV_Gavrilov
-
-set_research_slots = 4 #Количество ячеек исследования
-
 # Технологии, какие будут открыты при старте
 set_technology = {
 	infantry_weapons = 2
@@ -33,6 +30,27 @@ set_popularities = {
 	fascism = 45 ##Фашизм
 }
 
+create_country_leader = {
+    name = "Dojean"
+    desc = "Dojean"
+    picture = "POV_Dojean.dds"
+    expire = "1995.1.1"
+    ideology = neutrality
+    traits = {
+        #
+    }
+}
+
+create_country_leader = {
+    name = "Gavrilov"
+    desc = "Gavrilov"
+    picture = "POV_Gavrilov.dds"
+    expire = "1995.1.1"
+    ideology = fascism
+    traits = {
+        #
+    }
+}
 
 
 create_field_marshal = {
@@ -45,6 +63,7 @@ create_field_marshal = {
 	planning_skill = 3
 	logistics_skill = 4
 }
+
 create_field_marshal = {
 	name = " Gavrilov "
 	picture = "GGavrilov.dds"
@@ -54,6 +73,4 @@ create_field_marshal = {
 	defense_skill = 5
 	planning_skill = 5
 	logistics_skill = 5
-}
-
-}
+   }
