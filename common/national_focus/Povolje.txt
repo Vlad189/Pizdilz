@@ -272,7 +272,7 @@ focus = {
             popularity = 10
         }
         country_event = {
-            id = super.1
+            id = super.54
             hours = 4
         }
     }
