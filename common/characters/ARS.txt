@@ -1,6 +1,6 @@
 characters = {
 	ARS_Arslan = {
-		name= ARS_Arslan
+		name= Arslan
 		portraits = {
 			civilian={
 				large = GFX_portrait_ARS_Arslan

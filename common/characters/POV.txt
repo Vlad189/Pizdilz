@@ -1,7 +1,7 @@
 characters={
 
 	POV_Dojean = { #POV
-		name = POV_Dojean
+		name = Dojean
 		portraits = {
 			civilian = {
 				large = GFX_portrait_POV_Dojean
@@ -16,7 +16,7 @@ characters={
 	}
 
 	POV_Gavrilov = { #POV
-		name = POV_Gavrilov
+		name = Gavrilov
 		portraits = {
 			civilian = {
 				large = GFX_portrait_POV_Gavrilov
