@@ -8223,6 +8223,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/POV/POV_Gavrilov.dds"
 	}
 
+    spriteType = {
+		name = "GFX_portrait_POV_Sergey"
+		texturefile = "gfx/leaders/POV/POV_Sergey.png"
+	}
 	###AMB###
 		spriteType = {
 		name = "GFX_portrait_Osen"

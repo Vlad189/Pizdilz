@@ -29,4 +29,27 @@ characters={
 
 		}
 	}
+
+sergey_cho = {
+    name = "Sergey Cho"
+    portraits = {
+        civilian = {
+            small = "/gfx/leaders/pov/POV_Sergey.png"
+        }
+    }
+    advisor = {
+        cost = 150
+        slot = political_advisor
+        idea_token = POV_sergey_cho
+        allowed = {
+            original_tag = POV
+        }
+        available = {
+            OR = {
+                has_government = neutrality
+            }
+        }
+       traits = {krovaviy_palach}
+	}
+     }
 }
