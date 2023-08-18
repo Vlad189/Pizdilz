@@ -316,7 +316,7 @@ focus = {
 						add_political_power = 10
 						add_popularity = {
 								ideology = neutrality
-								popularity = 10
+								popularity = 0.10
 							}
 					}
 

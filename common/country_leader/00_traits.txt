@@ -6600,6 +6600,18 @@ leader_traits = {
 			factor = 1
 		}
 	}
+
+       krovaviy_palach = {
+	random = no
+
+                consumer_goods_factor = -0.20
+                production_speed_buildings_factor = 0.1
+                war_support_factor = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	oligarch_winner = {
 		random = no
 
