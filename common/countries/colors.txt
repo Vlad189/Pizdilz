@@ -889,6 +889,6 @@ KSS = {
 	color_ui = rgb { 85 228 233 }
 
 LIP= {
-	color = rgb { 125 13 24 }
-	color_ui = rgb { 163 17 31 }
+	color = rgb { 68 33 33 }
+	color_ui = rgb { 255 0 0 }
 }

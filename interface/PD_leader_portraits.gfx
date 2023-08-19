@@ -8240,4 +8240,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/ARS/ARS_Arslan.dds"
 	}
 
+	###LIP###
+
+		spriteType = {
+		name = "GFX_portrait_LIP_Konstantin"
+		texturefile = "gfx/leaders/LIP/LIP_Konstantin.dds"
+	}
 }

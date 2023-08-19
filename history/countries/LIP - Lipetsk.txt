@@ -4,7 +4,7 @@ oob = "lip_1936" ##GEG - Тег, заменить
 
 set_research_slots = 3 #Количество ячеек исследования
 
-recruit_character = 
+recruit_character = LIP_Konstantin
 
 # Технологии, какие будут открыты при старте
 set_technology = {
@@ -44,4 +44,16 @@ create_field_marshal = {
 	planning_skill = 3
 	logistics_skill = 1
 }
+
+create_corps_commander = {
+	name = " Nikolai Burkov "
+	picture = "Burkov.dds"
+	traits = { }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 1
+	planning_skill = 4
+	logistics_skill = 3
+}
+
 }
