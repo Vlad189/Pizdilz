@@ -1866,6 +1866,8 @@ country_event = { #Winter War
 		set_global_flag = FIN_Winter_War
 		set_global_flag = Super_Event_Visible
 		sound_effect = "superev_winter"
+                add_ideas = sergey_cho
+                remove_ideas = POV_Stolip
 	}
 }
 
@@ -1894,7 +1896,9 @@ country_event = {	#gavrilovputch
 		name = super.54.a
 		
         set_global_flag = gavrilov_putch
-		set_global_flag = Super_Event_Visible
+        set_global_flag = Super_Event_Visible
+        sound_effect = "superev_endsieg"
+        add_ideas = sergey_cho
 		
 	}
 }

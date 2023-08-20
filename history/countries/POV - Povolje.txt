@@ -6,6 +6,8 @@ set_research_slots = 4 #Количество ячеек исследования
 recruit_character = POV_Dojean
 recruit_character = POV_Gavrilov
 recruit_character = sergey_cho
+recruit_character = POV_Stolip
+add_ideas = POV_Stolip
 # Технологии, какие будут открыты при старте
 set_technology = {
 	infantry_weapons = 2
@@ -45,11 +47,7 @@ create_country_leader = {
 create_country_leader = {
     name = "Gavrilov"
     desc = "Gavrilov"
-<<<<<<< HEAD
-    picture = "Gavrilov.dds"
-=======
     picture = "POV_Gavrilov.dds"
->>>>>>> parent of 51596ea (Фиксы хуйни и добавление иконок для фокусов)
     expire = "1995.1.1"
     ideology = fascism
     traits = {

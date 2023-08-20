@@ -8227,6 +8227,10 @@ spriteTypes = {
 		name = "GFX_portrait_POV_Sergey"
 		texturefile = "gfx/leaders/POV/POV_Sergey.png"
 	}
+	spriteType = {
+		name = "GFX_portrait_POV_Stolip"
+		texturefile = "gfx/leaders/POV/POV_Stolip.png"
+	}
 	###AMB###
 		spriteType = {
 		name = "GFX_portrait_Osen"
@@ -8240,4 +8244,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/ARS/ARS_Arslan.dds"
 	}
 
+	###LIP###
+
+		spriteType = {
+		name = "GFX_portrait_LIP_Konstantin"
+		texturefile = "gfx/leaders/LIP/LIP_Konstantin.dds"
+	}
 }

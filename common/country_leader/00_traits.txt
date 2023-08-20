@@ -6577,20 +6577,6 @@ leader_traits = {
 				factor = 1
 			}
 	}
-	father = {
-		random = no
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	humorist_president = {
-		random = no
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	criminal_oligarch = {
 		random = no
 
@@ -6600,18 +6586,30 @@ leader_traits = {
 			factor = 1
 		}
 	}
-
        krovaviy_palach = {
 	random = no
 
-                consumer_goods_factor = -0.20
-                production_speed_buildings_factor = 0.1
-                war_support_factor = 0.15
+                consumer_goods_factor = -0.1
+                war_support_factor = 0.20
+                justify_war_goal_time = -0.35
 
 		ai_will_do = {
 			factor = 1
 		}
 	}
+
+       reformator = {
+	random = no
+
+                consumer_goods_factor = -0.20
+                production_speed_buildings_factor = 0.30
+              
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	oligarch_winner = {
 		random = no
 

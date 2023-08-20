@@ -9,7 +9,7 @@ characters={
 		}
 		country_leader = {
 			ideology = despotism 
-			traits = { }
+			traits = {divisive_absolute_monarch}
 			expire = "1995.1.1.1"
 
 		}
@@ -38,9 +38,33 @@ sergey_cho = {
         }
     }
     advisor = {
+        cost = 250
+        slot = political_advisor
+        idea_token = sergey_cho
+        allowed = {
+            original_tag = POV
+        }
+        available = {
+            OR = {
+                has_government = neutrality
+                has_government = fascism
+            }
+        }
+       traits = {krovaviy_palach}
+	}
+     }
+POV_Stolip = {
+    name = "Stolipin"
+    portraits = {
+        civilian = {
+            small = "/gfx/leaders/pov/POV_Stolip.png"
+        }
+    }
+    
+    advisor = {
         cost = 150
         slot = political_advisor
-        idea_token = POV_sergey_cho
+        idea_token = POV_Stolip
         allowed = {
             original_tag = POV
         }
@@ -49,7 +73,7 @@ sergey_cho = {
                 has_government = neutrality
             }
         }
-       traits = {krovaviy_palach}
+       traits = {reformator}
 	}
      }
 }
