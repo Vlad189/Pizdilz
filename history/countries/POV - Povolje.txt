@@ -45,7 +45,11 @@ create_country_leader = {
 create_country_leader = {
     name = "Gavrilov"
     desc = "Gavrilov"
+<<<<<<< HEAD
     picture = "Gavrilov.dds"
+=======
+    picture = "POV_Gavrilov.dds"
+>>>>>>> parent of 51596ea (Фиксы хуйни и добавление иконок для фокусов)
     expire = "1995.1.1"
     ideology = fascism
     traits = {

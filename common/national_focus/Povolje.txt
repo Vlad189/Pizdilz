@@ -48,6 +48,18 @@ instant_build = yes
 
 	
 	focus = {
+		id = POV_Polit1
+		icon = GFX_goal_generic_position_armies
+		cost = 0
+		x = 16
+		y = 0
+				completion_reward = {
+						add_political_power = 150
+					}
+
+
+	}
+	focus = {
 		id = POV_Motor
 		icon = GFX_goal_generic_army_motorized
 		cost = 0
@@ -239,21 +251,11 @@ instant_build = yes
 }
 
 	}
-focus = {
-	id = POV_Polit1
-	icon = GFX_Vybor
-	cost = 0
-	x = 16
-	y = 0
-	completion_reward = {
-		add_political_power = 150
-		}
-	    }
 
 focus = {
     id = POV_Gavril1
-    icon = GFX_Gavrilov_1
-    cost = 0.20
+    icon = GFX_goal_support_fascism
+    cost = 0
     prerequisite = {
         focus = POV_Polit1
     }
@@ -300,7 +302,7 @@ focus = {
 	}
 	focus = {
 		id = POV_Doj1
-		icon = GFX_Dojean_1
+		icon = GFX_goal_generic_neutrality_focus
 		cost = 0
 		prerequisite = {
 			focus = POV_Polit1
@@ -450,5 +452,4 @@ focus = {
 		y = 6
 
 	}
-     
-  
+}

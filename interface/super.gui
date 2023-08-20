@@ -341,7 +341,7 @@ guiTypes = {
 			font = "hoi_18mbs"
 			borderSize = {x = 0 y = 0}
 			text = "[get_super_event_quote]"
-			maxWidth = 355
+			maxWidth = 348
 			maxHeight = 110
 			fixedsize = yes	
 			format = right
