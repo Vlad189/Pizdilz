@@ -124,13 +124,13 @@ if = {
 	}
 }
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = democratic
 	elections_allowed = no
 }
 
 set_popularities = {
-	democratic = 20
-	neutrality = 60
+	democratic = 60
+	neutrality = 20
 	fascism = 20
 }
 add_ideas = {
