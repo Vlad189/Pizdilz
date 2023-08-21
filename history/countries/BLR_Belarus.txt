@@ -1,0 +1,181 @@
+capital = 206
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_military_police = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	paratroopers = 1
+	gw_artillery = 1 
+}
+
+
+set_politics = {
+	ruling_party = Democratic
+	last_election = "1935.1.20"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	fascism = 15
+	democratic = 65
+	neutrality = 20
+}
+
+create_country_leader = {
+	name = "Vaclav Ustilovich Lastovsky"
+	desc = "POLITICS_LONG_YUN_DESC"
+	ideology = liberalism
+	picture = "gfx/Leaders/BLR/Lukash.dds"
+	expire = "1945.1.1"
+	traits = {
+	    #
+	}
+}
+create_country_leader = {
+	name = "Leon Ivanovich Dubaykovsky"
+	desc = "POLITICS_LONG_YUN_DESC"
+	ideology = nazism
+	picture = "gfx/Leaders/BLR/Kablas.dds"
+	expire = "1945.1.1"
+	traits = {
+	    #
+	}
+}
+
+create_country_leader = {
+	name = "Bulak Balakhovich"
+	desc = "POLITICS_LONG_YUN_DESC"
+	ideology = despotism
+	picture = "gfx/Leaders/BLR/portrait_BLR_field.dds"
+	expire = "1955.1.1"
+	traits = {
+	    #
+	}
+}
+create_country_leader = {
+	name = "Jan Borisovich Gamarnik"
+	desc = "POLITICS_LONG_YUN_DESC"
+	ideology = stalinism
+	picture = "gfx/Leaders/BLR/comunist.dds"
+	expire = "1945.1.1"
+	traits = {
+	    #
+	}
+}
+
+create_corps_commander = {
+
+   name = "Kiprian Kondratovich"
+   picture = "General2.dds"
+   skill = 4 
+   attack_skill = 6
+   defense_skill = 4
+   planning_skill = 1
+   logistics_skill = 1
+	
+}
+create_corps_commander = {
+
+   name = "Ales Garun"
+   picture = "General1.dds"
+   skill = 4
+   attack_skill = 5
+   defense_skill = 4
+   planning_skill = 3
+   logistics_skill = 1
+	
+}
+create_corps_commander = {
+
+   name = "Jaugen von Grothe de Buko"
+   picture = "General3.dds"
+   skill = 4
+   attack_skill = 3
+   defense_skill = 4
+   planning_skill = 2
+   logistics_skill = 2
+	
+}
+create_corps_commander = {
+
+   name = "Jaugen von Grothe de Buko"
+   picture = "General3.dds"
+   skill = 4
+   attack_skill = 3
+   defense_skill = 4
+   planning_skill = 2
+   logistics_skill = 2
+	
+}
+create_corps_commander = {
+
+   name = "Konstantin Yezovitov"
+   picture = "General4.dds"
+   skill = 4
+   attack_skill = 4
+   defense_skill = 2
+   planning_skill = 1
+   logistics_skill = 1
+	
+}
+create_corps_commander = {
+
+   name = "Alaksandr Barysavich Shramkoŭ"
+   picture = "portrait_europe_generic_land_19.dds"
+   skill = 3
+   attack_skill = 3
+   defense_skill = 2
+   planning_skill = 1
+   logistics_skill = 1
+	
+}
+create_corps_commander = {
+
+   name = "Viktar Mikalaeŭich Karamiazaŭ"
+   picture = "Portrait_Europe_Generic_land_5.dds"
+   skill = 3
+   attack_skill = 2
+   defense_skill = 1
+   planning_skill = 2
+   logistics_skill = 1
+	
+}
+create_corps_commander = {
+
+   name = "Henadz Ivanavich Khalestaŭ"
+   picture = "Portrait_Europe_Generic_land_4.dds"
+   skill = 2
+   attack_skill = 2
+   defense_skill = 1
+   planning_skill = 1
+   logistics_skill = 3
+	
+}
+create_corps_commander = {
+
+   name = "Ihar Uladzimiravich Pashkou"
+   picture = "Portrait_Europe_Generic_land_3.dds"
+   skill = 3
+   attack_skill = 3
+   defense_skill = 1
+   planning_skill = 2
+   logistics_skill = 2
+	
+}
+create_corps_commander = {
+
+   name = "Yankut Dombrowski"
+   picture = "Portrait_Europe_Generic_3.dds"
+   skill = 2
+   attack_skill = 2
+   defense_skill = 1
+   planning_skill = 2
+   logistics_skill = 2
+	
+}
+
+

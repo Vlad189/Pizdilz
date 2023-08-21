@@ -2,20 +2,25 @@
 state={
 	id=201
 	name="STATE_201"
-	manpower = 1417834
+	manpower = 1467834
 	
 	state_category = town
 
+	resources={
+		tungsten=4
+	}
+
 	history={
-		victory_points = {
-			6593 3
-		}
-		owner = SOV
+		owner = UKR
 		buildings = {
-			infrastructure = 3 #was: 5
+			infrastructure = 3
+			arms_factory = 1
 			air_base = 3
 		}
-		add_core_of = SOV
+		victory_points = {
+			11514 3
+		}
+
 		add_core_of = UKR
 	}
 
