@@ -8,7 +8,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = despotism 
+			ideology = absolute_monarchy
 			traits = {divisive_absolute_monarch}
 			expire = "1995.1.1.1"
 
@@ -23,7 +23,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = nazism 
+			ideology = nationalism_ideology
 			traits = { dictator }
 			expire = "1995.1.1.1"
 
@@ -48,6 +48,7 @@ sergey_cho = {
             OR = {
                 has_government = neutrality
                 has_government = fascism
+                has_government = monarchy
             }
         }
        traits = {krovaviy_palach}
@@ -70,7 +71,7 @@ POV_Stolip = {
         }
         available = {
             OR = {
-                has_government = neutrality
+                has_government = monarchy
             }
         }
        traits = {reformator}

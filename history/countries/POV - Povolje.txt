@@ -20,7 +20,7 @@ set_technology = {
 }
 
 set_politics = {
-	ruling_party = neutrality ##Рулевая партия
+	ruling_party = monarchy ##Рулевая партия
 	last_election = "1936.1.1" ##Последние выборы (если есть)
 	election_frequency = 48 ##Через сколько проводят выборы
 	elections_allowed = no ##Есть ли выборы
@@ -28,7 +28,8 @@ set_politics = {
 
 set_popularities = {
 	democratic = 0  ##Демократия
-	neutrality = 45 ##Нейтралитет
+	monarchy = 45 ##Монархия
+        neutrality = 0 ## Нейтралитет/Военная хунта
 	communism = 10 ##Коммунизм
 	fascism = 45 ##Фашизм
 }
@@ -38,7 +39,7 @@ create_country_leader = {
     desc = "Dojean"
     picture = "Dojean.dds"
     expire = "1995.1.1"
-    ideology = neutrality
+    ideology = monarchy
     traits = {
         #
     }

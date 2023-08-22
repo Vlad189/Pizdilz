@@ -313,7 +313,7 @@ focus = {
 				completion_reward = {
 						add_political_power = 10
 						add_popularity = {
-								ideology = neutrality
+								ideology = monarchy
 								popularity = 0.10
 							}
 					}
