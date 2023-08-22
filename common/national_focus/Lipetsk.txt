@@ -1,0 +1,116 @@
+focus_tree = {
+    id = "Lipetsk"
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            tag = "LIP"
+        }
+    }
+    default = no
+    focus = {
+        id = "LIP_polit"
+        icon = "GFX_goal_tripartite_pact"
+        cost = 1
+        x = 7
+        y = 0
+        completion_reward = {
+            add_war_support = 0.1
+            add_equipment_to_stockpile = {
+                type = "infantry_equipment"
+                amount = 1000
+                producer = "SOV"
+            }
+        }
+    }
+    focus = {
+        id = "LIP_polit2"
+        icon = "GFX_goal_generic_forceful_treaty"
+        cost = 0
+        prerequisite = {
+            focus = "LIP_polit"
+        }
+        x = 7
+        y = 1
+        completion_reward = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                type = "industrial_complex"
+                level = 1
+                instant_build = yes
+            }
+        }
+    }
+    focus = {
+        id = "LIP_Motor1"
+        icon = "GFX_goal_generic_air_production"
+        cost = 0
+        prerequisite = {
+            focus = "LIP_polit2"
+        }
+        x = 3
+        y = 2
+        completion_reward = {
+            division_template = {
+                name = "NKVD Infantry Division"
+                priority = 2
+                division_names_group = "ARS_INF_01"
+                regiments = {
+                    infantry = {
+                        x = 0
+                        y = 0
+                    }
+                    infantry = {
+                        x = 0
+                        y = 1
+                    }
+                    infantry = {
+                        x = 0
+                        y = 2
+                    }
+                    infantry = {
+                        x = 1
+                        y = 0
+                    }
+                    infantry = {
+                        x = 1
+                        y = 1
+                    }
+                    infantry = {
+                        x = 1
+                        y = 2
+                    }
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    ROOT = {
+                        has_full_control_of_state = "PREV"
+                    }
+                }
+                prioritize = {}
+                create_unit = {
+                    division = "name"
+                    owner = "LIP"
+                }
+            }
+        }
+    }
+    focus = {
+        id = "LIP_motor2"
+        icon = "GFX_goal_generic_army_doctrines"
+        cost = 0
+        prerequisite = {
+            focus = "LIP_Motor1"
+        }
+        x = 3
+        y = 3
+        completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.5
+                uses = "2"
+                category = "land_doctrine"
+            }
+        }
+    }
+}

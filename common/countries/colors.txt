@@ -883,12 +883,26 @@ TTS = {
 ARS = {
 	color = rgb { 0 100 0 }
 	color_ui = rgb { 10 80 10 }
+}
 
 KSS = {
 	color = rgb { 65 175 179 }
 	color_ui = rgb { 85 228 233 }
+}
 
 LIP= {
-	color = rgb { 68 33 33 }
+	color = rgb { 125 13 24 }
+	color_ui = rgb { 68 33 33 }
+}
+
+POV = {
+	color = rgb { 225 225 225 }
 	color_ui = rgb { 255 0 0 }
+}
+
+OMS = {
+	color = rgb { 0 0 0 }
+	color_ui = rgb { 0 0 0 }
+}
+
 }
