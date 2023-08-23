@@ -83,6 +83,58 @@ ideologies = {
 	}
 
 
+        miliritary= {
+	
+		types = {
+		
+			militarism_ideology = {
+			}
+			
+			miliritary_junta = {
+			}
+			
+			military_socialism = {
+			can_be_randomly_selected = no
+			}
+			
+			militocracy = {
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_Military_1"
+			"FACTION_NAME_Military_2"
+			"FACTION_NAME_Military_3"
+			"FACTION_NAME_Military_4"
+			"FACTION_NAME_Military_5"
+		}
+		
+		color = { 219 252 3 }
+		
+		war_impact_on_world_tension = 1.0			
+		faction_impact_on_world_tension = 1.0
+		
+		rules = {
+			can_force_government = no
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+			can_create_factions = no
+		}
+		
+		can_collaborate = yes
+		
+		modifiers = {
+			generate_wargoal_tension = 0.5
+			send_volunteers_tension = 0.35
+			research_speed_factor = 0.1
+			justify_war_goal_when_in_major_war_time = -0.90
+				ai_focus_aggressive_factor = 0.6
+		}
+
+		ai_miliritary = yes # uses the fascist AI behaviour
+	}
+
 	communism = {
 		
 		types = {
