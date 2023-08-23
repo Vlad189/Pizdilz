@@ -49,6 +49,7 @@ sergey_cho = {
                 has_government = neutrality
                 has_government = fascism
                 has_government = monarchy
+                has_government = miliritary
             }
         }
        traits = {krovaviy_palach}
@@ -72,6 +73,7 @@ POV_Stolip = {
         available = {
             OR = {
                 has_government = monarchy
+                has_government = neutrality
             }
         }
        traits = {reformator}

@@ -89,18 +89,14 @@ ideologies = {
 		
 			militarism_ideology = {
 			}
-			
-			miliritary_junta = {
-			}
-			
-			military_socialism = {
+		        military_socialism = {
 			can_be_randomly_selected = no
 			}
-			
+			miliritary_junta = {
+			}
 			militocracy = {
 			}
 		}
-		
 		dynamic_faction_names = {
 			"FACTION_NAME_Military_1"
 			"FACTION_NAME_Military_2"
@@ -294,13 +290,9 @@ ideologies = {
 			kemalism = {
 				can_be_randomly_selected = no
 			}
-			militarism_ideology = {
-			}
 			authoritarian_democracy = {
 			}
-			military_socialism = {
-				can_be_randomly_selected = no
-			}
+			
 			austro_fascism = {
 				can_be_randomly_selected = no
 			}

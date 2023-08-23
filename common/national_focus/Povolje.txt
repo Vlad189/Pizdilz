@@ -264,6 +264,7 @@ focus = {
     y = 1
     completion_reward = {
         add_political_power = 50
+        add_ideas = pov_voennoy_podniatie
         set_politics = { ruling_party = fascism elections_allowed = no }
         add_popularity = {
             ideology = fascism
