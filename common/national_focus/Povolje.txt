@@ -186,6 +186,7 @@ instant_build = yes
 		
 		completion_reward = {
         add_political_power = 50
+        add_ideas = pov_voennoy_podniatie
         set_politics = { ruling_party = fascism elections_allowed = no }
         add_popularity = {
             ideology = fascism
@@ -284,6 +285,8 @@ instant_build = yes
 		245 = { add_claim_by = POV }
 		218 = { add_claim_by = POV }
 		916 = { add_claim_by = POV }
+                238 = { add_claim_by = POV }
+                939 = {add_claim_by = POV }
 		
 								hidden_effect = {
 								division_template = {
@@ -428,9 +431,11 @@ instant_build = yes
 		}
 		x = 12
 		y = 6
-      country_event = {
-            id = kss.1
-        }
-    }
-	}
-	
+     completion_reward = {
+		create_wargoal = {
+				type = take_claimed_state
+				target = KSS
+				#expire = 0
+		}
+}
+}
