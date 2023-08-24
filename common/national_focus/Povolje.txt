@@ -9,63 +9,49 @@ focus_tree = {
 	}
 	default = no
 	focus = {
-		id = POV_Ekon1
+		id = POV_Prom
 		icon = GFX_goal_generic_consumer_goods
 		cost = 0
-		x = 3
+		x = 2
 		y = 0
-
-completion_reward = {
+		
+		completion_reward = {
 
 	829 = {
-add_extra_state_shared_building_slots = 1
+add_extra_state_shared_building_slots = 3
 add_building_construction = {
 type = industrial_complex
-level = 1
+level = 3
 instant_build = yes
 }
 }
-
-236 = {
-add_extra_state_shared_building_slots = 2
-add_building_construction = {
-type = industrial_complex
-level = 2
-instant_build = yes
 }
-}
-
-257 = {
-add_extra_state_shared_building_slots = 1
-add_building_construction = {
-type = industrial_complex
-level = 1
-instant_build = yes
-}
-}
-
-}
-
-	
-	focus = {
-		id = POV_Motor
-		icon = GFX_goal_generic_army_motorized
-		cost = 0
-		x = 15
-		y = 3
 
 	}
 	focus = {
-		id = POV_Ekon2
+		id = POV_Polit
+		icon = GFX_Vybor
+		cost = 1
+		x = 12
+		y = 0
+		
+		completion_reward = {
+		add_political_power = 150
+		}
+
+	}
+	
+	focus = {
+		id = POV_Prom2
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 0
 		prerequisite = {
-			focus = POV_Ekon1
+			focus = POV_Prom
 		}
-		x = 1
+		x = 2
 		y = 1
-
-completion_reward = {
+		
+		completion_reward = {
 
 401 = {
 add_extra_state_shared_building_slots = 2
@@ -87,20 +73,19 @@ instant_build = yes
 
 }
 	}
-}
 
 	}
 	focus = {
-		id = POV_Ekon4
+		id = POV_Prom3
 		icon = GFX_goal_generic_production
 		cost = 0
 		prerequisite = {
-			focus = POV_Ekon1
+			focus = POV_Prom2
 		}
-		x = 3
-		y = 1
-
-completion_reward = {
+		x = 2
+		y = 2
+		
+		completion_reward = {
 
 255 = {
 add_extra_state_shared_building_slots = 3
@@ -147,16 +132,16 @@ instant_build = yes
 
 	}
 	focus = {
-		id = POV_Ekon5
+		id = POV_Prom4
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 0
 		prerequisite = {
-			focus = POV_Ekon4
+			focus = POV_Prom3
 		}
-		x = 3
-		y = 2
-
-completion_reward = {
+		x = 2
+		y = 3
+		
+		completion_reward = {
 
 
 401 = {
@@ -187,84 +172,20 @@ instant_build = yes
 
 	}
 	focus = {
-		id = POV_Ekon7
-		icon = GFX_goal_generic_construct_military
+		id = POV_Polit2
+		icon = GFX_Gavrilov_1
 		cost = 0
 		prerequisite = {
-			focus = POV_Ekon5
+			focus = POV_Polit
 		}
-		x = 3
-		y = 3
-
-completion_reward = {
-
-
-
-
-}
-
-	}
-	focus = {
-		id = POV_Ekon6
-		icon = GFX_goal_generic_fortify_city
-		cost = 0
-		prerequisite = {
-			focus = POV_Ekon7
+		mutually_exclusive = {
+			focus = POV_Polit3
 		}
-		x = 3
-		y = 4
-
-	}
-	focus = {
-		id = POV_Ekon3
-		icon = GFX_goal_generic_construct_civ_factory
-		cost = 0
-		prerequisite = {
-			focus = POV_Ekon1
-		}
-		x = 5
+		x = 8
 		y = 1
-
-completion_reward = {
-
-260 = {
-add_extra_state_shared_building_slots = 2
-add_building_construction = {
-type = industrial_complex
-level = 2
-instant_build = yes
-}
-}
-
-}
-
-	}
-focus = {
-	id = POV_Polit1
-	icon = GFX_Vybor
-	cost = 0
-	x = 16
-	y = 0
-	completion_reward = {
-		add_political_power = 150
-		}
-	    }
-
-focus = {
-    id = POV_Gavril1
-    icon = GFX_Gavrilov_1
-    cost = 0.20
-    prerequisite = {
-        focus = POV_Polit1
-    }
-    mutually_exclusive = {
-        focus = POV_Doj1
-    }
-    x = 11
-    y = 1
-    completion_reward = {
+		
+		completion_reward = {
         add_political_power = 50
-        add_ideas = pov_voennoy_podniatie
         set_politics = { ruling_party = fascism elections_allowed = no }
         add_popularity = {
             ideology = fascism
@@ -272,46 +193,51 @@ focus = {
         }
         country_event = {
             id = super.54
-            hours = 2
         }
     }
-}
 
-focus = {
-    id = POV_Gavril2
-    icon = GFX_goal_anti_comintern_pact
-    cost = 0
-    prerequisite = {
-        focus = POV_Gavril1
-    }
-    x = 11
-    y = 2
-}
+	}
 	focus = {
-		id = POV_Gavril3
-		icon = GFX_goal_generic_army_tanks
+		id = POV_Gavr
+		icon = GFX_goal_unknown
 		cost = 0
 		prerequisite = {
-			focus = POV_Gavril2
-			focus = POV_Motor
+			focus = POV_Polit2
 		}
-		x = 11
+		x = 8
 		y = 3
 
 	}
 	focus = {
-		id = POV_Doj1
+		id = POV_Gavr2
+		icon = GFX_goal_generic_propaganda.dds
+		cost = 0
+		prerequisite = {
+			focus = POV_Gavr
+		}
+		x = 8
+		y = 5
+		
+				completion_reward = {
+						add_war_support = 0.2
+						add_manpower = 20000
+					}
+
+	}
+	focus = {
+		id = POV_Polit3
 		icon = GFX_Dojean_1
 		cost = 0
 		prerequisite = {
-			focus = POV_Polit1
+			focus = POV_Polit
 		}
 		mutually_exclusive = {
-			focus = POV_Gavril1
+			focus = POV_Polit2
 		}
-		x = 20
+		x = 16
 		y = 1
-				completion_reward = {
+		
+		completion_reward = {
 						add_political_power = 10
 						add_popularity = {
 								ideology = monarchy
@@ -319,137 +245,192 @@ focus = {
 							}
 					}
 
-
 	}
 	focus = {
 		id = POV_Doj2
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_goal_unknown
 		cost = 0
 		prerequisite = {
-			focus = POV_Doj1
+			focus = POV_Polit3
 		}
-		x = 20
-		y = 2
+		x = 16
+		y = 3
 
 	}
 	focus = {
 		id = POV_Doj3
-		icon = GFX_goal_generic_construct_mil_factory
-		cost = 0
-		prerequisite = {
-			focus = POV_Doj2
-			focus = POV_Motor
-		}
-		mutually_exclusive = {
-			focus = POV_Doj4
-		}
-		x = 19
-		y = 3
-
-	}
-	focus = {
-		id = POV_Doj4
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_goal_unknown
 		cost = 0
 		prerequisite = {
 			focus = POV_Doj2
 		}
-		mutually_exclusive = {
-			focus = POV_Doj3
-		}
-		x = 21
-		y = 3
-
-	}
-	focus = {
-		id = POV_Doj5
-		icon = GFX_goal_anschluss
-		cost = 0
-		prerequisite = {
-			focus = POV_Doj3
-			focus = POV_Doj4
-		}
-		x = 20
-		y = 4
-
-	}
-	focus = {
-		id = POV_Doj7
-		icon = GFX_goal_anti_comintern_pact
-		cost = 0
-		prerequisite = {
-			focus = POV_Doj5
-		}
-		mutually_exclusive = {
-			focus = POV_Doj6
-		}
-		x = 21
+		x = 16
 		y = 5
 
 	}
 	focus = {
-		id = POV_Femboy1
-		icon = GFX_goal_generic_allies_build_infantry
+		id = POV_Don
+		icon = GFX_goal_unknown
 		cost = 0
 		prerequisite = {
-			focus = POV_Doj1
+			focus = POV_Gavr2
+			focus = POV_Doj3
 		}
-		x = 25
+		x = 12
+		y = 5
+		
+		completion_reward = {
+		938 = { add_claim_by = POV }
+		245 = { add_claim_by = POV }
+		218 = { add_claim_by = POV }
+		916 = { add_claim_by = POV }
+		
+								hidden_effect = {
+								division_template = {
+										name = "Donskaya Osvoboditelnaya Army"
+										priority = 2
+										division_names_group = POV_INF_01
+										regiments = {
+												cavalry = {
+														x = 0
+														y = 0
+													}
+												cavalry = {
+														x = 0
+														y = 1
+													}
+												cavalry = {
+														x = 0
+														y = 2
+													}
+												cavalry = {
+														x = 1
+														y = 0
+													}
+												
+
+											}
+									}
+								random_owned_controlled_state = {
+										limit = {
+												ROOT = {
+														has_full_control_of_state = PREV
+													}
+											}
+										prioritize = {
+											}
+										create_unit = {
+												division = "name=\"1.Donskaya Osvoboditelnaya Army\"division_template=\"Donskaya Osvoboditelnaya Army\"start_experience_factor=1.0"
+												owner = POV
+											}
+										create_unit = {
+												division = "name=\"2.Donskaya Osvoboditelnaya Army\"division_template=\"Donskaya Osvoboditelnaya Army\"start_experience_factor=1.0"
+												owner = POV
+											}
+										create_unit = {
+												division = "name=\"3.Donskaya Osvoboditelnaya Army\"division_template=\"Donskaya Osvoboditelnaya Army\"start_experience_factor=1.0"
+												owner = POV
+											}
+										create_unit = {
+												division = "name=\"4.Donskaya Osvoboditelnaya Army\"division_template=\"Donskaya Osvoboditelnaya Army\"start_experience_factor=1.0"
+												owner = POV
+											}
+									}
+							}
+							
+		}
+
+	}
+	focus = {
+		id = POV_Doj
+		icon = GFX_goal_generic_military_sphere.dds
+		cost = 1
+		prerequisite = {
+			focus = POV_Polit3
+		}
+		x = 20
 		y = 2
+		
+						completion_reward = {
+						add_political_power = 10
+						hidden_effect = {
+								division_template = {
+										name = "108 Strelkov Polk"
+										priority = 2
+										division_names_group = POV_INF_01
+										regiments = {
+												infantry = {
+														x = 0
+														y = 0
+													}
+												infantry = {
+														x = 0
+														y = 1
+													}
+												infantry = {
+														x = 0
+														y = 2
+													}
+												infantry = {
+														x = 1
+														y = 0
+													}
+												infantry = {
+														x = 1
+														y = 1
+													}
+												infantry = {
+														x = 1
+														y = 2
+													}
+												infantry = {
+														x = 2
+														y = 0
+													}
+
+											}
+									}
+								random_owned_controlled_state = {
+										limit = {
+												ROOT = {
+														has_full_control_of_state = PREV
+													}
+											}
+										prioritize = {
+											}
+										create_unit = {
+												division = "name=\"1.108 Strelkov Polk\"division_template=\"108 Strelkov Polk\"start_experience_factor=1.0"
+												owner = POV
+											}
+										create_unit = {
+												division = "name=\"2.108 Strelkov Polk\"division_template=\"108 Strelkov Polk\"start_experience_factor=1.0"
+												owner = POV
+											}
+										create_unit = {
+												division = "name=\"3.108 Strelkov Polk\"division_template=\"108 Strelkov Polk\"start_experience_factor=1.0"
+												owner = POV
+											}
+										create_unit = {
+												division = "name=\"4.108 Strelkov Polk\"division_template=\"108 Strelkov Polk\"start_experience_factor=1.0"
+												owner = POV
+											}
+									}
+							}
+					}
 
 	}
 	focus = {
-		id = POV_Femboy3
-		icon = GFX_goal_generic_major_war
+		id = POV_Don2
+		icon = GFX_goal_unknown
 		cost = 0
 		prerequisite = {
-			focus = POV_Femboy1
+			focus = POV_Don
 		}
-		mutually_exclusive = {
-			focus = POV_Femboy2
-		}
-		x = 24
-		y = 3
-
-	}
-	focus = {
-		id = POV_Doj6
-		icon = GFX_goal_molotov_ribbentrop_pact
-		cost = 0
-		prerequisite = {
-			focus = POV_Doj5
-		}
-		mutually_exclusive = {
-			focus = POV_Doj7
-		}
-		x = 19
-		y = 5
-
-	}
-	focus = {
-		id = POV_Femboy2
-		icon = GFX_goal_generic_improve_relations
-		cost = 0
-		prerequisite = {
-			focus = POV_Femboy1
-		}
-		mutually_exclusive = {
-			focus = POV_Femboy3
-		}
-		x = 26
-		y = 3
-
-	}
-	focus = {
-		id = POV_Doj8
-		icon = GFX_goal_generic_dangerous_deal
-		cost = 0
-		prerequisite = {
-			focus = POV_Doj7
-		}
-		x = 20
+		x = 12
 		y = 6
-
+      country_event = {
+            id = kss.1
+        }
+    }
 	}
-     
-  
+	

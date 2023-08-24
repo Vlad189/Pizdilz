@@ -29,7 +29,7 @@ country_event = {	#gavrilovputch
 		
         set_global_flag = gavrilov_putch
         set_global_flag = Super_Event_Visible
-        play_song  = "superev_endsieg"
+        play_song = "superev_endsieg"
         add_ideas = sergey_cho
 		
 	}

@@ -56,18 +56,6 @@ create_country_leader = {
     }
 }
 
-
-create_field_marshal = {
-	name = " Du "
-	picture = "Du.dds"
-	traits = { defensive_doctrine }
-	skill = 4
-	attack_skill = 4
-	defense_skill = 4
-	planning_skill = 3
-	logistics_skill = 4
-}
-
 create_field_marshal = {
 	name = " Gavrilov "
 	picture = "GGavrilov.dds"
@@ -78,3 +66,35 @@ create_field_marshal = {
 	planning_skill = 5
 	logistics_skill = 5
    }
+  create_corps_commander = {
+	name = " Ded Saray "
+	picture = "Saray.dds"
+	traits = { defensive_doctrine }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 4
+	logistics_skill = 4
+}
+
+create_field_marshal = {
+	name = " Nikolay Denikin "
+	picture = "Denikin.dds"
+	traits = { defensive_doctrine }
+	skill = 5
+	attack_skill = 3
+	defense_skill = 5
+	planning_skill = 5
+	logistics_skill = 5
+}
+
+create_corps_commander = {
+	name = " Serey Dushkin "
+	picture = "Du.dds"
+	traits = { attack_doctrine }
+	skill = 3
+	attack_skill = 5
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}

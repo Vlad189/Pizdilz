@@ -18,7 +18,7 @@ set_technology = {
 }
 
 set_politics = {
-	ruling_party = miliritary  ##Рулевая партия
+	ruling_party = miliritary ##Рулевая партия
 	last_election = "1936.1.1" ##Последние выборы (если есть)
 	election_frequency = 48 ##Через сколько проводят выборы
 	elections_allowed = no ##Есть ли выборы
@@ -27,7 +27,7 @@ set_politics = {
 set_popularities = {
 	democratic = 0  ##Демократия
 	neutrality = 0 ##Нейтралитет
-	miliritary  = 85 ##Коммунизм военный
+	miliritary = 85 ##Коммунизм военный
 	fascism = 15 ##Фашизм
 }
 
@@ -35,9 +35,9 @@ set_popularities = {
 create_country_leader = {
     name = "Konstantin"
     desc = "Konstantin"
-    picture = ""
+    picture = "Konstantin.dds"
     expire = "1995.1.1"
-    ideology = military_socialism
+    ideology = miliritary
     traits = {
         #
     }
