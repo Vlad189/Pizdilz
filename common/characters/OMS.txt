@@ -1,6 +1,6 @@
 characters = {
 	OMS_Lenin = {
-		name = OMS_Lenin
+		name = Lenin
 		portraits = {
 			civilian={
 				large = GFX_portrait_OMS_Lenin
