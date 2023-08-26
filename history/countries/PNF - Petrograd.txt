@@ -30,11 +30,3 @@ set_popularities = {
 	communism = 5 ##Коммунизм
 	fascism = 0 ##Фашизм
 }
-
-
-
-
-
-
-
-}

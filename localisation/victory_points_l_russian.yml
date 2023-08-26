@@ -597,7 +597,7 @@
  VICTORY_POINTS_6318:0 "Манчестер"
  VICTORY_POINTS_11405:0 "Запорожье"
  VICTORY_POINTS_11561:0 "Кривой Рог"
- VICTORY_POINTS_9461:0 "Ворошиловград"
+ VICTORY_POINTS_9461:0 "Луганск"
  VICTORY_POINTS_3734:0 "Вангерград"
  VICTORY_POINTS_11349:0 "Ржев"
  VICTORY_POINTS_8011:0 "Бангалор"
@@ -1112,9 +1112,8 @@
  VICTORY_POINTS_9780:0 "Шкодра"
  VICTORY_POINTS_6900:0 "Корча"
  VICTORY_POINTS_6680:0 "Лихтенштейн"
-
-
- 
+ VICTORY_POINTS_6519:0 "Северодонецк"
+ VICTORY_POINTS_3529:0 "Царицын"
 
 # === [LocEditor:OrphanedKeys] Keys that do not exist in English ===
  VICTORY_POINTS_6683:0 "Базель"
