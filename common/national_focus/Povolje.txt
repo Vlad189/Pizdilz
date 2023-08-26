@@ -266,6 +266,7 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 				add_political_power = 10
+                                country_event = povolsheska.imperia.1
 				add_popularity = {
 						ideology = monarchy
 						popularity = 0.10

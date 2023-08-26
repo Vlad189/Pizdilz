@@ -1,0 +1,28 @@
+add_namespace = povolsheska.imperia
+
+country_event = {
+	id = povolsheska.imperia.1
+	title = povolsheska.imperia.1.t
+	desc = povolsheska.imperia.1.d
+    picture = GFX_report_event_saf_soldiers_2
+	
+	 is_triggered_only = yes
+
+	 option = { 
+		name = povolsheska.imperia.1.a
+		}
+		
+
+country_event = {
+	id = krasnodar.1
+	title = krasnodar.1.t
+	desc = krasnodar.1.d
+    picture = GFX_report_event_saf_soldiers_1
+	
+	 is_triggered_only = yes
+
+	 option = { 
+		name = krasnodar.1.a
+		}
+		}
+		}
