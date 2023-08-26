@@ -11,7 +11,7 @@ country_event = {
 	 option = { 
 		name = povolsheska.imperia.1.a
 		}
-		
+}
 
 country_event = {
 	id = krasnodar.1
@@ -25,4 +25,4 @@ country_event = {
 		name = krasnodar.1.a
 		}
 		}
-		}
+		
