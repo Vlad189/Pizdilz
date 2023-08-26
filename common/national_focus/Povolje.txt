@@ -14,18 +14,17 @@ focus_tree = {
 		cost = 0
 		x = 2
 		y = 0
-		
 		completion_reward = {
+				829 = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+								type = industrial_complex
+								level = 3
+								instant_build = yes
+							}
+					}
+			}
 
-	829 = {
-add_extra_state_shared_building_slots = 3
-add_building_construction = {
-type = industrial_complex
-level = 3
-instant_build = yes
-}
-}
-}
 
 	}
 	focus = {
@@ -34,13 +33,29 @@ instant_build = yes
 		cost = 1
 		x = 12
 		y = 0
-		
 		completion_reward = {
-		add_political_power = 150
-		}
+				add_political_power = 150
+			}
+
 
 	}
-	
+	focus = {
+		id = POV_Don3
+		icon = GFX_goal_unknown
+		cost = 0
+		x = 12
+		y = 7
+		
+			prerequisite = {
+			focus = POV_Don2
+		}
+		
+				completion_reward = {
+				add_war_support = 0.1
+				add_manpower = 20000
+			}
+
+	}
 	focus = {
 		id = POV_Prom2
 		icon = GFX_goal_generic_construct_mil_factory
@@ -50,29 +65,25 @@ instant_build = yes
 		}
 		x = 2
 		y = 1
-		
 		completion_reward = {
+				239 = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+					}
+				260 = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+					}
+			}
 
-401 = {
-add_extra_state_shared_building_slots = 2
-add_building_construction = {
-type = arms_factory
-level = 2
-instant_build = yes
-}
-}
-
-260 = {
-add_extra_state_shared_building_slots = 2
-add_building_construction = {
-type = arms_factory
-level = 2
-instant_build = yes
-
-}
-
-}
-	}
 
 	}
 	focus = {
@@ -84,51 +95,45 @@ instant_build = yes
 		}
 		x = 2
 		y = 2
-		
 		completion_reward = {
+				255 = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+					}
+				251 = {
+						add_building_construction = {
+								type = infrastructure
+								level = 3
+								instant_build = yes
+							}
+					}
+				217 = {
+						add_building_construction = {
+								type = infrastructure
+								level = 2
+								instant_build = yes
+							}
+					}
+				236 = {
+						add_building_construction = {
+								type = infrastructure
+								level = 4
+								instant_build = yes
+							}
+					}
+				265 = {
+						add_building_construction = {
+								type = infrastructure
+								level = 2
+								instant_build = yes
+							}
+					}
+			}
 
-255 = {
-add_extra_state_shared_building_slots = 3
-add_building_construction = {
-type = industrial_complex
-level = 1
-instant_build = yes
-}
-}
-
-251 = {
-add_building_construction = {
-type = infrastructure
-level = 3
-instant_build = yes
-}
-}
-
-217 = {
-add_building_construction = {
-type = infrastructure
-level = 2
-instant_build = yes
-}
-}
-
-236 = {
-add_building_construction = {
-type = infrastructure
-level = 4
-instant_build = yes
-}
-}
-
-265 = {
-add_building_construction = {
-type = infrastructure
-level = 2
-instant_build = yes
-}
-}
-
-}
 
 	}
 	focus = {
@@ -140,35 +145,30 @@ instant_build = yes
 		}
 		x = 2
 		y = 3
-		
 		completion_reward = {
+				401 = {
+						add_building_construction = {
+								type = infrastructure
+								level = 2
+								instant_build = yes
+							}
+					}
+				217 = {
+						add_building_construction = {
+								type = infrastructure
+								level = 4
+								instant_build = yes
+							}
+					}
+				245 = {
+						add_building_construction = {
+								type = infrastructure
+								level = 2
+								instant_build = yes
+							}
+					}
+			}
 
-
-401 = {
-add_building_construction = {
-type = infrastructure
-level = 2
-instant_build = yes
-}
-}
-
-217 = {
-add_building_construction = {
-type = infrastructure
-level = 4
-instant_build = yes
-}
-}
-
-245 = {
-add_building_construction = {
-type = infrastructure
-level = 2
-instant_build = yes
-}
-}
-
-}
 
 	}
 	focus = {
@@ -183,29 +183,55 @@ instant_build = yes
 		}
 		x = 8
 		y = 1
-		
 		completion_reward = {
-        add_political_power = 50
-        add_ideas = pov_voennoy_podniatie
-        set_politics = { ruling_party = fascism elections_allowed = no }
-        add_popularity = {
-            ideology = fascism
-            popularity = 0.10
-        }
-        country_event = {
-            id = super.54
-        }
-    }
+				add_political_power = 50
+				set_politics = {
+						ruling_party = fascism
+						elections_allowed = no
+					}
+				add_popularity = {
+						ideology = fascism
+						popularity = 0.10
+					}
+				country_event = {
+						id = super.54
+						hours = 2
+					}
+			}
+
 
 	}
 	focus = {
 		id = POV_Gavr
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_construct_mil_factory
 		cost = 0
 		prerequisite = {
 			focus = POV_Polit2
 		}
 		x = 8
+		y = 3
+		
+				completion_reward = {
+				239 = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+								type = arms_factory
+								level = 3
+								instant_build = yes
+							}
+			}
+			
+			}
+
+	}
+	focus = {
+		id = POV_Gavr3
+		icon = GFX_goal_unknown
+		cost = 0
+		prerequisite = {
+			focus = POV_Gavr
+		}
+		x = 6
 		y = 3
 
 	}
@@ -218,11 +244,11 @@ instant_build = yes
 		}
 		x = 8
 		y = 5
-		
-				completion_reward = {
-						add_war_support = 0.2
-						add_manpower = 20000
-					}
+		completion_reward = {
+				add_war_support = 0.2
+				add_manpower = 20000
+			}
+
 
 	}
 	focus = {
@@ -237,25 +263,37 @@ instant_build = yes
 		}
 		x = 16
 		y = 1
-		
 		completion_reward = {
-						add_political_power = 10
-						add_popularity = {
-								ideology = monarchy
-								popularity = 0.10
-							}
+				add_political_power = 10
+				add_popularity = {
+						ideology = monarchy
+						popularity = 0.10
 					}
+			}
+
 
 	}
 	focus = {
 		id = POV_Doj2
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_construct_mil_factory
 		cost = 0
 		prerequisite = {
 			focus = POV_Polit3
 		}
 		x = 16
 		y = 3
+		
+				completion_reward = {
+				239 = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+								type = arms_factory
+								level = 3
+								instant_build = yes
+							}
+							}
+							
+							}
 
 	}
 	focus = {
@@ -271,7 +309,7 @@ instant_build = yes
 	}
 	focus = {
 		id = POV_Don
-		icon = GFX_goal_unknown
+		icon = GFX_Don_Army
 		cost = 0
 		prerequisite = {
 			focus = POV_Gavr2
@@ -279,69 +317,78 @@ instant_build = yes
 		}
 		x = 12
 		y = 5
-		
 		completion_reward = {
-		938 = { add_claim_by = POV }
-		245 = { add_claim_by = POV }
-		218 = { add_claim_by = POV }
-		916 = { add_claim_by = POV }
-                238 = { add_claim_by = POV }
-                939 = {add_claim_by = POV }
-		
-								hidden_effect = {
-								division_template = {
-										name = "Donskaya Osvoboditelnaya Army"
-										priority = 2
-										division_names_group = POV_INF_01
-										regiments = {
-												cavalry = {
-														x = 0
-														y = 0
-													}
-												cavalry = {
-														x = 0
-														y = 1
-													}
-												cavalry = {
-														x = 0
-														y = 2
-													}
-												cavalry = {
-														x = 1
-														y = 0
-													}
-												
-
+				938 = {
+						add_claim_by = POV
+					}
+				245 = {
+						add_claim_by = POV
+					}
+				218 = {
+						add_claim_by = POV
+					}
+				916 = {
+						add_claim_by = POV
+					}
+				238 = {
+						add_claim_by = POV
+					}
+				923 = {
+						add_claim_by = POV
+					}
+				hidden_effect = {
+						division_template = {
+								name = "DonskayaOsvoboditelnayaArmy"
+								priority = 2
+								division_names_group = POV_INF_01
+								regiments = {
+										cavalry = {
+												x = 0
+												y = 0
 											}
-									}
-								random_owned_controlled_state = {
-										limit = {
-												ROOT = {
-														has_full_control_of_state = PREV
-													}
+										cavalry = {
+												x = 0
+												y = 1
 											}
-										prioritize = {
+										cavalry = {
+												x = 0
+												y = 2
 											}
-										create_unit = {
-												division = "name=\"1.Donskaya Osvoboditelnaya Army\"division_template=\"Donskaya Osvoboditelnaya Army\"start_experience_factor=1.0"
-												owner = POV
-											}
-										create_unit = {
-												division = "name=\"2.Donskaya Osvoboditelnaya Army\"division_template=\"Donskaya Osvoboditelnaya Army\"start_experience_factor=1.0"
-												owner = POV
-											}
-										create_unit = {
-												division = "name=\"3.Donskaya Osvoboditelnaya Army\"division_template=\"Donskaya Osvoboditelnaya Army\"start_experience_factor=1.0"
-												owner = POV
-											}
-										create_unit = {
-												division = "name=\"4.Donskaya Osvoboditelnaya Army\"division_template=\"Donskaya Osvoboditelnaya Army\"start_experience_factor=1.0"
-												owner = POV
+										cavalry = {
+												x = 1
+												y = 0
 											}
 									}
 							}
-							
-		}
+						random_owned_controlled_state = {
+								limit = {
+										ROOT = {
+												has_full_control_of_state = PREV
+											}
+									}
+								prioritize = {
+
+}
+								create_unit = {
+										division = "name=\"1.DonskayaOsvoboditelnayaArmy\"division_template=\"DonskayaOsvoboditelnayaArmy\"start_experience_factor=1.0"
+										owner = POV
+									}
+								create_unit = {
+										division = "name=\"2.DonskayaOsvoboditelnayaArmy\"division_template=\"DonskayaOsvoboditelnayaArmy\"start_experience_factor=1.0"
+										owner = POV
+									}
+								create_unit = {
+										division = "name=\"3.DonskayaOsvoboditelnayaArmy\"division_template=\"DonskayaOsvoboditelnayaArmy\"start_experience_factor=1.0"
+										owner = POV
+									}
+								create_unit = {
+										division = "name=\"4.DonskayaOsvoboditelnayaArmy\"division_template=\"DonskayaOsvoboditelnayaArmy\"start_experience_factor=1.0"
+										owner = POV
+									}
+							}
+					}
+			}
+
 
 	}
 	focus = {
@@ -349,93 +396,97 @@ instant_build = yes
 		icon = GFX_goal_generic_military_sphere.dds
 		cost = 1
 		prerequisite = {
-			focus = POV_Polit3
+			focus = POV_Doj2
 		}
-		x = 20
-		y = 2
-		
-						completion_reward = {
-						add_political_power = 10
-						hidden_effect = {
-								division_template = {
-										name = "108 Strelkov Polk"
-										priority = 2
-										division_names_group = POV_INF_01
-										regiments = {
-												infantry = {
-														x = 0
-														y = 0
-													}
-												infantry = {
-														x = 0
-														y = 1
-													}
-												infantry = {
-														x = 0
-														y = 2
-													}
-												infantry = {
-														x = 1
-														y = 0
-													}
-												infantry = {
-														x = 1
-														y = 1
-													}
-												infantry = {
-														x = 1
-														y = 2
-													}
-												infantry = {
-														x = 2
-														y = 0
-													}
-
+		x = 18
+		y = 3
+		completion_reward = {
+				add_political_power = 10
+				hidden_effect = {
+						division_template = {
+								name = "108StrelkovPolk"
+								priority = 2
+								division_names_group = POV_INF_01
+								regiments = {
+										infantry = {
+												x = 0
+												y = 0
 											}
-									}
-								random_owned_controlled_state = {
-										limit = {
-												ROOT = {
-														has_full_control_of_state = PREV
-													}
+										infantry = {
+												x = 0
+												y = 1
 											}
-										prioritize = {
+										infantry = {
+												x = 0
+												y = 2
 											}
-										create_unit = {
-												division = "name=\"1.108 Strelkov Polk\"division_template=\"108 Strelkov Polk\"start_experience_factor=1.0"
-												owner = POV
+										infantry = {
+												x = 1
+												y = 0
 											}
-										create_unit = {
-												division = "name=\"2.108 Strelkov Polk\"division_template=\"108 Strelkov Polk\"start_experience_factor=1.0"
-												owner = POV
+										infantry = {
+												x = 1
+												y = 1
 											}
-										create_unit = {
-												division = "name=\"3.108 Strelkov Polk\"division_template=\"108 Strelkov Polk\"start_experience_factor=1.0"
-												owner = POV
+										infantry = {
+												x = 1
+												y = 2
 											}
-										create_unit = {
-												division = "name=\"4.108 Strelkov Polk\"division_template=\"108 Strelkov Polk\"start_experience_factor=1.0"
-												owner = POV
+										infantry = {
+												x = 2
+												y = 0
 											}
 									}
 							}
+						random_owned_controlled_state = {
+								limit = {
+										ROOT = {
+												has_full_control_of_state = PREV
+											}
+									}
+								prioritize = {
+
+}
+								create_unit = {
+										division = "name=\"1.108StrelkovPolk\"division_template=\"108StrelkovPolk\"start_experience_factor=1.0"
+										owner = POV
+									}
+								create_unit = {
+										division = "name=\"2.108StrelkovPolk\"division_template=\"108StrelkovPolk\"start_experience_factor=1.0"
+										owner = POV
+									}
+								create_unit = {
+										division = "name=\"3.108StrelkovPolk\"division_template=\"108StrelkovPolk\"start_experience_factor=1.0"
+										owner = POV
+									}
+								create_unit = {
+										division = "name=\"4.108StrelkovPolk\"division_template=\"108StrelkovPolk\"start_experience_factor=1.0"
+										owner = POV
+									}
+							}
 					}
+			}
+
 
 	}
 	focus = {
 		id = POV_Don2
-		icon = GFX_goal_unknown
-		cost = 0
+		icon = GFX_Don_war
+		cost = 0.45
 		prerequisite = {
 			focus = POV_Don
 		}
 		x = 12
 		y = 6
-     completion_reward = {
-		create_wargoal = {
-				type = take_claimed_state
-				target = KSS
-				#expire = 0
-		}
-}
+		completion_reward = {
+				declare_war = {
+						target = KSS
+					}
+			}
+
+
+	}
+		
+
+		
 }

@@ -4,7 +4,7 @@ oob = "KSS_1936" ##GEG - Тег, заменить
 
 set_research_slots = 3 #Количество ячеек исследования
 
-
+recruit_character = KSS_Dirlivang
 
 # Технологии, какие будут открыты при старте
 set_technology = {

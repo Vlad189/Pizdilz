@@ -8,9 +8,11 @@ characters = {
 		}
 		country_leader = {
 
-			ideology = military_socialism 
+			ideology = stalinism
 			traits = { Veteran_Communist }
 			expire = "1995.1.1.1"
 		
 		}
+	}
+	
 	}

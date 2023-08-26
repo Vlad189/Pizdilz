@@ -5,19 +5,19 @@ state={
 	state_category = town
 
 	history={
-		owner = FIN
-		add_core_of = FIN
+		owner = FRX
+		add_core_of = FRX
 		add_core_of = KAR
 		buildings = {
 			infrastructure = 3 #was: 5
-			industrial_complex = 2
+			industrial_complex = 5
 
 			#Mannerheim Line
 			9100 = {
-				bunker = 2
+				bunker = 4
 			}
 			9105 = {
-				bunker = 2
+				bunker = 4
 			}
 			9206 = {
 				coastal_bunker = 1

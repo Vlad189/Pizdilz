@@ -8250,4 +8250,22 @@ spriteTypes = {
 		name = "GFX_portrait_LIP_Konstantin"
 		texturefile = "gfx/leaders/LIP/LIP_Konstantin.dds"
 	}
+
+	###FRX###
+		spriteType = {
+		name = "GFX_portrait_FRX_Manerg"
+		texturefile = "gfx/leaders/FRX/FRX_Manerg.dds"
+	}
+
+	###KSS###
+		spriteType = {
+		name = "GFX_portrait_KSS_Dirlivang"
+		texturefile = "gfx/leaders/KSS/KSS_Dirlivang.dds"
+	}
+
+		spriteType = {
+		name = "GFX_portrait_OMS_Lenin"
+		texturefile = "gfx/leaders/OMS/OMS_Lenin.dds"
+	}
+	
 }

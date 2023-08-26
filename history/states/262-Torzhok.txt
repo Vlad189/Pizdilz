@@ -11,12 +11,12 @@ state = {
 	}
 
 	history = {
-		owner = SOV
+		owner = FRX
 		buildings = {
 			infrastructure = 1
 
 		}
-		add_core_of = SOV
+		add_core_of = FRX
 		add_core_of = KOM
 	}
 

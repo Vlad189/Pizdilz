@@ -7,7 +7,7 @@ state={
 	state_category = city
 	
 	history={
-		owner = FIN
+		owner = FRX
 		victory_points = {
 			11105 15 
 		}
@@ -18,9 +18,9 @@ state={
 			3137 1 
 		}
 		buildings = {
-			infrastructure = 3
-			arms_factory = 3
-			industrial_complex = 2
+			infrastructure = 5
+			arms_factory = 6
+			industrial_complex = 5
 			dockyard = 1
 			air_base = 5
 			11105 = {
@@ -32,7 +32,7 @@ state={
 				coastal_bunker = 1
 			}
 		}
-		add_core_of = FIN
+		add_core_of = FRX
 	}
 
 	provinces={

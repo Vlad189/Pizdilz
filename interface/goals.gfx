@@ -3804,4 +3804,14 @@ spriteTypes = {
 	name = "GFX_Gavrilov_1"
 	texturefile = "gfx/interface/goals/Gavrilov_1.dds"			
 	}
+
+	SpriteType = {
+	name = "GFX_Don_Army"
+	texturefile = "gfx/interface/goals/Don_Army.dds"			
+	}
+
+	SpriteType = {
+	name = "GFX_Don_war"
+	texturefile = "gfx/interface/goals/Don_war.dds"			
+	}
 }

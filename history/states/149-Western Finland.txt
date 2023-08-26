@@ -7,18 +7,18 @@ state={
 	state_category = town
 	
 	history={
-		owner = FIN
+		owner = FRX
 		victory_points = {
 			3122 3 
 		}
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
 			industrial_complex = 2
 			3122 = {
 				naval_base = 1
 			}
 		}
-		add_core_of = FIN
+		add_core_of = FRX
 	}
 
 	provinces={
