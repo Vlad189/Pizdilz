@@ -173,8 +173,51 @@ completion_reward = {
 		}
 		x = 2
 		y = 2
-
+		
+				completion_reward = {
+		238 = {
+	add_building_construction = {
+		type = bunker
+        	province = 6490
+		level = 5
 	}
+} 
+}
+
+completion_reward = {
+
+		238 = {
+	add_building_construction = {
+		type = bunker
+        	province = 11400
+		level = 5
+	}
+}
+}
+
+completion_reward = {
+
+		238 = {
+		add_building_construction = {
+			type = bunker
+        	province = 9581	
+		level = 5
+	}
+} 
+}
+
+
+completion_reward = {
+
+ 		238 = {
+	add_building_construction = {
+		type = bunker
+        	province = 3777
+		level = 5
+	}
+} 
+}
+}
 	focus = {
 		id = KSS_OBORONA5
 		icon = GFX_goal_generic_construct_military
@@ -184,7 +227,50 @@ completion_reward = {
 		}
 		x = 4
 		y = 2
+		
+completion_reward = {
+		238 = {
+	add_building_construction = {
+		type = bunker
+        	province = 6765
+		level = 5
+	}
+} 
+}
 
+completion_reward = {
+
+		238 = {
+	add_building_construction = {
+		type = bunker
+        	province = 6765
+		level = 5
+	}
+}
+}
+
+completion_reward = {
+
+		238 = {
+		add_building_construction = {
+			type = bunker
+        	province = 3779	
+		level = 5
+	}
+} 
+}
+
+
+completion_reward = {
+
+ 		238 = {
+	add_building_construction = {
+		type = bunker
+        	province = 3734
+		level = 1
+	}
+} 
+}
 	}
 	focus = {
 		id = KSS_OBORONA6
@@ -195,6 +281,50 @@ completion_reward = {
 		}
 		x = 6
 		y = 2
+		
+						completion_reward = {
+		235 = {
+	add_building_construction = {
+		type = bunker
+        	province = 9688
+		level = 5
+	}
+} 
+}
+
+completion_reward = {
+
+		235 = {
+	add_building_construction = {
+		type = bunker
+        	province = 748
+		level = 5
+	}
+}
+}
+
+completion_reward = {
+
+		235 = {
+		add_building_construction = {
+			type = bunker
+        	province = 3748	
+		level = 5
+	}
+} 
+}
+
+
+completion_reward = {
+
+ 		235 = {
+	add_building_construction = {
+		type = bunker
+        	province = 11693
+		level = 5
+	}
+} 
+}
 
 	}
 	focus = {
@@ -206,6 +336,50 @@ completion_reward = {
 		}
 		x = 8
 		y = 2
+		
+						completion_reward = {
+		235 = {
+	add_building_construction = {
+		type = bunker
+        	province = 9705
+		level = 5
+	}
+} 
+}
+
+completion_reward = {
+
+		235 = {
+	add_building_construction = {
+		type = bunker
+        	province = 11693
+		level = 5
+	}
+}
+}
+
+completion_reward = {
+
+		235 = {
+		add_building_construction = {
+			type = bunker
+        	province = 3734	
+		level = 5
+	}
+} 
+}
+
+
+completion_reward = {
+
+ 		235 = {
+	add_building_construction = {
+		type = bunker
+        	province = 9417
+		level = 5
+	}
+} 
+}
 
 	}
 	focus = {
@@ -229,6 +403,28 @@ completion_reward = {
 		}
 		x = 4
 		y = 3
+		
+						completion_reward = {
+		238 = {
+	add_building_construction = {
+		type = bunker
+        	province = 9417
+		level = 3
+	}
+} 
+}
+
+completion_reward = {
+
+		238 = {
+	add_building_construction = {
+		type = bunker
+        	province = 3734
+		level = 3
+	}
+}
+}
+
 
 	}
 	focus = {
