@@ -19,7 +19,6 @@ state={
 
 		}
 		add_core_of = ZEL
-		add_core_of = ZEL
 	}
 
 	provinces={
