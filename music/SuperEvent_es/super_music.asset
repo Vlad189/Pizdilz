@@ -1,0 +1,8 @@
+music = {
+	name = "endsieg"
+	file = endsieg.ogg"
+}
+music = {
+	name = "start_war"
+	file = "start_war.ogg"
+}

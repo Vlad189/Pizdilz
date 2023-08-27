@@ -1,0 +1,13 @@
+music_station = "super_event_station"
+music = {
+	song = "endsieg"
+	chance = {
+		factor = 0
+	}
+}
+music = {
+	song = "start_war"
+	chance = {
+		factor = 0
+	}
+}
