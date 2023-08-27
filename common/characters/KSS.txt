@@ -1,6 +1,4 @@
 characters={
-
-
 	KSS_Dirlivang = { #POV
 		name = Dirli Vanger
 		portraits = {
