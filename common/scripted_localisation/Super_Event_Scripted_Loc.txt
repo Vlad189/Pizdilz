@@ -1,34 +1,55 @@
 #Titles
 defined_text = {
     name = get_super_event_title
-	text = {
+	
+    text = {
         trigger = {
             has_global_flag = gavrilov_putch
         }
         localization_key = "sp_event_gavrilovputch"
-	}
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = vtorzhenee
+        }
+        localization_key = "sp_event_vtorzhenee"
+    }
+	
 }
 
-#Remarks
 defined_text = {
     name = get_super_event_remark
+	
 	text = {
         trigger = {
             has_global_flag = gavrilov_putch
         }
         localization_key = "sp_event_gavrilovputch_REMARK"
-       }
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = vtorzhenee
+        }
+        localization_key = "sp_event_vtorzhenee_REMARK"
+    }
 }
 
-
-	
-#Quotes
 defined_text = {
     name = get_super_event_quote
-	text = { 
-		trigger = {
-			has_global_flag = gavrilov_putch
-		}
-		localization_key = "sp_event_gavrilovputch_QUOTE"
-	}
+	
+	text = {
+        trigger = {
+            has_global_flag = gavrilov_putch
+        }
+        localization_key = "sp_event_gavrilovputch_QUOTE"
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = vtorzhenee
+        }
+        localization_key = "sp_event_vtorzhenee_QUOTE"
+    }
 }

@@ -17,4 +17,8 @@ spriteTypes = {
 		name = "GFX_sp_event_gavrilovputch"
 		textureFile = "/gfx/sp_events/gavrilovputch.dds"
 	}
-}
+	spriteType = {
+		name = "GFX_sp_event_vtorzhenee"
+		textureFile = "/gfx/sp_events/vtorzhenee.dds"
+	}
+	}
