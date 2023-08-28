@@ -1,6 +1,6 @@
 characters={
-	KSS_Dirlivang = { #POV
-		name = Dirli Vanger
+	KSS_Dirlivang = { 
+		name = Vanger
 		portraits = {
 			civilian = {
 				large = GFX_portrait_KSS_Dirlivang
