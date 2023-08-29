@@ -48,11 +48,14 @@ country_event = {	#vtorzhenee
 	hidden = yes
 	
 	trigger = {
+		AND = {
+			POV = { has_government = fascism }
+                        POV = { has_government = monarchy }
 			NOT = {
 				has_global_flag = vtorzhenee
 			}
 		}
-
+	}
 
 	option = {
 		name = super.2.a
