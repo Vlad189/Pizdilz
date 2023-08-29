@@ -1,0 +1,3 @@
+﻿l_russian:
+  war_reparations:0 "Военные Репарации"
+  war_reparations_desc:0 "Это государство в настоящее время выплачивает военные репарации стране [?war_reps_to.GetNameDef]"
