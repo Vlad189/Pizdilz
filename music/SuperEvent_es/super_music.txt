@@ -5,9 +5,3 @@ music = {
 		factor = 0
 	}
 }
-music = {
-	song = "startwar"
-	chance = {
-		factor = 0
-	}
-}

@@ -1,8 +1,5 @@
 music = {
 	name = "endsieg"
 	file = endsieg.ogg"
-}
-music = {
-	name = "startwar"
-	file = "startwar.ogg"
+	volume = 0.65
 }

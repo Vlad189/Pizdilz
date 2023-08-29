@@ -143,3 +143,9 @@ music = {
 	file = "thegreatpatrioticwar.ogg"
 	volume = 0.65
 }
+
+music {
+	name = "startwar"
+	file = "startwar.ogg"
+	volume = 065
+}
