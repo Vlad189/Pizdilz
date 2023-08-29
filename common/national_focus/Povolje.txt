@@ -484,10 +484,11 @@ focus_tree = {
 				declare_war_on = {
 						target = KSS
 						type = take_claimed_state
+				}
+                    country_event = {
+					       id = super.2
+						hours = 2
+					    }
 					}
 			}
-
-
 	}
-		
-}
