@@ -1,0 +1,544 @@
+homefront_decisions = {
+	homefront_1 = {
+		priority = 50
+
+		icon = generic_scorched_earth
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = hf_1_tt
+				check_variable = {
+					life_counter < 50
+				}
+				NOT = {
+					has_country_flag = already_hf1
+				}
+			}
+		}
+
+		visible = {
+			
+		}
+		cost = 50
+
+		days_remove = 90
+
+		days_re_enable = 120
+
+		modifier = {
+			modifier_life_level = 0.05
+			modifier_economy_power = -0.01
+		}
+
+		remove_effect = {
+			set_country_flag = already_hf1
+		}
+	}
+	homefront_2 = {
+		priority = 50
+
+		icon = generic_fundraising
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = hf_2_tt
+				check_variable = {
+					economy_counter < 50
+				}
+				has_country_flag = already_hf1
+			}
+		}
+
+		visible = {
+			has_country_flag = already_hf1
+		}
+		cost = 50
+
+		days_remove = 90
+
+		days_re_enable = 120
+
+		modifier = {
+			modifier_economy_power = 0.05
+			modifier_life_level = -0.01
+		}
+
+		remove_effect = {
+			clr_country_flag = already_hf1
+		}
+	}
+
+	homefront_3 = {
+		priority = 50
+
+		icon = generic_independence
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = hf_3_tt
+				any_owned_state = {
+					days_since_last_strategic_bombing < 2
+				}
+			}
+		}
+
+		visible = {
+			any_owned_state = {
+				days_since_last_strategic_bombing < 2
+			}
+		}
+		cost = 50
+
+		days_remove = 90
+
+		days_re_enable = 120
+
+		complete_effect = {
+			set_country_flag = hf_evacuation
+		}
+
+		remove_effect = {
+			clr_country_flag = hf_evacuation
+		}
+	}
+
+	homefront_4 = {
+		priority = 50
+
+		icon = eng_blackshirt_march
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = hf_4_tt
+				check_variable = {
+					economy_counter < 50
+				}
+				NOT = {
+					has_country_flag = hf_st
+				}
+			}
+		}
+
+		visible = {
+			
+		}
+		cost = 50
+
+		days_remove = 90
+
+		days_re_enable = 120
+
+		complete_effect = {
+			set_country_flag = hf_st
+		}
+
+		modifier = {
+			modifier_economy_power = 0.02
+			modifier_life_level = -0.01
+		}
+	}
+
+	homefront_5 = {
+		priority = 50
+
+		icon = eng_trade_unions_support
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = hf_5_tt
+				NOT = {
+					has_country_flag = hf_st
+				}
+			}
+		}
+
+		visible = {
+		NOT = {
+				has_country_flag = hf_st
+		}
+		}
+		cost = 50
+
+		days_remove = 90
+
+		days_re_enable = 120
+
+		modifier = {
+			modifier_economy_power = -0.01
+			modifier_life_level = 0.04
+		}
+	}
+
+	homefront_6 = {
+		priority = 50
+
+		icon = gre_investment_decisions
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = hf_6_tt
+				OR = {
+					check_variable = {
+						life_counter < 20
+					}
+					check_variable = {
+						economy_counter < 20
+					}
+				}
+				
+			}
+			has_idea = tot_economic_mobilisation
+		}
+
+		visible = {
+			OR = {
+				check_variable = {
+					life_counter < 20
+				}
+				check_variable = {
+					economy_counter < 20
+				}
+			}
+			has_idea = tot_economic_mobilisation
+		}
+
+		ai_will_do = {
+			base = 40
+		}
+
+		cost = 50
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = tot_economic_mobilisation
+				add_idea = war_economy
+			}
+		}
+	}
+
+	homefront_7 = {
+		priority = 50
+
+		icon = gre_paying_ifc_debt
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = hf_7_tt
+				OR = {
+					check_variable = {
+						enegy_counter < 20
+					}
+					check_variable = {
+						economy_counter < 20
+					}
+				}
+				
+			}
+			has_idea = closed_economy
+		}
+
+		visible = {
+			OR = {
+				check_variable = {
+					life_counter < 20
+				}
+				check_variable = {
+					economy_counter < 20
+				}
+			}
+			has_idea = closed_economy
+		}
+
+		ai_will_do = {
+			base = 40
+		}
+
+		cost = 50
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = closed_economy
+				add_idea = export_focus
+			}
+		}
+	}
+
+	homefront_8 = {
+		priority = 50
+
+		icon = SWI_elect_confederation_president
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = hf_8_tt
+				check_variable = {
+						life_counter < 20
+					}
+				
+			}
+			OR = {
+				has_idea = scraping_the_barrel
+				has_idea = all_adults_serve
+				has_idea = service_by_requirement
+			}
+		}
+
+		visible = {
+			OR = {
+				check_variable = {
+					life_counter < 20
+				}
+			}
+			OR = {
+				has_idea = scraping_the_barrel
+				has_idea = all_adults_serve
+				has_idea = service_by_requirement
+			}
+		}
+
+		ai_will_do = {
+			base = 40
+		}
+
+		cost = 50
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_idea = scraping_the_barrel
+				}
+				swap_ideas = {
+					remove_idea = scraping_the_barrel
+					add_idea = extensive_conscription
+				}
+			}
+			else_if = {
+				limit = { has_idea = all_adults_serve }
+				swap_ideas = {
+					remove_idea = all_adults_serve
+					add_idea = extensive_conscription
+				}
+			}
+			else_if = {
+				limit = { has_idea = service_by_requirement }
+				swap_ideas = {
+					remove_idea = service_by_requirement
+					add_idea = extensive_conscription
+				}
+			}
+		}
+	}
+
+	homefront_9 = {
+		priority = 50
+
+		icon = gre_investment_decisions
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			check_variable = {
+				life_counter < 20
+			}	
+			is_ai = yes
+		}
+
+		visible = {
+			check_variable = {
+				life_counter < 20
+			}	
+			is_ai = yes
+		}
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		days_remove = 90
+
+		days_re_enable = 180
+
+		modifier = {
+			modifier_life_level = 0.03
+		}
+	}
+
+	homefront_10 = {
+		priority = 50
+
+		icon = gre_investment_decisions
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			check_variable = {
+				economy_counter < 20
+			}	
+			is_ai = yes
+		}
+
+		visible = {
+			check_variable = {
+				economy_counter < 20
+			}	
+			is_ai = yes
+		}
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		days_remove = 90
+
+		days_re_enable = 180
+
+		modifier = {
+			modifier_economy_power  = 0.03
+		}
+	}
+
+	homefront_11 = {
+		priority = 50
+
+		icon = gre_investment_decisions
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+			check_variable = {
+				enegy_counter < 20
+			}	
+			is_ai = yes
+		}
+
+		visible = {
+			check_variable = {
+				enegy_counter < 20
+			}	
+			is_ai = yes
+		}
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		days_remove = 90
+
+		days_re_enable = 180
+
+		modifier = {
+			modifier_enegy_eq  = 0.03
+		}
+	}
+
+	homefront_12 = {
+		priority = 50
+
+		icon = generic_merge_plant_materiel
+
+
+
+		allowed = {
+			
+		}
+
+		available = {
+		}
+
+		visible = {
+			industrial_complex > 5
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 40
+				AND = {
+					tag = USA
+					has_defensive_war = yes
+				}
+			}
+		}
+		
+		days_remove = 90
+
+		days_re_enable = 180
+
+		modifier = {
+			modifier_life_level = 0.02
+			modifier_economy_power = 0.02
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}

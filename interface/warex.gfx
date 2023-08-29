@@ -1,0 +1,8 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_exhaustedw"
+		texturefile = "gfx/interface/warexhausted.dds"
+		legacy_lazy_load = no
+	}
+	
+}
