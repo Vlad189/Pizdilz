@@ -55,7 +55,7 @@ country_event = {	#vtorzhenee
 		name = super.2.a
         set_global_flag = vtorzhenee
         set_global_flag = Super_Event_Visible
-        play_song = "start_war"
+        play_song = "startwar"
 		
 	}
 }

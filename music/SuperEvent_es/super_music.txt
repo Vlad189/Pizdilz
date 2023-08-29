@@ -6,7 +6,7 @@ music = {
 	}
 }
 music = {
-	song = "start_war"
+	song = "startwar"
 	chance = {
 		factor = 0
 	}
