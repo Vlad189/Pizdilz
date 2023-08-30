@@ -1,9 +1,9 @@
 characters = {
-	LIP_Konstantin = {
-		name= Konstantin
+	LIP_Levt = {
+		name = LIP_Levt
 		portraits = {
 			civilian={
-				large = GFX_portrait_LIP_Konstantin
+				large = GFX_portrait_LIP_Levt
 			}
 		}
 		country_leader = {

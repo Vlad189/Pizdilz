@@ -6649,6 +6649,12 @@ leader_traits = {
 		agency_upgrade_time = -0.15
 		special_forces_cap = 0.2
 	}
+		Han = {
+		random = no
+
+		production_factory_max_efficiency_factor = 0.2
+		production_speed_arms_factory_factor = 0.2
+	}
 	}
 	}
 }

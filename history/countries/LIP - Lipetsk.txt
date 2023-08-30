@@ -4,7 +4,7 @@ oob = "lip_1936" ##GEG - Тег, заменить
 
 set_research_slots = 3 #Количество ячеек исследования
 
-recruit_character = LIP_Konstantin
+recruit_character = LIP_Levt
 
 # Технологии, какие будут открыты при старте
 set_technology = {

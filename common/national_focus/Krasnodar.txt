@@ -1,6 +1,6 @@
 focus_tree = {
-	id = FocusTree0
-	country = { KSS
+	id = Krasnodar
+	country = { 
 		factor = 0
 		modifier = {
 			add = 10

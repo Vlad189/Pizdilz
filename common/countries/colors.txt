@@ -43,4 +43,15 @@ PNF = {
 	color_ui = rgb { 0 148 0 }
 }
 
+NOW = {
+	color = rgb { 100 0 225 }
+	color_ui = rgb { 0 148 0 }
+}
+
+KAZ = {
+	color = rgb { 100 225 100 }
+	color_ui = rgb { 0 148 0 }
+}
+
+
 }

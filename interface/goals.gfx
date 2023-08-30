@@ -3814,4 +3814,9 @@ spriteTypes = {
 	name = "GFX_Don_war"
 	texturefile = "gfx/interface/goals/Don_war.dds"			
 	}
+
+	SpriteType = {
+	name = "GFX_108_polk"
+	texturefile = "gfx/interface/goals/108_polk.dds"			
+	}
 }

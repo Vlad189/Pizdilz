@@ -8247,8 +8247,8 @@ spriteTypes = {
 	###LIP###
 
 		spriteType = {
-		name = "GFX_portrait_LIP_Konstantin"
-		texturefile = "gfx/leaders/LIP/LIP_Konstantin.dds"
+		name = "GFX_portrait_LIP_Levt"
+		texturefile = "gfx/leaders/LIP/LIP_Levt.dds"
 	}
 
 	###FRX###
