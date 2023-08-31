@@ -1,0 +1,191 @@
+guiTypes = {
+	
+	containerWindowType = {
+		name = "TE_start_peace_terms_window"
+		position = {x=900 y=300} 
+		size = { width=527 height = 200}
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		#background = {
+		#	name = "Background"
+		#	spriteType = "GFX_TE_peace_political_section" 
+		#} 
+		verticalScrollbar = "right_vertical_slider"
+		margin = { top = 14 bottom = 14}				
+	
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_bg_1_scrollbar"   
+		}
+		buttonType = {
+			name = "TE_close_country_selec_btn"   
+			position = {x=470 y=0 }	  
+			spriteType = "GFX_TE_close_peace_req_btn" 
+			buttonFont = "hoi_16mbs"
+			#pdx_tooltip = "TE_OFFER_COND_BTN_tt"   
+			scale = 1.0
+			clicksound = select_focus   
+		}
+		
+		instantTextboxType = { 
+			name = "Peace_offer_header"
+			position = {x=30 y=10}   
+			font = "hoi_16mbs"
+			text = "TE_TREATY_OFFERS"  
+			maxWidth = 380
+			maxHeight = 23
+			format = left
+		}
+		
+		buttonType = {
+			name = "TE_start_neg_btn"   
+			position = {x=40 y=30}	
+			spriteType = "GFX_TE_peace_select_button_long" 
+			buttonText = "TE_START_NEG_TARGET_1"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		
+		buttonType = {
+			name = "TE_start_neg_btn_2"   
+			position = {x=40 y=60}	
+			spriteType = "GFX_TE_peace_select_button"  
+			buttonText = "TE_START_NEG_TARGET_2"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_2_tt"    
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType = {
+			name = "TE_start_neg_btn_3"   
+			position = {x=40 y=90}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_START_NEG_TARGET_3"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_3_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType = {
+			name = "TE_start_neg_btn_4"   
+			position = {x=40 y=120}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_START_NEG_TARGET_4"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_4_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType = {
+			name = "TE_start_neg_btn_5"   
+			position = {x=40 y=150}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_START_NEG_TARGET_5"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_5_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType = {
+			name = "TE_start_neg_btn_6"   
+			position = {x=40 y=180}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_START_NEG_TARGET_6"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_6_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType = {
+			name = "TE_start_neg_btn_7"   
+			position = {x=40 y=210}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_START_NEG_TARGET_7"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_7_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType = {
+			name = "TE_start_neg_btn_8"   
+			position = {x=40 y=240}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_START_NEG_TARGET_8"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_8_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType = {
+			name = "TE_start_neg_btn_9"   
+			position = {x=40 y=270}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_START_NEG_TARGET_9"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_9_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType = {
+			name = "TE_start_neg_btn_10"   
+			position = {x=40 y=300}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_START_NEG_TARGET_10"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_10_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType = {
+			name = "TE_start_neg_btn_11"   
+			position = {x=40 y=330}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_START_NEG_TARGET_11"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_11_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType = {
+			name = "TE_start_neg_btn_12"   
+			position = {x=40 y=360}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_START_NEG_TARGET_12"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_START_NEG_BTN_12_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+	
+		
+		
+		
+	} 
+	
+	containerWindowType = {
+		name = "TE_peace_offers_available_window"
+		position = {x=1300 y=-20}  
+		size = { width=25 height = 25}
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		
+		
+		buttonType = {
+			name = "TE_show_peace_offers_btn"    
+			position = {x=0 y=20}	
+			spriteType = "GFX_TE_peace_offers_shield"
+			#buttonText = "TE_PEACE_OFFERS_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_PEACE_OFFERS_BTN_tt"   
+			scale = 1
+			clicksound = select_focus 
+		}
+	}
+}

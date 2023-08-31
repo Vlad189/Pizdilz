@@ -1,0 +1,272 @@
+TE_debug_category = {
+	TE_debug_transfer_puppet ={
+		allowed = {  }                 
+		available = {                           
+			always = yes 
+		}
+		
+		                              
+		days_re_enable = o 
+		timeout_effect = {                      
+			
+		}
+		complete_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_puppet_of = HOL
+						is_subject_of = HOL
+					}
+					OR = {
+						check_variable = { THIS.var_TE_puppet_released = 1 }
+						check_variable = { THIS.var_TE_puppet_transferred = 1 }
+					}
+				}
+				random_country = {
+					limit = { check_variable = { var_TE_trans_pup@PREV = 1 } }
+					puppet = PREV
+					
+				}
+			}
+			
+		} 
+	} 
+
+}
+
+TE_peace_proposals_category  = {
+	TE_peace_offer_sent ={
+		allowed = {  }                 
+		available = {                           
+			#always = no # should be finished when reply has been sent
+			TE_every_country_finished_peace_terms = yes 
+		}
+		selectable_mission = no
+		activation = {                          
+			# always = no 
+			any_country = {
+				check_variable = { ROOT.var_TE_has_sent_offer@THIS = 1 }
+				check_variable = { THIS.var_TE_has_started_treaty@ROOT = 0 }
+			}
+			                  
+		}
+		is_good = no                         
+		days_mission_timeout = var:global.var_TE_peace_timer_days          
+		days_re_enable = 0
+		timeout_effect = {                      
+			# Start peace process if countries have accepted and sent in demands
+			IF = { 
+				limit = {
+					any_country = {
+						OR = {
+							check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+							# check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+							check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+						}
+					}
+				}	
+				ROOT = {
+					country_event = {
+						id = TE_treaty_execution_event.2
+						days = 1
+					}
+				}
+				# reminder to AI-players - trying to catch unresolved treaties
+				every_country = {
+					limit = {
+						# check_variable = { ROOT.var_TE_has_sent_offer@WINNER = 1 }
+						check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+						is_ai = yes
+					}
+					country_event = {
+						id = TE_peace_treaty_ai_event.10
+						days = 0
+					}
+				}
+			
+			}
+			# if countries have accepted but not replied
+			ELSE_IF = {
+				limit = {
+					any_country = { check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 } }
+				}
+				ROOT = {
+					country_event = {
+						id = TE_treaty_execution_event.2
+						days = 1
+					}
+				}
+				# reminder to AI-players - trying to catch unresolved treaties
+				every_country = {
+					limit = {
+						# check_variable = { ROOT.var_TE_has_sent_offer@WINNER = 1 }
+						check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+						is_ai = yes
+					}
+					country_event = {
+						id = TE_peace_treaty_ai_event.10
+						days = 0
+					}
+				}
+					
+			}
+			# No-one agreed to peace
+			ELSE = {
+			
+			}
+			
+		}
+		complete_effect = {                   
+			IF = { 
+				limit = {
+					any_country = {
+						OR = {
+							check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+							check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+							check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+						}
+					}
+				}	
+				ROOT = {
+					country_event = {
+						id = TE_treaty_execution_event.2
+						days = 0
+					}
+				}
+			
+			}
+		} 
+	}
+	
+	
+	
+	
+	
+	TE_peace_offer_received ={
+		allowed = {  }                 
+		available = {                           
+			always = no # should be finished when reply has been sent
+		}
+		selectable_mission = no
+		activation = {                          
+			always = no 
+			#has_war_with = GER                      
+		}
+		is_good = no                         
+		days_mission_timeout = var:global.var_TE_peace_timer_days          
+		days_re_enable = o 
+		timeout_effect = {                      
+			
+		}
+		complete_effect = {                   
+			
+		} 
+	}  	
+}
+
+TE_ongoing_wars_category   = {
+
+	TE_independence_war_mission ={
+		allowed = {  } 
+		icon = GFX_decision_generic_nationalism
+		available = {                           
+			OR = {
+				any_state = {
+					is_owned_by = ROOT 
+					is_core_of = ROOT
+					NOT = { is_controlled_by = ROOT }
+				}
+				NOT = {
+					any_country = {
+						has_war_with = ROOT
+						check_variable = {
+							ROOT.var_TE_war_type@THIS = 6
+						}
+					}
+				}
+			}
+		}
+		selectable_mission = no
+		activation = {                          
+			  any_country = {
+				has_war_with = ROOT
+				check_variable = {
+					ROOT.var_TE_war_type@THIS = 6
+				}
+				OR = {
+					ROOT = { is_in_faction = no }
+					ROOT = { is_faction_leader = yes }
+				}
+						
+				
+			}
+			NOT = {
+				any_state = {
+					is_owned_by = ROOT 
+					is_core_of = ROOT
+					NOT = { is_controlled_by = ROOT }
+				}
+			}
+		}
+		is_good = yes                         
+		days_mission_timeout = 180 # was 90          
+		days_re_enable = 7
+		timeout_effect = {                      
+			random_country = {
+				limit = {
+					check_variable = { ROOT.var_TE_war_type@THIS = 6 }
+				}
+				country_event = { days = 1 id = TE_peace_event.9 }
+			}
+		}
+		complete_effect = {                   
+			
+		} 
+	}
+	
+}
+
+TE_existing_treaties_category = {
+	TE_too_many_divisions_mission ={
+		allowed = {  } 
+		icon = GFX_decision_generic_nationalism
+		activation = {                          
+			 has_idea = TE_army_restrictions
+			 num_divisions > 7
+		}
+		available = {                           
+			OR = {
+				NOT  = { has_idea = TE_army_restrictions }
+				NOT = { num_divisions > 7 }
+			}
+		}
+		selectable_mission = no
+		
+		is_good = no                         
+		days_mission_timeout = 30  
+		days_re_enable = 7
+		timeout_effect = {                      
+			every_country = {
+				limit = {
+					check_variable = { THIS.var_TE_army_limit_enforcer@ROOT = 1 }
+				}
+				country_event = { days = 1 id = TE_peace_event.16 }
+				set_variable = { ROOT.TE_var_enforcing_country = THIS.id }
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					news_event = {
+						id = TE_treaty_news_event.5  
+						days = 0
+					}
+				}
+			}
+		}
+		complete_effect = {                   
+			
+		} 
+	}
+}

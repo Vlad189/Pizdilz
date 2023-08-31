@@ -59,3 +59,38 @@ country_event = {	#vtorzhenee
 		
 	}
 }
+
+
+country_event = {
+	id = super.3
+	title = super.3.t
+	desc = super.3.d
+	picture = GFX_report_event_diplomatic_message
+
+	trigger = {
+		AND = {
+		NOT = {
+			KSS = {
+				controls_province = 9417
+			}
+			POV = {
+				divisions_in_state = {  size > 3  state = 165 }
+			}
+			has_global_flag = POV_Rostov_Taken
+		}
+	}
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	immediate = {
+		name = super.3.a
+		
+                set_global_flag = POV_Rostov_Taken
+		set_global_flag = Super_Event_Visible
+		
+		play_song = "nota_bene_chernocoyenci"
+	}
+}

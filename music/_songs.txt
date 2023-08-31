@@ -297,4 +297,10 @@ music = {
 		factor = 0
 	}
 }
+
+music = { 
+        song = "nota_bene_chernocoyenci"
+        chance = {
+		factor = 0
+	}
 }

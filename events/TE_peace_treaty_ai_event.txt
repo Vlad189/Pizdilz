@@ -1,0 +1,1592 @@
+﻿add_namespace = TE_peace_treaty_ai_event
+# DEBUG!!!
+country_event = {
+	id = TE_peace_treaty_ai_event.0
+	title = TE_peace_treaty_ai_event.0.t
+	desc = TE_peace_treaty_ai_event.0.d 
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	hidden = no
+	
+	immediate = {
+	
+	}
+	
+
+	
+	option = { 
+		name = TE_peace_treaty_ai_event.0.a
+		ai_chance = { 
+			factor = 30
+		}
+		
+	}
+}
+
+
+### Sending Conditional Peace Request
+country_event = {
+	id = TE_peace_treaty_ai_event.1
+	title = TE_peace_treaty_ai_event.1.t
+	desc = TE_peace_treaty_ai_event.1.d 
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	hidden = no
+	
+	immediate = {
+		#set_variable = { ROOT.var_TE_peace_offer_available@FROM = 1 }
+		#add_to_variable = {ROOT.var_TE_number_peace_offers_accepted = 1 }
+		set_variable = { ROOT.var_TE_target_country = FROM.id }
+		set_variable = { ROOT.var_TE_war_type = ROOT.var_TE_war_type@FROM  }
+		set_variable = { ROOT.var_TE_war_scope = ROOT.var_TE_war_scope@FROM  }
+		set_variable = { ROOT.var_TE_peace_type = ROOT.var_TE_peace_type@FROM }
+		set_variable = { ROOT.var_TE_has_started_treaty@FROM = 1 } # so if timer runs out, the LOSER knows we at least have started
+		set_variable = { ROOT.var_TE_peace_offer_available@FROM = 0 }# as we have started the treaty work we don't need this. Possibly change in the future if it bugs up saves, but it really shouldn't
+		
+	}
+	
+
+	
+	option = { 
+		name = TE_peace_treaty_ai_event.1.a
+		ai_chance = { 
+			factor = 30
+		}
+		
+		set_temp_variable = { temp_cost = 0 }
+		TE_get_total_peace_points = yes 
+		# DEBUG
+		#every_country = {
+		#	limit = { is_ai = no }
+		#	country_event = {
+		#		id = TE_peace_treaty_ai_event.0
+		#		days = 0
+		#	}
+		#}
+		
+		################################################################
+		################### DO WE HAVE CIVIL WAR???? ###################
+		################################################################
+		IF = {
+			limit = {
+				TE_dissolve_allowed_ideology = yes
+				TE_dissolve_allowed_war_type = yes 
+			}
+			set_variable { ROOT.var_TE_dissolve@var:ROOT.var_TE_target_country = 1 }
+			subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_dissolve_cost } # subtract cost from available
+			add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_dissolve_cost }
+			add_political_power = -100
+		}
+									# # #
+									
+		####################################################################
+		################### DO WE HAVE INDEPENDENCE WAR? ###################
+		####################################################################
+		IF = {
+			limit = {
+				TE_get_recog_allowed_ideology = yes
+				TE_get_recog_allowed_war_type = yes 
+			}
+			set_variable = { ROOT.var_TE_get_recog@var:ROOT.var_TE_target_country = 1 }
+			subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_get_recog_cost } # subtract cost from available
+			add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_get_recog_cost }
+			add_political_power = -100
+		}
+									# # #
+									
+										
+									
+		#########################################################							
+		#################### TAKE CORE STATE ####################
+		#########################################################
+		IF = {
+			limit = {
+				TE_take_core_allowed_ideology = yes
+				TE_take_core_allowed_war_type = yes 
+			}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = {
+					limit = {
+						THIS = { 
+							is_core_of = ROOT 
+							
+							OR = { 
+								is_owned_by = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_owned_by = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							is_controlled_by = ROOT
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_take_core_cost } } # Can afford
+						check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 } # Not if already selected 
+					}
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_take_core_cost } # subtract from available
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_take_core_cost } # add to used
+					set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+					add_political_power = -5
+				}
+				
+			}
+		
+		}
+		
+									# # #
+		
+		##############################################################
+		##################### TAKE CLAIMED STATE #####################
+		##############################################################
+		IF = {
+			limit = {
+				TE_take_claimed_allowed_ideology = yes
+				TE_take_claimed_allowed_war_type = yes 
+			}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = {
+					limit = {
+						THIS = { 
+							
+							NOT = { is_core_of = ROOT }
+							is_claimed_by = ROOT
+							any_neighbor_state = { 
+								OR = {
+									is_owned_by = ROOT
+									check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+									naval_base > 0
+									is_island_state = yes
+								}
+							}
+							OR = { 
+								is_owned_by = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_owned_by = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							OR = {
+								is_core_of = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_core_of = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							is_controlled_by = ROOT
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_take_claimed_cost } } # Can afford
+						check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 } # Not if already selected 
+					}
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_take_claimed_cost } # subtract from available
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_take_claimed_cost } # add to used
+					set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+					add_political_power = -10
+				}
+				
+			}
+		
+		}
+		
+									# # #
+		
+									
+		#########################################################							
+		#################### TAKE CORE STATE ####################
+		#########################################################
+		IF = {
+			limit = {
+				TE_take_core_allowed_ideology = yes
+				TE_take_core_allowed_war_type = yes 
+			}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = {
+					limit = {
+						THIS = { 
+							is_core_of = ROOT 
+							
+							OR = { 
+								is_owned_by = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_owned_by = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							is_controlled_by = ROOT
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_take_core_cost } } # Can afford
+						check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 } # Not if already selected 
+					}
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_take_core_cost } # subtract from available
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_take_core_cost } # add to used
+					set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+					add_political_power = -5
+				}
+				
+			}
+		
+		}
+		
+									# # # 
+		
+		#############################################################							
+		################### INSTALL PUPPET REGIME ###################
+		#############################################################
+		IF = { 
+			limit = {
+				TE_inst_pup_allowed_ideology = yes
+				TE_inst_pup_allowed_war_type = yes 
+				NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_inst_pup_cost } } # Can afford
+			}
+			set_variable = { ROOT.var_TE_inst_pup@var:ROOT.var_TE_target_country = 1 } 
+			subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_inst_pup_cost } # subtract cost from available
+			add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_inst_pup_cost }
+			add_political_power = -25
+		}
+		
+									# # #
+	
+		##############################################################
+		################## CHANGE GOVERNMENT OPTION ##################
+		##############################################################
+		# If democratic - try to change gov
+		IF = { 
+			limit = { 
+				has_government = democratic
+				check_variable = { ROOT.var_TE_change_gov_cost > 0 }
+				NOT = { check_variable = { ROOT.var_TE_ptp_available < ROOT.var_TE_change_gov_cost }}
+				NOT = { var:ROOT.var_TE_target_country = { has_government = democratic } }
+				TE_change_gov_allowed_ideology = yes
+				TE_change_gov_allowed_war_type = yes 
+			}
+			var:ROOT.var_TE_target_country = { set_variable = { var_TE_change_gov@ROOT = 1 } } # IF not set -> Set
+			var:ROOT.var_TE_target_country = { set_variable = { var_TE_change_gov = ROOT.id } }
+			add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_change_gov_cost } # Repay cost
+			subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_change_gov_cost } # subtract cost from available
+			add_political_power = -40
+		}
+		
+		
+		
+		
+		########################################################
+		##################### ANNEX OPTION #####################
+		########################################################
+		IF = {
+			limit = {
+				TE_annex_allowed_ideology = yes
+				TE_annex_allowed_war_type = yes 
+				check_variable = { ROOT.var_TE_inst_pup@var:ROOT.var_TE_target_country = 0 } 
+				NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_annex_cost } } # Can afford
+				any_state = {
+					OR = { 
+						is_owned_by = var:ROOT.var_TE_target_country
+						any_country = {
+							PREV = { is_owned_by = PREV }
+							OR = {
+								is_puppet_of = var:ROOT.var_TE_target_country
+								is_subject_of = var:ROOT.var_TE_target_country
+							}
+							has_war_with = ROOT 
+						}
+					}
+					is_controlled_by = ROOT
+				}
+			}
+			subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_annex_cost }
+			add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_annex_cost }
+			set_variable = {  ROOT.var_TE_annex@var:var_TE_target_country = 1 }
+			#every_state = {
+			#	limit = {
+			#		OR = { 
+			#			is_owned_by = var:ROOT.var_TE_target_country
+			#			any_country = {
+			#				PREV = { is_owned_by = PREV }
+			#				OR = {
+			#					is_puppet_of = var:ROOT.var_TE_target_country
+			#					is_subject_of = var:ROOT.var_TE_target_country
+			#				}
+			#				has_war_with = ROOT 
+			#			}
+			#		}
+			#		is_controlled_by = ROOT
+			#		#check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+			#	}
+			#	set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+			#}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = { 
+					limit = {
+						THIS = { 
+							OR = { 
+								is_owned_by = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_owned_by = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							is_controlled_by = ROOT
+						}
+					}
+					set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+				}
+			}
+			add_political_power = -50
+		}
+		
+		
+									# # #
+		
+		##############################################################
+		##################### TAKE CLAIMED STATE #####################
+		##############################################################
+		IF = {
+			limit = {
+				TE_take_claimed_allowed_ideology = yes
+				TE_take_claimed_allowed_war_type = yes 
+			}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = {
+					limit = {
+						THIS = { 
+							
+							NOT = { is_core_of = ROOT }
+							is_claimed_by = ROOT
+							any_neighbor_state = { 
+								OR = {
+									is_owned_by = ROOT
+									check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+									naval_base > 0
+									is_island_state = yes
+								}
+							}
+							OR = { 
+								is_owned_by = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_owned_by = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							OR = {
+								is_core_of = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_core_of = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							is_controlled_by = ROOT
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_take_claimed_cost } } # Can afford
+						check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 } # Not if already selected 
+					}
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_take_claimed_cost } # subtract from available
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_take_claimed_cost } # add to used
+					set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+					add_political_power = -10
+				}
+				
+			}
+		
+		}
+		
+									# # #
+									
+		
+		##############################################################
+		##################### Take border states #####################
+		##############################################################
+		IF = {
+			limit = { 
+				TE_take_border_allowed_ideology = yes
+				TE_take_border_allowed_war_type = yes 
+				NOT = { check_variable = { ROOT.var_TE_ptp_available < ROOT.var_TE_take_border_cost } }
+			}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = {
+					limit = {
+						THIS = { 
+							
+							NOT = { is_core_of = ROOT }
+							NOT = { is_claimed_by = ROOT }
+							any_neighbor_state = { is_owned_by = ROOT }
+							OR = { 
+								is_owned_by = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_owned_by = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							OR = {
+								is_core_of = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_core_of = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							is_controlled_by = ROOT
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_take_border_cost } } # Can afford
+						check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 } # Not if already selected 
+					}
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_take_border_cost } # subtract from available
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_take_border_cost } # add to used
+					set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+					add_political_power = -15
+				}
+			}
+		}
+		##############################################################
+		
+		##############################################################
+		##################### TAKE PORT STATE #####################
+		##############################################################
+		IF = {
+			limit = {
+				TE_take_port_allowed_ideology = yes
+				TE_take_port_allowed_war_type = yes 
+			}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = {
+					limit = {
+						THIS = { 
+							NOT = { is_core_of = ROOT }
+							NOT = { is_claimed_by = ROOT }
+							NOT = { is_island_state = yes}
+							NOT = { any_neighbor_state = { is_owned_by = ROOT } }
+							OR = { 
+								is_owned_by = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_owned_by = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							OR = {
+								is_core_of = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_core_of = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							naval_base > 0
+							is_controlled_by = ROOT
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_take_port_cost } } # Can afford
+						check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 } # Not if already selected 
+					}
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_take_port_cost } # subtract from available
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_take_port_cost } # add to used
+					set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+					add_political_power = -20
+				}
+				
+			}
+		
+		}
+		
+									# # #
+		
+		#############################################################
+		##################### TAKE ISLAND STATE #####################
+		#############################################################
+		IF = {
+			limit = {
+				TE_take_island_allowed_ideology = yes
+				TE_take_island_allowed_war_type = yes 
+			}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = {
+					limit = {
+						THIS = { 
+							NOT = { is_core_of = ROOT }
+							NOT = { is_claimed_by = ROOT }
+							is_island_state = yes
+							OR = {
+								is_core_of = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_core_of = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							OR = { 
+								is_owned_by = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_owned_by = PREV }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							is_controlled_by = ROOT
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_take_island_cost } } # Can afford
+						check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 } # Not if already selected 
+					}
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_take_island_cost } # subtract from available
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_take_island_cost } # add to used
+					set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+					add_political_power = -10
+				}
+				
+			}
+		
+		}
+		
+									# # #
+		
+		#############################################################
+		##################### TAKE COLONY STATE #####################
+		#############################################################
+		IF = {
+			limit = {
+				TE_take_island_allowed_ideology = yes
+				TE_take_island_allowed_war_type = yes 
+			}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = {
+					limit = {
+						THIS = { 
+							NOT = { is_core_of = ROOT }
+							NOT = { is_core_of = var:ROOT.var_TE_target_country }
+							OR = { 
+								is_island_state = yes 
+								any_neighbor_state = { is_owned_by = ROOT }
+								naval_base > 0 
+							} 
+							OR = { 
+								is_owned_by = var:ROOT.var_TE_target_country
+								any_country = {
+									PREV = { is_owned_by = PREV }
+									NOT = { PREV = { is_core_of = PREV } }
+									OR = {
+										is_puppet_of = var:ROOT.var_TE_target_country
+										is_subject_of = var:ROOT.var_TE_target_country
+									}
+									has_war_with = ROOT 
+								}
+							}
+							# naval_base > 0 
+							# is_coastal = yes
+							is_controlled_by = ROOT
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_take_colony_cost } } # Can afford
+						check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 } # Not if already selected 
+					}
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_take_colony_cost } # subtract from available
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_take_colony_cost } # add to used
+					set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+					add_political_power = -10
+				}
+				
+			}
+		
+		}
+		
+									# # #
+		
+		##############################################################
+		##################### GIVE STATE TO ALLY #####################
+		##############################################################
+		IF = {
+			limit = {
+				TE_give_to_ally_allowed_ideology = yes
+				TE_give_to_ally_allowed_war_type = yes
+			}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = {
+					limit = {
+						THIS = { 
+							is_controlled_by = ROOT 
+							any_country = {
+								NOT = { tag = ROOT }
+								NOT = { tag = var:ROOT.var_TE_target_country }
+								OR = {
+									is_in_faction_with = ROOT
+									is_subject_of = ROOT
+									is_puppet_of = ROOT 
+									ROOT = { is_puppet_of = PREV }
+									ROOT = { is_subject_of = PREV }
+								}
+								has_war_with = var:ROOT.var_TE_target_country
+								OR = {
+									PREV = { is_claimed_by = PREV }
+									PREV = { is_core_of = PREV }
+									PREV = { any_neighbor_state = { is_owned_by = PREV } }
+								}
+							}
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_give_to_ally_cost } } # Can afford
+						check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 } # Not if already selected 
+						
+					}
+					set_variable = { THIS.give_to_ally_FROM = ROOT.id }
+					set_variable = { PREV.var_HE_peace_term_transfer@THIS = 1 }
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_give_to_ally_cost } # add to used
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_give_to_ally_cost }
+					add_political_power = -10
+				}
+				
+			}
+		
+		}
+		
+									# # #
+																
+									
+		
+		###########################################################
+		################### PUPPET CONQ COUNTRY ###################
+		###########################################################
+		IF = {
+			limit = { 
+				TE_pup_conq_allowed_ideology = yes
+				TE_pup_conq_allowed_war_type = yes 
+				NOT = { check_variable = { ROOT.var_TE_ptp_available < ROOT.var_TE_lib_conq_cost } }
+			}
+			for_each_scope_loop = {
+				array = controlled_states
+				IF = {
+					limit = {
+						THIS = { is_owned_by = var:ROOT.var_TE_target_country }
+						THIS = { NOT = { is_core_of = var:ROOT.var_TE_target_country } }
+						THIS = { is_controlled_by = ROOT }
+						check_variable = { THIS.var_TE_liberate = 0 }
+						check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 }
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_pup_conq_cost } } # Can afford
+						NOT = { 
+							any_country = { 
+								PREV = { is_core_of = PREV }
+								exists = yes # You can't release as puppet if the country already exists. Well in theory, but the code will simply be too messy. It is rather fkd up as it is...
+							}
+						}
+					}
+					THIS = { set_variable = { var_TE_pup_conq = 1 } }
+					ROOT = { set_variable = { var_TE_pup_conq_ovelord@PREV = 1 } }
+					random_occupied_country = {
+						limit = { PREV = { is_core_of = PREV } }
+						set_variable = { PREV.var_HE_peace_term_transfer@THIS = 1 }
+						set_variable = { THIS.var_TE_has_sent_treaty@var:ROOT.var_TE_target_country = 1 }
+					}
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_pup_conq_cost } # Repay cost
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_pup_conq_cost }
+					add_political_power = -15
+				}
+			}
+		}
+		
+									# # #		
+									
+		#############################################################
+		################### LIBERATE CONQ COUNTRY ###################
+		#############################################################
+		IF = {
+			limit = { 
+				TE_lib_conq_allowed_ideology = yes
+				TE_lib_conq_allowed_war_type = yes 
+				NOT = { check_variable = { ROOT.var_TE_ptp_available < ROOT.var_TE_lib_conq_cost } }
+			}
+			every_state = {
+				limit = { 
+					is_owned_by = var:ROOT.var_TE_target_country 
+					is_controlled_by = ROOT 
+				}
+				clear_array = ROOT.my_countries_array
+				for_each_scope_loop = {
+					array = global.countries
+					IF = {
+						limit = {
+							PREV = {is_core_of = PREV }
+							THIS = { exists = no } 
+							NOT = { tag = var:var_TE_target_country }
+							NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_lib_conq_cost } } # Can afford
+							check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 0 } # Not if already selected 
+						}
+						ROOT = {
+							add_to_array = {
+								array = ROOT.my_countries_array
+								value = PREV
+								# index = <index> 
+							}
+						}
+					}
+				}
+				IF = {
+					limit = {
+						check_variable = { ROOT.my_countries_array^0 > 0 } # are there any possible countries to liberate to?
+					}
+					set_variable = { THIS.var_TE_liberation_target = ROOT.my_countries_array^0 } # pick the first possible option
+					THIS = { set_variable = { var_TE_liberate = 1 } }
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_lib_conq_cost }
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_lib_conq_cost }
+					ROOT = { add_political_power = -15 }
+				}		
+			}
+		}
+		
+									# # #
+		
+		##############################################################
+		################### TRANSFER PUPPET COUNTRY ##################
+		##############################################################
+		IF = {
+			limit = {
+				TE_release_pup_allowed_ideology = yes
+				TE_release_pup_allowed_war_type = yes 
+			}
+			for_each_scope_loop = {
+				array = controlled_states 
+				IF = {
+					limit = {
+						THIS = {
+							is_capital = yes
+						}
+						THIS.owner = { 
+							OR = {
+								is_puppet_of = var:ROOT.var_TE_target_country
+								is_subject_of = var:ROOT.var_TE_target_country
+							}
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_trans_pup_cost } } # Can afford
+					}
+					set_variable = { THIS.var_TE_puppet_transferred = 1 } 
+					THIS.owner = { ROOT = { set_variable = { var_TE_trans_pup@PREV = 1 } } }
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_trans_pup_cost } # subtract cost from available
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_trans_pup_cost }
+					add_political_power = -15
+				}
+			}
+			
+		}
+									# # #
+		
+		##############################################################
+		################### RELEASE PUPPET COUNTRY ###################
+		##############################################################
+		IF = {
+			limit = {
+				TE_release_pup_allowed_ideology = yes
+				TE_release_pup_allowed_war_type = yes 
+			}
+			for_each_scope_loop = {
+				array = controlled_states 
+				IF = {
+					limit = {
+						THIS = {
+							is_capital = yes
+						}
+						THIS.owner = { 
+							OR = {
+								is_puppet_of = var:ROOT.var_TE_target_country
+								is_subject_of = var:ROOT.var_TE_target_country
+							}
+						}
+						NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_release_pup_cost } } # Can afford
+					}
+					THIS.owner = { set_variable = { var_TE_puppet_released = 1 } }
+					subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_release_pup_cost } # subtract cost from available
+					add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_release_pup_cost }
+					add_political_power = -10
+				}
+			}
+			
+		}
+		
+									# # #
+									
+		
+		### Send terms
+		# set peace terms sent 
+		set_variable = { ROOT.var_TE_has_sent_treaty@var:ROOT.var_TE_target_country = 1 }
+		
+		#set_variable = { ROOT.var_TE_target_country = 0 }
+		#set_variable = { ROOT.var_TE_war_type = 0  }
+		#set_variable = { ROOT.var_TE_war_scope = 0  }
+		#set_variable = { ROOT.var_TE_peace_type = 0 }
+		#set_temp_variable = { temp_cost = 0 }
+		
+		# THE END
+	}
+}
+
+country_event = {
+	id = TE_peace_treaty_ai_event.2
+	title = TE_peace_treaty_ai_event.2.t
+	desc = TE_peace_treaty_ai_event.2.d 
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	hidden = no
+	
+	immediate = {
+	
+	}
+	
+
+	
+	option = { 
+		name = TE_peace_treaty_ai_event.2.a
+		ai_chance = { 
+			factor = 30
+		}
+		# DO WE HAVE CIVIL WAR????
+		IF = {
+			limit = {
+				TE_dissolve_allowed_ideology = yes
+				TE_dissolve_allowed_war_type = yes 
+			}
+			set_variable { ROOT.var_TE_dissolve@var:ROOT.var_TE_target_country = 1 }
+			subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_dissolve_cost } # subtract cost from available
+			add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_dissolve_cost }
+			add_political_power = -100
+		}
+		### POLITICAL SECTION
+		
+		
+		
+		
+		# If democratic - try to change gov
+		IF = { 
+			limit = { 
+				has_government = democratic
+				check_variable = { ROOT.var_TE_change_gov_cost > 0 }
+				NOT = { check_variable = { ROOT.var_TE_ptp_available < ROOT.var_TE_change_gov_cost }}
+				NOT = { var:ROOT.var_TE_target_country = { has_government = democratic } }
+				TE_change_gov_allowed_ideology = yes
+				TE_change_gov_allowed_war_type = yes 
+			}
+			var:ROOT.var_TE_target_country = { set_variable = { var_TE_change_gov@ROOT = 1 } } # IF not set -> Set
+			var:ROOT.var_TE_target_country = { set_variable = { var_TE_change_gov = ROOT.id } }
+			add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_change_gov_cost } # Repay cost
+			subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_change_gov_cost } # subtract cost from available
+			add_political_power = -40
+		}
+		# otherwise leave for now
+		
+		### ANNEXING
+		IF = { 
+			limit = {
+				TE_annex_allowed_ideology = yes
+				TE_annex_allowed_war_type = yes 
+				any_state = {
+					OR = { 
+						is_owned_by = var:ROOT.var_TE_target_country
+						any_country = {
+							PREV = { is_owned_by = PREV }
+							OR = {
+								is_puppet_of = var:ROOT.var_TE_target_country
+								is_subject_of = var:ROOT.var_TE_target_country
+							}
+							has_war_with = ROOT 
+						}
+					}
+					is_controlled_by = ROOT
+				}
+				NOT = { check_variable { ROOT.var_TE_ptp_available < ROOT.var_TE_annex_cost } }
+			}
+			subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_annex_cost }
+			add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_annex_cost }
+			every_state = {
+				limit = {
+					OR = { 
+						is_owned_by = var:ROOT.var_TE_target_country
+						any_country = {
+							PREV = { is_owned_by = PREV }
+							OR = {
+								is_puppet_of = var:ROOT.var_TE_target_country
+								is_subject_of = var:ROOT.var_TE_target_country
+							}
+							has_war_with = ROOT 
+						}
+					}
+					is_controlled_by = ROOT
+					#check_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+				}
+				set_variable = { THIS.var_HE_peace_term_transfer@ROOT = 1 }
+			}
+			add_political_power = -50
+		}
+		
+		
+		
+		
+		### Send terms
+		# set peace terms sent 
+		set_variable = { ROOT.var_TE_has_sent_treaty@var:ROOT.var_TE_target_country = 1 }
+		
+		# THE END
+	}
+}
+
+# Generic Civil War
+country_event = {
+	id = TE_peace_treaty_ai_event.3
+	title = TE_peace_treaty_ai_event.3.t
+	desc = TE_peace_treaty_ai_event.3.d 
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	hidden = no
+	
+	immediate = {
+	
+	}
+	
+
+	
+	option = { 
+		name = TE_peace_treaty_ai_event.3.a
+		ai_chance = { 
+			factor = 30
+		}
+		set_variable = { ROOT.var_TE_target_country = FROM.id }
+		set_variable = { ROOT.var_TE_war_type = ROOT.var_TE_war_type@FROM  }
+		set_variable = { ROOT.var_TE_war_scope = ROOT.var_TE_war_scope@FROM  }
+		set_variable = { ROOT.var_TE_peace_type = ROOT.var_TE_peace_type@FROM }
+		set_temp_variable = { temp_cost = 0 }
+		TE_get_total_peace_points = yes 
+	
+		# open window
+		#set_variable = { ROOT.var_TE_show_peace_gui = 1 } # Opens the window
+		set_variable = { ROOT.var_TE_has_started_treaty@FROM = 1 } # so if timer runs out, the LOSER knows we at least have started
+		set_variable = { ROOT.var_TE_peace_offer_available@FROM = 0 }# as we have started the treaty work we don't need this. Possibly change in the future if it bugs up saves, but it really shouldn't
+		subtract_from_variable = { ROOT.var_TE_number_peace_offers_accepted = 1 } # decrease counter for unnegotiated peace treaties
+		#set_variable = { ROOT.show_war_list = 0 } # closes this window 
+		
+		
+		
+		set_variable { ROOT.var_TE_dissolve@var:ROOT.var_TE_target_country = 1 }
+		subtract_from_variable = { ROOT.var_TE_ptp_available = ROOT.var_TE_dissolve_cost } # subtract cost from available
+		add_to_variable = { ROOT.var_TE_ptp_used = ROOT.var_TE_dissolve_cost }
+		add_political_power = -100
+	}
+}
+
+
+### SETTING THE TERMS
+country_event = {
+	id = TE_peace_treaty_ai_event.10
+	title = TE_peace_treaty_ai_event.10.t
+	desc = TE_peace_treaty_ai_event.10.d 
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	hidden = no
+	
+	immediate = {
+		#set_variable = { ROOT.var_TE_peace_offer_available@FROM = 1 }
+		#add_to_variable = {ROOT.var_TE_number_peace_offers_accepted = 1 }
+		set_variable = { ROOT.var_TE_target_country = FROM.id }
+		set_variable = { ROOT.var_TE_war_type = ROOT.var_TE_war_type@FROM  }
+		set_variable = { ROOT.var_TE_war_scope = ROOT.var_TE_war_scope@FROM  }
+		set_variable = { ROOT.var_TE_peace_type = ROOT.var_TE_peace_type@FROM }
+		set_variable = { ROOT.var_TE_has_started_treaty@FROM = 1 } # so if timer runs out, the LOSER knows we at least have started
+		set_variable = { ROOT.var_TE_peace_offer_available@FROM = 0 }# as we have started the treaty work we don't need this. Possibly change in the future if it bugs up saves, but it really shouldn't
+		
+		
+		
+	}
+	
+
+	#### GENERIC OPTION
+	option = { 
+		name = TE_peace_treaty_ai_event.10.a
+		ai_chance = { 
+			factor = 40
+		}
+
+		
+		
+		set_temp_variable = { temp_cost = 0 }
+		TE_get_total_peace_points = yes 
+		
+		
+		# Debug info
+		IF = { 
+			limit = {
+				has_global_flag = TE_debug_flag
+			}
+			set_variable = { ROOT.TE_debug_war_type = ROOT.var_TE_war_type }
+			set_variable = { ROOT.TE_debug_ptp = ROOT.var_TE_ptp_available }
+			set_variable = { ROOT.TE_debug_border_cost = ROOT.var_TE_take_border_cost }
+			set_variable = { ROOT.TE_debug_option_selected = 1 }
+			every_country = {
+				limit = { is_ai = no }
+				country_event = {
+					id = TE_peace_treaty_ai_event.0
+					days = 0
+				}
+			}
+		}
+		
+		############ Strategy goes here
+		TE_check_civil_war_peace_terms = yes
+		TE_check_independence_war_peace_terms = yes
+		
+		
+		TE_check_assume_control_peace_terms = yes
+		
+		TE_check_annex_peace_terms = yes
+		TE_check_take_core_peace_terms = yes
+		TE_check_take_claimed_peace_terms = yes
+		TE_check_take_claimed_peace_terms = yes # Doing it a second time to see if there are any more that can be taken now. 
+		
+		TE_check_take_border_peace_terms = yes
+		TE_check_take_claimed_peace_terms = yes # Doing it a third time to see if there are any more that can be taken now. 
+		
+		TE_check_install_puppet_peace_terms = yes
+		TE_check_change_govt_peace_terms = yes
+				
+		TE_check_take_border_peace_terms = yes # Doing it a second time to see if there are any more that can be taken now.
+		
+		TE_check_take_island_peace_terms = yes
+		
+		TE_check_take_colony_peace_terms = yes
+		TE_check_take_colony_peace_terms = yes
+		
+		TE_check_give_to_ally_peace_terms = yes 
+		
+		TE_check_take_other_peace_terms = yes 
+		
+		TE_check_revoke_core_peace_terms = yes  
+		TE_check_revoke_claim_peace_terms = yes
+		
+		TE_check_pup_conq_peace_terms = yes
+		TE_check_lib_conq_peace_terms = yes 
+		
+		TE_check_war_rep_peace_terms = yes 
+		TE_check_reduce_mil_peace_terms = yes
+		TE_check_oil_rights_peace_terms = yes
+		TE_check_limit_military_peace_terms = yes
+		TE_check_reduce_naval_peace_terms = yes 
+		TE_check_trans_pup_peace_terms = yes
+		TE_check_release_pup_peace_terms = yes
+		TE_check_take_port_peace_terms = yes
+		TE_check_return_core_peace_terms = yes 
+		
+		### Send terms
+		# set peace terms sent 
+		set_variable = { ROOT.var_TE_has_sent_treaty@var:ROOT.var_TE_target_country = 1 }
+		TE_clear_peace_term_variables = yes 
+		
+		#set_variable = { ROOT.var_TE_target_country = 0 }
+		#set_variable = { ROOT.var_TE_war_type = 0  }
+		#set_variable = { ROOT.var_TE_war_scope = 0  }
+		#set_variable = { ROOT.var_TE_peace_type = 0 }
+		#set_temp_variable = { temp_cost = 0 }
+		
+		# THE END
+	}
+	
+	#### FASCIST OPTION
+	option = { 
+		name = TE_peace_treaty_ai_event.10.b
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 20
+				has_government = fascism
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_government = fascism }
+			}
+		}
+		
+		set_temp_variable = { temp_cost = 0 }
+		TE_get_total_peace_points = yes 
+		
+		# Debug info set up
+		IF = { 
+			limit = {
+				has_global_flag = TE_debug_flag
+			}
+			set_variable = { ROOT.TE_debug_war_type = ROOT.var_TE_war_type }
+			set_variable = { ROOT.TE_debug_ptp = ROOT.var_TE_ptp_available }
+			set_variable = { ROOT.TE_debug_border_cost = ROOT.var_TE_take_border_cost }
+			set_variable = { ROOT.TE_debug_option_selected = 2 }
+		}
+		
+		
+		############ Strategy goes here
+		TE_check_civil_war_peace_terms = yes
+		TE_check_independence_war_peace_terms = yes
+		
+		TE_check_assume_control_peace_terms = yes 
+		
+		TE_check_annex_peace_terms = yes
+		
+		TE_check_take_core_peace_terms = yes
+		TE_check_take_claimed_peace_terms = yes
+		TE_check_take_claimed_peace_terms = yes
+		
+		IF = { 
+			limit = {
+				ROOT = {
+					has_country_leader = {
+						name = "Benito Mussolini"
+						ruling_only = yes
+					}
+				}
+			}
+			TE_check_take_border_peace_terms = yes
+			TE_check_take_island_peace_terms = yes
+			TE_check_take_colony_peace_terms = yes
+			TE_check_take_other_peace_terms = yes 
+			TE_check_take_port_peace_terms = yes
+			TE_check_take_other_peace_terms = yes 
+		}
+			
+		ELSE = {
+			random_list = { 
+				50 = { 
+					TE_check_install_puppet_peace_terms = yes 
+					TE_check_pup_conq_peace_terms = yes
+					TE_check_take_border_peace_terms = yes
+					TE_check_take_other_peace_terms = yes 
+				}
+				50 = { 
+					TE_check_take_border_peace_terms = yes
+					TE_check_take_other_peace_terms = yes 
+					TE_check_install_puppet_peace_terms = yes 
+					TE_check_pup_conq_peace_terms = yes
+				}
+			}
+		}
+
+		TE_check_trans_pup_peace_terms = yes
+		
+		TE_check_take_port_peace_terms = yes
+		TE_check_take_island_peace_terms = yes
+		TE_check_take_colony_peace_terms = yes
+		TE_check_give_to_ally_peace_terms = yes 
+		TE_check_oil_rights_peace_terms = yes 
+		
+		TE_check_change_govt_peace_terms = yes
+		TE_check_lib_conq_peace_terms = yes 
+		TE_check_release_pup_peace_terms = yes
+		
+		TE_check_war_rep_peace_terms = yes 
+		TE_check_limit_military_peace_terms = yes
+		TE_check_reduce_mil_peace_terms = yes
+		TE_check_reduce_naval_peace_terms = yes 
+		
+		TE_check_revoke_core_peace_terms = yes  
+		TE_check_revoke_claim_peace_terms = yes
+		TE_check_return_core_peace_terms = yes 
+		
+		### Send terms
+		# set peace terms sent 
+		set_variable = { ROOT.var_TE_has_sent_treaty@var:ROOT.var_TE_target_country = 1 }
+		TE_clear_peace_term_variables = yes 
+		#set_variable = { ROOT.var_TE_target_country = 0 }
+		#set_variable = { ROOT.var_TE_war_type = 0  }
+		#set_variable = { ROOT.var_TE_war_scope = 0  }
+		#set_variable = { ROOT.var_TE_peace_type = 0 }
+		#set_temp_variable = { temp_cost = 0 }
+		
+		# Debug message
+		IF = { 
+			limit = {
+				has_global_flag = TE_debug_flag
+			}
+			
+			every_country = {
+				limit = { is_ai = no }
+				country_event = {
+					id = TE_peace_treaty_ai_event.0
+					days = 0
+				}
+			}
+		}
+		
+		# THE END
+	}
+	#### "COMMUNIST" OPTION (also runs as an option for monarchist countries)
+	option = { 
+		name = TE_peace_treaty_ai_event.10.c
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 20
+				has_government = communism
+			}
+			modifier = {
+				factor = 5
+				has_government = monarchist 
+				
+			}
+		}
+		
+		set_temp_variable = { temp_cost = 0 }
+		TE_get_total_peace_points = yes 
+		
+		# Debug info
+		IF = { 
+			limit = {
+				has_global_flag = TE_debug_flag
+			}
+			set_variable = { ROOT.TE_debug_war_type = ROOT.var_TE_war_type }
+			set_variable = { ROOT.TE_debug_ptp = ROOT.var_TE_ptp_available }
+			set_variable = { ROOT.TE_debug_border_cost = ROOT.var_TE_take_border_cost }
+			set_variable = { ROOT.TE_debug_option_selected = 3 }
+		}
+		
+		############ Strategy goes here
+		TE_check_civil_war_peace_terms = yes
+		TE_check_independence_war_peace_terms = yes
+		
+		#TE_check_assume_control_peace_terms = yes 
+		TE_check_take_core_peace_terms = yes
+		
+		IF = { 
+			limit = { 
+				has_country_leader = {
+					name = "Vladimir Lenin"
+					ruling_only = yes
+				}
+			}
+			random_list = {
+				75 = { TE_check_install_puppet_peace_terms = yes }
+				25 = { TE_check_take_claimed_peace_terms = yes }
+			}
+		}
+		
+		TE_check_take_claimed_peace_terms = yes
+		TE_check_take_claimed_peace_terms = yes
+		TE_check_take_claimed_peace_terms = yes
+		
+		#TE_check_give_to_ally_peace_terms = yes 
+		
+		TE_check_annex_peace_terms = yes
+		
+		IF = { 
+			limit = { date > 1944.1.1 } # Stalin decides to create buffer states 
+			TE_check_install_puppet_peace_terms = yes
+		}
+		#TE_check_pup_conq_peace_terms = yes
+		#TE_check_trans_pup_peace_terms = yes
+		
+		
+		
+		TE_check_take_border_peace_terms = yes
+		IF = { 
+			limit = { date < 1944.1.2 } # Moving borders more important
+			TE_check_install_puppet_peace_terms = yes
+		}
+		TE_check_take_other_peace_terms = yes 
+		TE_check_take_port_peace_terms = yes
+		TE_check_take_island_peace_terms = yes
+		TE_check_take_colony_peace_terms = yes
+		
+		TE_check_change_govt_peace_terms = yes
+		#TE_check_lib_conq_peace_terms = yes 
+		#TE_check_release_pup_peace_terms = yes
+		
+		TE_check_war_rep_peace_terms = yes 
+		TE_check_oil_rights_peace_terms = yes
+		TE_check_reduce_mil_peace_terms = yes
+		TE_check_reduce_naval_peace_terms = yes
+		
+		TE_check_revoke_core_peace_terms = yes  
+		TE_check_revoke_claim_peace_terms = yes
+		TE_check_limit_military_peace_terms = yes
+		TE_check_return_core_peace_terms = yes 
+		### Send terms
+		# set peace terms sent 
+		set_variable = { ROOT.var_TE_has_sent_treaty@var:ROOT.var_TE_target_country = 1 }
+		TE_clear_peace_term_variables = yes 
+		#set_variable = { ROOT.var_TE_target_country = 0 }
+		#set_variable = { ROOT.var_TE_war_type = 0  }
+		#set_variable = { ROOT.var_TE_war_scope = 0  }
+		#set_variable = { ROOT.var_TE_peace_type = 0 }
+		#set_temp_variable = { temp_cost = 0 }
+		
+		# More debug
+		IF = { 
+			limit = {
+				has_global_flag = TE_debug_flag
+			}
+			every_country = {
+				limit = { is_ai = no }
+				country_event = {
+					id = TE_peace_treaty_ai_event.0
+					days = 0
+				}
+			}
+		}
+		
+		# THE END
+	}
+	
+	# DEMOCRATIC OPTION
+	option = { 
+		name = TE_peace_treaty_ai_event.10.e
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 20
+				has_government = democratic
+			}
+			
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = communism 
+					has_government = fascism 
+				}
+			}
+		}
+		
+		set_temp_variable = { temp_cost = 0 }
+		TE_get_total_peace_points = yes 
+		
+		
+		# Debug info
+		IF = { 
+			limit = {
+				has_global_flag = TE_debug_flag
+			}
+			set_variable = { ROOT.TE_debug_war_type = ROOT.var_TE_war_type }
+			set_variable = { ROOT.TE_debug_ptp = ROOT.var_TE_ptp_available }
+			set_variable = { ROOT.TE_debug_border_cost = ROOT.var_TE_take_border_cost }
+			set_variable = { ROOT.TE_debug_option_selected = 4 }
+			
+		}
+		
+		############ Strategy goes here
+		TE_check_civil_war_peace_terms = yes
+		TE_check_independence_war_peace_terms = yes
+		
+		TE_check_assume_control_peace_terms = yes 
+		
+		IF = { 
+			limit = { 
+				OR = {
+					var:ROOT.var_TE_target_country = { has_government = fascism }
+					var:ROOT.var_TE_target_country = { has_government = communism }
+				}
+			}
+			TE_check_change_govt_peace_terms = yes
+		}
+		TE_check_take_core_peace_terms = yes
+		TE_check_install_puppet_peace_terms = yes
+		TE_check_take_island_peace_terms = yes
+		TE_check_take_colony_peace_terms = yes
+		
+		IF = {
+			limit = {
+				tag = ENG
+			}
+			TE_check_transfer_navy_peace_terms = yes
+		}
+		IF = { 
+			limit = { tag = FRA }
+			TE_check_set_demil_peace_terms = yes 
+		}
+		# TE_check_annex_peace_terms = yes
+		TE_check_oil_rights_peace_terms = yes 
+		
+		TE_check_change_govt_peace_terms = yes
+				
+		
+		
+		TE_check_revoke_core_peace_terms = yes  
+		TE_check_revoke_claim_peace_terms = yes
+	
+		TE_check_pup_conq_peace_terms = yes
+		TE_check_lib_conq_peace_terms = yes 
+		TE_check_return_core_peace_terms = yes 
+		
+		TE_check_war_rep_peace_terms = yes 
+		TE_check_limit_military_peace_terms = yes
+		TE_check_reduce_mil_peace_terms = yes
+		TE_check_reduce_naval_peace_terms = yes 
+		TE_check_reduce_navy_peace_terms = yes
+		TE_check_release_pup_peace_terms = yes
+		TE_check_take_claimed_peace_terms = yes
+		TE_check_take_border_peace_terms = yes
+		TE_check_take_port_peace_terms = yes
+		TE_check_trans_pup_peace_terms = yes	
+		TE_check_give_to_ally_peace_terms = yes 
+		TE_check_set_demil_peace_terms = yes 
+		### Send terms
+		# set peace terms sent 
+		set_variable = { ROOT.var_TE_has_sent_treaty@var:ROOT.var_TE_target_country = 1 }
+		TE_clear_peace_term_variables = yes 
+		#set_variable = { ROOT.var_TE_target_country = 0 }
+		#set_variable = { ROOT.var_TE_war_type = 0  }
+		#set_variable = { ROOT.var_TE_war_scope = 0  }
+		#set_variable = { ROOT.var_TE_peace_type = 0 }
+		#set_temp_variable = { temp_cost = 0 }
+		# Debug info
+		IF = { 
+			limit = {
+				has_global_flag = TE_debug_flag
+			}
+			
+			every_country = {
+				limit = { is_ai = no }
+				country_event = {
+					id = TE_peace_treaty_ai_event.0
+					days = 0
+				}
+			}
+		}
+		# THE END
+	}
+	
+	#### "PUPPET" OPTION (also runs as an option for defender )
+	option = { 
+		name = TE_peace_treaty_ai_event.10.f
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 40
+				check_variable = { ROOT.var_TE_war_type@FROM = 5 }
+			}
+			modifier = {
+				factor = 5
+				check_variable = { ROOT.var_TE_war_type@FROM = 7 }
+				
+			}
+		}
+		
+		set_temp_variable = { temp_cost = 0 }
+		TE_get_total_peace_points = yes 
+		
+		# Debug info
+		IF = { 
+			limit = {
+				has_global_flag = TE_debug_flag
+			}
+			set_variable = { ROOT.TE_debug_war_type = ROOT.var_TE_war_type }
+			set_variable = { ROOT.TE_debug_ptp = ROOT.var_TE_ptp_available }
+			set_variable = { ROOT.TE_debug_border_cost = ROOT.var_TE_take_border_cost }
+			set_variable = { ROOT.TE_debug_option_selected = 5 }
+		}
+		
+		
+		############ Strategy goes here
+		TE_check_civil_war_peace_terms = yes
+		TE_check_independence_war_peace_terms = yes
+		
+		TE_check_assume_control_peace_terms = yes 
+		TE_check_take_core_peace_terms = yes
+		
+		
+		TE_check_install_puppet_peace_terms = yes
+		TE_check_pup_conq_peace_terms = yes
+		
+		TE_check_change_govt_peace_terms = yes
+		
+		TE_check_take_claimed_peace_terms = yes
+		TE_check_take_claimed_peace_terms = yes
+		TE_check_take_claimed_peace_terms = yes
+		
+		TE_check_give_to_ally_peace_terms = yes 
+		
+		TE_check_install_puppet_peace_terms = yes
+		
+		TE_check_install_puppet_peace_terms = yes
+		
+		TE_check_trans_pup_peace_terms = yes
+		
+		TE_check_take_border_peace_terms = yes
+		
+		TE_check_take_port_peace_terms = yes
+		TE_check_take_island_peace_terms = yes
+		TE_check_take_colony_peace_terms = yes
+		
+		
+		#TE_check_lib_conq_peace_terms = yes 
+		#TE_check_release_pup_peace_terms = yes
+		
+		TE_check_war_rep_peace_terms = yes 
+		TE_check_oil_rights_peace_terms = yes
+		TE_check_reduce_mil_peace_terms = yes
+		TE_check_reduce_naval_peace_terms = yes
+		
+		TE_check_revoke_core_peace_terms = yes  
+		TE_check_revoke_claim_peace_terms = yes
+		TE_check_limit_military_peace_terms = yes
+		### Send terms
+		# set peace terms sent 
+		set_variable = { ROOT.var_TE_has_sent_treaty@var:ROOT.var_TE_target_country = 1 }
+		TE_clear_peace_term_variables = yes 
+		#set_variable = { ROOT.var_TE_target_country = 0 }
+		#set_variable = { ROOT.var_TE_war_type = 0  }
+		#set_variable = { ROOT.var_TE_war_scope = 0  }
+		#set_variable = { ROOT.var_TE_peace_type = 0 }
+		#set_temp_variable = { temp_cost = 0 }
+		
+		# More debug 
+		IF = { 
+			limit = {
+				has_global_flag = TE_debug_flag
+			}
+			every_country = {
+				limit = { is_ai = no }
+				country_event = {
+					id = TE_peace_treaty_ai_event.0
+					days = 0
+				}
+			}
+		}
+		# THE END
+	}
+	
+}

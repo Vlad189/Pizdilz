@@ -18,9 +18,9 @@ defined_text = {
 	
 	text = {
         trigger = {
-            has_global_flag = RUS_bakhmut_taken_se
+            has_global_flag = POV_Rostov_Taken
         }
-        localization_key = "sp_event_bakhmut_taken_RUS"
+        localization_key = "sp_event_POV_Rostov_Taken"
     }
 	
 	text = {
@@ -51,9 +51,9 @@ defined_text = {
 	
 	text = {
         trigger = {
-            has_global_flag = RUS_bakhmut_taken_se
+            has_global_flag = POV_Rostov_Taken
         }
-        localization_key = "sp_event_bakhmut_taken_RUS_REMARK"
+        localization_key = "sp_event_POV_Rostov_Taken_REMARK"
     }
 	
 	text = {
@@ -83,9 +83,9 @@ defined_text = {
 	
 	text = {
         trigger = {
-            has_global_flag = RUS_bakhmut_taken_se
+            has_global_flag = POV_Rostov_Taken
         }
-        localization_key = "sp_event_bakhmut_taken_RUS_QUOTE"
+        localization_key = "sp_event_POV_Rostov_Taken_QUOTE"
     }
 	
 	text = {

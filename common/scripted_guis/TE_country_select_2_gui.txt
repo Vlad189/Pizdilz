@@ -1,0 +1,81 @@
+scripted_gui = {
+	#### GUI FOR SELECTING COUNTRY TO NEGOTIATE WITH
+	TE_peace_neg_selection_ui = {
+		window_name = "TE_peace_offers_available_window"
+        #context_type = selected_country_context
+		parent_window_token = top_bar
+		#### Main variables used for peace process communication
+		# VICTOR.var_TE_peace_offer_available@LOSER = 0/1 - unlocks country selection GUI - should be targeted, right? 
+		# LOSER.var_TE_has_sent_offer@VICTOR = 0/1 - Conditional peace only - so that you cant sent the same offer twice. 
+		# VICTOR.var_TE_has_started_treaty@LOSER = 0/1 - Set to 1 when clicking the button in this GUI 
+		# VICTOR.var_TE_has_sent_treaty@LOSER = 0/1 - set to 1 when "DONE" with peace treaty, used to complete mission timer and kick off peace. 
+		# VICTOR.var_TE_number_peace_offers_accepted = x # Counter, can be used to show how many peace treaties the player needs to work with
+		
+		visible = {
+			#any_country = { 
+			#	has_war_with = ROOT # just to be sure 
+			#	check_variable = { ROOT.var_TE_peace_offer_available@THIS = 1 }
+			#	check_variable = { ROOT.var_TE_has_sent_treaty@THIS = 0 }
+			#}
+			#check_variable = { ROOT.show_war_list = 0  } 
+			
+		}
+		effects = {
+			TE_show_peace_offers_btn_click = {
+				IF = { limit = { check_variable = { ROOT.show_war_list = 1 }}
+				set_variable = { ROOT.show_war_list = 0 }
+				}
+				ELSE = {
+					TE_open_peace_offers_accepted = yes
+				}
+			}
+		}
+		triggers = {
+			TE_show_peace_offers_btn_click_enabled = {
+				check_variable = { ROOT.var_TE_show_peace_gui = 0 }
+				any_country = { 
+					has_war_with = ROOT # just to be sure 
+					check_variable = { ROOT.var_TE_peace_offer_available@THIS = 1 }
+					check_variable = { ROOT.var_TE_has_sent_treaty@THIS = 0 }
+				}
+				check_variable = { ROOT.show_war_list = 0  } 
+	
+			}
+			TE_show_peace_offers_btn_visible = {
+				check_variable = { ROOT.var_TE_number_peace_offers_accepted > 0 }
+			}
+		}
+		
+		ai_enabled = {
+            always = no
+		}
+		
+		ai_test_interval = 100 
+        ai_test_variance = 50    
+		 
+		ai_test_scopes = test_enemy_countries
+        
+        ai_check = {
+			check_variable = { ROOT.show_war_list = 0  } 
+			check_variable = { ROOT.var_TE_show_peace_gui = 0 }
+			has_war = yes
+			check_variable = { ROOT.var_TE_number_peace_offers_accepted > 0 }
+			
+        }
+        
+       
+		
+		ai_weights = {
+			TE_show_peace_offers_btn_click = {
+				ai_will_do = {
+					factor = 1
+					
+				}
+			}
+		}
+	}
+		
+			
+}
+	
+	

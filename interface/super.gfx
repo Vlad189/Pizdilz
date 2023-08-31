@@ -21,4 +21,9 @@ spriteTypes = {
 		name = "GFX_sp_event_vtorzhenee"
 		textureFile = "/gfx/sp_events/vtorzhenee.dds"
 	}
+spriteType = {
+		name = "GFX_sp_event_POV_Rostov_Taken"
+		textureFile = "/gfx/sp_events/vzityerostova.dds"
+
 	}
+}

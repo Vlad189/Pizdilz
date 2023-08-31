@@ -1,0 +1,207 @@
+spriteTypes = {	
+	### BUTTONS
+	spriteType = {
+		name = "GFX_TE_button_close_window"
+		texturefile = "gfx/interface/button_94x31.dds"
+	}
+	
+	
+	## TOP Icons 
+	spriteType = {
+		name = "GFX_TE_icon"
+		texturefile = "gfx/interface/WP_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_peace_offers_shield"
+		texturefile = "gfx/interface/TE_peace_offers_shield.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_declare_war_shield"
+		texturefile = "gfx/interface/TE_declare_war_shield.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_request_peace_shield"
+		texturefile = "gfx/interface/TE_request_peace_shield.dds"
+	}
+	
+	### OFFER PEACE
+	spriteType = {
+		name = "GFX_TE_offer_peace_bg"
+		texturefile = "gfx/interface/TE_offer_peace_bg.dds"
+	}
+	
+	
+	### Peace terms
+	spriteType = {
+		name = "GFX_TE_peace_terms_background_bg"
+		texturefile = "gfx/interface/TE_peace_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_selected_terms_background_bg"
+		texturefile = "gfx/interface/TE_selected_peace_terms_bg.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_TE_close_peace_req_btn"
+		texturefile = "gfx/interface/closebutton.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_TE_peace_political_section"
+		texturefile = "gfx/interface/TE_peace_political_section.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_peace_select_button"
+		texturefile = "gfx/interface/TE_peace_term_button.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_peace_select_button_long"
+		texturefile = "gfx/interface/TE_peace_term_button_long.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_points_cost_icon"
+		texturefile = "gfx/interface/TE_points_cost_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_checkmark_icon"
+		texturefile = "gfx/interface/TE_checkmark.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_points_total_icon"
+		texturefile = "gfx/interface/TE_points_total_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_points_available_icon"
+		texturefile = "gfx/interface/TE_points_available_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_points_used_icon"
+		texturefile = "gfx/interface/TE_points_used_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_TE_selected_state_bg"
+		texturefile = "gfx/interface/TE_selected_state_bg.dds"
+	}
+	
+	
+	#### IDEAS
+	
+	
+	spriteType = {
+		name = "GFX_idea_TE_army_restrictions"
+		texturefile = "gfx/interface/ideas/idea_TE_army_restrictions.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_recent_peace_treaty"
+		texturefile = "gfx/interface/ideas/idea_generic_constitutional_guarantee.dds"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_1"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_2"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_3"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_4"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_5"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_6"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_7"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_8"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_9"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_10"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_11"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_12"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_13"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_14"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_pay_15"
+		texturefile = "gfx/interface/ideas/TE_war_rep_pay_idea.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_war_rep_get_idea"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_get_1"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_get_2"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_get_3"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_get_4"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_get_5"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_get_6"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_get_7"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_get_8"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_get_9"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_war_reps_get_10"
+		texturefile = "gfx/interface/ideas/TE_war_rep_get_idea.dds"
+	}
+	
+}

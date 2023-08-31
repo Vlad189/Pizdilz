@@ -27,7 +27,13 @@ guiTypes = {
 			spriteType = "GFX_sp_event_vtorzhenee"
 			position = {x = 0 y = 0}
 		}
+		iconType = {
+			name = "Super_Event_Image_POV_Rostov_Taken"
+			spriteType = "GFX_sp_event_POV_Rostov_Taken"
+			position = {x = 0 y = 0}
+		}
 	
+
 		#############
 		##INTERFACE##
 		#############

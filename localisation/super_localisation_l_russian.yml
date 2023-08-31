@@ -8,6 +8,8 @@
   sp_event_vtorzhenee_QUOTE:0 "Поволжье объявляет свою решимость и ведет поволжских бравых солдат в битву за восстановление своих земель Дона \n- Краснов"
   sp_event_vtorzhenee_REMARK:0 "В шаге от державности"
   
- 
+  sp_event_POV_Rostov_Taken:0 "Падение Ростова"
+  sp_event_POV_Rostov_Taken_QUOTE:0 "Наконец таки, вторая столица Поволжья вернулась в родную обитель \n- Гаврилов"
+  sp_event_POV_Rostov_Taken_REMARK:0 "Ура!"
 
 

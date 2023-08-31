@@ -1,0 +1,78 @@
+
+####### Strategy for Major Conquest - via border  
+TE_conquest_treaty_strategy = {
+	# Check if major want to take control 
+	TE_check_assume_control_peace_terms = yes
+	
+	# Check if annex is possible
+	TE_check_annex_peace_terms = yes
+	
+	# take core states
+	TE_check_take_core_peace_terms = yes
+	
+	# Claims 
+	TE_check_take_claimed_peace_terms = yes
+	TE_check_take_claimed_peace_terms = yes # Doing it a second time to see if there are any more that can be taken now. 
+	
+	# Border States
+	TE_check_take_border_peace_terms = yes
+	
+	# Digging deeper in 
+	TE_check_take_claimed_peace_terms = yes # Doing it a third time to see if there are any more that can be taken now. 
+	
+	TE_check_take_other_peace_terms = yes 
+	
+	# Islands and ports 
+	TE_check_take_island_peace_terms = yes
+	TE_check_take_port_peace_terms = yes
+	TE_check_take_other_peace_terms = yes 
+	
+	# Colonies low prio
+	TE_check_take_colony_peace_terms = yes		
+	TE_check_take_other_peace_terms = yes 
+	
+	
+	# In case there are points left basically 
+	TE_check_take_colony_peace_terms = yes
+	
+	TE_check_pup_conq_peace_terms = yes
+	TE_check_lib_conq_peace_terms = yes 
+	
+	TE_check_war_rep_peace_terms = yes 
+	TE_check_reduce_mil_peace_terms = yes
+	TE_check_oil_rights_peace_terms = yes
+	TE_check_limit_military_peace_terms = yes
+	TE_check_reduce_naval_peace_terms = yes 
+	TE_check_trans_pup_peace_terms = yes
+	TE_check_release_pup_peace_terms = yes
+	
+}
+
+
+####### Strategy for gaining a foothold
+TE_gain_foothold_treaty_strategy = {
+	# Check if major want to take control 
+	TE_check_assume_control_peace_terms = yes
+	
+	TE_check_take_port_peace_terms = yes
+	TE_check_take_claimed_peace_terms = yes
+	TE_check_take_core_peace_terms = yes
+	
+	TE_check_take_colony_peace_terms = yes		
+	TE_check_take_other_peace_terms = yes 
+	TE_check_take_other_peace_terms = yes
+	TE_check_take_island_peace_terms = yes	
+	
+	TE_check_lib_conq_peace_terms = yes 
+	TE_check_pup_conq_peace_terms = yes	
+
+	TE_check_war_rep_peace_terms = yes 
+	TE_check_reduce_naval_peace_terms = yes 
+	TE_check_reduce_mil_peace_terms = yes
+	TE_check_oil_rights_peace_terms = yes
+	TE_check_limit_military_peace_terms = yes
+	
+	TE_check_trans_pup_peace_terms = yes
+	TE_check_release_pup_peace_terms = yes
+	
+}
