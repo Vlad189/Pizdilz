@@ -27,7 +27,7 @@ scripted_gui = {
 		}
 		
 		triggers = {
-			Super_Event_POV_Vangergrad_Taken_visible = {
+			Super_Event_Image_POV_Vangergrad_Taken_visible = {
 				has_global_flag = POV_Vangergrad_Taken
 			}
 		}
