@@ -155,3 +155,8 @@ music {
 	file = "nota_bene_chernocoyenci.ogg"
 	volume = 0.65
 }
+music {
+	name = "ccw"
+	file = "ccw.ogg"
+	volume = 0.65
+}

@@ -304,3 +304,9 @@ music = {
 		factor = 0
 	}
 }
+music = {
+      song = "ccw"
+       chance = {
+	       factor = 0
+	}
+}

@@ -121,7 +121,7 @@ country_event = {
                 set_global_flag = POV_Vangergrad_Taken
 		set_global_flag = Super_Event_Visible
 		
-		play_song = "nota_bene_chernocoyenci"
+		play_song = "ccw"
             
 	}
 }
