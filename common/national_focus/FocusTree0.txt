@@ -585,7 +585,7 @@ focus_tree = {
 	focus = {
 		id = POV_Don2
 		icon = GFX_Don_war
-		cost = 500
+		cost = 80
 		prerequisite = {
 			focus = POV_Don1
 		}
