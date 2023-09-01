@@ -16,10 +16,10 @@ set_technology = {
 	tech_support = 2		
 	tech_engineers = 2
 	tech_military_police = 1
-        interwar_artillery = 1
-        interwar_antitank = 1
-        interwar_antiair = 1
-        fighter1 = 1
+     gw_artillery = 1
+    interwar_antitank = 1
+    interwar_antiair = 1
+    fighter1 = 1
 
 }
 
