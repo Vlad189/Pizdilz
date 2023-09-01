@@ -12,4 +12,6 @@
   sp_event_POV_Rostov_Taken_QUOTE:0 "Наконец таки, вторая столица Поволжья вернулась в родную обитель \n- Гаврилов"
   sp_event_POV_Rostov_Taken_REMARK:0 "Ура!"
 
-
+ sp_event_POV_Vangergrad_Taken:0 "Падение Вангерграда"
+ sp_event_POV_Vangergrad_Taken_QUOTE:0 "Наконец то таки, Екатеринодар освободился от проклятых вангеровцев! \n- Гаврилов"
+ sp_event_POV_Vangergrad_Taken_REMARK:0 "Интересный поворот событий"

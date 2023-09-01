@@ -26,4 +26,9 @@ spriteType = {
 		textureFile = "/gfx/sp_events/vzityerostova.dds"
 
 	}
+spriteType = {
+		name = "GFX_sp_event_POV_Vangergrad_Taken"
+		textureFile = "/gfx/sp_events/vzitievangergrada.dds"
+
+	}
 }

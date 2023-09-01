@@ -27,8 +27,8 @@ scripted_gui = {
 		}
 		
 		triggers = {
-			Super_Event_WGN_bakhmut_taken_visible = {
-				has_global_flag = WGN_bakhmut_taken_se
+			Super_Event_POV_Vangergrad_Taken_visible = {
+				has_global_flag = POV_Vangergrad_Taken
 			}
 		}
 		
@@ -63,9 +63,9 @@ scripted_gui = {
 				
 				if = {
 					limit = {
-						has_global_flag = WGN_bakhmut_taken_se
+						has_global_flag = POV_Vangergrad_Taken
 					}
-					clr_global_flag = WGN_bakhmut_taken_se
+					clr_global_flag = POV_Vangergrad_Taken
 				}
 			}
 		}

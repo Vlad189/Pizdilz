@@ -25,9 +25,9 @@ defined_text = {
 	
 	text = {
         trigger = {
-            has_global_flag = WGN_bakhmut_taken_se
+            has_global_flag = POV_Vangergrad_Taken
         }
-        localization_key = "sp_event_bakhmut_taken_WGN"
+        localization_key = "sp_event_POV_Vangergrad_Taken"
     }
 	
 }
@@ -58,9 +58,9 @@ defined_text = {
 	
 	text = {
         trigger = {
-            has_global_flag = WGN_bakhmut_taken_se
+            has_global_flag = POV_Vangergrad_Taken
         }
-        localization_key = "sp_event_bakhmut_taken_WGN_REMARK"
+        localization_key = "sp_event_POV_Vangergrad_Taken_REMARK"
     }
 }
 
@@ -90,8 +90,8 @@ defined_text = {
 	
 	text = {
         trigger = {
-            has_global_flag = WGN_bakhmut_taken_se
+            has_global_flag = POV_Vangergrad_Taken
         }
-        localization_key = "sp_event_bakhmut_taken_WGN_QUOTE"
+        localization_key = "sp_event_POV_Vangergrad_Taken_QUOTE"
     }
 }
