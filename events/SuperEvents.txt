@@ -122,7 +122,6 @@ country_event = {
 		set_global_flag = Super_Event_Visible
 		
 		play_song = "nota_bene_chernocoyenci"
-               KSS = {country_event = TE_peace_event.6}
             
 	}
 }

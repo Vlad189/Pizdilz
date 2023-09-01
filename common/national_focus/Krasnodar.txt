@@ -11,7 +11,7 @@ focus_tree = {
 	focus = {
 		id = KSS_OBORONA1
 		icon = GFX_goal_generic_defence
-		cost = 0
+		cost = 30
 		x = 4
 		y = 0
 
@@ -19,7 +19,7 @@ focus_tree = {
 	focus = {
 		id = KSS_CUB1
 		icon = GFX_goal_generic_CAS
-		cost = 0.5
+		cost = 30
 		x = 13
 		y = 0
 		
@@ -27,7 +27,7 @@ focus_tree = {
 		
 add_equipment_to_stockpile = {
     type = infantry_equipment
-    amount = 5000
+    amount = 10000
     producer = KSS
 }
 }
@@ -36,7 +36,7 @@ add_equipment_to_stockpile = {
 	focus = {
 		id = KSS_OBORONA2
 		icon = GFX_goal_anti_comintern_pact
-		cost = 1
+		cost = 30
 		prerequisite = {
 			focus = KSS_OBORONA1
 		}
@@ -55,7 +55,7 @@ add_equipment_to_stockpile = {
 	focus = {
 		id = KSS_OBORONA3
 		icon = GFX_goal_generic_construct_military
-		cost = 1
+		cost = 30
 		prerequisite = {
 			focus = KSS_OBORONA2
 		}
@@ -167,7 +167,7 @@ completion_reward = {
 	focus = {
 		id = KSS_OBORONA4
 		icon = GFX_goal_generic_construct_military
-		cost = 0
+		cost = 30
 		prerequisite = {
 			focus = KSS_OBORONA2
 		}
@@ -221,7 +221,7 @@ completion_reward = {
 	focus = {
 		id = KSS_OBORONA5
 		icon = GFX_goal_generic_construct_military
-		cost = 0
+		cost = 30
 		prerequisite = {
 			focus = KSS_OBORONA2
 		}
@@ -275,7 +275,7 @@ completion_reward = {
 	focus = {
 		id = KSS_OBORONA6
 		icon = GFX_goal_generic_construct_military
-		cost = 0
+		cost = 30
 		prerequisite = {
 			focus = KSS_OBORONA2
 		}
@@ -330,7 +330,7 @@ completion_reward = {
 	focus = {
 		id = KSS_OBORONA7
 		icon = GFX_goal_generic_construct_military
-		cost = 0
+		cost = 0.30
 		prerequisite = {
 			focus = KSS_OBORONA2
 		}
@@ -385,7 +385,7 @@ completion_reward = {
 	focus = {
 		id = KSS_OBORONA8
 		icon = GFX_goal_generic_fortify_city
-		cost = 0
+		cost = 0.30
 		prerequisite = {
 			focus = KSS_OBORONA3
 		}
@@ -430,7 +430,7 @@ completion_reward = {
 	focus = {
 		id = KSS_CUB2
 		icon = GFX_goal_generic_improve_relations
-		cost = 0
+		cost = 0.30
 		prerequisite = {
 			focus = KSS_CUB1
 		}
