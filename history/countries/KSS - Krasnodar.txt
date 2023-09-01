@@ -23,6 +23,9 @@ set_technology = {
         photo_reconnaisance = 1
         iw_small_airframe = 1
         iw_medium_airframe = 1
+        support_weapons = 1
+        support_weapons2 = 1
+        motorised_infantry = 1
 
 }
 
