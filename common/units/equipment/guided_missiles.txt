@@ -9,10 +9,6 @@ equipments = {
 			}
 		}
 
-		allow_mission_type = {
-			strategic_bomber
-		}
-
 		is_archetype = yes
 		is_buildable = no
 		can_license = no
@@ -49,10 +45,10 @@ equipments = {
 		one_use_only = yes
 		sprite = missile_default
 		
-		air_range = 500
+		air_range = 2000
 		maximum_speed = 640
 		air_agility = 10
-		air_bombing = 300
+		air_bombing = 600
 		
 		# build_cost_ic = 36
 	}
@@ -66,10 +62,10 @@ equipments = {
 		one_use_only = yes
 		sprite = missile_default
 		
-		air_range = 640
+		air_range = 5000
 		maximum_speed = 5760
 		air_agility = 10
-		air_bombing = 450
+		air_bombing = 900
 	}
 	
 	guided_missile_equipment_3 = {
@@ -84,7 +80,7 @@ equipments = {
 		air_range = 11000
 		maximum_speed = 9999
 		air_agility = 10
-		air_bombing = 600
+		air_bombing = 1200
 		
 		# build_cost_ic = 44
 	}
