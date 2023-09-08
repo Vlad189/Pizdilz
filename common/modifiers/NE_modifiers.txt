@@ -1,7 +1,0 @@
-trade_partner_static_modifier = {
-
-}
-
-freeze_static_modifier = {
-
-}
