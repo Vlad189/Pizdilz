@@ -1,0 +1,189 @@
+defined_text = {
+	name = GetLeagueOfNationsReformName
+
+	text = {
+		trigger = {
+			set_temp_variable = { reform_id = v }
+		}
+		localization_key = "[This.GetLeagueOfNationsReformNameOtherContext]"
+	}
+}
+
+defined_text = {
+	name = GetLeagueOfNationsReformNameOtherContext
+
+	text = {
+		trigger = {
+			check_variable = { reform_id = 1 }
+		}
+		localization_key = league_of_nations_reform_1
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 2 }
+		}
+		localization_key = league_of_nations_reform_2
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 3 }
+		}
+		localization_key = league_of_nations_reform_3
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 4 }
+		}
+		localization_key = league_of_nations_reform_4
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 5 }
+		}
+		localization_key = league_of_nations_reform_5
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 6 }
+		}
+		localization_key = league_of_nations_reform_6
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 7 }
+		}
+		localization_key = league_of_nations_reform_7
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 8 }
+		}
+		localization_key = league_of_nations_reform_8
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetLeagueOfNationsReformDesc
+
+	text = {
+		trigger = {
+			set_temp_variable = { reform_id = v }
+		}
+		localization_key = "[This.GetLeagueOfNationsReformDescOtherContext]"
+	}
+}
+
+defined_text = {
+	name = GetLeagueOfNationsReformDescOtherContext
+
+	text = {
+		trigger = {
+			check_variable = { reform_id = 1 }
+		}
+		localization_key = league_of_nations_reform_1_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 2 }
+		}
+		localization_key = league_of_nations_reform_2_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 3 }
+		}
+		localization_key = league_of_nations_reform_3_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 4 }
+		}
+		localization_key = league_of_nations_reform_4_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 5 }
+		}
+		localization_key = league_of_nations_reform_5_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 6 }
+		}
+		localization_key = league_of_nations_reform_6_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 7 }
+		}
+		localization_key = league_of_nations_reform_7_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { reform_id = 8 }
+		}
+		localization_key = league_of_nations_reform_8_desc
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetLeagueOfNationsReformsListEntryContainer
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { v = 1 }
+				check_variable = { v = 6 }
+			}
+		}
+		localization_key = "league_of_nations_reforms_entry"
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 0 }
+		}
+		localization_key = "league_of_nations_reforms_entry_empty"
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "league_of_nations_reforms_entry_small"
+	}
+}
+
+defined_text = {
+	name = GetLeagueOfNationsReformTooltip
+
+	text = {
+		trigger = {
+			var:global.league_of_nations_leader = {
+				meta_trigger = {
+					text = {
+						has_decision = league_of_nations_reform_[REFORM]
+					}
+					REFORM = "[?v]"
+				}
+			}
+		}
+		localization_key = string_league_of_nations_reform_tt_ongoing
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = string_league_of_nations_reform_tt
+	}
+}

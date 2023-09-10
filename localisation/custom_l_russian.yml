@@ -1,5 +1,6 @@
 ﻿l_russian:
 
-bnm.0.t:0 "В нас ударила ядерная бомба!"
-bnm.0.d:0 "На нас ударила ядерная бомба! Катастрофа! Мы тоже потеряли несколько человек..."
-bnm.0.a:0 "О нет!"
+bnm.0.t:0 "We were hit by a nuke!"
+bnm.0.d:0 "We have been hit by a nuke! Disaster! We lost some men, too..."
+bnm.0.a:0 "Oh no!"
+
