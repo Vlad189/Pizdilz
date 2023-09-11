@@ -3,7 +3,7 @@ state={
 	name="STATE_925"
 	manpower = 767336
 	
-	state_category = city
+	state_category = large_city
 
 	history={
 		owner = UKR
