@@ -11223,7 +11223,7 @@
 11222;169;9;197;land;false;forest;1
 11223;169;12;12;land;false;mountain;6
 11224;169;12;162;land;false;plains;1
-11225;169;12;217;land;false;urban;6
+11225;169;12;217;land;true;urban;6
 11226;169;15;77;land;false;forest;1
 11227;169;15;182;land;false;forest;1
 11228;169;18;42;land;false;forest;6

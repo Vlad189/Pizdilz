@@ -1,0 +1,75 @@
+ideas = {
+	country = {
+	
+	}
+	
+	hidden_ideas = {
+		
+		idea_activ_bomb = {
+			ledger = hidden
+			
+		}
+		
+		idea_bomb_ongoing = {
+			ledger = hidden
+		}
+		
+		idea_target_bomb_selection = {
+			ledger = hidden
+		}
+		
+		idea_target_bomb_infrastructure = {
+			ledger = hidden
+		}
+		idea_target_bomb_air_base = {
+			ledger = hidden
+		}
+		idea_target_bomb_anti_air_building = {
+			ledger = hidden
+		}
+		idea_target_bomb_radar_station = {
+			ledger = hidden
+		}
+		idea_target_bomb_arms_factory = {
+			ledger = hidden
+		}
+		idea_target_bomb_industrial_complex = {
+			ledger = hidden
+		}
+		idea_target_bomb_dockyard = {
+			ledger = hidden
+		}
+		idea_target_bomb_synthetic_refinery = {
+			ledger = hidden
+		}
+		idea_target_bomb_fuel_silo = {
+			ledger = hidden
+		}
+		idea_target_bomb_rocket_site = {
+			ledger = hidden
+		}
+		idea_target_bomb_nuclear_reactor = {
+			ledger = hidden
+		}
+		idea_target_bomb_naval_base = {
+			ledger = hidden
+		}
+		idea_target_bomb_bunker = {
+			ledger = hidden
+		}
+		idea_target_bomb_coastal_bunker = {
+			ledger = hidden
+		}
+		idea_target_bomb_rail_way = {
+			ledger = hidden
+		}
+		
+		idea_malus_bomb = {
+			ledger = hidden
+			modifier = {
+				stability_factor = -0.05
+			}
+		}
+		
+	}
+}
