@@ -149,6 +149,14 @@ strat_artillery_bomb_category = {
 				}
 				remove_ideas = idea_target_bomb_bunker 
 			}
+                       else_if = {
+				limit = {
+					ROOT = { 
+						has_idea = idea_target_bomb_trenches 
+					}
+				}
+				remove_ideas = idea_target_bomb_trenches
+			}
 			else_if = {
 				limit = {
 					ROOT = { 
@@ -193,6 +201,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -231,6 +240,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -269,6 +279,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -307,6 +318,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -345,6 +357,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -383,6 +396,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                     has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -421,6 +435,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -459,6 +474,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -497,6 +513,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -535,6 +552,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -573,6 +591,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -611,6 +630,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -649,6 +669,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -665,7 +686,44 @@ strat_artillery_bomb_category = {
 			add_ideas = idea_target_bomb_bunker
 		}
 	}
-	
+	target_bomb_trenches_dec = {
+		priority = 6
+		icon = decision_generic_factory
+		fire_only_once = no
+		visible = {
+			has_idea = idea_target_bomb_selection
+			NOT = {
+				OR = {
+					has_idea = idea_target_bomb_infrastructure
+					has_idea = idea_target_bomb_air_base
+					has_idea = idea_target_bomb_anti_air_building
+					has_idea = idea_target_bomb_radar_station
+					has_idea = idea_target_bomb_arms_factory
+					has_idea = idea_target_bomb_industrial_complex
+					has_idea = idea_target_bomb_dockyard
+					has_idea = idea_target_bomb_synthetic_refinery
+					has_idea = idea_target_bomb_fuel_silo
+					has_idea = idea_target_bomb_rocket_site
+					has_idea = idea_target_bomb_nuclear_reactor
+					has_idea = idea_target_bomb_naval_base
+					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
+					has_idea = idea_target_bomb_coastal_bunker
+					has_idea = idea_target_bomb_rail_way
+				}
+			}
+		}
+		available = {
+			command_power > 2
+		}
+		custom_cost_trigger = {
+			command_power > 2
+		}
+		custom_cost_text = cost_cp_2
+		complete_effect = {
+			add_ideas = idea_target_bomb_trenches
+		}
+	}
 	target_bomb_coastal_bunker_dec = {
 		priority = 6
 		icon = decision_generic_factory
@@ -688,7 +746,9 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
 					has_idea = idea_target_bomb_coastal_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_rail_way
+                                        
 				}
 			}
 		}
@@ -725,6 +785,7 @@ strat_artillery_bomb_category = {
 					has_idea = idea_target_bomb_nuclear_reactor
 					has_idea = idea_target_bomb_naval_base
 					has_idea = idea_target_bomb_bunker
+                    has_idea = idea_target_bomb_trenches
 					has_idea = idea_target_bomb_coastal_bunker
 					has_idea = idea_target_bomb_rail_way
 				}
@@ -971,6 +1032,19 @@ bomb_dec = {
 								}
 							}
 						}
+                        else_if = {
+							limit = { has_idea = idea_target_bomb_trenches}
+							OR = {
+								intel_level_over = { 
+									target = PREV
+										army_intel = 0.3
+								}
+								intel_level_over = { 
+									target = PREV
+										army_intel > 0.3
+								}
+							}
+						}
 						else_if = {
 							limit = { has_idea = idea_target_bomb_coastal_bunker}
 							OR = {
@@ -1024,6 +1098,7 @@ bomb_dec = {
 										has_idea = idea_target_bomb_nuclear_reactor
 										has_idea = idea_target_bomb_naval_base
 										has_idea = idea_target_bomb_bunker
+                                        has_idea = idea_target_bomb_trenches
 										has_idea = idea_target_bomb_coastal_bunker
 										has_idea = idea_target_bomb_rail_way
 									}
@@ -1187,6 +1262,15 @@ bomb_dec = {
 					}
 				}
 			}
+                else_if = {
+				limit = { has_idea = idea_target_bomb_trenches}
+				FROM = {
+					damage_building = {
+						type = trench_building
+						damage = 1												#Bunker Schaden 2 oder 1?
+					}
+				}
+			}
 			else_if = {
 				limit = { has_idea = idea_target_bomb_coastal_bunker}
 				FROM = {
@@ -1223,6 +1307,7 @@ bomb_dec = {
 							has_idea = idea_target_bomb_naval_base
 							has_idea = idea_target_bomb_bunker
 							has_idea = idea_target_bomb_coastal_bunker
+                            has_idea = idea_target_bomb_trenches
 							has_idea = idea_target_bomb_rail_way
 						}
 					}
@@ -1400,6 +1485,14 @@ bomb_dec = {
 						}
 					}
 					remove_ideas = idea_target_bomb_coastal_bunker 
+				}
+                                else_if = {
+					limit = {
+						ROOT = { 
+							has_idea = idea_target_bomb_trenches 
+						}
+					}
+					remove_ideas = idea_target_bomb_trenches 
 				}
 				else_if = {
 					limit = {
