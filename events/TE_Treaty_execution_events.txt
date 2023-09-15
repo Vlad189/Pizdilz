@@ -1,0 +1,1851 @@
+﻿###########################
+# Test Events
+###########################
+
+add_namespace = TE_treaty_execution_event
+
+#### Main variables used for peace process communication
+# VICTOR.var_TE_peace_offer_available@LOSER = 0/1 - unlocks country selection GUI 
+# LOSER.var_TE_has_sent_offer@VICTOR = 0/1 - Conditional peace only - so that you cant sent the same offer twice. 
+# VICTOR.var_TE_has_started_treaty@LOSER = 0/1 - Set to 1 when clicking the button in this GUI 
+# VICTOR.var_TE_has_sent_treaty@LOSER = 0/1 - set to 1 when "DONE" with peace treaty, used to complete mission timer and kick off peace. 
+# VICTOR.var_TE_number_peace_offers_accepted = x # Counter, can be used to show how many peace treaties the player needs to work with
+
+
+### Going through the peace treaty
+country_event = {
+	id = TE_treaty_execution_event.1   
+	title = TE_treaty_execution_event.1.t
+	desc = TE_treaty_execution_event.1.d 
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	hidden = yes # should be hidden 
+	
+	immediate = {
+		clear_variable = ROOT.var_TE_number_peace_countries
+		clear_variable = ROOT.peace_with_Country_1
+		clear_variable = ROOT.peace_with_Country_2
+		clear_variable = ROOT.peace_with_Country_3
+		
+		every_country = {
+			limit = { 
+				has_war_with = ROOT 
+				OR = {
+					check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				}
+			}
+			add_to_variable = { ROOT.var_TE_number_peace_countries = 1 }
+			IF = {
+				limit = { check_variable = { ROOT.var_TE_number_peace_countries = 1 } }
+				set_variable = { ROOT.peace_with_Country_1 = THIS.id }
+			}
+			ELSE_IF = {
+				limit = { check_variable = { ROOT.var_TE_number_peace_countries = 2 } }
+				set_variable = { ROOT.peace_with_Country_2 = THIS.id }
+			}
+			ELSE_IF = {
+				limit = { check_variable = { ROOT.var_TE_number_peace_countries = 3 } }
+				set_variable = { ROOT.peace_with_Country_3 = THIS.id }
+			}
+			
+		
+		}
+	}
+	
+
+	### Let's rock
+	option = { 
+		name = TE_treaty_execution_event.1.a 
+		ai_chance = { 
+			factor = 30
+		}
+		
+		
+		# Compatibility stuff for heavy Spanish Civil War scripting 
+		IF = {
+			limit = {
+				has_global_flag = spanish_civil_war
+				NOT = { has_global_flag = scw_over }
+			}
+			TE_get_post_spanish_civil_war_effects = yes 
+		}
+		
+		### LIBERATION TIME
+		
+		# New code 
+		every_owned_state = {
+			limit = { 
+				check_variable = { THIS.var_TE_liberation_target > 0 }
+			}
+			var:THIS.var_TE_liberation_target = { transfer_state = PREV }
+			clear_variable = THIS.var_TE_liberation_target
+			clear_variable = THIS.var_TE_liberate
+		}
+		
+		
+		
+		# Puppet conq 
+		every_owned_state = {
+			limit = { 
+				check_variable = { THIS.var_TE_pup_conq_target > 0 }
+			}
+			set_temp_variable = { global.temp_pup_country = THIS.var_TE_pup_conq_target }
+			var:THIS.var_TE_pup_conq_target = { transfer_state = PREV }
+			var:THIS.var_TE_pup_conq_ovelord = {
+				puppet = var:global.temp_pup_country
+			}
+			clear_variable = THIS.var_TE_pup_conq_target
+			clear_variable = THIS.var_TE_pup_conq_ovelord
+			clear_variable = THIS.var_TE_pup_conq 
+			
+		}
+				
+			
+			
+		
+		
+		### Territorial changes
+		# 1) transfer demanded states
+		clear_variable = ROOT.var_TE_number_states_ceded
+		clear_variable = ROOT.var_TE_ceded_state_1
+		clear_variable = ROOT.var_TE_ceded_state_2
+		clear_variable = ROOT.var_TE_ceded_state_3
+		every_country = {
+			limit = { 
+				has_war_with = ROOT 
+				OR = {
+					check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				}
+				
+			}
+			every_state = {
+				limit = {
+					check_variable = { THIS.var_HE_peace_term_transfer@PREV = 1 }
+					OR = { 
+						is_owned_by = ROOT
+						any_country = {
+							PREV = { is_owned_by = PREV }
+							OR = { 
+								is_puppet_of = ROOT
+								is_subject_of = ROOT 
+							}
+						}
+					}
+							
+				}
+				add_to_variable = { ROOT.var_TE_number_states_ceded = 1 }
+				IF = {
+					limit = { check_variable = { ROOT.var_TE_number_states_ceded = 1 } }
+					set_variable = { ROOT.var_TE_ceded_state_1 = THIS.id }
+				}
+				ELSE_IF = {
+					limit = { check_variable = { ROOT.var_TE_number_states_ceded = 2 } }
+					set_variable = { ROOT.var_TE_ceded_state_2 = THIS.id }
+				}
+				ELSE_IF = {
+					limit = { check_variable = { ROOT.var_TE_number_states_ceded = 3 } }
+					set_variable = { ROOT.var_TE_ceded_state_3 = THIS.id }
+				}
+				#goto_state = THIS
+				set_variable = { THIS.var_HE_peace_term_transfer@PREV = 0 }
+				PREV = { transfer_state = PREV }
+			}
+		
+		
+		}
+		
+		
+		#### Removing Cores and Claims
+		
+		every_country = {
+			limit = { 
+				has_war_with = ROOT 
+				NOT = { tag = ROOT }
+				OR = {
+					check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				}
+			}
+				
+			every_state = {
+				limit = {
+					is_owned_by = PREV
+					check_variable = { ROOT.var_TE_revoke_core@THIS = 1 }
+				}
+				remove_core_of = ROOT 	
+				clear_variable = ROOT.var_TE_revoke_core@THIS		
+			}
+			every_state = {
+				limit = {
+					is_owned_by = PREV
+					check_variable = { ROOT.vvar_te_revoke_claim@THIS = 1 }
+				}
+				remove_claim_by = ROOT 	
+				clear_variable = ROOT.var_te_revoke_claim@THIS		
+			}
+			
+		}
+		
+		
+		#### Returning Cores 
+		clear_variable = ROOT.TE_var_no_returned_cores
+		clear_variable = ROOT.TE_var_returned_core_no_1
+		clear_variable = ROOT.TE_var_returned_core_no_1_to
+		clear_variable = ROOT.TE_var_returned_core_no_2
+		clear_variable = ROOT.TE_var_returned_core_no_2_to
+		clear_variable = ROOT.TE_var_returned_core_no_3
+		clear_variable = ROOT.TE_var_returned_core_no_3_to
+		every_country = {
+			limit = { 
+				has_war_with = ROOT 
+				NOT = { tag = ROOT }
+				OR = {
+					check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				}
+			}
+			# Log = "Checking [?THIS.GetName] for core return"
+			every_state = {
+				limit = { 
+					is_owned_by = ROOT 
+					check_variable = { THIS.var_TE_return_core@PREV = 1  } 
+				}
+				# log = "Found state: [THIS.GetName] - will return to [?THIS.var_TE_return_core_country.GetName]"
+				
+				# increase counter for peace news event and add states 
+				add_to_variable = { ROOT.TE_var_no_returned_cores = 1 } 
+				IF = { 
+					limit = { check_variable = { ROOT.TE_var_no_returned_cores = 1 }}
+					set_variable = {ROOT.TE_var_returned_core_no_1 = THIS }
+					set_variable = {ROOT.TE_var_returned_core_no_1_to = THIS.var_TE_return_core_country }
+				}
+				ELSE_IF = { 
+					limit = { check_variable = { ROOT.TE_var_no_returned_cores = 2 }}
+					set_variable = {ROOT.TE_var_returned_core_no_2 = THIS }
+					set_variable = {ROOT.TE_var_returned_core_no_2_to = THIS.var_TE_return_core_country }
+				}
+				ELSE_IF = { 
+					limit = { check_variable = { ROOT.TE_var_no_returned_cores = 3 }}
+					set_variable = {ROOT.TE_var_returned_core_no_3 = THIS }
+					set_variable = {ROOT.TE_var_returned_core_no_3_to = THIS.var_TE_return_core_country }
+				}
+				var:THIS.var_TE_return_core_country = { transfer_state = PREV }
+				clear_variable = THIS.var_TE_return_core_country
+				clear_variable = THIS.var_TE_return_core@PREV
+			}
+			
+			
+		}
+
+		
+		
+		### naval
+		
+		### Political stuff
+		# Swap ideology
+		
+		IF = { 
+			limit = { check_variable = { var_TE_change_gov > 0 } }
+			IF = {
+				limit = { check_variable = { var_TE_change_gov_type = 1 } }
+				ROOT = { 
+					set_politics = { ruling_party = anarchist } 
+					add_popularity = {
+						ideology = anarchist
+						popularity = 0.5
+					}				
+				}
+				
+			}
+			ELSE_IF = {
+				limit = { check_variable = { var_TE_change_gov_type = 6 } }
+				ROOT = { 
+					set_politics = { ruling_party = monarchist } 
+					add_popularity = {
+						ideology = monarchist
+						popularity = 0.5
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = { check_variable = { var_TE_change_gov_type = 2 } }
+				ROOT = { 
+					set_politics = { 
+						ruling_party = democratic 
+						elections_allowed = yes
+					}
+					add_popularity = {
+						ideology = democratic
+						popularity = 0.5
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = { check_variable = { var_TE_change_gov_type = 5 } }
+				ROOT = { 
+					set_politics = { ruling_party = neutrality } 
+					add_popularity = {
+						ideology = neutrality
+						popularity = 0.5
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = { check_variable = { var_TE_change_gov_type = 4 } }
+				ROOT = { 
+					set_politics = { ruling_party = fascism } 
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.5
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = { check_variable = { var_TE_change_gov_type = 3 } }
+				ROOT = { 
+					set_politics = { ruling_party = communism } 
+					add_popularity = {
+						ideology = communism
+						popularity = 0.5
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = { check_variable = { var_TE_change_gov_type = 7 } }
+				ROOT = { 
+					set_politics = { ruling_party = militarist } 
+					add_popularity = {
+						ideology = militarist
+						popularity = 0.5
+					}
+				}
+			}
+			clear_variable = var_TE_change_gov_type 
+			clear_variable = var_TE_change_gov
+		}
+		
+		
+		# Pupeteering
+		# set_variable = { ROOT.var_TE_inst_pup@var:ROOT.var_TE_target_country = 1 } 
+		IF = { 
+			limit = { 
+				any_country = {
+					check_variable = { THIS.var_TE_inst_pup@ROOT = 1 }
+					any_state = {
+						is_controlled_by = PREV 
+						is_owned_by = ROOT 
+					}
+				}
+			}
+			### Test to transfer allied controlled states 
+			every_country = {
+				limit = { 
+					check_variable = { THIS.var_TE_inst_pup@ROOT = 1 } 
+				}
+				every_state = {
+					limit = {
+						is_owned_by = ROOT 
+						any_country = {
+							AND = {
+								check_variable = { THIS.var_TE_inst_pup@ROOT = 0 } 
+								PREV = { is_controlled_by = PREV }
+								check_variable = { THIS.var_TE_dissolve@ROOT = 0 } # only if not going to dissolve
+								is_in_faction_with = PREV.PREV
+							}
+						}
+					}
+					PREV = { set_state_controller = PREV }
+				}
+			}
+			
+			
+			### 
+			
+			
+			
+			
+			IF = {
+				limit = {
+					any_country = {
+						check_variable = { THIS.var_TE_inst_pup@ROOT = 1 }
+						ROOT = { all_owned_state = { is_controlled_by = PREV.PREV } }
+					}
+				}
+				random_country = {
+					limit = { check_variable = { THIS.var_TE_inst_pup@ROOT = 1 } }
+					white_peace = ROOT
+					IF = { 
+						limit = { has_government = democratic has_dlc = "Man the Guns" date > 1936.1.1}
+						set_autonomy = {
+							target = ROOT
+							autonomy_state = autonomy_supervised_state
+						}
+					}
+					ELSE_IF = {
+						limit = { original_tag = SOV has_government = communism has_global_flag = rcw_scenario_flag }
+						set_autonomy = {
+							target = ROOT
+							autonomy_state = autonomy_assr
+						}
+					}
+					ELSE_IF = {
+						limit = { tag = JAP has_dlc = "Waking the Tiger" OR = { has_government = fascism has_government = neutrality has_government = monarchist } }
+						set_autonomy = {
+							target = ROOT
+							autonomy_state = autonomy_wtt_imperial_protectorate
+						}
+					}
+					ELSE_IF = {
+						limit = { tag = GER has_dlc = "Death or Dishonor" has_government = fascism }
+						set_autonomy = {
+							target = ROOT
+							autonomy_state = autonomy_reichskommissariat
+						}
+					}
+					ELSE_IF = {
+						limit = { has_dlc = "Death or Dishonor" has_government = fascism }
+						set_autonomy = {
+							target = ROOT
+							autonomy_state = autonomy_satellite
+						}
+					}
+					ELSE_IF = {
+						limit = { date < 1936.1.1 has_government = democratic OR = { tag = FRA tag = USA tag = ENG } }
+						set_autonomy = {
+							target = ROOT
+							autonomy_state = IBW_LoN_mandate
+						}
+					}
+					ELSE_IF = {
+						limit = { NOT = { has_government = fascism } PREV = { OR = { any_owned_state = { is_on_continent = africa } any_owned_state = { is_on_continent = asia } } } }
+						set_autonomy = {
+							target = ROOT
+							autonomy_state = autonomy_colony
+						}
+					}
+					ELSE = { puppet = ROOT }
+				}
+			}
+			ELSE = {
+				every_country = { 
+					limit = { check_variable = { THIS.var_TE_inst_pup@ROOT = 1 } }
+					#save_event_target_as = victor_country
+					create_dynamic_country = {
+						original_tag = ROOT
+						save_event_target_as = vichy_estonia
+						every_state = { #transfer Estonian colonial empire
+							limit = {
+								is_controlled_by = PREV.PREV
+								is_owned_by = ROOT
+							}
+							event_target:vichy_estonia = { transfer_state = PREV }
+						}
+						random_owned_state = { event_target:vichy_estonia = { set_capital = PREV } }
+						IF ={ 
+							limit = { PREV = { has_government = anarchist } }
+							set_politics = {
+								ruling_party = anarchist
+								elections_allowed = no
+							}
+						}
+						ELSE = {
+							set_politics = {
+								ruling_party = communism
+								elections_allowed = no
+							}
+						}
+						set_popularities = {
+							democratic = 25
+							fascism = 25
+							neutrality = 25
+							communism = 25
+							
+						}
+						IF = { 
+							limit = { has_dlc = "Man the Guns" date > 1936.1.1 PREV = { has_government = democratic } }
+							PREV = { 
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_supervised_state
+								}
+							}
+						}
+						
+						ELSE_IF = {
+							limit = { has_dlc = "Waking the Tiger" PREV = { tag = JAP OR = { has_government = fascism has_government = neutrality has_government = monarchist } }}
+							PREV = { 
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_wtt_imperial_protectorate
+								}
+							}
+						}
+						ELSE_IF = {
+							limit = { has_dlc = "Death or Dishonor" PREV = { tag = GER  has_government = fascism }}
+							PREV = { 
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_reichskommissariat
+								}
+							}
+						}
+						ELSE_IF = {
+							limit = { has_dlc = "Death or Dishonor" PREV = { has_government = fascism }}
+							PREV = { 
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_satellite
+								}
+							}
+						}
+						ELSE_IF = {
+							limit = { date < 1936.1.1 PREV = { has_government = democratic OR = { tag = FRA tag = USA } } }
+							PREV = { 
+								set_autonomy = {
+									target = PREV
+									autonomy_state = IBW_LoN_mandate
+								}
+							}
+						}
+						ELSE = { PREV = { puppet = PREV }}
+						
+						#PREV = { puppet = PREV }
+					}
+					set_variable = { THIS.var_TE_inst_pup@ROOT = 0 }
+					
+				}
+			}
+		} 
+				
+		# Recognition
+		# ROOT.var_TE_get_recog@var:ROOT.var_TE_target_country = 1
+		every_country = {
+			limit = { 
+				has_war_with = ROOT 
+				OR = {
+					check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				}
+				check_variable = { THIS.var_TE_war_type@ROOT = 6 } # if the country has an independence war against the losing country 
+			
+			}
+			IF = {
+				limit = { check_variable = { THIS.var_TE_get_recog@ROOT = 1 } } # IF they have chosen it... They would be stupid not to, but...
+				set_variable = { THIS.var_TE_get_recog@ROOT = 0 } # CLEAR 
+				THIS = { 
+					news_event = {
+						id = TE_treaty_news_event.4
+						days = 0
+					}
+					
+				}
+				ROOT = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_free
+					}
+				}
+				
+			}
+			ELSE = { #if they were kind of stupid, or decided to only remove cores etc
+				set_variable = { THIS.var_TE_get_recog@ROOT = 0 } # CLEAR
+				IF = { 
+					limit = { has_dlc = "Man the Guns" date > 1936.1.1 PREV = { has_government = democratic } }
+					ROOT = { 
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_supervised_state
+						}
+					}
+				}
+				
+				ELSE_IF = {
+					limit = { has_dlc = "Waking the Tiger" PREV = { tag = JAP OR = { has_government = fascism has_government = neutrality has_government = monarchist } }}
+					ROOT = { 
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_wtt_imperial_protectorate
+						}
+					}
+				}
+				ELSE_IF = {
+					limit = { has_dlc = "Death or Dishonor" PREV = { tag = GER  has_government = fascism }}
+					ROOT = { 
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_reichskommissariat
+						}
+					}
+				}
+				ELSE_IF = {
+					limit = { has_dlc = "Death or Dishonor" PREV = { has_government = fascism }}
+					ROOT = { 
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_satellite
+						}
+					}
+				}
+				ELSE_IF = {
+					ROOT = { 
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_puppet
+						}
+					}
+				}
+				ELSE = { ROOT = { puppet = PREV }}
+			}
+		}
+				
+		#### RELEASE and transfer puppets
+		
+		# Moved to after peace treaty to be able to have effect
+		
+				
+		#### After all is said and done - in case of civil war DISSOLVE!
+		
+		# Prep news message
+		clear_variable = var_TE_dissolve_this_gov
+		clear_variable = var_TE_dissolve_this_gov_from
+		clear_variable = var_TE_escape_country
+		IF = {
+			limit = {
+				any_country = { check_variable = { THIS.var_TE_dissolve@ROOT = 1 } }
+			}
+			set_variable = { var_TE_dissolve_this_gov = 1 }
+			random_country = {
+				limit = { check_variable = { THIS.var_TE_dissolve@ROOT = 1 } }
+				set_variable = { ROOT.var_TE_dissolve_this_gov_from = THIS.id }
+			}
+			set_temp_variable = { temp_ideology = current_party_ideology_group }
+			
+			set_variable = { ROOT.var_TE_current_ideology = temp_ideology }
+			# escape code 
+			IF = {
+				limit = {
+					any_country = { 
+						has_government = var:ROOT.var_TE_current_ideology 
+						NOT = { tag = ROOT }
+						has_opinion = {
+							target = ROOT
+							value > 0
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_government = var:ROOT.var_TE_current_ideology
+						NOT = { tag = ROOT }
+						#has_opinion = {
+						#	target = ROOT
+						#	value > 0
+						#}
+					}
+					set_variable = { ROOT.var_TE_escape_country = THIS.id }
+				}
+			}
+			randomize_temp_variable = {
+				var = dissolve_message
+				distribution = uniform
+				min = 0
+				max = 3
+			}
+			round_temp_variable = dissolve_message
+			set_variable = { ROOT.var_TE_dissolve_message = dissolve_message }
+		}
+				
+		# Transfer controlled ground to dissolving nations
+		every_state = {
+			limit = { 
+				is_owned_by = ROOT 
+				any_country = {
+					check_variable = { THIS.var_TE_dissolve@ROOT = 1  } 
+					controls_state = PREV 
+				}
+			}
+			random_country = {
+				limit = { 
+					check_variable = { THIS.var_TE_dissolve@ROOT = 1  } 
+					controls_state = PREV 
+				}
+				transfer_state = PREV 
+			}
+		}
+		
+		#every_country = {
+		#	limit = { check_variable = { THIS.var_TE_dissolve@ROOT = 1 } }
+		#	#set_variable = { test_dissolve = 14 }
+		#	every_state = { 
+		#		limit = { 
+		#			is_owned_by = ROOT
+		#			is_controlled_by PREV 
+		#		}
+		#		PREV = { transfer_state = PREV }
+		#	}
+		#}
+		### transfer all remaining 
+		every_state = {
+			limit = { 
+				is_owned_by = ROOT 
+			}
+			#save_event_target_as = return_state
+			### trying to tidy up occupation zones
+			IF = {
+				limit = {
+					any_country = { 
+						check_variable = { THIS.var_TE_dissolve@ROOT = 1 }
+						PREV = { any_neighbor_state = { is_owned_by = PREV.PREV } }
+					}
+				}
+				random_country = {
+					limit = { 
+						check_variable = { THIS.var_TE_dissolve@ROOT = 1 }
+						PREV = { any_neighbor_state = { is_controlled_by = PREV.PREV } }
+					}
+					transfer_state = PREV 
+					
+				}
+			}
+		
+			ELSE = {
+				random_country = {
+					limit = { check_variable = { THIS.var_TE_dissolve@ROOT = 1  } }
+					transfer_state = PREV 
+				}
+			}
+		
+		}
+		every_country = { 
+			limit = { check_variable = { THIS.var_TE_dissolve@ROOT = 1 } }
+			set_variable = { THIS.var_TE_dissolve@ROOT = 0 } 
+			white_peace = ROOT # don't know if this is necessary, but why not
+			
+		}
+		
+		### Industrial
+		# Reduce Military Cap
+		every_country = {
+			limit = { 
+				OR = {
+					check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				}
+				check_variable = { THIS.var_TE_reduce_mil@ROOT = 1 }
+			}
+			clear_variable = THIS.var_TE_reduce_mil@ROOT
+			every_state = {
+				limit = {	
+					is_owned_by = ROOT
+					arms_factory > 0
+				}
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+		}
+		
+		# Reduce Naval Cap
+		every_country = {
+			limit = { 
+				OR = {
+					check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				}
+				check_variable = { THIS.var_TE_reduce_naval@ROOT = 1 }
+			}
+			clear_variable = THIS.var_TE_reduce_naval@ROOT
+			# Reduces dockyards twice, to make it comparable to the Reduce Mil option as there generally are more states containing Mil Factories than there are Dockyards
+			every_state = {
+				limit = {	
+					is_owned_by = ROOT
+					dockyard > 0
+				}
+				remove_building = {
+					type = dockyard
+					level = 1
+				}
+			}
+			every_state = {
+				limit = {	
+					is_owned_by = ROOT
+					dockyard > 0
+				}
+				remove_building = {
+					type = dockyard
+					level = 1
+				}
+			}
+		}
+		
+		# Reduce Navy
+		
+			
+		every_country = {
+			limit = { 
+				OR = {
+					check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				}
+				check_variable = { THIS.var_TE_destroy_navy@ROOT = 1 }
+			} 
+			clear_variable = THIS.var_TE_destroy_navy@ROOT
+			# Carriers
+			IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 10
+							type = carrier
+						}
+					}
+				}			
+				ROOT = {
+					destroy_ships = {
+						type = ship_hull_carrier 
+						count = 5
+					}
+				}		
+			}
+			ELSE_IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 4
+							type = carrier
+						}
+					}
+				}
+				
+				ROOT = {
+					destroy_ships = {
+						type = ship_hull_carrier 
+						count = 2
+					}
+				}
+				
+			}
+			ELSE_IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 0
+							type = carrier
+						}
+					}
+				}
+				
+				ROOT = {
+					destroy_ships = {
+						type = ship_hull_carrier 
+						count = 1
+					}
+				}
+				
+				
+			}
+			
+			# Heavy ships
+			IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 15
+							type = capital_ship
+						}
+					}
+				}
+				ROOT = {
+					destroy_ships = {
+						type = ship_hull_heavy
+						count = 10
+					}
+				}		
+			}
+			ELSE_IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 8
+							type = capital_ship
+						}
+					}
+				}
+				
+				ROOT = {
+					destroy_ships = {
+						type = ship_hull_heavy
+						count = 4
+					}
+				}
+			}
+			ELSE_IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 0
+							type = capital_ship
+						}
+					}
+				}
+				
+				ROOT = {
+					destroy_ships = {
+						type = ship_hull_heavy
+						count = 1
+					}
+				}
+				
+			}
+			# Destroyers
+			IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 30
+							type = screen_ship
+						}
+					}
+				}
+				IF = {
+					limit = { has_dlc = "Man the Guns" }
+					ROOT = {
+						destroy_ships = {
+							type = ship_hull_light
+							count = 25
+						}
+					}
+				}
+				ELSE = {
+					ROOT = {
+						destroy_ships = {
+							type = destroyer 
+							count = 25
+						}
+					}
+				} 
+			}
+			ELSE_IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 15
+							type = screen_ship
+						}
+					}
+				}
+				IF = {
+					limit = { has_dlc = "Man the Guns" }
+					ROOT = {
+						destroy_ships = {
+							type = ship_hull_light
+							count = 10
+						}
+					}
+				}
+				ELSE = {
+					ROOT = {
+						destroy_ships = {
+							type = destroyer 
+							count = 10
+						}
+					}
+				} 
+			}
+			ELSE_IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 5
+							type = screen_ship
+						}
+					}
+				}
+				IF = {
+					limit = { has_dlc = "Man the Guns" }
+					ROOT = {
+						destroy_ships = {
+							type = ship_hull_light
+							count = 2
+						}
+					}
+				}
+				ELSE = {
+					ROOT = {
+						destroy_ships = {
+							type = destroyer 
+							count = 2
+						}
+					}
+				} 
+			}
+			ELSE_IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 0
+							type = screen_ship
+						}
+					}
+				}
+				IF = {
+					limit = { has_dlc = "Man the Guns" }
+					ROOT = {
+						destroy_ships = {
+							type = ship_hull_light
+							count = 1
+						}
+					}
+				}
+				ELSE = {
+					ROOT = {
+						destroy_ships = {
+							type = destroyer 
+							count = 1
+						}
+					}
+				} 
+			}
+
+			# Submarines
+			IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 25
+							type = submarine
+						}
+					}
+				}
+				
+				ROOT = {
+					destroy_ships = {
+						type = ship_hull_submarine 
+						count = 20
+					}
+				}
+			
+			}
+			ELSE_IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 15
+							type = submarine
+						}
+					}
+				}
+				ROOT = {
+					destroy_ships = {
+						type = ship_hull_submarine 
+						count = 10
+					}
+				}				
+			}
+			ELSE_IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 5
+							type = submarine
+						}
+					}
+				}
+				ROOT = {
+					destroy_ships = {
+						type = ship_hull_submarine 
+						count = 3
+					}
+				}
+			}
+			ELSE_IF = { 
+				limit = {
+					ROOT = {
+						has_navy_size = {
+							size > 0
+							type = submarine
+						}
+					}
+				}
+				ROOT = {
+					destroy_ships = {
+						type = ship_hull_submarine 
+						count = 1
+					}
+				}
+				
+			}
+			
+			
+		}
+		
+		
+		
+		# check_variable = { ROOT.var_TE_reduce_mil@var:ROOT.var_TE_target_country	
+		#### TRANSFER NAVY
+		IF = {
+			limit = { 
+				any_country = {
+					OR = {
+						check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+						check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+						check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+					}
+					check_variable = { THIS.var_TE_transfer_navy@ROOT = 1 }
+				}
+			}
+			random_country = {
+				limit = { 
+					OR = {
+						check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+						check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+						check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+					}
+					check_variable = { THIS.var_TE_transfer_navy@ROOT = 1 } 
+				}
+				ROOT = {
+					transfer_navy = {
+						target = PREV
+					}
+				}
+			}
+			
+		}
+
+		
+		#### WAR REPARATIONS
+		# Only done if the country has any states left
+		clear_variable = ROOT.var_TE_number_war_reps
+		set_variable = { ROOT.var_TE_number_war_reps_target_1 = 0 }
+		set_variable = { ROOT.var_TE_number_war_reps_target_2 = 0 }
+		set_variable = { ROOT.var_TE_number_war_reps_target_3 = 0 }
+		IF = {
+			limit = {
+				any_country = { check_variable = { THIS.var_TE_get_war_rep@ROOT = 1 } } 
+				check_variable = { ROOT.num_owned_states > 0 }
+			}
+			every_country = {
+				limit = { 
+					check_variable = { THIS.var_TE_get_war_rep@ROOT = 1 }
+					OR = {
+						check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+						check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+						check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+					}
+				}
+				# Receiving country
+				IF = {
+					limit = {
+						NOT = { THIS = { has_idea = war_reps_get_1 }}
+					}
+					THIS = { 
+						add_timed_idea = {
+							idea = war_reps_get_1
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_paying_country_1 = ROOT.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { THIS = { has_idea = war_reps_get_2 }}
+					}
+					THIS = { 
+						add_timed_idea = {
+							idea = war_reps_get_2
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_paying_country_2 = ROOT.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { THIS = { has_idea = war_reps_get_3 }}
+					}
+					THIS = { 
+						add_timed_idea = {
+							idea = war_reps_get_3
+							days = 1095
+						} 
+						set_variable = { THIS.var_TE_war_rep_paying_country_3 = ROOT.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { THIS = { has_idea = war_reps_get_4 }}
+					}
+					THIS = { 
+						add_timed_idea = {
+							idea = war_reps_get_4
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_paying_country_4 = ROOT.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { THIS = { has_idea = war_reps_get_5 }}
+					}
+					THIS = { 
+						add_timed_idea = {
+							idea = war_reps_get_5
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_paying_country_5 = ROOT.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { THIS = { has_idea = war_reps_get_6 }}
+					}
+					THIS = { 
+						add_timed_idea = {
+							idea = war_reps_get_6
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_paying_country_6 = ROOT.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { THIS = { has_idea = war_reps_get_7 }}
+					}
+					THIS = { 
+						add_timed_idea = {
+							idea = war_reps_get_7
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_paying_country_7 = ROOT.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { THIS = { has_idea = war_reps_get_8 }}
+					}
+					THIS = { 
+						add_timed_idea = {
+							idea = war_reps_get_8
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_paying_country_8 = ROOT.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { THIS = { has_idea = war_reps_get_9 }}
+					}
+					THIS = { 
+						add_timed_idea = {
+							idea = war_reps_get_9
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_paying_country_9 = ROOT.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { THIS = { has_idea = war_reps_get_10 }}
+					}
+					THIS = { 
+						add_timed_idea = {
+							idea = war_reps_get_10
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_paying_country_10 = ROOT.id }
+					}
+				}
+				
+				
+				# Paying country - i.e. ROOT 
+				IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_1 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_1
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_1 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_2 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_2
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_2 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_3 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_3
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_3 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_4 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_4
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_4 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_5 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_5
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_5 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_6 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_6
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_6 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_7 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_7
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_7 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_8 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_8
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_8 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_9 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_9
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_9 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_10 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_10 
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_10 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_11 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_11
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_11 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_12 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_12
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_12 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_13 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_13
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_13 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_14 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_14
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_14 = PREV.id }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						NOT = { ROOT = { has_idea = war_reps_pay_15 }}
+					}
+					ROOT = { 
+						add_timed_idea = {
+							idea = war_reps_pay_15
+							days = 365
+						} 
+						set_variable = { THIS.var_TE_war_rep_receiving_country_15 = PREV.id }
+					}
+				}
+				set_variable = { THIS.var_TE_get_war_rep@ROOT = 0 }
+				add_to_variable = { ROOT.var_TE_number_war_reps = 1 }
+				IF = { 
+					limit = {
+						check_variable = { ROOT.var_TE_number_war_reps_target_1 = 0 }
+					}
+					set_variable = { ROOT.var_TE_number_war_reps_target_1 = THIS.id }
+				}
+				ELSE_IF = { 
+					limit = {
+						check_variable = { ROOT.var_TE_number_war_reps_target_2 = 0 }
+					}
+					set_variable = { ROOT.var_TE_number_war_reps_target_2 = THIS.id }
+				}
+				ELSE_IF = { 
+					limit = {
+						check_variable = { ROOT.var_TE_number_war_reps_target_3 = 0 }
+					}
+					set_variable = { ROOT.var_TE_number_war_reps_target_3 = THIS.id }
+				}
+						
+			}
+			
+		}
+		# End war rep
+		
+		# Limit military 
+		# limit = { var:ROOT.var_TE_target_country = { check_variable = { var_TE_limit_military@ROOT = 1  } } }
+		every_country = {
+			limit = {
+				check_variable = { ROOT.var_TE_limit_military@THIS = 1 }
+				OR = {
+					check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				}
+			}
+			set_variable = { THIS.var_TE_army_limit_enforcer@ROOT = 1 }
+			ROOT = { add_ideas  = TE_army_restrictions }
+			
+		}
+		
+			
+		IF = {
+			limit = { check_variable = { ROOT.num_owned_states < 1 } }
+			every_country = {
+				limit = { is_ai = no }
+				news_event = {
+					id = TE_treaty_news_event.2
+					days = 0
+				}
+			}
+		}
+		ELSE = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = {
+					id = TE_treaty_news_event.1
+					days = 0
+				}
+			}			
+		}
+		
+		
+		
+		# IF Faction Leader - Dissolve Faction - otherwise leave, unless ind war
+		IF = {
+			limit = { 
+				ROOT = { is_faction_leader = yes }
+				NOT = { 
+					any_country = {
+						OR = {
+							check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+							check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+							check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+						}
+						OR = {
+							check_variable = { THIS.var_TE_peace_type = 3 }
+							check_variable = { THIS.var_TE_war_type@ROOT = 6 }
+						}
+					}
+				}
+			}
+			ROOT = { dismantle_faction = yes }
+		}
+		ELSE_IF = {
+			limit = { 
+				ROOT = { is_in_faction = yes }
+				NOT = { 
+					any_country = {
+						OR = {
+							check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+							check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+							check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+						}
+						OR = {
+							check_variable = { THIS.var_TE_peace_type = 3 }
+							check_variable = { THIS.var_TE_war_type@ROOT = 6 }
+						}
+					}
+				}
+			}
+			ROOT = { leave_faction = yes }
+		}
+			
+		ROOT = {
+			add_timed_idea = {
+				idea = recent_peace_treaty
+				days = 365
+			}
+			IF = {
+				limit = { is_ai = yes }
+				add_timed_idea = {
+					idea = recent_peace_treaty_ai
+					days = 720
+				}
+			}
+		}
+		
+		### Test
+		every_state = {
+			limit = { 
+				is_owned_by = ROOT 
+				any_country = {
+					NOT = { has_war_with = ROOT }
+					PREV = { is_controlled_by = PREV }
+				}
+			}
+			ROOT = { set_state_controller = PREV }
+		}
+			
+		
+		#PEACE AT LAST
+		every_country = {
+			limit = { 
+				#has_war_with = ROOT 
+				OR = {
+					check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+					check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				}
+				
+			}
+			# Lower world tension
+			IF = {
+				limit = {
+					is_major = yes 
+					ROOT = { is_major = yes }
+				}
+				add_threat = -5
+			}
+			ELSE_IF = {
+				limit = {
+					is_major = yes 
+				}
+				add_threat = -2
+			}
+			ELSE_IF = {
+				limit = {
+					ROOT = { is_major = yes }
+				}
+				add_threat = -1
+			}
+			ELSE = {
+				add_threat = -0.5
+			}
+			# Clear war type
+			clear_variable = THIS.var_TE_war_type@ROOT
+			clear_variable = THIS.te_peace_type@ROOT
+			clear_variable = ROOT.var_TE_war_type@THIS			
+			
+			# clear all peace communication variables
+			clear_variable = THIS.var_TE_peace_offer_available@ROOT 
+			clear_variable = THIS.var_TE_has_started_treaty@ROOT 
+			clear_variable = THIS.var_TE_has_sent_treaty@ROOT
+			clear_variable = ROOT.var_TE_has_sent_offer@THIS
+			
+			
+			
+			clear_variable = THIS.var_TE_annex@ROOT
+			
+			
+			
+			# do the peace -> if not civil war
+			IF = { 
+				limit = { check_variable = { THIS.var_TE_dissolve@ROOT = 0 } }
+				white_peace = {
+					tag = ROOT
+					message = TE_TREATY_SIGNED
+				}
+				#white_peace = ROOT # why doesn't the message thing work - would have been so much better. 
+				every_country = {
+					limit = {
+						OR = {
+							is_puppet_of = ROOT 
+							is_subject_of = ROOT
+						}
+						has_war_with = PREV
+					}
+					white_peace = {
+						tag = PREV
+						message = TE_TREATY_SIGNED
+					}
+					#white_peace = PREV
+				}			
+			}
+		}
+		
+		
+		
+		### One last event a day or so after everything - fixing resource rights and demil, as they can't be done before the actual peace treaty is resolved... 
+		ROOT = {
+			country_event = {
+				id = TE_treaty_execution_event.4 
+				days = 1
+			}
+			
+		}
+	}
+}
+### Running the liberation thing first as a separate event, to see if that gives better results }
+country_event = {
+	id = TE_treaty_execution_event.2  
+	title = TE_treaty_execution_event.2.t
+	desc = TE_treaty_execution_event.2.d 
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	hidden = yes # should be hidden 
+	
+	immediate = {
+	
+	}
+	option = { 
+		name = TE_treaty_execution_event.2.a
+		ai_chance = { 
+			factor = 30
+		}
+		
+		### LIBERATION TIME	
+		#for_each_scope_loop = {
+		#	array = owned_states
+		#	save_global_event_target_as = liberate_state
+		#	IF = { limit = { check_variable = { THIS.var_TE_liberate = 1 }}
+		#		
+		#		ROOT = {
+		#			random_occupied_country = {
+		#				limit = { 
+		#					NOT = { tag = ROOT }
+		#					event_target:liberate_state = { is_core_of = PREV }
+		#				}
+		#				transfer_state = event_target:liberate_state
+		#				
+		#			}
+		#		}
+		#		clear_global_event_target = liberate_state
+		#	}
+		#}
+		ROOT = { country_event = { id = TE_treaty_execution_event.3 days = 0 } }
+	}		
+}
+
+### and then the liberate as puppet
+country_event = {
+	id = TE_treaty_execution_event.3  
+	title = TE_treaty_execution_event.3.t
+	desc = TE_treaty_execution_event.3.d 
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	hidden = yes # should be hidden 
+	
+	immediate = {
+	
+	}
+	option = { 
+		name = TE_treaty_execution_event.4.a
+		ai_chance = { 
+			factor = 30
+		}
+		
+		
+		
+		ROOT = { country_event = { id = TE_treaty_execution_event.1 days = 0 } }
+	}		
+}
+
+### Effects that need to come after the actual peace is resolved
+country_event = {
+	id = TE_treaty_execution_event.4  
+	title = TE_treaty_execution_event.4.t
+	desc = TE_treaty_execution_event.4.d 
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	hidden = yes # should be hidden 
+	
+	immediate = {
+	
+	}
+	option = { 
+		name = TE_treaty_execution_event.4.a
+		ai_chance = { 
+			factor = 30
+		}
+		# Oil rights
+		every_country = {
+			limit = { 
+				#has_war_with = ROOT 
+				#OR = {
+				#	check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+				#	check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+				#	check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				#}
+				
+			}
+			save_event_target_as = oil_country
+			every_state = {
+				limit = { 
+					check_variable = { THIS.var_TE_oil_rights_demanded@PREV = 1 } 
+					THIS = { is_owned_by = ROOT  }
+				}
+				save_event_target_as = oil_state
+				set_variable = { THIS.degugging_state = 1 }
+				ROOT = { 
+					give_resource_rights = { 
+						receiver = event_target:oil_country
+						state = event_target:oil_state
+					} 
+				}
+				set_variable = { THIS.var_TE_oil_rights_demanded@PREV = 0 } 
+			}
+		}
+		##### SECURITY 
+		## Demilitarized Zone
+		# check_variable = { THIS.var_TE_set_demil@ROOT = 1 }
+		every_country = {
+			limit = { 
+				#has_war_with = ROOT 
+				#OR = {
+				#	check_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+				#	check_variable = { THIS.var_TE_has_started_treaty@ROOT = 1 }
+				#	check_variable = { THIS.var_TE_has_sent_treaty@ROOT = 1 }
+				#}
+				
+			}
+			every_state = {
+				limit = {
+					check_variable = { THIS.var_TE_set_demil@PREV = 1 }
+					OR = { 
+						is_owned_by = ROOT
+						any_country = {
+							PREV = { is_owned_by = PREV }
+							OR = { 
+								is_puppet_of = ROOT
+								is_subject_of = ROOT 
+							}
+						}
+					}			
+				}
+				clear_variable = THIS.var_TE_set_demil@PREV
+				set_demilitarized_zone = yes 
+			}
+		} 
+		
+		#### RELEASE and transfer puppets
+		
+		every_country = {
+			limit = {
+				OR = {
+					is_puppet_of = ROOT
+					is_subject_of = ROOT
+				}
+				OR = {
+					check_variable = { THIS.var_TE_puppet_released = 1 }
+					check_variable = { THIS.var_TE_puppet_transferred = 1 }
+				}
+			}
+			
+			IF = {
+				limit = { check_variable = { THIS.var_TE_puppet_released = 1 } }
+				log = "Tranfer Puppet check. to be released"
+				ROOT = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_free
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = { check_variable = { THIS.var_TE_puppet_transferred = 1 } }
+				
+				random_country = {
+					limit = { check_variable = { var_TE_trans_pup@PREV = 1 } }
+					
+					puppet = PREV
+					
+				}
+			}
+		
+		
+		}
+	}		
+}

@@ -1,0 +1,1143 @@
+on_actions = {
+	
+	on_startup = { 
+		effect = {
+			##### FLAG THAT MOD IS BEING ACTIVE
+			set_global_flag = TolstoyEngine
+			
+			##### FIX ONGOING WARS 
+			# Italian Ethiopian War
+			IF = {
+				limit = {
+					date > 1935.1.1 
+					date < 1937.1.1 
+					ITA = { has_war_with = ETH }
+				}
+				set_variable = { ITA.var_TE_war_type@ETH = 3 }
+				set_variable = { ETH.var_TE_war_type@ITA = 7 }
+			}
+			
+			
+			#####SET VARIABLES
+			
+			### Global 
+			set_variable = { global.var_TE_peace_timer_days = 15 }
+			set_variable = { global.var_TE_conditional_pp = 100 }
+			set_variable = { global.var_TE_unconditional_pp = 75 }
+			set_variable = { global.var_TE_recognition_pp = 75 }
+			set_variable = { global.var_TE_white_pp = 75 }
+			set_variable = { global.var_TE_mild_terms_pp = 75 }
+			
+			
+			### war type peace term points
+			set_variable = { global.var_TE_ptp_bw = 1.5 }
+			set_variable = { global.var_TE_ptp_mc = 2.5 }
+			set_variable = { global.var_TE_ptp_an = 6 } # annex: was 5
+			set_variable = { global.var_TE_ptp_cw = 1 }
+			set_variable = { global.var_TE_ptp_otg = 4 }
+			set_variable = { global.var_TE_ptp_iw = 3 }
+			set_variable = { global.var_TE_ptp_dw = 4 }
+			set_variable = { global.var_TE_ptp_lib = 3 }
+			set_variable = { global.var_TE_ptp_dis = 5 }
+			
+			### war scope peace term points
+			set_variable = { global.var_TE_ptp_skirmish = 1 }
+			set_variable = { global.var_TE_ptp_limited_war = 1.5 }
+			set_variable = { global.var_TE_ptp_major_war = 2.0 }
+			set_variable = { global.var_TE_ptp_world_war = 3 }
+			
+			### Peace level  peace term points
+			set_variable = { global.var_TE_ptp_conditional = 2 }
+			set_variable = { global.var_TE_ptp_capitulation = 6 }
+			set_variable = { global.var_TE_ptp_independence = 1.5 }
+			
+			### Base Costs
+			set_variable = { global.var_TE_base_change_gov = 15 }
+			set_variable = { global.var_TE_base_inst_pup = 20 } # should be somewhere in region 15-25???
+			set_variable = { global.var_TE_base_lib_conq = 8 }
+			set_variable = { global.var_TE_base_pup_conq = 8 }
+			set_variable = { global.var_TE_base_dissolve = 1 }
+			set_variable = { global.var_TE_base_get_recog = 1 }
+			set_variable = { global.var_TE_base_release_pup = 4 }
+			set_variable = { global.var_TE_base_trans_pup = 8 }
+			
+			set_variable = { global.var_TE_base_annex = 10 }
+			set_variable = { global.var_TE_base_take_core = 3 }
+			set_variable = { global.var_TE_base_take_claimed = 4 }
+			set_variable = { global.var_TE_base_take_border = 5 }
+			set_variable = { global.var_TE_base_take_port = 7 }
+			set_variable = { global.var_TE_base_take_island = 5 }
+			set_variable = { global.var_TE_base_take_colony = 3 }
+			set_variable = { global.var_TE_base_give_to_ally = 4 }
+			set_variable = { global.var_TE_base_take_other = 8 }
+			
+			set_variable = { global.var_TE_base_set_demil = 5 }
+			set_variable = { global.var_TE_base_dismantle_forts = 3 }
+			
+			set_variable = { global.var_TE_base_reduce_mil = 6 }
+			set_variable = { global.var_TE_base_reduce_naval = 6 }
+			set_variable = { global.var_TE_base_war_rep = 4 }
+			set_variable = { global.var_TE_base_oil_rights = 5 }
+			
+			set_variable = { global.var_TE_base_demob = 15 }	
+						
+			set_variable = { global.var_TE_base_reduce_navy = 8 }
+			set_variable = { global.var_TE_base_transfer_navy = 16 }
+
+			set_variable = { global.var_TE_base_revoke_core = 4 }
+			set_variable = { global.var_TE_base_revoke_claim = 1 }
+			
+			set_variable = { global.var_TE_base_return_core = 6 }
+			
+			set_variable = { global.var_TE_base_limit_military = 8 }
+			
+			### Ideology Modifiers
+			# Anarchist
+			set_variable = { global.var_TE_anarchist_change_gov = 1.5 }
+			set_variable = { global.var_TE_anarchist_inst_pup = 0 }
+			set_variable = { global.var_TE_anarchist_lib_conq = 1 }
+			set_variable = { global.var_TE_anarchist_pup_conq = 0 }
+			set_variable = { global.var_TE_anarchist_dissolve = 1 }
+			set_variable = { global.var_TE_anarchist_get_recog = 1 }
+			set_variable = { global.var_TE_anarchist_release_pup = 2 }
+			set_variable = { global.var_TE_anarchist_trans_pup = 0 }
+			
+			set_variable = { global.var_TE_anarchist_annex = 0 }
+			set_variable = { global.var_TE_anarchist_take_core = 0.5 }
+			set_variable = { global.var_TE_anarchist_take_claimed = 1.25 }
+			set_variable = { global.var_TE_anarchist_take_border = 1.5 }
+			set_variable = { global.var_TE_anarchist_take_other = 1.5 }
+			set_variable = { global.var_TE_anarchist_take_port = 1.75 }
+			set_variable = { global.var_TE_anarchist_take_island = 1.75 }
+			set_variable = { global.var_TE_anarchist_take_colony = 0 }
+			set_variable = { global.var_TE_anarchist_give_to_ally = 1 }
+			
+			set_variable = { global.var_TE_anarchist_set_demil = 1 }
+			set_variable = { global.var_TE_anarchist_dismantle_forts = 1 }
+			
+			set_variable = { global.var_TE_anarchist_reduce_mil = 1 }
+			set_variable = { global.var_TE_anarchist_reduce_naval = 1 }
+			set_variable = { global.var_TE_anarchist_war_rep = 1 }
+			set_variable = { global.var_TE_anarchist_oil_rights = 1.25 }
+			set_variable = { global.var_TE_anarchist_demob = 1.25 }	
+						
+			set_variable = { global.var_TE_anarchist_reduce_navy = 1.5 }
+			set_variable = { global.var_TE_anarchist_transfer_navy = 1 }
+			
+			set_variable = { global.var_TE_anarchist_revoke_core = 1.5 }
+			set_variable = { global.var_TE_anarchist_revoke_claim = 1 }
+			set_variable = { global.var_TE_anarchist_return_core = 1 }
+			
+			set_variable = { global.var_TE_anarchist_limit_military = 1 }
+			
+			# Democratic
+			set_variable = { global.var_TE_democratic_change_gov = 1 }
+			set_variable = { global.var_TE_democratic_inst_pup = 1.5 } # but only major power on minor
+			set_variable = { global.var_TE_democratic_lib_conq = 0.25 }
+			set_variable = { global.var_TE_democratic_pup_conq = 2.25 } # but only major power
+			set_variable = { global.var_TE_democratic_dissolve = 1 }
+			set_variable = { global.var_TE_democratic_get_recog = 1 }
+			set_variable = { global.var_TE_democratic_release_pup = 1 }
+			set_variable = { global.var_TE_democratic_trans_pup = 1 }  # but only major power
+			
+			set_variable = { global.var_TE_democratic_annex = 0 }
+			set_variable = { global.var_TE_democratic_take_core = 1.25 }
+			set_variable = { global.var_TE_democratic_take_claimed = 1.25 }
+			set_variable = { global.var_TE_democratic_take_border = 1.5 }
+			set_variable = { global.var_TE_democratic_take_port = 1.25 }
+			set_variable = { global.var_TE_democratic_take_other = 1.25 }
+			set_variable = { global.var_TE_democratic_take_island = 1 }
+			set_variable = { global.var_TE_democratic_take_colony = 1 }
+			set_variable = { global.var_TE_democratic_give_to_ally = 0.8 }
+			
+			set_variable = { global.var_TE_democratic_set_demil = 1 }
+			set_variable = { global.var_TE_democratic_dismantle_forts = 1 }
+			
+			set_variable = { global.var_TE_democratic_reduce_mil = 1 }
+			set_variable = { global.var_TE_democratic_reduce_naval = 1 }
+			set_variable = { global.var_TE_democratic_war_rep = 1 }
+			set_variable = { global.var_TE_democratic_oil_rights = 1 }
+			set_variable = { global.var_TE_democratic_demob = 1 }	
+						
+			set_variable = { global.var_TE_democratic_reduce_navy = 1 }
+			set_variable = { global.var_TE_democratic_transfer_navy = 1 }
+			
+			set_variable = { global.var_TE_democratic_revoke_core = 1 }
+			set_variable = { global.var_TE_democratic_revoke_claim = 1 }
+			set_variable = { global.var_TE_democratic_return_core = 1 }
+			
+			set_variable = { global.var_TE_democratic_limit_military = 1 }
+			
+			# Communism
+			set_variable = { global.var_TE_communism_change_gov = 0 }
+			set_variable = { global.var_TE_communism_inst_pup = 1 }
+			set_variable = { global.var_TE_communism_lib_conq = 0 }
+			set_variable = { global.var_TE_communism_pup_conq = 1 }
+			set_variable = { global.var_TE_communism_dissolve = 1 }
+			set_variable = { global.var_TE_communism_get_recog = 1 }
+			set_variable = { global.var_TE_communism_release_pup = 1 }
+			set_variable = { global.var_TE_communism_trans_pup = 1 }
+			
+			set_variable = { global.var_TE_communism_annex = 1.25 }
+			set_variable = { global.var_TE_communism_take_core = 1 }
+			set_variable = { global.var_TE_communism_take_claimed = 1 }
+			set_variable = { global.var_TE_communism_take_border = 1 }
+			set_variable = { global.var_TE_communism_take_other = 1 }
+			set_variable = { global.var_TE_communism_take_port = 1.5 }
+			set_variable = { global.var_TE_communism_take_island = 1.5 }
+			set_variable = { global.var_TE_communism_take_colony = 1.5 }
+			set_variable = { global.var_TE_communism_give_to_ally = 1.25 }
+			
+			set_variable = { global.var_TE_communism_set_demil = 2 }
+			set_variable = { global.var_TE_communism_dismantle_forts = 1.25 }
+			
+			set_variable = { global.var_TE_communism_reduce_mil = 1.5 }
+			set_variable = { global.var_TE_communism_reduce_naval = 2 }
+			set_variable = { global.var_TE_communism_war_rep = 1.25 }
+			set_variable = { global.var_TE_communism_oil_rights = 1 }
+			set_variable = { global.var_TE_communism_demob = 1.5 }	
+						
+			set_variable = { global.var_TE_communism_reduce_navy = 1.5 }
+			set_variable = { global.var_TE_communism_transfer_navy = 2 }
+			
+			set_variable = { global.var_TE_communism_revoke_core = 2.5 }
+			set_variable = { global.var_TE_communism_revoke_claim = 2.5 }
+			set_variable = { global.var_TE_communism_return_core = 1.5 }
+			
+			set_variable = { global.var_TE_communism_limit_military = 1 }
+			
+			# Fascism
+			set_variable = { global.var_TE_fascism_change_gov = 0 }
+			set_variable = { global.var_TE_fascism_inst_pup = 1 }
+			set_variable = { global.var_TE_fascism_lib_conq = 0 }
+			set_variable = { global.var_TE_fascism_pup_conq = 1 }
+			set_variable = { global.var_TE_fascism_dissolve = 1 }
+			set_variable = { global.var_TE_fascism_get_recog = 1 }
+			set_variable = { global.var_TE_fascism_release_pup = 0 }
+			set_variable = { global.var_TE_fascism_trans_pup = 1.25 }
+			
+			set_variable = { global.var_TE_fascism_annex = 1 }
+			set_variable = { global.var_TE_fascism_take_core = 1 }
+			set_variable = { global.var_TE_fascism_take_claimed = 1 }
+			set_variable = { global.var_TE_fascism_take_border = 1 }
+			set_variable = { global.var_TE_fascism_take_other = 1 }
+			set_variable = { global.var_TE_fascism_take_port = 1.5 }
+			set_variable = { global.var_TE_fascism_take_island = 1.25 }
+			set_variable = { global.var_TE_fascism_take_colony = 1.25 }
+			set_variable = { global.var_TE_fascism_give_to_ally = 1.25 }
+			
+			set_variable = { global.var_TE_fascism_set_demil = 2 }
+			set_variable = { global.var_TE_fascism_dismantle_forts = 1.5 }
+			
+			set_variable = { global.var_TE_fascism_reduce_mil = 1.5 }
+			set_variable = { global.var_TE_fascism_reduce_naval = 1.5 }
+			set_variable = { global.var_TE_fascism_war_rep = 1.5 }
+			set_variable = { global.var_TE_fascism_oil_rights = 1 }
+			set_variable = { global.var_TE_fascism_demob = 1.75 }	
+						
+			set_variable = { global.var_TE_fascism_reduce_navy = 1.5 }
+			set_variable = { global.var_TE_fascism_transfer_navy = 1.5 }
+			
+			set_variable = { global.var_TE_fascism_revoke_core = 1.75 }
+			set_variable = { global.var_TE_fascism_revoke_claim = 1.75 }
+			set_variable = { global.var_TE_fascism_return_core = 1.5 }
+			
+			set_variable = { global.var_TE_fascism_limit_military = 1 }
+			
+			# Neutrality
+			set_variable = { global.var_TE_neutrality_change_gov = 0 }
+			set_variable = { global.var_TE_neutrality_inst_pup = 2 }
+			set_variable = { global.var_TE_neutrality_lib_conq = 0 }
+			set_variable = { global.var_TE_neutrality_pup_conq = 0 }
+			set_variable = { global.var_TE_neutrality_dissolve = 1 }
+			set_variable = { global.var_TE_neutrality_get_recog = 1 }
+			set_variable = { global.var_TE_neutrality_release_pup = 1.25 }
+			set_variable = { global.var_TE_neutrality_trans_pup = 0 }
+			
+			set_variable = { global.var_TE_neutrality_annex = 1.5 }
+			set_variable = { global.var_TE_neutrality_take_core = 1 }
+			set_variable = { global.var_TE_neutrality_take_claimed = 1 }
+			set_variable = { global.var_TE_neutrality_take_border = 1 }
+			set_variable = { global.var_TE_neutrality_take_other = 1 }
+			set_variable = { global.var_TE_neutrality_take_port = 1.5 }
+			set_variable = { global.var_TE_neutrality_take_island = 1 }
+			set_variable = { global.var_TE_neutrality_take_colony = 1.25 }
+			set_variable = { global.var_TE_neutrality_give_to_ally = 1 }
+			
+			set_variable = { global.var_TE_neutrality_set_demil = 1.5 }
+			set_variable = { global.var_TE_neutrality_dismantle_forts = 1.25 }
+			
+			set_variable = { global.var_TE_neutrality_reduce_mil = 1.2 }
+			set_variable = { global.var_TE_neutrality_reduce_naval = 1.5 }
+			set_variable = { global.var_TE_neutrality_war_rep = 1 }
+			set_variable = { global.var_TE_neutrality_oil_rights = 1 }
+			set_variable = { global.var_TE_neutrality_demob = 1 }	
+						
+			set_variable = { global.var_TE_neutrality_reduce_navy = 1.5 }
+			set_variable = { global.var_TE_neutrality_transfer_navy = 1.5 }
+			
+			set_variable = { global.var_TE_neutrality_revoke_core = 1.5 }
+			set_variable = { global.var_TE_neutrality_revoke_claim = 1.5 }
+			set_variable = { global.var_TE_neutrality_return_core = 1.5 }
+			
+			set_variable = { global.var_TE_neutrality_limit_military = 1 }
+			
+			#Monarchist 
+			set_variable = { global.var_TE_monarchist_change_gov = 1.25 }
+			set_variable = { global.var_TE_monarchist_inst_pup = 1 }
+			set_variable = { global.var_TE_monarchist_lib_conq = 1 }
+			set_variable = { global.var_TE_monarchist_pup_conq = 1 }
+			set_variable = { global.var_TE_monarchist_dissolve = 1 }
+			set_variable = { global.var_TE_monarchist_get_recog = 1 }
+			set_variable = { global.var_TE_monarchist_release_pup = 1.5 }
+			set_variable = { global.var_TE_monarchist_trans_pup = 1.5 }
+			
+			set_variable = { global.var_TE_monarchist_annex = 1.5 }
+			set_variable = { global.var_TE_monarchist_take_core = 1 }
+			set_variable = { global.var_TE_monarchist_take_claimed = 1 }
+			set_variable = { global.var_TE_monarchist_take_border = 1 }
+			set_variable = { global.var_TE_monarchist_take_other = 1 }
+			set_variable = { global.var_TE_monarchist_take_port = 1.75 }
+			set_variable = { global.var_TE_monarchist_take_island = 1.25 }
+			set_variable = { global.var_TE_monarchist_take_colony = 1.25 }
+			set_variable = { global.var_TE_monarchist_give_to_ally = 1.25 }
+			
+			set_variable = { global.var_TE_monarchist_set_demil = 1.75 }
+			set_variable = { global.var_TE_monarchist_dismantle_forts = 1.25 }
+			
+			set_variable = { global.var_TE_monarchist_reduce_mil = 1.5 }
+			set_variable = { global.var_TE_monarchist_reduce_naval = 1.2 }
+			set_variable = { global.var_TE_monarchist_war_rep = 1.25 }
+			set_variable = { global.var_TE_monarchist_oil_rights = 1.25 }
+			set_variable = { global.var_TE_monarchist_demob = 1.5 }	
+						
+			set_variable = { global.var_TE_monarchist_reduce_navy = 1.2 }
+			set_variable = { global.var_TE_monarchist_transfer_navy = 1.2 }
+			
+			set_variable = { global.var_TE_monarchist_revoke_core = 1.25 }
+			set_variable = { global.var_TE_monarchist_revoke_claim = 1.25 }
+			set_variable = { global.var_TE_monarchist_return_core = 1 }
+			
+			set_variable = { global.var_TE_monarchist_limit_military = 1 }
+			
+			# Militarist
+			set_variable = { global.var_TE_militarist_change_gov = 0 }
+			set_variable = { global.var_TE_militarist_inst_pup = 1.2 }
+			set_variable = { global.var_TE_militarist_lib_conq = 1 }
+			set_variable = { global.var_TE_militarist_pup_conq = 1.2 }
+			set_variable = { global.var_TE_militarist_dissolve = 1 }
+			set_variable = { global.var_TE_militarist_get_recog = 1 }
+			set_variable = { global.var_TE_militarist_release_pup = 2 }
+			
+			set_variable = { global.var_TE_militarist_annex = 1.25 }
+			set_variable = { global.var_TE_militarist_take_core = 1 }
+			set_variable = { global.var_TE_militarist_take_claimed = 1 }
+			set_variable = { global.var_TE_militarist_take_border = 1 }
+			set_variable = { global.var_TE_militarist_take_other = 1 }
+			set_variable = { global.var_TE_militarist_take_port = 1.5 }
+			set_variable = { global.var_TE_militarist_take_island = 1 }
+			set_variable = { global.var_TE_militarist_take_colony = 1.5 }
+			set_variable = { global.var_TE_militarist_give_to_ally = 1 }
+			
+			set_variable = { global.var_TE_militarist_set_demil = 2 }
+			set_variable = { global.var_TE_militarist_dismantle_forts = 2 }
+			
+			set_variable = { global.var_TE_militarist_reduce_mil = 1.25 }
+			set_variable = { global.var_TE_militarist_reduce_naval = 1.25 }
+			set_variable = { global.var_TE_militarist_war_rep = 2 }
+			set_variable = { global.var_TE_militarist_oil_rights = 1 }
+			set_variable = { global.var_TE_militarist_demob = 2 }	
+						
+			set_variable = { global.var_TE_militarist_reduce_navy = 1.25 }
+			set_variable = { global.var_TE_militarist_transfer_navy = 1.25 }
+			
+			set_variable = { global.var_TE_militarist_revoke_core = 1.25 }
+			set_variable = { global.var_TE_militarist_revoke_claim = 1.25 }
+			set_variable = { global.var_TE_militarist_return_core = 1.5 }
+			
+			set_variable = { global.var_TE_militarist_limit_military = 2 }
+			
+			
+			### War type modifiers 
+			# Border war - ID 1
+			set_variable = { global.var_TE_bw_change_gov = 0 }
+			set_variable = { global.var_TE_bw_inst_pup = 0 }
+			set_variable = { global.var_TE_bw_lib_conq = 1.25 }
+			set_variable = { global.var_TE_bw_pup_conq = 1.25 }
+			set_variable = { global.var_TE_bw_dissolve = 0 }
+			set_variable = { global.var_TE_bw_get_recog = 0 }
+			set_variable = { global.var_TE_bw_release_pup = 1.5 }
+			set_variable = { global.var_TE_bw_trans_pup = 1.5 }
+			
+			set_variable = { global.var_TE_bw_annex = 0 }
+			set_variable = { global.var_TE_bw_take_core = 1 }
+			set_variable = { global.var_TE_bw_take_claimed = 1 }
+			set_variable = { global.var_TE_bw_take_border = 1 }
+			set_variable = { global.var_TE_bw_take_other = 1 }
+			set_variable = { global.var_TE_bw_take_port = 0 }
+			set_variable = { global.var_TE_bw_take_island = 2 }
+			set_variable = { global.var_TE_bw_take_colony = 2 }
+			set_variable = { global.var_TE_bw_give_to_ally = 1 }
+			
+			set_variable = { global.var_TE_bw_set_demil = 1 }
+			set_variable = { global.var_TE_bw_dismantle_forts = 1 }
+			
+			set_variable = { global.var_TE_bw_reduce_mil = 2 }
+			set_variable = { global.var_TE_bw_reduce_naval = 2 }
+			set_variable = { global.var_TE_bw_war_rep = 1 }
+			set_variable = { global.var_TE_bw_oil_rights = 1 }
+			set_variable = { global.var_TE_bw_demob = 1.5 }	
+			
+			set_variable = { global.var_TE_bw_reduce_navy = 0 }
+			set_variable = { global.var_TE_bw_transfer_navy = 0 }
+			
+			set_variable = { global.var_TE_bw_revoke_core = 1 }
+			set_variable = { global.var_TE_bw_revoke_claim = 1.25 }
+			set_variable = { global.var_TE_bw_return_core = 1.25 }
+			
+			set_variable = { global.var_TE_bw_limit_military = 1.5 }
+			
+			# Minor Conquest - ID 2
+			set_variable = { global.var_TE_mc_change_gov = 0 }
+			set_variable = { global.var_TE_mc_inst_pup = 1.25 }
+			set_variable = { global.var_TE_mc_lib_conq = 0 }
+			set_variable = { global.var_TE_mc_pup_conq = 1.25 }
+			set_variable = { global.var_TE_mc_dissolve = 0 }
+			set_variable = { global.var_TE_mc_get_recog = 0 }
+			set_variable = { global.var_TE_mc_release_pup = 1 }
+			set_variable = { global.var_TE_mc_trans_pup = 1 }
+			
+			set_variable = { global.var_TE_mc_annex = 0 }
+			set_variable = { global.var_TE_mc_take_core = 1 }
+			set_variable = { global.var_TE_mc_take_claimed = 1 }
+			set_variable = { global.var_TE_mc_take_border = 1 }
+			set_variable = { global.var_TE_mc_take_other = 1 }
+			set_variable = { global.var_TE_mc_take_port = 1 }
+			set_variable = { global.var_TE_mc_take_island = 1 }
+			set_variable = { global.var_TE_mc_take_colony = 1 }
+			set_variable = { global.var_TE_mc_give_to_ally = 1 }
+			
+			set_variable = { global.var_TE_mc_set_demil = 1 }
+			set_variable = { global.var_TE_mc_dismantle_forts = 1.25 }
+			
+			set_variable = { global.var_TE_mc_reduce_mil = 1.5 }
+			set_variable = { global.var_TE_mc_reduce_naval = 1.5 }
+			set_variable = { global.var_TE_mc_war_rep = 1.5 }
+			set_variable = { global.var_TE_mc_oil_rights = 1 }
+			set_variable = { global.var_TE_mc_demob = 1 }
+			
+						
+			set_variable = { global.var_TE_mc_reduce_navy = 1.5 }
+			set_variable = { global.var_TE_mc_transfer_navy = 1.25 }
+			
+			set_variable = { global.var_TE_mc_revoke_core = 1.25 }
+			set_variable = { global.var_TE_mc_revoke_claim = 1.25 }
+			set_variable = { global.var_TE_mc_return_core = 1.25 }
+			
+			set_variable = { global.var_TE_mc_limit_military = 1.5 }
+			
+			#Annex - ID 3
+			set_variable = { global.var_TE_an_change_gov = 1.5 }
+			set_variable = { global.var_TE_an_inst_pup = 1.25 }
+			set_variable = { global.var_TE_an_lib_conq = 1.25 }
+			set_variable = { global.var_TE_an_pup_conq = 1.1 }
+			set_variable = { global.var_TE_an_dissolve = 0 }
+			set_variable = { global.var_TE_an_get_recog = 0 }
+			set_variable = { global.var_TE_an_release_pup = 1.25 }
+			set_variable = { global.var_TE_an_trans_pup = 1.25 }
+			
+			set_variable = { global.var_TE_an_annex = 1 }
+			set_variable = { global.var_TE_an_take_core = 1 }
+			set_variable = { global.var_TE_an_take_claimed = 1 }
+			set_variable = { global.var_TE_an_take_border = 1 }
+			set_variable = { global.var_TE_an_take_other = 1 }
+			set_variable = { global.var_TE_an_take_port = 1 }
+			set_variable = { global.var_TE_an_take_island = 1 }
+			set_variable = { global.var_TE_an_take_colony = 1 }
+			set_variable = { global.var_TE_an_give_to_ally = 1 }
+			
+			set_variable = { global.var_TE_an_set_demil = 1.25 }
+			set_variable = { global.var_TE_an_dismantle_forts = 1.5 }
+			
+			set_variable = { global.var_TE_an_reduce_mil = 1.5 }
+			set_variable = { global.var_TE_an_reduce_naval = 1.5 }
+			set_variable = { global.var_TE_an_war_rep = 1.5 }
+			set_variable = { global.var_TE_an_oil_rights = 1.5 }
+			set_variable = { global.var_TE_an_demob = 1.5 }	
+						
+			set_variable = { global.var_TE_an_reduce_navy = 1.5 }
+			set_variable = { global.var_TE_an_transfer_navy = 1.25 }
+			
+			set_variable = { global.var_TE_an_revoke_core = 1.25 }
+			set_variable = { global.var_TE_an_revoke_claim = 1.25 }
+			set_variable = { global.var_TE_an_return_core = 1.5 }
+			
+			set_variable = { global.var_TE_an_limit_military = 1.5 }
+			
+			# Civil War - ID 4
+			set_variable = { global.var_TE_cw_change_gov = 0 }
+			set_variable = { global.var_TE_cw_inst_pup = 0 }
+			set_variable = { global.var_TE_cw_lib_conq = 0 }
+			set_variable = { global.var_TE_cw_pup_conq = 0 }
+			set_variable = { global.var_TE_cw_dissolve = 1 }
+			set_variable = { global.var_TE_cw_get_recog = 0 }
+			set_variable = { global.var_TE_cw_release_pup = 0 }
+			set_variable = { global.var_TE_cw_trans_pup = 0 }
+			
+			set_variable = { global.var_TE_cw_annex = 0 }
+			set_variable = { global.var_TE_cw_take_core = 0 }
+			set_variable = { global.var_TE_cw_take_claimed = 0 }
+			set_variable = { global.var_TE_cw_take_border = 0 }
+			set_variable = { global.var_TE_cw_take_other = 0 }
+			set_variable = { global.var_TE_cw_take_port = 0 }
+			set_variable = { global.var_TE_cw_take_island = 0 }
+			set_variable = { global.var_TE_cw_take_colony = 0 }
+			set_variable = { global.var_TE_cw_give_to_ally = 0 }
+			
+			set_variable = { global.var_TE_cw_set_demil = 0 }
+			set_variable = { global.var_TE_cw_dismantle_forts = 0 }
+			
+			set_variable = { global.var_TE_cw_reduce_mil = 0 }
+			set_variable = { global.var_TE_cw_reduce_naval = 0 }
+			set_variable = { global.var_TE_cw_war_rep = 0 }
+			set_variable = { global.var_TE_cw_oil_rights = 0 }
+			set_variable = { global.var_TE_cw_demob = 0 }	
+						
+			set_variable = { global.var_TE_cw_reduce_navy = 0 }
+			set_variable = { global.var_TE_cw_transfer_navy = 0 }
+			
+			set_variable = { global.var_TE_cw_revoke_core = 0 }
+			set_variable = { global.var_TE_cw_revoke_claim = 0 }
+			set_variable = { global.var_TE_cw_return_core = 0 }
+			
+			set_variable = { global.var_TE_cw_limit_military = 0 }
+			
+			# Overthrow Government - ID 5
+			set_variable = { global.var_TE_otg_change_gov = 0.75 } # was 1
+			set_variable = { global.var_TE_otg_inst_pup = 0.85 } # was 1
+			set_variable = { global.var_TE_otg_lib_conq = 0.75 } # was 1
+			set_variable = { global.var_TE_otg_pup_conq = 1 }
+			set_variable = { global.var_TE_otg_dissolve = 0 }
+			set_variable = { global.var_TE_otg_get_recog = 0 }
+			set_variable = { global.var_TE_otg_release_pup = 1 }
+			set_variable = { global.var_TE_otg_trans_pup = 1 }
+			
+			set_variable = { global.var_TE_otg_annex = 0 }
+			set_variable = { global.var_TE_otg_take_core = 1.25 }
+			set_variable = { global.var_TE_otg_take_claimed = 3 }
+			set_variable = { global.var_TE_otg_take_border = 3 }
+			set_variable = { global.var_TE_otg_take_other = 3 }
+			set_variable = { global.var_TE_otg_take_port = 5 }
+			set_variable = { global.var_TE_otg_take_island = 3 }
+			set_variable = { global.var_TE_otg_take_colony = 2 }
+			set_variable = { global.var_TE_otg_give_to_ally = 3 }
+			
+			set_variable = { global.var_TE_otg_set_demil = 1 }
+			set_variable = { global.var_TE_otg_dismantle_forts = 0 }
+			
+			set_variable = { global.var_TE_otg_reduce_mil = 1 }
+			set_variable = { global.var_TE_otg_reduce_naval = 1 }
+			set_variable = { global.var_TE_otg_war_rep = 1.5 }
+			set_variable = { global.var_TE_otg_oil_rights = 0.75 }
+			set_variable = { global.var_TE_otg_demob = 1 }	
+						
+			set_variable = { global.var_TE_otg_reduce_navy = 1.25 }
+			set_variable = { global.var_TE_otg_transfer_navy = 1.5 }
+			
+			set_variable = { global.var_TE_otg_revoke_core = 1 }
+			set_variable = { global.var_TE_otg_revoke_claim = 1 }
+			set_variable = { global.var_TE_otg_return_core = 1 }
+			
+			set_variable = { global.var_TE_otg_limit_military = 1 }
+			
+			# Independence war - ID 6
+			set_variable = { global.var_TE_iw_change_gov = 0 }
+			set_variable = { global.var_TE_iw_inst_pup = 0 }
+			set_variable = { global.var_TE_iw_lib_conq = 0 }
+			set_variable = { global.var_TE_iw_pup_conq = 0 }
+			set_variable = { global.var_TE_iw_dissolve = 0 }
+			set_variable = { global.var_TE_iw_get_recog = 1 }
+			set_variable = { global.var_TE_iw_release_pup = 2 }
+			set_variable = { global.var_TE_iw_trans_pup = 2 }
+			
+			set_variable = { global.var_TE_iw_annex = 0 }
+			set_variable = { global.var_TE_iw_take_core = 1 }
+			set_variable = { global.var_TE_iw_take_claimed = 1 }
+			set_variable = { global.var_TE_iw_take_border = 1 }
+			set_variable = { global.var_TE_iw_take_other = 1 }
+			set_variable = { global.var_TE_iw_take_port = 1 }
+			set_variable = { global.var_TE_iw_take_island = 1 }
+			set_variable = { global.var_TE_iw_take_colony = 1 }
+			set_variable = { global.var_TE_iw_give_to_ally = 1.25 }
+			
+			set_variable = { global.var_TE_iw_set_demil = 2 }
+			set_variable = { global.var_TE_iw_dismantle_forts = 2 }
+			
+			set_variable = { global.var_TE_iw_reduce_mil = 0 }
+			set_variable = { global.var_TE_iw_reduce_naval = 0 }
+			set_variable = { global.var_TE_iw_war_rep = 1 }
+			set_variable = { global.var_TE_iw_oil_rights = 1.5 }
+			set_variable = { global.var_TE_iw_demob = 2 }	
+						
+			set_variable = { global.var_TE_iw_reduce_navy = 0 }
+			set_variable = { global.var_TE_iw_transfer_navy = 2 }
+			
+			set_variable = { global.var_TE_iw_revoke_core = 0.5 }
+			set_variable = { global.var_TE_iw_revoke_claim = 1 }
+			set_variable = { global.var_TE_iw_return_core = 1 }
+			
+			set_variable = { global.var_TE_iw_limit_military = 2 }
+			
+			# Defensive war - ID 7
+			set_variable = { global.var_TE_dw_change_gov = 1 }
+			set_variable = { global.var_TE_dw_inst_pup = 1.25 }
+			set_variable = { global.var_TE_dw_lib_conq = 1 }
+			set_variable = { global.var_TE_dw_pup_conq = 1 }
+			set_variable = { global.var_TE_dw_dissolve = 0 }
+			set_variable = { global.var_TE_dw_get_recog = 0 }
+			set_variable = { global.var_TE_dw_release_pup = 1 }
+			set_variable = { global.var_TE_dw_trans_pup = 1 }
+			
+			set_variable = { global.var_TE_dw_annex = 1.2 }
+			set_variable = { global.var_TE_dw_take_core = 1 }
+			set_variable = { global.var_TE_dw_take_claimed = 1.25 }
+			set_variable = { global.var_TE_dw_take_border = 1.25 }
+			set_variable = { global.var_TE_dw_take_other = 1.25 }
+			set_variable = { global.var_TE_dw_take_port = 1.25 }
+			set_variable = { global.var_TE_dw_take_island = 1.25 }
+			set_variable = { global.var_TE_dw_take_colony = 1 }
+			set_variable = { global.var_TE_dw_give_to_ally = 1 }
+			
+			set_variable = { global.var_TE_dw_set_demil = 1 }
+			set_variable = { global.var_TE_dw_dismantle_forts = 1 }
+			
+			set_variable = { global.var_TE_dw_reduce_mil = 1 }
+			set_variable = { global.var_TE_dw_reduce_naval = 1 }
+			set_variable = { global.var_TE_dw_war_rep = 1 }
+			set_variable = { global.var_TE_dw_oil_rights = 1 }
+			set_variable = { global.var_TE_dw_demob = 1 }	
+						
+			set_variable = { global.var_TE_dw_reduce_navy = 1 }
+			set_variable = { global.var_TE_dw_transfer_navy = 1 }
+			
+			set_variable = { global.var_TE_dw_revoke_core = 1 }
+			set_variable = { global.var_TE_dw_revoke_claim = 1 }
+			set_variable = { global.var_TE_dw_return_core = 1 }
+			
+			set_variable = { global.var_TE_dw_limit_military = 1 }
+			
+			# War of Liberation - ID 8
+			set_variable = { global.var_TE_lib_change_gov = 1 }
+			set_variable = { global.var_TE_lib_inst_pup = 1 }
+			set_variable = { global.var_TE_lib_lib_conq = 0.5 }
+			set_variable = { global.var_TE_lib_pup_conq = 0.65 }
+			set_variable = { global.var_TE_lib_dissolve = 0 }
+			set_variable = { global.var_TE_lib_get_recog = 0 }
+			set_variable = { global.var_TE_lib_release_pup = 0.75 }
+			set_variable = { global.var_TE_lib_trans_pup = 1 }
+			
+			set_variable = { global.var_TE_lib_annex = 0 }
+			set_variable = { global.var_TE_lib_take_core = 1.5 }
+			set_variable = { global.var_TE_lib_take_claimed = 3 }
+			set_variable = { global.var_TE_lib_take_border = 3 }
+			set_variable = { global.var_TE_lib_take_other = 5 }
+			set_variable = { global.var_TE_lib_take_port = 5 }
+			set_variable = { global.var_TE_lib_take_island = 3 }
+			set_variable = { global.var_TE_lib_take_colony = 2 }
+			set_variable = { global.var_TE_lib_give_to_ally = 1 }
+			
+			set_variable = { global.var_TE_lib_set_demil = 1 }
+			set_variable = { global.var_TE_lib_dismantle_forts = 1 }
+			
+			set_variable = { global.var_TE_lib_reduce_mil = 1 }
+			set_variable = { global.var_TE_lib_reduce_naval = 1 }
+			set_variable = { global.var_TE_lib_war_rep = 1.5 }
+			set_variable = { global.var_TE_lib_oil_rights = 1 }
+			set_variable = { global.var_TE_lib_demob = 1 }	
+						
+			set_variable = { global.var_TE_lib_reduce_navy = 1 }
+			set_variable = { global.var_TE_lib_transfer_navy = 1.5 }
+			
+			set_variable = { global.var_TE_lib_revoke_core = 1 }
+			set_variable = { global.var_TE_lib_revoke_claim = 0.75 }
+			set_variable = { global.var_TE_lib_return_core = 0.5 }
+			
+			set_variable = { global.var_TE_lib_limit_military = 1 }
+			
+			# Dismantle Empire - ID 9
+			set_variable = { global.var_TE_dis_change_gov = 1 }
+			set_variable = { global.var_TE_dis_inst_pup = 1 }
+			set_variable = { global.var_TE_dis_dis_conq = 0.5 }
+			set_variable = { global.var_TE_dis_pup_conq = 0.65 }
+			set_variable = { global.var_TE_dis_dissolve = 0 }
+			set_variable = { global.var_TE_dis_get_recog = 0 }
+			set_variable = { global.var_TE_dis_release_pup = 0.75 }
+			set_variable = { global.var_TE_dis_trans_pup = 1 }
+			
+			set_variable = { global.var_TE_dis_annex = 0 }
+			set_variable = { global.var_TE_dis_take_core = 1.5 }
+			set_variable = { global.var_TE_dis_take_claimed = 3 }
+			set_variable = { global.var_TE_dis_take_border = 3 }
+			set_variable = { global.var_TE_dis_take_other = 5 }
+			set_variable = { global.var_TE_dis_take_port = 5 }
+			set_variable = { global.var_TE_dis_take_island = 3 }
+			set_variable = { global.var_TE_dis_take_colony = 2 }
+			set_variable = { global.var_TE_dis_give_to_ally = 1 }
+			
+			set_variable = { global.var_TE_dis_set_demil = 1 }
+			set_variable = { global.var_TE_dis_dismantle_forts = 1 }
+			
+			set_variable = { global.var_TE_dis_reduce_mil = 1 }
+			set_variable = { global.var_TE_dis_reduce_naval = 1 }
+			set_variable = { global.var_TE_dis_war_rep = 1.5 }
+			set_variable = { global.var_TE_dis_oil_rights = 1 }
+			set_variable = { global.var_TE_dis_demob = 1 }	
+						
+			set_variable = { global.var_TE_dis_reduce_navy = 1 }
+			set_variable = { global.var_TE_dis_transfer_navy = 1.5 }
+			
+			set_variable = { global.var_TE_dis_revoke_core = 0.9 }
+			set_variable = { global.var_TE_dis_revoke_claim = 0.75 }
+			set_variable = { global.var_TE_dis_return_core = 0.25 }
+			
+			set_variable = { global.var_TE_dis_limit_military = 1 }
+			
+		
+			# Lock templates for ww1 nations after armistice
+			#every_country = {
+				#add_ideas = nada_wars
+				#country_lock_all_division_template = yes
+			#}
+			
+
+			
+		}
+	}
+	
+	#### ON MONTHLY
+	# War length counter 
+	on_monthly = { 
+		effect = { 
+			every_country = {
+				limit = { has_war_with = ROOT }
+				add_to_variable = { ROOT.var_TE_war_length@THIS = 1 }
+			}
+		}
+	}
+	
+
+	
+	
+	##### ON CAPITULATION - . ROOT is capitulated country, FROM is winner
+	on_capitulation = { 
+		effect = {
+			# Dismantle Faction 
+			IF = {
+				limit = { 
+					ROOT = { is_faction_leader = yes  }
+				}
+				every_other_country = {
+					limit = { is_in_faction_with = ROOT }
+					leave_faction = yes
+					add_timed_idea = {
+						idea = TE_leave_faction_cooldown_idea
+						days = 180
+					}
+				}
+				ROOT = {
+					dismantle_faction = yes
+				}
+				#### Surrender Allies
+				#every_country = {
+				#	limit = {
+				#		NOT = { tag = ROOT }
+				#		is_in_faction_with = ROOT
+				#		NOT = { is_puppet = yes }
+				#		NOT = { is_subject = yes }
+				#	}
+				#	country_event = {
+				#		id = TE_peace_event.6
+				#		days = 0
+				#	}
+				#	country_event = {
+				#		id = TE_peace_event.21
+				#		days = 0
+				#	}
+				#}
+					
+				
+			}
+			# check if direct peace
+			IF = {
+				limit = {
+					NOT = { is_subject = yes } # Foreign policy managed by overlord
+					NOT = { is_puppet = yes } # Foreign policy managed by overlord
+					OR = {
+						NOT = { is_in_faction = yes } # Non faction members don't continue struggle
+						is_faction_leader = yes # But the faction leader may surrender...
+						# but if we are in a war and our faction leader isn't...
+						all_enemy_country = { # Should this be ALL COUNTRY????????? Fix in event as well if changing here
+							#has_war_with = ROOT
+							any_country = {
+								is_in_faction_with = ROOT
+								is_faction_leader = yes 
+								NOT = { has_war_with = PREV }
+							}
+						}
+					}
+				}
+				ROOT = {
+					country_event = {
+						id = TE_peace_event.6
+						days = 0
+					}
+					add_ideas = TE_armistice_idea
+					IF = { 
+						limit = { ROOT = { has_active_mission = TE_peace_offer_sent } }
+						set_temp_variable = { temp_time = global.var_TE_peace_timer_days }
+						subtract_from_temp_variable = { temp_time = days_mission_timeout@TE_peace_offer_sent }
+						ROOT = { 
+							add_days_mission_timeout = { 
+								mission = TE_peace_offer_sent days = temp_time 
+							} 
+						}
+					}
+					ELSE = {
+						ROOT = { activate_mission = TE_peace_offer_sent }
+					}
+				}
+				every_other_country = {
+					limit = { 
+						has_war_with = ROOT 
+						check_variable = { THIS.var_TE_peace_offer_available@ROOT = 0 }
+					}
+					set_variable = { ROOT.var_TE_has_sent_offer@THIS = 1 }
+					THIS = { set_variable = { var_TE_peace_type@ROOT = 2 } }
+					# figuring out war types if not already defined
+					IF = { 
+						limit = {
+							OR = {
+								NOT = { has_variable = ROOT.var_TE_war_type@THIS }
+								check_variable = { ROOT.var_TE_war_type@THIS = 0 }
+							}
+						}
+						IF = {
+							limit = { check_variable = { THIS.var_TE_war_type@ROOT = 6 } }
+							set_variable = { ROOT.var_TE_war_type@THIS = 4 }
+						}
+						ELSE_IF = {
+							limit = { check_variable = { THIS.var_TE_war_type@ROOT = 4 } }
+							set_variable = { ROOT.var_TE_war_type@THIS = 4 }
+						}	
+						ELSE_IF = {
+							limit = { 
+								THIS = { has_civil_war = yes }
+								ROOT = { has_civil_war = yes }
+								
+							}
+							set_variable = { ROOT.var_TE_war_type@THIS = 4 }
+						}
+						ELSE_IF = {
+							limit = { check_variable = { THIS.var_TE_war_type@ROOT = 1 } }
+							set_variable = { ROOT.var_TE_war_type@THIS = 1 }
+						}
+						ELSE_IF = {
+							limit = { check_variable = { THIS.var_TE_war_type@ROOT = 7 } }
+							set_variable = { ROOT.var_TE_war_type@THIS = 3 }
+						}
+						ELSE = {
+							set_variable = { ROOT.var_TE_war_type@THIS = 7 }
+						}
+					}
+					IF = { 
+						limit = {
+							OR = {
+								#NOT = { has_variable = THIS.var_TE_war_type@ROOT }
+								check_variable = { THIS.var_TE_war_type@ROOT = 0 }
+							}
+						}
+						IF = {
+							limit = { check_variable = { ROOT.var_TE_war_type@THIS = 6 } }
+							set_variable = { THIS.var_TE_war_type@ROOT = 4 }
+						}
+						ELSE_IF = {
+							limit = { check_variable = { ROOT.var_TE_war_type@THIS = 4 } }
+							set_variable = { THIS.var_TE_war_type@ROOT = 4 }
+						}	
+						ELSE_IF = {
+							limit = { check_variable = { ROOT.var_TE_war_type@THIS = 1 } }
+							set_variable = { THIS.var_TE_war_type@ROOT = 1 }
+						}
+						ELSE_IF = {
+							limit = { check_variable = { ROOT.var_TE_war_type@THIS = 7 } }
+							set_variable = { THIS.var_TE_war_type@ROOT = 3 }
+						}
+						ELSE = {
+							set_variable = { THIS.var_TE_war_type@ROOT = 7 }
+						}
+					}
+					IF = {
+						limit = { THIS = { is_ai = no } }	
+						set_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 }
+						country_event = {
+							id = TE_peace_event.7
+							days = 1
+						}
+					}
+					
+					ELSE = {
+						set_variable = { THIS.var_TE_peace_offer_available@ROOT = 1 } 
+						country_event = {
+							id = TE_peace_treaty_ai_event.10
+							days = 1
+						}
+					}
+				}
+			}
+			ELSE = {
+				set_variable = { ROOT.var_TE_not_surrender_on_cap = 1 }
+			}
+			
+			
+			
+				
+		}
+	} 
+	
+	on_declare_war = { # FROM is war target.
+		effect = { 
+			### FIX MOLOTOV - RIBBENTROP 
+			IF = {
+				limit = { 
+					has_global_flag = sov_yes_pact
+					ROOT = { tag = GER }
+					FROM = { tag = POL }
+				}
+				set_variable = { GER.var_TE_annex_bonus@POL = 0.25 }
+				set_variable = { GER.var_TE_inst_pup_bonus@POL = 2 }
+			}
+			
+			
+			## Attacker First
+			IF = {
+				limit = {
+					check_variable = { ROOT.var_TE_war_type@FROM = 0 }
+				}
+				# Danzig or War
+				IF = { 
+					limit = { 
+						ROOT = {
+							tag = GER
+							has_completed_focus = GER_danzig_or_war
+						}
+						FROM = { tag = POL }
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 3 }
+					set_variable = { FROM.var_TE_war_type@ROOT = 7 }
+				}
+				# South Africa 
+				ELSE_IF = { 
+					limit = { 
+						ROOT = {
+							tag = SAF
+							has_completed_focus = SAF_liberate_british
+						}
+						FROM = { tag = ENG }
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 8 }
+					set_variable = { FROM.var_TE_war_type@ROOT = 7 }
+				}
+				ELSE_IF = { 
+					limit = { 
+						ROOT = {
+							tag = SAF
+							has_completed_focus = SAF_liberate_portugese
+						}
+						FROM = { tag = POR }
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 8 }
+					set_variable = { FROM.var_TE_war_type@ROOT = 7 }
+				}
+				ELSE_IF = { 
+					limit = { 
+						ROOT = {
+							tag = SAF
+							has_completed_focus = SAF_liberate_belgian
+						}
+						FROM = { tag = BEL }
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 8 }
+					set_variable = { FROM.var_TE_war_type@ROOT = 7 }
+				}
+				
+				
+				# Civil War
+				ELSE_IF = {
+					limit = {
+						ROOT = {
+							has_wargoal_against = {
+								target = FROM
+								type = civil_war  
+							}
+						}
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 4 }
+				}
+				# Annex 
+				ELSE_IF = {
+					limit = {
+						ROOT = {
+							has_wargoal_against = {
+								target = FROM
+								type = annex_everything
+							}
+						}
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 3 }
+				}
+				# Minor Conquest War goal
+				ELSE_IF = {
+					limit = {
+						OR = {
+							ROOT = {
+								has_wargoal_against = {
+									target = FROM
+									type = take_state
+								}
+							}
+							ROOT = {
+								has_wargoal_against = {
+									target = FROM
+									type = take_state_focus
+								}
+							}
+							ROOT = {
+								has_wargoal_against = {
+									target = FROM
+									type = take_claimed_state 
+								}
+							}
+							ROOT = {
+								has_wargoal_against = {
+									target = FROM
+									type = take_core_state 
+								}
+							}
+						}
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 2 }
+				}
+				
+				# Border War
+				ELSE_IF = {
+					limit = {
+						ROOT = {
+							has_wargoal_against = {
+								target = FROM
+								type = border_war_goal 
+							}
+						}
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 1 }
+				}
+				
+				# Topple gov
+				ELSE_IF = {
+					limit = {
+						ROOT = {
+							has_wargoal_against = {
+								target = FROM
+								type = topple_government  
+							}
+						}
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 5 }
+				}
+				
+				# Puppet
+				ELSE_IF = {
+					limit = {
+						ROOT = {
+							has_wargoal_against = {
+								target = FROM
+								type = puppet_wargoal_focus   
+							}
+						}
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 5 }
+				}
+				# Liberation
+				ELSE_IF = {
+					limit = {
+						ROOT = {
+							has_wargoal_against = {
+								target = FROM
+								type = liberate_wargoal   
+							}
+						}
+					}
+					set_variable = { ROOT.var_TE_war_type@FROM = 8 }
+				}
+				ELSE = {
+					set_variable = { ROOT.var_TE_war_type@FROM = 3 }
+				}
+			}
+			#### DEFENDERF
+			# Civil war
+			IF = {
+				limit = {
+					check_variable = { FROM.var_TE_war_type@ROOT = 0 }
+				}
+				IF = {
+					limit = {
+						OR = {
+							ROOT = {
+								has_wargoal_against = {
+									target = FROM
+									type = civil_war  
+								}
+							}
+							check_variable = { ROOT.var_TE_war_type@FROM = 4 }
+							check_variable = { ROOT.var_TE_war_type@FROM = 6 }
+						}
+					}
+					set_variable = { FROM.var_TE_war_type@ROOT = 4 }
+				}
+				ELSE_IF = {
+					limit = {
+						OR = {
+							ROOT = {
+								has_wargoal_against = {
+									target = FROM
+									type = border_war_goal  
+								}
+							}
+							check_variable = { ROOT.var_TE_war_type@FROM = 1 }
+						}
+					}
+					set_variable = { FROM.var_TE_war_type@ROOT = 1 }
+				}
+				ELSE = {
+					set_variable = { FROM.var_TE_war_type@ROOT = 7 }
+				}
+			}
+					
+		}
+				
+	}
+	
+	
+	
+	#### Leaving factions Cooldown
+	
+	on_leave_faction = { 
+		effect = { 
+			add_timed_idea = {
+				idea = TE_leave_faction_cooldown_idea
+				days = 180
+			}
+		}
+	}
+		
+		
+}

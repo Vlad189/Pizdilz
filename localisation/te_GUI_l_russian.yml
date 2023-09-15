@@ -1,0 +1,406 @@
+﻿l_russian:
+ 
+ TE_ICON_tt:0 "С использованием мода §RВойна и мир§!\na.k.a. Tolstoy Engine\nСделан Thomas Å.\n\nТекущая версия мода 0.3 (бета)" 
+ 
+ 
+ ### TRIGGERS
+ TE_every_country_finished_peace_terms_tt:0 "Каждая страна сделана с мирными условиями"
+ TE_TREATY_SIGNED:0 "Договор подписан"
+ TE_can_start_war_of_independence:0 "Может начать войну за независимость"
+
+
+ TE_PEACE_DEADLINE:0 "[?days_mission_timeout@TE_peace_offer_sent]"
+ TE_open_peace_offers_accepted_tt:0 "Показать список принятых мирных предложений"
+
+ ### WAR TYPES
+ TE_BORDER_CONFLICT:0 "Пограничный конфликт"
+ TE_MINOR_CONQUEST:0 "Война за Завоевание"
+ TE_ANNEXATION:0 "Война за Аннексию"
+ TE_CIVIL_WAR:0 "Гражданская война"
+ TE_OVERTHROW_GOVERNMENT:0 "Война за свержение правительства"
+ TE_INDEPENDENCE_WAR:0 "Война за независимость"
+ TE_DEFENSIVE_WAR:0 "Оборонительная война"
+ TE_GENERIC_WAR:0 "Война"
+ TE_INSURGENCY_WAR:0 "[?ROOT.var_TE_peace_neg_target.GetAdjective] Мятеж"
+ TE_INSURGENCY_WAR_peace_gui:0 "[?ROOT.var_TE_target_country.GetAdjective] Мятеж"
+ 
+ ### PEACE TYPES
+ TE_PEACE_TYPE:0 "Type of peace: [TE_GET_SURRENDER_TYPE_NAME]"
+ TE_CONDITIONAL_PEACE:0 "§OУсловная сдача§!"
+ TE_CAPITULATION_PEACE:0 "§RБезоговорочная капитуляция§!"
+ TE_INDEPENDENCE_PEACE:0 "§GПереговоры о независимости§!"
+ TE_CONFUZELED_PEACE:0 "Запутанное мирное предложение"
+ 
+ ### WAR SCOPES
+ TE_SCALE_OF_CONFLICT:0 "Scale of conflict: [TE_GET_WARSCOPE_NAME]"
+ TE_SKIRMISH_SCOPE:0 "§GПерепалка§!"
+ TE_LIMITED_WAR_SCOPE:0 "§YОграниченная война§!"
+ TE_MAJOR_WAR_SCOPE:0 "§OБольшая война§!"
+ TE_WORLD_WAR_SCOPE:0 "§RМировая война§!"
+ TE_UNDEFINED_SCOPE:0 "Война"
+
+ ### SHOW PEACE OFFERS ICON
+ TE_PEACE_OFFERS_BTN:0 "[?ROOT.var_TE_number_peace_offers_accepted]"
+ TE_PEACE_OFFERS_BTN_tt:0 "У вас [?ROOT.var_TE_number_peace_offers_accepted] принятых входящих мирных предложений, где вам нужно установить требования."
+ 
+ 
+ ### Selection window"
+ TE_TREATY_OFFERS:0 "Доступные предложения мира" 
+ 
+ TE_START_NEG_BTN:0 "Выбрать"
+ 
+ TE_START_NEG_TARGET_1:0 "[?ROOT.var_TE_target_no_1.GetName]"
+ TE_START_NEG_TARGET_2:0 "[?ROOT.var_TE_target_no_2.GetName]"
+ TE_START_NEG_TARGET_3:0 "[?ROOT.var_TE_target_no_3.GetName]"
+ TE_START_NEG_TARGET_4:0 "[?ROOT.var_TE_target_no_4.GetName]"
+ TE_START_NEG_TARGET_5:0 "[?ROOT.var_TE_target_no_5.GetName]"
+ TE_START_NEG_TARGET_6:0 "[?ROOT.var_TE_target_no_6.GetName]"
+ TE_START_NEG_TARGET_7:0 "[?ROOT.var_TE_target_no_7.GetName]"
+ TE_START_NEG_TARGET_8:0 "[?ROOT.var_TE_target_no_8.GetName]"
+ TE_START_NEG_TARGET_9:0 "[?ROOT.var_TE_target_no_9.GetName]"
+ TE_START_NEG_TARGET_10:0 "[?ROOT.var_TE_target_no_10.GetName]"
+ TE_START_NEG_TARGET_11:0 "[?ROOT.var_TE_target_no_11.GetName]"
+ TE_START_NEG_TARGET_12:0 "[?ROOT.var_TE_target_no_12.GetName]"
+ 
+ TE_START_NEG_BTN_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_1.GetNameWithFlag]"
+ TE_START_NEG_BTN_2_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_2.GetNameWithFlag]"
+ TE_START_NEG_BTN_3_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_3.GetNameWithFlag]"
+ TE_START_NEG_BTN_4_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_4.GetNameWithFlag]"
+ TE_START_NEG_BTN_5_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_5.GetNameWithFlag]"
+ TE_START_NEG_BTN_6_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_6.GetNameWithFlag]"
+ TE_START_NEG_BTN_7_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_7.GetNameWithFlag]"
+ TE_START_NEG_BTN_8_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_8.GetNameWithFlag]"
+ TE_START_NEG_BTN_9_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_9.GetNameWithFlag]"
+ TE_START_NEG_BTN_10_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_10.GetNameWithFlag]"
+ TE_START_NEG_BTN_11_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_11.GetNameWithFlag]"
+ TE_START_NEG_BTN_12_tt:0 "Установить требования мирного договора для мирных переговоров с [?ROOT.var_TE_target_no_12.GetNameWithFlag]"
+ 
+ 
+ ### REQUEST PEACE
+ # Shield
+ TE_OPEN_PEACE_REQ_BTN_tt:0 "Просьба о мире [THIS.GetNameWithFlag]\n---\nВы можете предложить мир только той стране, которая входит во фракцию, если она является лидером фракции или если лидер фракции не воюет с вами. Странам не может быть предложен отдельный мир."
+ TE_OFFER_SURRENDER_COUNTRY:0 "[?ROOT.var_TE_peace_neg_target.GetName]"
+ TE_OFFER_SURRENDER_HEADER:0 "Surrender"
+ 
+  
+ TE_OFFER_PEACE_WAR_TYPE:0 "Мы боремся §R[TE_GET_WARTYPE_NAME_FROM]§! против [?ROOT.var_TE_peace_neg_target.GetNameWithFlag]." 
+ TE_CLOSE_BTN:0 "Закрыть"
+ TE_CLOSE_BTN_tt:0 "Закрывает окно без отправки мирных предложений"
+ # Peace offer send
+ TE_OFFER_COND_BTN:0 "§LУсловная капитуляция§!"
+ TE_OFFER_COND_BTN_tt:0 "Отправить предложение об условной капитуляции [?ROOT.var_TE_peace_neg_target.GetNameDef] \nСтоит [?global.var_TE_conditional_pp] пв\n---[TE_GET_CONDITIONAL_CONDITION_SURRENDER_LOW] [TE_GET_CONDITIONAL_CONDITION_SURRENDER_HIGH] [TE_GET_CONDITIONAL_CONDITION_CONTROL] [TE_GET_CONDITIONAL_CONDITION_PP] [TE_GET_CONDITIONAL_CONDITION_OPPONENT_FACTION] [TE_GET_CONDITIONAL_CONDITION_OWN_FACTION] [TE_GET_CONDITIONAL_CIVIL_WAR]"
+ TE_TE_OFFER_COND_PP:0 "§L[?global.var_TE_conditional_pp]§!" 
+ TE_conditional_surrender_low:0 "\n £trigger_no §R У вас должно быть больше, чем 1% процесса капитуляции§!"
+ TE_conditional_surrender_low_ok:0 "\n £trigger_yes §G У вас должно быть больше, чем 1% процесса капитуляции§!"
+ TE_conditional_surrender_high:0 "\n £trigger_no §R Прогресс сдачи не может быть выше 65%§!"
+ TE_conditional_surrender_high_ok:0 "\n £trigger_yes §G Прогресс сдачи не может быть выше 65%§!"
+ TE_conditional_control:0 "\n £trigger_no §R [?Root.var_TE_peace_neg_target.GetName] не контролирует хотя бы одно из ваших регионов§!"
+ TE_conditional_control_ok:0 "\n £trigger_yes §G [?Root.var_TE_peace_neg_target.GetName] контролирует хотя бы один из ваших регионов§!"
+ TE_conditional_pp_low:0 "\n £trigger_no §R Вам нужно как минимум [?global.var_TE_conditional_pp] Политической власти чтобы предложить условную капитуляцию.§!"
+ TE_conditional_pp_low_ok:0 "\n £trigger_yes §G Вам нужно как минимум [?global.var_TE_conditional_pp] Политической власти чтобы предложить условную капитуляцию.§!"
+ TE_conditional_opponent_not_faction_leader:0 "\n £trigger_no §R Вы можете предложить условную капитуляцию только стране, которая либо не входит во фракцию, либо является лидером фракции. §!"
+ TE_conditional_opponent_not_faction_leader_ok:0 "\n £trigger_yes §G Вы можете предложить условную капитуляцию только стране, которая либо не входит во фракцию, либо является лидером фракции. §!"
+ TE_conditional_own_faction:0 "\n £trigger_no §R Вы не можете сдаться условно, если находитесь во фракции.§!"
+ TE_conditional_own_faction_ok:0 "\n £trigger_yes §G Вы не можете сдаться условно, если находитесь во фракции.§!"
+ TE_conditional_civil_war:0 "\n £trigger_no §R Вы не можете сдаться условно, если ведете гражданскую войну.§!"
+ 
+ TE_OFFER_UNCOND_BTN:0 "§LБезоговорочная капитуляция§!"
+ TE_OFFER_UNCOND_BTN_tt:0 "Отправить предложение о безоговорочной капитуляции [?ROOT.var_TE_peace_neg_target.GetNameDef]\nСтоит [?global.var_TE_unconditional_pp] пв\n---[TE_GET_UNCONDITIONAL_CONDITION_SURRENDER_LOW] [TE_GET_UNCONDITIONAL_CONDITION_SURRENDER_HIGH] [TE_GET_UNCONDITIONAL_CONDITION_CONTROL] [TE_GET_UNCONDITIONAL_CONDITION_PP] [TE_GET_UNCONDITIONAL_CONDITION_OPPONENT_FACTION] "
+ TE_OFFER_UNCOND_PP:0 "§L[?global.var_TE_unconditional_pp]§!" 
+ TE_unconditional_surrender_low:0 "\n £trigger_no §R У вас должно быть больше, чем 65% процесса капитуляции§!"
+ TE_unconditional_surrender_low_ok:0 "\n £trigger_yes §G У вас должно быть больше, чем 65% процесса капитуляции§!"
+ TE_unconditional_surrender_high:0 "\n £trigger_no §R Прогресс сдачи не может быть выше 95%§!"
+ TE_unconditional_surrender_high_ok:0 "\n £trigger_yes §G Прогресс сдачи не может быть выше 95%§!"
+ TE_unconditional_control:0 "\n §R £trigger_no  [?Root.var_TE_peace_neg_target.GetName] не контролирует хотя бы одно из ваших регионов§!"
+ TE_unconditional_control_ok:0 "\n £trigger_yes §G [?Root.var_TE_peace_neg_target.GetName] контролирует хотя бы один из ваших регионов§!"
+ TE_unconditional_pp_low:0 "\n £trigger_no §R Вам нужно как минимум [?global.var_TE_unconditional_pp] Политической власти чтобы предложить безоговорочную капитуляцию.§!"
+ TE_unconditional_pp_low_ok:0 "\n £trigger_yes §G Вам нужно как минимум [?global.var_TE_unconditional_pp] Политической власти чтобы предложить безоговорочную капитуляцию.§!"
+ TE_unconditional_opponent_not_faction_leader:0 "\n £trigger_no §R Вы можете предложить отдельное предложение о безоговорочной капитуляции только стране, которая либо не входит во фракцию, либо является лидером фракции. §!"
+ TE_unconditional_opponent_not_faction_leader_ok:0 "\n £trigger_yes §G Вы можете предложить отдельное предложение о безоговорочной капитуляции только стране, которая либо не входит во фракцию, либо является лидером фракции. §!"
+ 
+ 
+ TE_OFFER_RECOG_BTN:0 "§LПредложение Независимости§!"
+ TE_OFFER_RECOG_BTN_tt:0 "Начать переговоры о независимости с [?ROOT.var_TE_peace_neg_target.GetNameDef]  \nСтоит [?global.var_TE_recognition_pp] пв\n---[TE_GET_RECOG_CONDITION_OPPONENT_OVERLORD] [TE_GET_RECOG_CONDITION_PP]"
+ TE_OFFER_RECOGNITION_PP:0 "§L[?global.var_TE_recognition_pp]§!"
+ TE_recog_opponent_overlord_ok:0 "\n £trigger_yes §G [?Root.var_TE_peace_neg_target.GetName] ведет войну за независимость против нас§!"
+ TE_recog_opponent_overlord:0 "\n £trigger_no §R [?Root.var_TE_peace_neg_target.GetName] не ведет против нас войну за независимость§!"
+ TE_recog_pp_low:0 "\n £trigger_no §R Вам нужно как минимум [?global.var_TE_recognition_pp] Политической власти чтобы предложить переговоры о независимости.§!"
+ TE_recog_pp_low_ok:0 "£\n trigger_yes §G Вам нужно как минимум [?global.var_TE_recognition_pp] Политической власти чтобы предложить переговоры о независимости.§!"
+ 
+ 
+ TE_OFFER_WHITE_BTN:0 "§LСтатус КВО§!"
+ TE_OFFER_WHITE_BTN_tt:0 "Отправить запрос на Белый мир [?ROOT.var_TE_peace_neg_target.GetNameDef]  \nСтоит [?global.var_TE_white_pp] пв\n---[TE_GET_WHITE_CONDITION_PP] [TE_GET_WHITE_CONDITION_WAR_LENGTH] [TE_GET_WHITE_CONDITION_SURRENDER] [TE_GET_WHITE_CONDITION_NO_CONTROL] [TE_GET_WHITE_CONDITION_NO_FACTION]"
+ TE_OFFER_WHITE_PP:0 "§L[?global.var_TE_white_pp]§!"
+ TE_white_no_faction_not_ok:0 "\n £trigger_no §R Вы не можете предложить белый мир, если вы находитесь в фракции, если вы не лидер фракции..§!"
+ TE_white_no_faction_ok:0 "\n £trigger_yes §G Вы не можете предложить белый мир, если вы находитесь в фракции, если вы не лидер фракции..§!"
+ TE_white_no_control_not_ok:0 "\n £trigger_no §R Вы можете предложить белый мир только в том случае, если ни одна из стран не контролирует территорию другой..§!"
+ TE_white_no_control_ok:0 "\n £trigger_yes §G Вы можете предложить белый мир только в том случае, если ни одна из стран не контролирует территорию другой..§!"
+ TE_white_surrender_low:0 "\n £trigger_no §R У вас не может быть больше, чем 1% процесса капитуляции.§!"
+ TE_white_surrender_low_ok:0 "\n £trigger_yes §G У вас не может быть больше, чем 1% процесса капитуляции.§!"
+ TE_white_pp_low:0 "\n £trigger_no §R Вам нужно как минимум [?global.var_TE_white_pp] Политической власти чтобы предложить белый мир.§!"
+ TE_white_pp_low_ok:0 "\n £trigger_yes §G Вам нужно как минимум [?global.var_TE_white_pp] Политической власти чтобы предложить белый мир.§!"
+ TE_white_war_length_low:0 "\n £trigger_no §R Вы должны быть в войне с [?Root.var_TE_peace_neg_target.GetName] минимум 6 месяцев.§!"
+ TE_white_war_length_low_ok:0 "\n £trigger_yes §G Вы должны быть в войне с [?Root.var_TE_peace_neg_target.GetName] минимум 6 месяцев.§!" 
+ 
+ 
+ ### SCRIPTED DIPLO
+ TE_OFFER_MILD_TERMS_TITLE:0 "Предложить мягкие условия"
+ TE_OFFER_MILD_TERMS_ACTION_DESC:0 "Предлагает условия мягкого мира, если они сдаются"
+ TE_MILD_TERMS_SEND_DESC:0 "Отправляет предложение о мире на мягких условиях, если [THIS.GetNameWithFlag] сдастся."
+ TE_MILD_TERMS_RECIEVE_DESC:0 "[ROOT.GetLeader] [ROOT.GetNameWithFlag] предложил нам мягкие условия, если мы сейчас сдадимся. \nЧто мы ответим"
+ TE_NOT_CIVIL_WAR_OR_IND:0 "Не в Гражданской войне или Войне за независимость против [ROOT.GetNameWithFlag]"
+ TE_WAR_LENGTH:0 "Продолжительность войны"
+ TE_ALL_STATES:0 "Все регионы оккупированы врагом"
+ TE_sent_request_flag:0 " Есть ожидающее предложение"
+ TE_SCRIPTED_DIPLO_CONDITIONAL_TITLE:0 "Условная капитуляция"
+ 
+ TE_WAR_OF_INDEPENDENCE_TITLE:0 "Война за независимость"
+ TE_WAR_OF_INDEPENDENCE_ACTION_DESC:0 "Начать войну против нашей метрополии за свободу нашего народа."
+ TE_wi_loc_key_accept:0 "Война за независимость"
+ TE_wi_loc_key_accept_desc:0 "§R[ROOT.GetNameWithFlag]§! в одностороннем порядке провозгласил себя независимым от §Y[FROM.GetNameWithFlag]§!\n\nМятеж необходимо подавить, прежде чем он выйдет из-под контроля." 
+ 
+ 
+ ### Условия мира WINDOW
+ # Selected Условия мира pop up
+ TE_selected_terms_header:0 "Выбранные условия мира"
+ TE_government_terms_none:0 "§LПравительственные условия:§!  §gНе выбрано§!"
+ TE_government_terms_change:0 "§LПравительственные условия:§!  §GСменить правительство§!"
+ TE_government_terms_puppet:0 "§LПравительственные условия:§!  §GУстановить марионеточный режим§!"
+ TE_government_terms_recognize:0 "§LПравительственные условия:§!  §GПризнать независимость§!"
+ TE_government_terms_dissolve:0 "§LПравительственные условия:§!  §GРаспустить правительство§!"
+ TE_reparations_terms_selected:0 "§LВоенные репарации:§!  §GПортебовать§!"
+ TE_reparations_terms_none:0 "§LВоенные репарации:§!  §gНе выбрано§!"
+ TE_military_industry_terms_selected:0 "§LУсловия военной промышленности:§!  §GТребуется сокращение§!"
+ TE_military_industry_terms_none:0 "§LУсловия военной промышленности:§!  §gНе выбрано§!"
+ TE_naval_industry_terms_selected:0 "§LУсловия военно-морской промышленности:§!  §GТребуется сокращение§!"
+ TE_naval_industry_terms_none:0 "§LУсловия военно-морской промышленности:§!  §gНе выбрано§!"
+ TE_navy_terms_reduce_transfer:0 "§LУсловия ВМФ:§!  §GСокращение и перевод флота§!"
+ TE_navy_terms_transfer:0 "§LУсловия ВМФ:§!  §GПередача ВМФ§!"
+ TE_navy_terms_reduce:0 "§LУсловия ВМФ:§!  §GСокращение военно-морского флота§!"
+ TE_navy_terms_none:0 "§LУсловия ВМФ:§!  §gНе выбрано§!"
+ TE_number_states_terms_pos:0 "§LКоличество требуемых регионов:§!  §G[?ROOT.current_no_demanded_states]§!"
+ TE_number_states_terms_none:0 "§LКоличество требуемых регионов:§!  §gНет§!"
+ TE_number_states_resources_terms_pos:0 "§LКоличество требуемых прав на нефть:§!  §G[?ROOT.current_no_demanded_states_resources]§!"
+ TE_number_states_resources_terms_none:0 "§LКоличество требуемых прав на нефть:§!  §gНет§!"
+ TE_number_states_demil_terms_pos:0 "§LКоличество регионов, подлежащих демилитаризации:§!  §G[?ROOT.current_no_demanded_states_demil]§!"
+ TE_number_states_demil_terms_none:0 "§LКоличество регионов, подлежащих демилитаризации:§!  §gНет§!"
+ 
+ TE_number_revoked_claimed_states_terms_pos:0 "§LКоличество отозванных претензий:§!  §G[?ROOT.current_no_revoked_claimed_states]§!"
+ TE_number_revoked_claimed_states_terms_none:0 "§LКоличество отозванных претензий:§!  §gНет§!"
+ TE_number_revoked_core_states_terms_pos:0 "§LКоличество отозванных нац регионов:§!  §G[?ROOT.current_no_revoked_core_states]§!"
+ TE_number_revoked_core_states_terms_none:0 "§LКоличество отозванных нац регионов:§!  §gНет§!"
+ 
+ # Container window 
+ TE_PEACE_TERMS_HEADER:0 "УСЛОВИЯ МИРА"
+ TE_TREATY_TERMS_HEADER:0 "[ROOT.GetAdjective] [ROOT.TE_GET_WARTYPE_NAME] против §R[?ROOT.var_TE_target_country.GetNameDef]§!"
+ TE_TREATY_POINTS:0 "[GET_SURRENDER_LEVEL]"
+ TE_SEND_BTN:0 "ОТПРАВИТЬ"
+ TE_SEND_BTN_tt:0 "Отправляет текущий набор требований мирного договора."
+ 
+ TE_TOTAL_PTS_BTN:0 "[?ROOT.var_TE_ptp_total]"
+ TE_TOTAL_PTS_BTN_tt:0 "Общее кол-во очков мира"
+ TE_USED_PTS_BTN:0 "[?ROOT.var_TE_ptp_used]"
+ TE_USED_PTS_BTN_tt:0 "Использованные очки мира"
+ TE_AVAILABLE_PTS_BTN:0 "[?ROOT.var_TE_ptp_available]"
+ TE_AVAILABLE_PTS_BTN_tt:0 "Available Peace Term Points"
+
+ # Target country terms frame
+ TE_SELECTEDCOUNTRY_TITLE:0 "Выбранная страна"
+ TE_SELECTEDCOUNTRY_NAME:0 "[THIS.OWNER.GetNameWithFlag]"
+ TE_country_main_war_target:0 "§LСтатус:§! §RОсновная цель по условиям мира§!"
+ TE_country_puppet_of_war_target:0 "§ LСтатус:§! §RМарионетка [?ROOT.var_TE_target_country.GetNameWithFlag]§!"
+ TE_country_ourselves:0 "§LСтатус:§! §BНаша страна§!"
+ 
+ TE_country_our_ally:0 "§LСтатус:§! §CНаши союзники§!"
+ TE_country_is_other:0 "§LСтатус:§! §gОстальные§!"
+ TE_GOVERNMENT_IDEOLOGY_TEXT:0 "§LПравящая партия:§! [This.OWNER.GetRulingParty], [This.OWNER.GetRulingIdeology]"
+ 
+ TE_country_change_gov_to_us:0 "Будет вынужден установить новое правительство"
+ TE_country_not_change_gov_to_us:0 "Без смены правительства (скрыть)"
+ TE_country_dissolve:0 "Незаконное правительство [?ROOT.var_TE_target_country.GetName] будет распущен"
+ TE_country_recognize:0 "Правительство [?ROOT.var_TE_target_country.GetName] узнает [Root.getName] как независимая страна."
+ TE_country_puppet_this:0 "Мы установим дружественный марионеточный режим в[?ROOT.var_TE_target_country.GetName]"
+ 
+ 
+ 
+ 
+ # Selected states frame
+ TE_SELECTEDSTATE_TITLE:0 "Выбранный регион"
+ TE_SELECTEDSTATE_NAME:0 "§LНазвание региона:§! [THIS.GetName]"
+ TE_state_is_core:0 "§LПринадлежит:§! §R[From.Owner.GetNameDef]§!\n§LСтатус:§! A §GНац§! регион нашей нации."
+ TE_state_is_claimed:0 "§LПринадлежит:§! §R[From.Owner.GetNameDef]§!\n§LСтатус:§! §OЗаявлен§! нами."
+ TE_state_is_border:0 "§LПринадлежит:§! §R[From.Owner.GetNameDef]§!\n§LСтатус:§! §CПриграничный регион§!"
+ TE_state_is_owned_by_target:0 "§LПринадлежит:§! §R[From.Owner.GetNameDef]§!\n§LСтатус:§! §g-§!"
+ TE_state_is_core_of_target:0 "§LПринадлежит:§!Наш регион \n§LСтатус:§! §RНац регион§! [?ROOT.var_TE_target_country.GetNameDef]."
+ TE_state_is_claimed_by_target:0 "§LПринадлежит: §!Наш регион \n§LСтатус:§! §OЗаявлен§![?ROOT.var_TE_target_country.GetNameDef]."
+ TE_state_is_owned_by_root:0 "§LПринадлежит: §!Наш регион\n§LСтатус:§! §g-§!"
+ TE_state_other:0 "§LПринадлежит:§! §g[From.Owner.GetNameDef]§!\n§LСтатус:§! §g-§!"
+ TE_state_controlled_by_us:0 "§LКонтроль:§! §GКонтроллируются§! нашими силами"
+ TE_state_controlled_by_ally:0 "§LКонтроль:§! §CКонтроллируются§! союзными силами"
+ TE_state_not_controlled_by_us:0 "§LКонтроль:§! §gNot Контроллируются§! нашими силами"
+ 
+ TE_state_is_demanded:0 "§LУсловия мира:§! §GТребуется§!"
+ TE_state_is_not_demanded:0 "§LУсловия мира:§! §g-§!"
+ TE_state_is_to_liberated:0 "§LУсловия мира:§! Будет освобождена"	
+ TE_state_is_to_pupped:0 "§LУсловия мира:§! Будет марионеткой"
+ TE_state_is_to_demil:0 "§LУсловия мира:§! Демилитаризованна"
+ 
+ 
+ TE_state_owner_is_puppet:0 "§Y[From.Owner.GetNameWithFlag]§! марионетка §R[?ROOT.var_TE_target_country.GetAdjective]§!"
+ TE_state_owner_is_puppet_liberated:0 "§Y[From.Owner.GetNameWithFlag]§! Будет освобождена."
+ TE_state_owner_is_puppet_transferred:0 "Control of §Y[From.Owner.GetNameWithFlag]§! будет переданн нам."
+ TE_state_is_not_puppet:0 " "
+ 
+ TE_option_not_allowed:0 "§g---§!"
+ 
+ TE_ASSUME_CONTROL_BTN:0 "§LВзять под свой контроль§!"
+ TE_ASSUME_CONTROL_BTN_tt:0 "Как лидер фракции или крупная страна в фракции, вы можете взять на себя контроль над вражескими государствами на время мирных переговоров на 1 очко заключения мира, если только эти государства не являются национальными или заявленны минорными государствами, или они уже были выбранны для завоевания. "
+ 
+ ### Political Terms Frame
+ TE_POLITICAL_TERMS_HEADER:0 "§LПолитические условия§!"
+ TE_CHANGE_GOVERNMENT_BTN:0 "§LИзменить правительство§!"
+ TE_CHANGE_GOVERNMENT_BTN_tt:0 "Установить [ROOT.GetRulingIdeology] правительство в [?ROOT.var_TE_target_country.GetNameDef]"
+ TE_change_gov_cost_pos:0 "[?ROOT.var_TE_change_gov_cost]"
+ TE_change_gov_cost_neg:0 "§R[?ROOT.var_TE_change_gov_cost]§!"
+ TE_INSTALL_PUPPET_BTN:0 "§LУстановить марионеточный режим§!"
+ TE_INSTALL_PUPPET_BTN_tt:0 "Установить [ROOT.GetRulingIdeology] марионеточный режим [?ROOT.var_TE_target_country.GetAdjective] регионах под вашим контролем. \n---\nN.B. Это не может быть объединено с опцией аннексирования." 
+ TE_inst_pup_cost_neg:0 "§R[?ROOT.var_TE_inst_pup_cost]§!"
+ TE_inst_pup_cost_pos:0 "[?ROOT.var_TE_inst_pup_cost]"
+ TE_DISSOLVE_BTN:0 "§LРаспустить страну§!"
+ TE_DISSOLVE_BTN_tt:0 "Распустить незаконное правительство [?ROOT.var_TE_target_country.GetNameDef], и реинтегрировать мятежные части страны в [ROOT.GetNameDef]."
+ TE_dissolve_cost_pos:0 "[?ROOT.var_TE_dissolve_cost]"
+ TE_dissolve_cost_neg:0 "§R[?ROOT.var_TE_dissolve_cost]§!"
+ 
+ TE_GET_RECOG_BTN:0 "§LПолучить признание§!"
+ TE_GET_RECOG_tt:0 "Заставь наших повелителей признать нашу независимость"
+ TE_get_recog_cost_pos:0 "[?ROOT.var_TE_get_recog_cost]"
+ TE_get_recog_cost_neg:0 "§R[?ROOT.var_TE_get_recog_cost]§!"
+ 
+ TE_RELEASE_PUP_BTN:0 "§LОтпустить марионеток§!"
+ TE_RELEASE_PUP_BTN_tt:0 "Освобождает выбранную нацию от оков своего повелителя"
+ TE_release_pup_cost_pos:0 "[?ROOT.var_TE_release_pup_cost]"
+ TE_release_pup_cost_neg:0 "§R[?ROOT.var_TE_release_pup_cost]§!"
+ 
+ TE_TRANS_PUP_BTN:0 "§LПередать марионетку§!"
+ TE_TRANS_PUP_BTN_tt:0 "Передать марионеточную нацию нам"
+ TE_trans_pup_cost_pos:0 "[?ROOT.var_TE_trans_pup_cost]"
+ TE_trans_pup_cost_neg:0 "§R[?ROOT.var_TE_trans_pup_cost]§!"
+
+ 
+ 
+ # conquered countries section
+ TE_CONQUERED_COUNTRIES_HEADER:0 "   §LПокоренные миноры§!"
+ TE_LIB_CONQ_BTN:0 "§LОсвободить§!"
+ TE_LIB_CONQ_BTN_tt:0 "Освободить завоеванную нацию, которая считает выбранную провинцию национальной провинцией."
+ TE_lib_conq_cost_pos:0 "[?ROOT.var_TE_lib_conq_cost]"
+ TE_lib_conq_cost_neg:0 "§R[?ROOT.var_TE_lib_conq_cost]§!"
+ TE_PUP_CONQ_BTN:0 "§LОсвободить марионетку§!"
+ TE_PUP_CONQ_BTN_tt:0 "Освободить завоеванную страну, но сохранить контроль над внешней политикой освобожденной нации."
+ TE_pup_conq_cost_pos:0 "[?ROOT.var_TE_pup_conq_cost]"
+ TE_pup_conq_cost_neg:0 "§R[?ROOT.var_TE_pup_conq_cost]§!"
+ 
+ # Territorial terms section 
+ TE_TERRITORIAL_TERMS_HEADER:0 "§LТерриториальные Условия§!"
+ TE_ANNEX_BTN:0 "§LАннекс§!"
+ TE_ANNEX_BTN_tt:0 "Потребовать все территории под вашим контролем"
+ TE_annex_cost_pos:0 "[?ROOT.var_TE_annex_cost]"
+ TE_annex_cost_neg:0 "§R[?ROOT.var_TE_annex_cost]§!"
+ TE_TAKE_CORE_BTN:0 "§LПотребовать национальные провинции§!"
+ TE_TAKE_CORE_BTN_tt:0 "Требование возврата провинции, которое считается национальной провинцией страны. Требование национальной провинции обычно дешевле, чем требование провинции, в котором у вас есть менее сильные требования."
+ TE_take_core_cost_neg:0 "§R[?ROOT.var_TE_take_core_cost]§!"
+ TE_take_core_cost_pos:0 "[?ROOT.var_TE_take_core_cost]"
+ 
+ TE_TAKE_CLAIMED_BTN:0 "§LПотребовать заявленные провинции§!"
+ TE_TAKE_CLAIMED_tt:0 "Потребовать провинцию, на которую вы претендуете. Чтобы требовать его, он должен либо граничить с вашей территорией, либо с другим государством, которое вы уже потребовали, либо быть доступным с моря."
+ TE_take_claimed_cost_neg:0 "§R[?ROOT.var_TE_take_claimed_cost]§!"
+ TE_take_claimed_cost_pos:0 "[?ROOT.var_TE_take_claimed_cost]"
+ 
+ TE_TAKE_BORDER_STATE_BTN:0 "§LПотребовать приграничные провинции§!"
+ TE_TAKE_BORDER_STATE_BTN_tt:0 "Требовать штат, который граничит с вашими собственными штатами."
+ TE_take_border_cost_neg:0 "§R[?ROOT.var_TE_take_border_cost]§!"
+ TE_take_border_cost_pos:0 "[?ROOT.var_TE_take_border_cost]"
+ 
+ TE_TAKE_PORT_BTN:0 "§LПотребовать порт§!"
+ TE_TAKE_PORT_BTN_tt:0 "Даже если вы не граничите с материковой провинцией, вы можете потребовать его в мирном договоре, если у него есть порт, чтобы ваша страна могла получить к нему доступ с моря. Это обычно намного дороже, чем требование штата, к которому вы предъявляете претензии или который граничит с вашей территорией."
+ TE_take_port_cost_neg:0 "§R[?ROOT.var_TE_take_port_cost]§!"
+ TE_take_port_cost_pos:0 "[?ROOT.var_TE_take_port_cost]"
+ 
+ TE_TAKE_ISLAND_BTN:0 "§LПотребовать остров§!"
+ TE_TAKE_ISLAND_BTN_tt:0 "Требовать передачу острова."
+ TE_take_island_cost_neg:0 "§R[?ROOT.var_TE_take_island_cost]§!"
+ TE_take_island_cost_pos:0 "[?ROOT.var_TE_take_island_cost]"
+ 
+ TE_TAKE_COLONY_BTN:0 "§LПотребовать колониальную провинцию§!"
+ TE_TAKE_COLONY_BTN_tt:0 "Потребовать передачи колониальной провинции под ваш контроль. Обычно дешевле, чем требовать национальную территорию."
+ TE_take_colony_cost_neg:0 "§R[?ROOT.var_TE_take_colony_cost]§!"
+ TE_take_colony_cost_pos:0 "[?ROOT.var_TE_take_colony_cost]"
+ 
+ TE_GIVE_TO_ALLY_BTN:0 "§LПотребовать для союзника§!"
+ TE_GIVE_TO_ALLY_BTN_tt:0 "Требуйте, чтобы провинция была передана союзнику или подчиненному государству, которое претендует или граничит с ним."
+ TE_give_to_ally_cost_neg:0 "§R[?ROOT.var_TE_give_to_ally_cost]§!"
+ TE_give_to_ally_cost_pos:0 "[?ROOT.var_TE_give_to_ally_cost]"
+ 
+ # Financial and Industrial Terms Window
+ TE_INDUSTRIAL_TERMS_HEADER:0 "§LФинансовые и промышленные условия§!"
+ TE_WAR_REP_BTN:0 "§LПотребовать репарации§!"
+ TE_WAR_REP_BTN_tt:0 "Требуйте, чтобы вы получили репарации от [?Root.var_TE_target_country.GetName] на период одного года"
+ TE_war_rep_cost_neg:0 "§R[?ROOT.var_TE_war_rep_cost]§!"
+ TE_war_rep_cost_pos:0 "[?ROOT.var_TE_war_rep_cost]"
+ 
+ TE_OIL_RIGHTS_BTN:0 "§LТребовать права на нефть§!"
+ TE_OIL_RIGHTS_BTN_tt:0 "Требовать права на нефть и другие природные ресурсы в [This.getName] регионе."
+ TE_oil_rights_cost_neg:0 "§R[?ROOT.var_TE_oil_rights_cost]§!"
+ TE_oil_rights_cost_pos:0 "[?ROOT.var_TE_oil_rights_cost]"
+ 
+ TE_state_has_oil_demanded:0 "[This.GetName] производит [?THIS.resource@oil] нефть. Мы заявили права на это."
+ TE_state_has_oil:0 "[This.GetName] производит [?THIS.resource@oil] нефть"
+ TE_state_no_oil:0 " "
+ 
+ TE_REDUCE_MIL_BTN:0 "§LУменьшить военный потенциал§!"
+ TE_REDUCE_MIL_BTN_tt:0 "Уничтожить военный потенциал страны-потерпевшего путем принудительного закрытия ряда военных заводов."
+ TE_reduce_mil_cost_neg:0 "§R[?ROOT.var_TE_reduce_mil_cost]§!"
+ TE_reduce_mil_cost_pos:0 "[?ROOT.var_TE_reduce_mil_cost]"
+ 
+ # Naval Terms Window
+ TE_NAVAL_TERMS_HEADER:0 "§LВоенно-морские условия§!" 
+ TE_REDUCE_NAVAL_BTN:0 "§LУменьшить военно-морские возможности§!"
+ TE_REDUCE_NAVAL_BTN_tt:0 "Сократите количество верфей проигравшей страны, чтобы они не смогли быстро восстановить свой флот."
+ TE_reduce_naval_cost_neg:0 "§R[?ROOT.var_TE_reduce_naval_cost]§!"
+ TE_reduce_naval_cost_pos:0 "[?ROOT.var_TE_reduce_naval_cost]"
+ 
+ TE_REDUCE_NAVY_BTN:0 "§LУменьшить ВМС§!"
+ TE_REDUCE_NAVY_BTN_tt:0 "Требовать, чтобы части [?ROOT.var_TE_target_country.GetAdjective] флот списан, чтобы уменьшить его будущую угрозу."
+ TE_reduce_navy_cost_neg:0 "§R[?ROOT.var_TE_reduce_navy_cost]§!"
+ TE_reduce_navy_cost_pos:0 "[?ROOT.var_TE_reduce_navy_cost]"
+ 
+ TE_TRANSFER_NAVY_BTN:0 "§LТрансфер ВМФ§!"
+ TE_TRANSFER_NAVY_BTN_tt:0 "Требовать, чтобы весь [?ROOT.var_TE_target_country.GetAdjective] флот передан нам."
+ TE_transfer_navy_cost_neg:0 "§R[?ROOT.var_TE_transfer_navy_cost]§!"
+ TE_transfer_navy_cost_pos:0 "[?ROOT.var_TE_transfer_navy_cost]"
+ 
+ ### Security Terms Window
+ TE_SECURITY_TERMS_HEADER:0 "§LУсловия безопасности§!" 
+ 
+ TE_SET_DEMIL_BTN:0 "§LДемилитаризованная зона§!"
+ TE_SET_DEMIL_BTN_tt:0 "Превратить выбранный регион в Демилитаризованную зону"
+ TE_set_demil_cost_neg:0 "§R[?ROOT.var_TE_set_demil_cost]§!"
+ TE_set_demil_cost_pos:0 "[?ROOT.var_TE_set_demil_cost]"
+ 
+ TE_LIMIT_MILITARY_BTN:0 "§LПредел армии§!"
+ TE_LIMIT_MILITARY_BTN_tt:0 "Ограничивает армию выбранной страны максимум до 7 дивизий."
+ TE_limit_military_cost_neg:0 "§R[?ROOT.var_TE_limit_military_cost]§!"
+ TE_limit_military_cost_pos:0 "[?ROOT.var_TE_limit_military_cost]"
+
+ ### Diplomatic terms Window 
+ TE_DIPLOMATIC_TERMS_HEADER:0 "§LДипломатические условия§!" 
+ TE_REVOKE_CORE_BTN:0 "§LУбрать нац регион§!"
+ TE_REVOKE_CORE_BTN_tt:0 "Заставить [?ROOT.var_TE_target_country.GetNameDef] отказаться от своих прав на господство над нашим государством."
+ TE_revoke_core_cost_neg:0 "§R[?ROOT.var_TE_revoke_core_cost]§!"
+ TE_revoke_core_cost_pos:0 "[?ROOT.var_TE_revoke_core_cost]"
+ 
+ TE_REVOKE_CLAIM_BTN:0 "§LСнять претензию§!"
+ TE_REVOKE_CLAIM_BTN_tt:0 "Заставить [?ROOT.var_TE_target_country.GetNameDef] отказаться от претензий на наше государство."
+ TE_revoke_claim_cost_neg:0 "§R[?ROOT.var_TE_revoke_claim_cost]§!"
+ TE_revoke_claim_cost_pos:0 "[?ROOT.var_TE_revoke_claim_cost]"
+ 
+ 

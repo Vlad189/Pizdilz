@@ -1,0 +1,223 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				set_variable = { war_exhaustion_variable = 0 }
+				set_variable = { war_exhaustion_daily = 1 }
+				set_variable = { peace_exhaustion_daily = 0 }
+				set_variable = { war_exhaustion_max = 4500 }
+				if = {
+					limit = {
+						OR = {
+							tag = ITA
+							tag = ETH
+						}
+					}
+					set_variable = { war_exhaustion_variable = 90 }
+				}
+			}
+		}
+	}
+
+    on_daily = {
+		effect = {
+				set_variable = { war_exhaustion_max = 4500 }
+
+				if = {
+					limit = { has_idea = undisturbed_isolation }
+					set_variable = { peace_exhaustion_daily = 0 }
+					set_variable = { war_exhaustion_daily = 2 }
+				}
+
+				if = {
+					limit = { has_idea = isolation }
+					set_variable = { peace_exhaustion_daily = 0 }
+					set_variable = { war_exhaustion_daily = 1 }
+				}
+
+				if = {
+					limit = { has_idea = civilian_economy }
+					set_variable = { peace_exhaustion_daily = -3 }
+					set_variable = { war_exhaustion_daily = 0 }
+				}
+
+				if = {
+					limit = { has_idea = low_economic_mobilisation }
+					set_variable = { peace_exhaustion_daily = -1.5 }
+					set_variable = { war_exhaustion_daily = 1 }
+				}
+
+				if = {
+					limit = { has_idea = partial_economic_mobilisation }
+					set_variable = { peace_exhaustion_daily = 0.5 }
+					set_variable = { war_exhaustion_daily = 1.5 }
+				}
+
+				if = {
+					limit = { has_idea = war_economy }
+					set_variable = { peace_exhaustion_daily = 1 }
+					set_variable = { war_exhaustion_daily = 2 }
+				}
+
+				if = {
+					limit = { has_idea = tot_economic_mobilisation }
+					set_variable = { peace_exhaustion_daily = 2 }
+					set_variable = { war_exhaustion_daily = 2.5 }
+				}
+				if = {
+					limit = { has_idea = SPR_collectivized_society }
+					set_variable = { peace_exhaustion_daily = -1 }
+					set_variable = { war_exhaustion_daily = 1 }
+				}
+				if = {
+					limit = { has_idea = new_economic_policy }
+					set_variable = { peace_exhaustion_daily = -1 }
+					set_variable = { war_exhaustion_daily = 1 }
+				}
+				if = {
+					limit = { has_idea = new_economic_policy_2 }
+					set_variable = { peace_exhaustion_daily = -1 }
+					set_variable = { war_exhaustion_daily = 1 }
+				}
+
+				#OTHER
+
+				if = {
+					limit = { has_war = yes }
+	                add_to_variable = { war_exhaustion_variable = war_exhaustion_daily }
+				}
+				if = {
+					limit = { has_war = no }
+	                add_to_variable = { war_exhaustion_variable = peace_exhaustion_daily }
+				}
+
+				if = {
+					limit = {
+						check_variable = { war_exhaustion_variable < 600 }
+						OR = {
+							has_idea = low_war_exhaustion_gui
+							has_idea = medium_war_exhaustion_gui
+							has_idea = heavy_war_exhaustion_gui
+						}
+					}
+					remove_ideas = low_war_exhaustion_gui
+					remove_ideas = medium_war_exhaustion_gui
+					remove_ideas = heavy_war_exhaustion_gui
+				}
+
+
+				if = {
+					limit = {
+						check_variable = { war_exhaustion_variable > 749 }
+						check_variable = { war_exhaustion_variable < 1500 }
+						NOT = { has_idea = low_war_exhaustion_gui }
+					}
+					if = {
+						limit = { has_idea = medium_war_exhaustion_gui }
+						remove_ideas = medium_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = heavy_war_exhaustion_gui }
+						remove_ideas = heavy_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = extreme_war_exhaustion_gui }
+						remove_ideas = extreme_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = total_war_exhaustion_gui }
+						remove_ideas = total_war_exhaustion_gui
+					}
+					add_ideas = low_war_exhaustion_gui
+				}
+
+				if = {
+					limit = {
+						check_variable = { war_exhaustion_variable > 1499 }
+						check_variable = { war_exhaustion_variable < 2250 }
+						NOT = { has_idea = medium_war_exhaustion_gui }
+					}
+					if = {
+						limit = { has_idea = low_war_exhaustion_gui }
+						remove_ideas = low_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = heavy_war_exhaustion_gui }
+						remove_ideas = heavy_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = extreme_war_exhaustion_gui }
+						remove_ideas = extreme_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = total_war_exhaustion_gui }
+						remove_ideas = total_war_exhaustion_gui
+					}
+					add_ideas = medium_war_exhaustion_gui
+				}
+				
+				if = {
+					limit = {
+						check_variable = { war_exhaustion_variable > 2249 }
+						check_variable = { war_exhaustion_variable < 3000 }
+						NOT = { has_idea = heavy_war_exhaustion_gui }
+					}
+					if = {
+						limit = { has_idea = low_war_exhaustion_gui }
+						remove_ideas = low_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = medium_war_exhaustion_gui }
+						remove_ideas = medium_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = extreme_war_exhaustion_gui }
+						remove_ideas = extreme_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = total_war_exhaustion_gui }
+						remove_ideas = total_war_exhaustion_gui
+					}
+					add_ideas = heavy_war_exhaustion_gui
+				}
+				
+				if = {
+					limit = {
+						check_variable = { war_exhaustion_variable > 2999 }
+						check_variable = { war_exhaustion_variable < 3750 }
+						NOT = { has_idea = extreme_war_exhaustion_gui }
+					}
+					if = {
+						limit = { has_idea = low_war_exhaustion_gui }
+						remove_ideas = low_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = medium_war_exhaustion_gui }
+						remove_ideas = medium_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = heavy_war_exhaustion_gui }
+						remove_ideas = heavy_war_exhaustion_gui
+					}
+					if = {
+						limit = { has_idea = total_war_exhaustion_gui }
+						remove_ideas = total_war_exhaustion_gui
+					}
+					add_ideas = extreme_war_exhaustion_gui
+				}
+
+				if = {
+					limit = {
+						check_variable = { war_exhaustion_variable > 3749 }
+						NOT = { has_idea = total_war_exhaustion_gui }
+					}
+					add_ideas = total_war_exhaustion_gui
+					if = {
+						limit = { has_idea = extreme_war_exhaustion_gui }
+						remove_ideas = extreme_war_exhaustion_gui
+					}
+				}
+                clamp_variable = { var = war_exhaustion_variable min = 0 max = war_exhaustion_max }
+		}
+	}
+}

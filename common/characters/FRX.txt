@@ -1,0 +1,17 @@
+characters={
+
+	FRX_Manerg = { #FRX
+		name = Mannerheim
+		portraits = {
+			civilian = {
+				large = GFX_portrait_FRX_Manerg
+			}
+		}
+		country_leader = {
+			ideology = nationalism_ideology
+			traits = { dictator }
+			expire = "1995.1.1.1"
+
+		}
+	}
+}

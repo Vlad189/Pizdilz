@@ -1,0 +1,127 @@
+##################
+# SUPER EVENTS 
+##################
+
+add_namespace = super
+country_event = {	#gavrilovputch
+	id = super.54
+	title = super.54.t
+	desc = super.54.d
+	picture = GFX_report_event_diplomatic_message
+
+	is_triggered_only = no
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		AND = {
+			POV = { has_government = fascism }
+			NOT = {
+				has_global_flag = gavrilov_putch
+			}
+		}
+	}
+
+	option = {
+		name = super.54.a
+		
+        set_global_flag = gavrilov_putch
+        set_global_flag = Super_Event_Visible
+        play_song = "endsieg"
+        add_ideas = sergey_cho
+		
+	}
+}
+
+country_event = {	#vtorzhenee
+	id = super.2
+	title = super.2.t
+	desc = super.2.d
+	picture = GFX_report_event_diplomatic_message
+	is_triggered_only = no
+	fire_only_once = yes
+	hidden = yes
+	trigger = {
+		AND = {
+			POV = { has_completed_focus = POV_Don2}
+			NOT = {
+				has_global_flag = vtorzhenee
+			}
+		}
+	}
+	option = {
+		name = super.2.a
+        set_global_flag = vtorzhenee
+        set_global_flag = Super_Event_Visible
+        play_song = "startwar"
+		
+	}
+}
+
+
+country_event = {
+	id = super.3
+	title = super.3.t
+	desc = super.3.d
+	picture = GFX_report_event_diplomatic_message
+
+	trigger = {
+		AND = {
+		NOT = {
+			KSS = {
+				controls_province = 9417
+			}
+			has_global_flag = POV_Rostov_Taken
+		}
+	}
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	immediate = {
+		name = super.3.a
+		
+                set_global_flag = POV_Rostov_Taken
+		set_global_flag = Super_Event_Visible
+		
+		play_song = "nota_bene_chernocoyenci"
+               KSS = {country_event = TE_peace_event.6}
+            
+	}
+}
+country_event = {
+	id = super.4
+	title = super.4.t
+	desc = super.4.d
+	picture = GFX_report_event_diplomatic_message
+
+	trigger = {
+		AND = {
+		NOT = {
+			KSS = {
+				controls_province = 3734
+			}
+
+			has_global_flag = POV_Vangergrad_Taken
+		}
+	}
+	}
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	immediate = {
+		name = super.4.a
+		
+                set_global_flag = POV_Vangergrad_Taken
+		set_global_flag = Super_Event_Visible
+		
+		play_song = "ccw"
+            
+	}
+}

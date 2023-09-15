@@ -1,0 +1,463 @@
+league_of_nations_category = {
+	form_league_of_nation = {
+		icon = generic_nationalism
+		fire_only_once = yes
+		visible = {
+			NOT = { league_of_nations_exists = yes }
+			OR = {
+				has_global_flag = league_of_nations_at_start_disabled
+				has_start_date > 1946.04.18
+			}
+		}
+		cost = 100
+		available = {
+			has_government = democratic
+			has_war = no
+			date > 1920.01.09
+			if = {
+				limit = {
+					is_historical_focus_on = yes
+					NOT = { has_start_date > 1946.04.18 }
+				}
+				date < 1946.04.18
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = CREATE_LEAGUE_OF_NATIONS_TT
+			set_country_flag = founder_of_league_of_nations
+			set_global_flag = league_of_nations_created
+			set_league_of_nations_leader = yes
+			custom_effect_tooltip = ALL_NEIGHBORS_ARE_INVITED_TO_THE_LEAGUE_OF_NATIONS
+			hidden_effect = {
+				set_variable = { global.last_lon_election_date = global.date }
+				set_temp_variable = { election_time = 365 }
+				set_league_of_nations_global_election_time = yes
+				every_neighbor_country = {
+					limit = {
+						NOT = { is_league_of_nations_member = yes }
+					}
+					country_event = { id = league_of_nations_events.11 hours = 3 }
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						NOT = { has_start_date > 1946.04.18 }
+						is_historical_focus_on = yes
+						NOT = { original_tag = IRE }
+						NOT = { original_tag = FRA }
+						NOT = { original_tag = ENG }
+					}
+					AND = {
+						has_start_date > 1946.04.18
+						is_major = no
+						NOT = { original_tag = FRA }
+						NOT = { original_tag = ENG }
+						NOT = { original_tag = GER }
+						NOT = { original_tag = USA }
+					}
+				}
+			}
+		}
+	}
+
+	league_of_nations_reform_1 = {
+		visible = {
+			is_league_of_nations_leader = yes
+			set_temp_variable = { reform_id = 1 }
+			has_not_completed_league_of_nations_reform = yes
+			OR = {
+				is_ai = yes
+				has_decision = league_of_nations_reform_1
+			}
+		}
+		available = {
+			set_temp_variable = { reform_id = 1 }
+			can_complete_league_of_nations_reform = yes
+		}
+		days_remove = 210
+		days_re_enable = 0
+		cancel_trigger = {
+			OR = {
+				is_not_league_of_nations_leader = yes
+				is_subject = yes
+			}
+		}
+		complete_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		cancel_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		remove_effect = {
+			set_temp_variable = { reform_id = 1 }
+			complete_league_of_nations_reform = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	league_of_nations_reform_2 = {
+		visible = {
+			is_league_of_nations_leader = yes
+			set_temp_variable = { reform_id = 2 }
+			has_not_completed_league_of_nations_reform = yes
+			set_temp_variable = { reform_id = 3 }
+			has_not_completed_league_of_nations_reform = yes
+			OR = {
+				is_ai = yes
+				has_decision = league_of_nations_reform_2
+			}
+		}
+		available = {
+			set_temp_variable = { reform_id = 2 }
+			can_complete_league_of_nations_reform = yes
+		}
+		days_remove = 210
+		days_re_enable = 0
+		cancel_trigger = {
+			OR = {
+				is_not_league_of_nations_leader = yes
+				is_subject = yes
+			}
+		}
+		complete_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		cancel_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		remove_effect = {
+			set_temp_variable = { reform_id = 2 }
+			complete_league_of_nations_reform = yes
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 2
+				has_government = democratic
+			}
+			modifier = {
+				factor = ai_random
+				always = yes
+			}
+		}
+	}
+
+	league_of_nations_reform_3 = {
+		visible = {
+			is_league_of_nations_leader = yes
+			set_temp_variable = { reform_id = 2 }
+			has_not_completed_league_of_nations_reform = yes
+			set_temp_variable = { reform_id = 3 }
+			has_not_completed_league_of_nations_reform = yes
+			OR = {
+				is_ai = yes
+				has_decision = league_of_nations_reform_3
+			}
+		}
+		available = {
+			set_temp_variable = { reform_id = 3 }
+			can_complete_league_of_nations_reform = yes
+		}
+		days_remove = 210
+		days_re_enable = 0
+		cancel_trigger = {
+			OR = {
+				is_not_league_of_nations_leader = yes
+				is_subject = yes
+			}
+		}
+		complete_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		cancel_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		remove_effect = {
+			set_temp_variable = { reform_id = 3 }
+			complete_league_of_nations_reform = yes
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 2
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
+			modifier = {
+				factor = ai_random
+				always = yes
+			}
+		}
+	}
+
+	league_of_nations_reform_4 = {
+		visible = {
+			is_league_of_nations_leader = yes
+			set_temp_variable = { reform_id = 3 }
+			has_not_completed_league_of_nations_reform = yes
+			set_temp_variable = { reform_id = 4 }
+			has_not_completed_league_of_nations_reform = yes
+			OR = {
+				is_ai = yes
+				has_decision = league_of_nations_reform_4
+			}
+		}
+		available = {
+			set_temp_variable = { reform_id = 4 }
+			can_complete_league_of_nations_reform = yes
+		}
+		days_remove = 210
+		days_re_enable = 0
+		cancel_trigger = {
+			OR = {
+				is_not_league_of_nations_leader = yes
+				is_subject = yes
+			}
+		}
+		complete_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		cancel_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		remove_effect = {
+			set_temp_variable = { reform_id = 4 }
+			complete_league_of_nations_reform = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	league_of_nations_reform_5 = {
+		visible = {
+			is_league_of_nations_leader = yes
+			set_temp_variable = { reform_id = 2 }
+			has_not_completed_league_of_nations_reform = yes
+			set_temp_variable = { reform_id = 5 }
+			has_not_completed_league_of_nations_reform = yes
+			OR = {
+				is_ai = yes
+				has_decision = league_of_nations_reform_5
+			}
+		}
+		available = {
+			set_temp_variable = { reform_id = 5 }
+			can_complete_league_of_nations_reform = yes
+		}
+		days_remove = 210
+		days_re_enable = 0
+		cancel_trigger = {
+			OR = {
+				is_not_league_of_nations_leader = yes
+				is_subject = yes
+			}
+		}
+		complete_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		cancel_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		remove_effect = {
+			set_temp_variable = { reform_id = 5 }
+			complete_league_of_nations_reform = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	league_of_nations_reform_6 = {
+		visible = {
+			is_league_of_nations_leader = yes
+			set_temp_variable = { reform_id = 6 }
+			has_not_completed_league_of_nations_reform = yes
+			OR = {
+				is_ai = yes
+				has_decision = league_of_nations_reform_6
+			}
+		}
+		available = {
+			set_temp_variable = { reform_id = 6 }
+			can_complete_league_of_nations_reform = yes
+		}
+		days_remove = 210
+		days_re_enable = 0
+		cancel_trigger = {
+			OR = {
+				is_not_league_of_nations_leader = yes
+				is_subject = yes
+			}
+		}
+		complete_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		cancel_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		remove_effect = {
+			set_temp_variable = { reform_id = 6 }
+			complete_league_of_nations_reform = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	league_of_nations_reform_7 = {
+		visible = {
+			is_league_of_nations_leader = yes
+			set_temp_variable = { reform_id = 3 }
+			has_not_completed_league_of_nations_reform = yes
+			set_temp_variable = { reform_id = 7 }
+			has_not_completed_league_of_nations_reform = yes
+			OR = {
+				is_ai = yes
+				has_decision = league_of_nations_reform_7
+			}
+		}
+		available = {
+			set_temp_variable = { reform_id = 7 }
+			can_complete_league_of_nations_reform = yes
+		}
+		days_remove = 180
+		days_re_enable = 0
+		cancel_trigger = {
+			OR = {
+				is_not_league_of_nations_leader = yes
+				has_war = yes
+				is_subject = yes
+			}
+		}
+		complete_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		cancel_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		remove_effect = {
+			set_temp_variable = { reform_id = 7 }
+			complete_league_of_nations_reform = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	league_of_nations_reform_8 = {
+		visible = {
+			is_league_of_nations_leader = yes
+			set_temp_variable = { reform_id = 2 }
+			has_not_completed_league_of_nations_reform = yes
+			set_temp_variable = { reform_id = 8 }
+			has_not_completed_league_of_nations_reform = yes
+			OR = {
+				is_ai = yes
+				has_decision = league_of_nations_reform_8
+			}
+		}
+		available = {
+			set_temp_variable = { reform_id = 8 }
+			can_complete_league_of_nations_reform = yes
+		}
+		days_remove = 180
+		days_re_enable = 0
+		cancel_trigger = {
+			OR = {
+				is_not_league_of_nations_leader = yes
+				has_war = yes
+				is_subject = yes
+			}
+		}
+		complete_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		cancel_effect = {
+			update_league_of_nations_reforms_window = yes
+		}
+		remove_effect = {
+			set_temp_variable = { reform_id = 8 }
+			complete_league_of_nations_reform = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}
+
+league_of_nations_overlord_category = {
+	assume_league_of_nations_leadership_from_subject_decision = {
+		icon = generic_nationalism
+		cost = 100
+		days_remove = 0
+		available = {
+			is_league_of_nations_member = yes
+			has_war = no
+		}
+
+		complete_effect = {
+			set_league_of_nations_leader = yes
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	dissolve_league_of_nations_decision = {
+		icon = generic_nationalism
+		cost = 100
+		days_remove = 0
+		visible = {
+			var:global.league_of_nations_leader = {
+				OR = {
+					is_puppet_of = ROOT
+					compare_autonomy_state < puppet
+				}
+			}
+		}
+		available = {
+			var:global.league_of_nations_leader = {
+				has_government = ROOT
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				set_global_flag = league_of_nations_dissolved
+				var:global.league_of_nations_leader = {
+					unset_league_of_nations_leader = yes
+				}
+				every_country = {
+					limit = {
+						is_league_of_nations_member = yes
+					}
+					remove_from_league_of_nations = yes
+					set_temp_variable = { threat_value = 0 }
+					set_league_of_nations_threat_value = yes
+				}
+			}
+			news_event = { id = league_of_nations_news_events.7 }
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_league_of_nations_member = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+state={
+	id=834
+	name="Transcurzonia" # Transcurzonia
+	manpower = 972688
+	
+	state_category = rural
+	
+	history={
+		victory_points = {
+			9494 1
+		}
+		owner = POL
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = POL
+	}
+
+	provinces={
+		6580 9452 9494
+	}
+
+	local_supplies=0.0 
+}

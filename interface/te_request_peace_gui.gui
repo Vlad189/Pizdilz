@@ -1,0 +1,187 @@
+guiTypes = {
+	
+	containerWindowType = {
+		name = "TE_request_peace_shield"
+		position = {x=1370 y=-20}  
+		size = { width=25 height = 25}
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		
+		
+		buttonType = {
+			name = "TE_open_peace_request_btn"    
+			position = {x=0 y=20}	
+			spriteType = "GFX_TE_request_peace_shield"
+			#buttonText = "TE_OPEN_DECLARE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_OPEN_PEACE_REQ_BTN_tt"   
+			scale = 1
+			clicksound = select_focus  
+		}
+	}
+	
+	
+	containerWindowType = {
+		name = "TE_request_peace_window" 
+		position = {x=1180 y=100}    
+		size = { width=527 height = 360}
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes 
+		background = {
+			name = "Background"
+			spriteType = "GFX_TE_offer_peace_bg"   
+		}  
+		instantTextboxType = { 
+			name = "title"
+			position = {x=20 y=23} 
+			font = "hoi_36header"
+			text = "TE_OFFER_SURRENDER_HEADER"            
+			maxWidth = 500   
+			maxHeight = 20 
+			format = center 
+		}
+		instantTextboxType = { 
+			name = "surrender_title"
+			position = {x=20 y=85}  
+			font = "hoi_30header"
+			text = "TE_OFFER_SURRENDER_COUNTRY"             
+			maxWidth = 500  
+			maxHeight = 20
+			format = center  
+		}
+		
+		
+		instantTextboxType = { 
+			name = "war"
+			position = {x=20 y=145}    
+			font = "hoi_16mbs" 
+			text = "TE_OFFER_PEACE_WAR_TYPE"                 
+			maxWidth = 490 
+			maxHeight = 36
+			format = center 
+		}
+		buttonType = {
+			name = "TE_close_peace_req_btn"   
+			position = {x=220 y=305}	
+			spriteType = "GFX_TE_button_close_window" 
+			buttonText  = "TE_CLOSE_BTN"
+			buttonFont = "hoi_18mbs"
+			pdx_tooltip = "TE_CLOSE_BTN_tt"      
+			scale = 1.0
+			clicksound = select_focus   
+		}
+		
+		
+		instantTextboxType = { 
+			name = "TE_offer_conditional_surrender_btn_pp"
+			position = {x=25 y=178}    
+			font = "hoi_16mbs" 
+			text = "TE_TE_OFFER_COND_PP"                 
+			maxWidth = 30 
+			maxHeight = 36
+			format = right  
+		} 
+		buttonType = {
+			name = "TE_offer_conditional_surrender_btn"     
+			position = {x=60 y=170}	
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_OFFER_COND_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_OFFER_COND_BTN_tt"    
+			scale = 1.0
+			clicksound = select_focus  
+		}
+		
+		
+		instantTextboxType = { 
+			name = "TE_offer_unconditional_surrender_btn_pp"
+			position = {x=282 y=178}    
+			font = "hoi_16mbs" 
+			text = "TE_OFFER_UNCOND_PP"                 
+			maxWidth = 30 
+			maxHeight = 36
+			format = right  
+		} 
+		buttonType = {
+			name = "TE_offer_unconditional_surrender_btn"       
+			position = {x=317 y=170}	 
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_OFFER_UNCOND_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_OFFER_UNCOND_BTN_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		
+		instantTextboxType = { 
+			name = "TE_offer_recognition_btn_pp"
+			position = {x=25 y=218}    
+			font = "hoi_16mbs" 
+			text = "TE_OFFER_RECOGNITION_PP"                  
+			maxWidth = 30 
+			maxHeight = 36
+			format = right   
+		} 
+		
+		buttonType = {
+			name = "TE_offer_recognition_btn"   
+			position = {x=60 y=210 }	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_OFFER_RECOG_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_OFFER_RECOG_BTN_tt"   
+			scale = 1.0
+			clicksound = select_focus   
+		}
+		
+		
+		
+		
+		instantTextboxType = { 
+			name = "TE_offer_white_btn_pp"  
+			position = {x=282 y=218}     
+			font = "hoi_16mbs" 
+			text = "TE_OFFER_WHITE_PP"                 
+			maxWidth = 30 
+			maxHeight = 36
+			format = right  
+		} 
+		buttonType = {
+			name = "TE_offer_white_peace_btn"       
+			position = {x=317 y=210}	
+			spriteType = "GFX_TE_peace_select_button" 
+			buttonText = "TE_OFFER_WHITE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_OFFER_WHITE_BTN_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		
+		instantTextboxType = { 
+			name = "TE_offer_mild_terms_btn_pp"
+			position = {x=25 y=258}    
+			font = "hoi_16mbs" 
+			text = "TE_OFFER_MILD_PP"                   
+			maxWidth = 30 
+			maxHeight = 36
+			format = right   
+		} 
+		
+		buttonType = {
+			name = "TE_offer_mild_terms_btn"   
+			position = {x=60 y=250}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_OFFER_MILD_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_OFFER_MILD_BTN_tt"   
+			scale = 1.0
+			clicksound = select_focus   
+		}
+		
+	} 
+		
+}

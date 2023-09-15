@@ -1,0 +1,75 @@
+hf_li_bad = {
+			icon = GFX_idea_hf_family_fire
+
+			conscription_factor = life_bonus
+
+			remove_trigger = {
+				check_variable = {
+					life_counter > 20
+				}
+			}
+		}
+hf_li_good = {
+			icon = GFX_idea_hf_family_happy
+
+				conscription_factor = life_bonus
+
+			remove_trigger = {
+				check_variable = {
+					life_counter < 80
+				}
+			}
+		}
+hf_ec_bad = {
+			icon = GFX_idea_POL_disjointed_industry
+
+				industrial_capacity_factory = economy_bonus
+				production_factory_max_efficiency_factor = economy_bonus
+				production_speed_buildings_factor = economy_bonus
+				production_factory_efficiency_gain_factor = economy_bonus
+
+			remove_trigger = {
+				check_variable = {
+					economy_counter > 20
+				}
+			}
+		}
+hf_ec_good = {
+			icon = GFX_idea_POL_succesful_four_year_plan
+
+				industrial_capacity_factory = economy_bonus
+				production_factory_max_efficiency_factor = economy_bonus
+				production_speed_buildings_factor = economy_bonus
+				production_factory_efficiency_gain_factor = economy_bonus
+
+			remove_trigger = {
+				check_variable = {
+					economy_counter < 80
+				}
+			}
+		}
+hf_en_bad = {
+			icon = GFX_idea_hf_fuel
+
+				industrial_capacity_factory = enegy_bonus
+				local_resources_factor = economy_bonus
+
+			remove_trigger = {
+				check_variable = {
+					enegy_counter > 20
+				}
+			}
+		}
+hf_en_good = {
+			icon = GFX_idea_generic_exploit_mines
+
+				industrial_capacity_factory = enegy_bonus
+				local_resources_factor = enegy_bonus
+
+
+			remove_trigger = {
+				check_variable = {
+					enegy_counter < 80
+				}
+			}
+		}

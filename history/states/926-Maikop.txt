@@ -1,0 +1,24 @@
+state={
+	id=926
+	name="STATE_926"
+	manpower = 142000
+	
+	state_category = rural
+	
+	history={
+		victory_points = {
+			9696 2 
+		}
+		owner = KSS
+		buildings = { 
+			infrastructure = 2
+		}
+		add_core_of = KSS
+	}
+
+	provinces={
+		3717 3720 6738 9696 
+	}
+
+	local_supplies=0.0 
+}

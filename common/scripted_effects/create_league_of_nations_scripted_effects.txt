@@ -1,0 +1,886 @@
+create_league_of_nations_effect = {
+	set_global_flag = league_of_nations_created
+	clear_array = global.league_of_nations_reforms_array
+	add_to_array = { global.league_of_nations_reforms_array = 1 }
+	add_to_array = { global.league_of_nations_reforms_array = 0 }
+	add_to_array = { global.league_of_nations_reforms_array = 2 }
+	add_to_array = { global.league_of_nations_reforms_array = 3 }
+	add_to_array = { global.league_of_nations_reforms_array = 4 }
+	add_to_array = { global.league_of_nations_reforms_array = 5 }
+	add_to_array = { global.league_of_nations_reforms_array = 6 }
+	add_to_array = { global.league_of_nations_reforms_array = 0 }
+	add_to_array = { global.league_of_nations_reforms_array = 7 }
+	add_to_array = { global.league_of_nations_reforms_array = 8 }
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = enable_league_of_nations_at_start
+				option = ENABLE
+			}
+		}
+		if = {
+			limit = {
+				date < 1946.04.19
+			}
+			# Joining of countries:
+			if = {
+				limit = {
+					date > 1920.01.09
+				}
+				# Founding Members:
+				if = {
+					limit = {
+						country_exists = AST
+					}
+					AST = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = BEL
+					}
+					BEL = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = BOL
+					}
+					BOL = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = BRA
+					}
+					BRA = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = CHI
+					}
+					CHI = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = FRA
+					}
+					FRA = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = GRE
+					}
+					GRE = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = GUA
+					}
+					GUA = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = HON
+					}
+					HON = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = RAJ
+					}
+					RAJ = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = ITA
+					}
+					ITA = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = JAP
+					}
+					JAP = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = YUG
+					}
+					YUG = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = CAN
+					}
+					CAN = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = CUB
+					}
+					CUB = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = LIB
+					}
+					LIB = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = NZL
+					}
+					NZL = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = NIC
+					}
+					NIC = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = PAN
+					}
+					random_country = {
+						limit = {
+							tag = PAN
+						}
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = PRU
+					}
+					PRU = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = POL
+					}
+					POL = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = POR
+					}
+					POR = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = ROM
+					}
+					ROM = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = SIA
+					}
+					SIA = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = SAF
+					}
+					SAF = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = CZE
+					}
+					CZE = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = URG
+					}
+					URG = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = ENG
+					}
+					ENG = {
+						add_to_league_of_nations = yes
+					}
+				}
+				# Invited Members:
+				if = {
+					limit = {
+						country_exists = ALB
+					}
+					ALB = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = ARG
+					}
+					ARG = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = CHL
+					}
+					CHL = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = DEN
+					}
+					DEN = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = COL
+					}
+					COL = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = HOL
+					}
+					HOL = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = NOR
+					}
+					NOR = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = PAR
+					}
+					PAR = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = PER
+					}
+					PER = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = SWE
+					}
+					SWE = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = SPR
+					}
+					SPR = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = VEN
+					}
+					VEN = {
+						add_to_league_of_nations = yes
+					}
+				}
+				# Later Members:
+				if = {
+					limit = {
+						country_exists = BUL
+					}
+					BUL = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = COS
+					}
+					COS = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = FIN
+					}
+					FIN = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = AUS
+					}
+					AUS = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = SWI
+					}
+					SWI = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1920.12.31
+				}
+				if = {
+					limit = {
+						country_exists = EST
+					}
+					EST = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = LAT
+					}
+					LAT = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = LIT
+					}
+					LIT = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1921.12.31
+				}
+				if = {
+					limit = {
+						country_exists = HUN
+					}
+					HUN = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1922.12.31
+				}
+				if = {
+					limit = {
+						country_exists = ETH
+					}
+					ETH = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = IRE
+					}
+					IRE = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1923.12.31
+				}
+				if = {
+					limit = {
+						country_exists = ELS
+					}
+					ELS = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = DOM
+					}
+					DOM = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1926.09.09
+				}
+				if = {
+					limit = {
+						country_exists = GER
+					}
+					GER = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1928.12.31
+				}
+				if = {
+					limit = {
+						country_exists = LUX
+					}
+					LUX = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1930.12.31
+				}
+				if = {
+					limit = {
+						country_exists = MEX
+					}
+					MEX = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1931.12.31
+				}
+				if = {
+					limit = {
+						country_exists = TUR
+					}
+					TUR = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = IRQ
+					}
+					IRQ = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1933.12.31
+				}
+				if = {
+					limit = {
+						country_exists = SOV
+					}
+					SOV = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = ECU
+					}
+					ECU = {
+						add_to_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = AFG
+					}
+					AFG = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1936.12.31
+				}
+				if = {
+					limit = {
+						country_exists = EGY
+					}
+					EGY = {
+						add_to_league_of_nations = yes
+					}
+				}
+			}
+
+			# Leaving of countries:
+			if = {
+				limit = {
+					date > 1925.01.01
+				}
+				if = {
+					limit = {
+						country_exists = COS
+					}
+					COS = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1926.06.11
+				}
+				if = {
+					limit = {
+						country_exists = BRA
+					}
+					BRA = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1933.03.01
+				}
+				if = {
+					limit = {
+						country_exists = JAP
+					}
+					JAP = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1933.10.13
+				}
+				if = {
+					limit = {
+						country_exists = GER
+					}
+					GER = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1935.01.01
+				}
+				if = {
+					limit = {
+						country_exists = PAR
+					}
+					PAR = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1936.01.01
+				}
+				if = {
+					limit = {
+						country_exists = NIC
+					}
+					NIC = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1936.05.01
+				}
+				if = {
+					limit = {
+						country_exists = GUA
+					}
+					GUA = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1936.07.01
+				}
+				if = {
+					limit = {
+						country_exists = HON
+					}
+					HON = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1937.01.01
+				}
+				if = {
+					limit = {
+						country_exists = ELS
+					}
+					ELS = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1937.12.10
+				}
+				if = {
+					limit = {
+						country_exists = ITA
+					}
+					ITA = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1938.01.01
+				}
+				if = {
+					limit = {
+						country_exists = CHL
+					}
+					CHL = {
+						remove_from_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = VEN
+					}
+					VEN = {
+						remove_from_league_of_nations = yes
+					}
+				}
+				if = {
+					limit = {
+						country_exists = SPR
+					}
+					SPR = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1939.04.01
+				}
+				if = {
+					limit = {
+						country_exists = PRU
+					}
+					PRU = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1939.11.30
+				}
+				if = {
+					limit = {
+						country_exists = SOV
+					}
+					SOV = {
+						remove_from_league_of_nations = yes
+					}
+				}
+			}
+
+			# Set leader:
+			if = {
+				limit = {
+					date > 1939.12.31
+				}
+				IRE = {
+					set_league_of_nations_leader = yes
+				}
+			}
+			else_if = {
+				limit = {
+					date > 1932.12.31
+				}
+				FRA = {
+					set_league_of_nations_leader = yes
+				}
+			}
+			else_if = {
+				limit = {
+					date > 1920.01.09
+				}
+				ENG = {
+					set_league_of_nations_leader = yes
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { league_of_nations_exists = yes }
+					any_country = {
+						is_league_of_nations_member = yes
+					}
+				}
+				random_country = {
+					limit = {
+						is_league_of_nations_member = yes
+					}
+					set_league_of_nations_leader = yes
+				}
+			}
+
+			set_variable = { global.last_lon_election_date = global.date }
+			set_temp_variable = { election_time = 365 }
+			set_league_of_nations_global_election_time = yes
+
+			# Set first voting regarding Italian-Ethopian War:
+			if = {
+				limit = {
+					date > 1935.10.03
+					date < 1936.05.09
+					is_historical_focus_on = yes
+					country_exists = ETH
+					country_exists = ITA
+					ITA = {
+						has_war_with = ETH
+					}
+					NOT = { is_league_of_nations_voting_active = yes }
+					NOT = { is_league_of_nations_election_active = yes }
+				}
+				ITA = {
+					set_temp_variable = { threat_change = 1 }
+					set_league_of_nations_last_threat_static_change = yes
+					set_variable = { declared_war_on_target = ETH.id }
+					set_country_flag = ITA_ETH_war_add_aggressiveness
+					ETH = {
+						start_league_of_nations_voting_against_prev = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					date > 1936.05.08
+					is_historical_focus_on = yes
+				}
+				add_to_variable = { global.num_of_total_successful_league_of_nations_votings = 1 }
+			}
+		}
+		if = {
+			limit = {
+				any_country = {
+					is_league_of_nations_member = yes
+				}
+			}
+			every_country = {
+				limit = {
+					is_league_of_nations_member = yes
+					any_other_country = {
+						is_league_of_nations_member = yes
+						NOT = { has_country_flag = league_of_nations_opinion_set_for_@PREV }
+					}
+				}
+				every_other_country = {
+					limit = {
+						is_league_of_nations_member = yes
+						NOT = { has_country_flag = league_of_nations_opinion_set_for_@PREV }
+					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = league_of_nations_member_opinion
+					}
+					set_country_flag = league_of_nations_opinion_set_for_@PREV
+				}
+			}
+
+			# Set Focus at start:
+			if = {
+				limit = {
+					date > 1939.08.13
+				}
+				var:global.league_of_nations_leader = {
+					set_temp_variable = { reform_id = 1 }
+					complete_league_of_nations_reform = yes
+				}
+			}
+		}
+	}
+}
