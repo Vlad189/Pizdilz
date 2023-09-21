@@ -63,4 +63,21 @@ equipments = {
 			steel = 2
 		}
 	}
+	# armored trains
+	train_equipment_4 = {
+		year = 1936
+
+		archetype = train_equipment
+		parent = train_equipment_2
+		parent = train_equipment_3
+		priority = 30
+
+		armor_value = 250 # HP = BASE_TRAIN_HP + armor_value
+		air_attack = 35
+
+		build_cost_ic = 200
+		resources = {
+			steel = 2
+		}
+	}
 }

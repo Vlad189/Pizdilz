@@ -100,6 +100,14 @@ duplicate_archetypes = {
 		air_map_icon_frame = 8
 		interface_overview_category_index = 3
 	}
+	
+	medium_plane_naval_bomber_airframe = {
+		archetype = medium_plane_airframe
+		type = naval_bomber
+		picture = archetype_heavy_fighter_equipment
+		air_map_icon_frame = 3
+		interface_overview_category_index = 2
+	}
 
 	medium_plane_scout_plane_airframe = {
 		archetype = medium_plane_airframe
@@ -161,6 +169,27 @@ duplicate_archetypes = {
 		type = strategic_bomber
 		air_map_icon_frame = 10
 	}
+	
+	# naval_helicopter_equipment = {
+		# only_duplicate_archetype = yes
+		# module_slots = none # Prevent this archetype from being identified as using the plane designer
+		# archetype = small_plane_airframe
+		# type = naval_bomber
+		# sprite = jet_plane
+		# air_map_icon_frame = 20
+	# }
+	
+	# sam_equipment = {
+		# only_duplicate_archetype = yes
+		# module_slots = none
+		# archetype = small_plane_airframe
+		# type = strategic_bomber
+		# #ai_type = interceptor
+		# air_map_icon_frame = 21
+		# interface_overview_category_index = -1 # Do not include these in the intel or airforce overview.
+		# picture = archetype_rocket_interceptor_equipment
+		
+	# }
 }
 
 equipments = {
@@ -281,7 +310,7 @@ equipments = {
 
 	# Advanced Fighter
 	fighter_equipment_3 = {
-		year = 1944
+		year = 1943
 
 		archetype = small_plane_airframe
 		parent = fighter_equipment_2

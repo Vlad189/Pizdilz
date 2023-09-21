@@ -84,6 +84,82 @@ equipments = {
 			steel = 3
 		}
 	}
+	
+	artillery_equipment_4 = {
+		year = 1942
+
+		archetype = artillery_equipment
+		parent = artillery_equipment_3
+		priority = 50
+		visual_level = 2
+		
+		defense = 21
+		breakthrough = 9
+		soft_attack = 38
+		
+		build_cost_ic = 5
+		resources = {
+			tungsten = 1
+			steel = 3
+		}
+	}
+	
+	artillery_equipment_5 = {
+		year = 1942
+
+		archetype = artillery_equipment
+		parent = artillery_equipment_4
+		priority = 50
+		visual_level = 2
+		
+		defense = 24
+		breakthrough = 10
+		soft_attack = 42
+		
+		build_cost_ic = 5.5
+		resources = {
+			tungsten = 1
+			steel = 3
+		}
+	}
+	
+	artillery_equipment_6 = {
+		year = 1942
+
+		archetype = artillery_equipment
+		parent = artillery_equipment_5
+		priority = 50
+		visual_level = 2
+		
+		defense = 27
+		breakthrough = 11
+		soft_attack = 46
+		
+		build_cost_ic = 6
+		resources = {
+			tungsten = 1
+			steel = 3
+		}
+	}
+	
+	artillery_equipment_7 = {
+		year = 1942
+
+		archetype = artillery_equipment
+		parent = artillery_equipment_6
+		priority = 50
+		visual_level = 2
+		
+		defense = 30
+		breakthrough = 12
+		soft_attack = 50
+		
+		build_cost_ic = 6.5
+		resources = {
+			tungsten = 1
+			steel = 3
+		}
+	}
 
 	# Nebelwerfers!
 	rocket_artillery_equipment = {
@@ -149,6 +225,52 @@ equipments = {
 		}
 	}
 	
+	rocket_artillery_equipment_3 = {
+		year = 1020
+
+		archetype = rocket_artillery_equipment
+		parent = rocket_artillery_equipment_2
+		priority = 60
+		visual_level = 2
+
+		can_convert_from = {
+			rocket_artillery_equipment_2
+		}
+
+
+		defense = 19
+		breakthrough = 16
+		soft_attack = 46
+		build_cost_ic = 6
+		resources = {
+			tungsten = 2
+			steel = 2
+		}
+	}
+
+	rocket_artillery_equipment_4 = {
+		year = 1026
+
+		archetype = rocket_artillery_equipment
+		parent = rocket_artillery_equipment_3
+		priority = 60
+		visual_level = 2
+
+		can_convert_from = {
+			rocket_artillery_equipment_3
+		}
+
+
+		defense = 24
+		breakthrough = 21
+		soft_attack = 54
+		build_cost_ic = 7
+		resources = {
+			tungsten = 3
+			steel = 2
+		}
+	}
+	
 	#Katyusha 
 	motorized_rocket_equipment = {
 		year = 1934
@@ -196,6 +318,121 @@ equipments = {
 		archetype = motorized_rocket_equipment
 		priority = 70
 		visual_level = 0
+	}
+	
+	
+	motorized_rocket_equipment_2 = {
+		year = 1939
+
+		archetype = motorized_rocket_equipment
+		priority = 70
+		visual_level = 0
+		parent = motorized_rocket_equipment_1
+		#Defensive Abilities
+		defense = 19
+		breakthrough = 20
+		hardness = 0.15
+		armor_value = 10
+
+		#Offensive Abilities
+		soft_attack = 50
+		hard_attack = 3
+		ap_attack = 4
+		air_attack = 0
+		
+		build_cost_ic = 28
+		resources = {
+			#oil = 1
+			rubber = 1
+			tungsten = 2
+			steel = 1
+		}
+	}
+	
+	
+	motorized_rocket_equipment_3 = {
+		year = 1939
+
+		archetype = motorized_rocket_equipment
+		priority = 70
+		visual_level = 0
+		parent = motorized_rocket_equipment_2
+		#Defensive Abilities
+		defense = 21
+		breakthrough = 23
+		hardness = 0.15
+		armor_value = 15
+
+		#Offensive Abilities
+		soft_attack = 78
+		hard_attack = 4
+		ap_attack = 6
+		air_attack = 0
+		
+		build_cost_ic = 31
+		resources = {
+			#oil = 1
+			rubber = 1
+			tungsten = 2
+			steel = 1
+		}
+	}	
+	
+	motorized_rocket_equipment_4 = {
+		year = 1939
+
+		archetype = motorized_rocket_equipment
+		priority = 70
+		visual_level = 0
+		parent = motorized_rocket_equipment_3
+		#Defensive Abilities
+		defense = 23
+		breakthrough = 27
+		hardness = 0.5
+		armor_value = 80
+
+		#Offensive Abilities
+		soft_attack = 87
+		hard_attack = 5
+		ap_attack = 9
+		air_attack = 0
+		
+		build_cost_ic = 34
+		resources = {
+			#oil = 1
+			rubber = 1
+			tungsten = 2
+			steel = 1
+		}
+	}
+	
+	
+	motorized_rocket_equipment_5 = {
+		year = 1939
+
+		archetype = motorized_rocket_equipment
+		priority = 70
+		visual_level = 0
+		parent = motorized_rocket_equipment_3
+		#Defensive Abilities
+		defense = 26
+		breakthrough = 32.5
+		hardness = 0.5
+		armor_value = 90
+
+		#Offensive Abilities
+		soft_attack = 108
+		hard_attack = 6.5
+		ap_attack = 11
+		air_attack = 0
+		
+		build_cost_ic = 43.5
+		resources = {
+			#oil = 1
+			rubber = 1
+			tungsten = 2
+			steel = 1
+		}
 	}
 	
 }

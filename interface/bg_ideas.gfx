@@ -62,23 +62,23 @@ spriteTypes = {
 	#Head of State
 	spriteType = {
 		name = "GFX_idea_head_monarch"
-		texturefile = "gfx/interface/ideas/laws/complementary_policies/cop_head_monarch.dds"
+		texturefile = "gfx/interface/ideas/laws/complementary_policies/PB_Absolute_Monarchy.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_head_prime_minister"
-		texturefile = "gfx/interface/ideas/laws/complementary_policies/cop_head_prime_minister.dds"
+		texturefile = "gfx/interface/ideas/laws/complementary_policies/PB_Parliamentary_Republic.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_head_president"
-		texturefile = "gfx/interface/ideas/laws/complementary_policies/cop_head_president.dds"
+		texturefile = "gfx/interface/ideas/laws/complementary_policies/PB_Ultranationalist_Dictatorship.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_head_military"
-		texturefile = "gfx/interface/ideas/laws/complementary_policies/cop_head_military.dds"
+		texturefile = "gfx/interface/ideas/laws/complementary_policies/PB_Military_Government.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_head_chairman"
-		texturefile = "gfx/interface/ideas/laws/complementary_policies/cop_head_chairman.dds"
+		texturefile = "gfx/interface/ideas/laws/complementary_policies/PB_Single_Party_State.dds"
 	}
 
 	#Taxation Policy

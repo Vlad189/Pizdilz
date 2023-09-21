@@ -294,6 +294,7 @@ sub_units = {
 			category_front_line
 			category_all_infantry
 			category_army
+			category_motmech
 		}
 		
 		combat_width = 2
@@ -364,6 +365,7 @@ sub_units = {
 			category_front_line
 			category_all_infantry
 			category_army
+			category_motmech
 		}
 
 		combat_width = 2
@@ -425,8 +427,7 @@ sub_units = {
 
 		#hardness = 0.2 moving these buffs to unit stats
 	}
-	
-	
+		
 	fake_intel_unit = {
 		sprite = infantry
 		map_icon_category = infantry
@@ -509,7 +510,6 @@ sub_units = {
 			infantry_equipment = 85 #100 -> Same ratio as regular Infantry			
 		}
 	}
-
 	irregular_infantry = {
 		abbreviation = "IRR"
 		sprite = infantry

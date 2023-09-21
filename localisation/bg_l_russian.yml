@@ -19,14 +19,14 @@
     covert_ops:0 "Тайные оперативники"
 
     #HEAD OF STATE
-    cop_head_of_state:0 "Глава государства"
+    cop_head_of_state:0 "Форма правления"
 
     #LAWS
-    head_monarch:0 "монарх"
-    head_prime_minister:0 "премьер-министр"
-    head_president:0 "президент"
-    head_military:0 "Военный"
-    head_chairman:0 "председатель"
+    head_monarch:0 "Монархия"
+    head_prime_minister:0 "Парламентская Республика"
+    head_president:0 "Президентская Республика"
+    head_military:0 "Военная Диктатура"
+    head_chairman:0 "Однопартийная система"
 
     #TAXATION POLICY
     cop_taxation_policy:0 "Налоговая политика"
