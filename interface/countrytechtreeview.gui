@@ -3763,7 +3763,7 @@ guiTypes = {
 				name = "size_filler"
 				position = { x=0 y=0 }
 				size = {
-					width = 1550 height = 1000 
+					width = 1750 height = 1000 
 					min = { width = 100%% height = 100%% }
 				}
 				
@@ -4120,6 +4120,19 @@ guiTypes = {
 				}
 
 				instantTextBoxType = {
+					name = "industry_subtitle_resource_expansion"
+					position = { x = 1550 y = 255  }
+					textureFile = ""
+					font = "hoi_22tech"
+					borderSize = {x = 0 y = 4}
+					text = "INDUSTRY_TITLE_RESOURCES"
+					maxWidth = 150
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
 					name = "industry_subtitle_construction"
 					position = { x = 871 y = 255  }
 					textureFile = ""
@@ -4159,6 +4172,13 @@ guiTypes = {
 			gridboxtype = {
 				name = "construction1_tree"
 				position = { x = 894 y = 312 }
+				size = { width = 72 height = 650 }
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+			gridboxtype = {
+				name = "resource_expansion_tech_1_tree"
+				position = { x = 1600 y = 312 }
 				size = { width = 72 height = 650 }
 				slotsize = { width = 70 height = 70 }
 				format = "UP"
@@ -5761,7 +5781,6 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 		}
-  
 	}
 	
 	containerWindowType = {
@@ -5969,8 +5988,7 @@ guiTypes = {
 		iconType = {
 			name = "Icon"
 			position = { x=3 y=3 }
-			spriteType = "GFX_technology_medium"
-					   
+			spriteType = "GFX_technology_medium"			   
 			alwaystransparent = yes
 		}
 		iconType = {

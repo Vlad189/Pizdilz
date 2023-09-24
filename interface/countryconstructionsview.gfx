@@ -16,20 +16,7 @@ spriteTypes = {
 		animation_rate_fps = 24
 		looping = yes
 		pause_on_loop = 0.0
-		alwaystransparent = yes		
-	}
-
-	
-	frameAnimatedSpriteType = {
-		name = "GFX_construction_line_glow"
-		texturefile = "gfx/interface/construction_line_glow.dds"
-		noOfFrames = 2
-		animation_rate_fps = 3
-		looping = no
-		play_on_show = yes
-		pause_on_loop = 0.0
-		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+		allwaystransparent = yes		
 	}
 
 	spriteType = {
@@ -45,10 +32,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_state_constructions"
 		textureFile = "gfx//interface//state_constructions.dds"
-	}
-	spriteType = {
-		name = "GFX_constructions_bg4"
-		textureFile = "gfx//interface//constructions_bg4.dds"
 	}
 
 	spriteType = {
@@ -104,6 +87,11 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_industry_trade_icon"
+		textureFile = "gfx//interface//trade_button.dds"
+	}
+
+	spriteType = {
 		name = "GFX_convert_ic_button"
 		textureFile = "gfx//interface//convert_ic_button.dds"
 	}
@@ -131,7 +119,7 @@ spriteTypes = {
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
-		alwaystransparent = yes
+		allwaystransparent = yes
 		effectFile = "gfx/FX/buttonstate_blendframes.lua"
 	}	
 	
@@ -143,14 +131,14 @@ spriteTypes = {
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
-		alwaystransparent = yes
+		allwaystransparent = yes
 		effectFile = "gfx/FX/buttonstate_blendframes.lua"
 	}		
 	
 	frameAnimatedSpriteType = {
 		name = "GFX_construction_button_anim"
 		texturefile = "gfx//interface//building_icon_anim.dds"
-		noOfFrames = 17
+		noOfFrames = 18
 		loadType = "INGAME"
 		transparencecheck = yes
 		animation_rate_fps = 20
@@ -177,7 +165,7 @@ spriteTypes = {
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
-		alwaystransparent = yes
+		allwaystransparent = yes
 		effectFile = "gfx/FX/buttonstate_blendframes.lua"
 	}		
 	
@@ -189,7 +177,7 @@ spriteTypes = {
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
-		alwaystransparent = yes
+		allwaystransparent = yes
 		effectFile = "gfx/FX/buttonstate_blendframes.lua"
 	}
 
@@ -201,7 +189,7 @@ spriteTypes = {
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
-		alwaystransparent = yes
+		allwaystransparent = yes
 		effectFile = "gfx/FX/buttonstate_blendframes.lua"
 	}
 

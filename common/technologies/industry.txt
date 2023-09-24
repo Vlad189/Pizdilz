@@ -19,6 +19,11 @@ technologies = {
 			leads_to_tech = dispersed_industry
 			research_cost_coeff = 1
 		}
+
+		path = {
+			leads_to_tech = industrial_expansion_tech_1
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1936
@@ -3266,5 +3271,703 @@ construction6 = {
 		categories = {
 			industry
 		}
+	}
+
+###### INDUSTRIAL EXPANSION START #######
+	industrial_expansion_tech_1 = {
+		allow_branch = {
+			has_game_rule = {
+				rule = rule_industrial_expansion
+				option = ENABLED
+			}
+		}
+		
+		enable_building = {
+			building = industrial_expansion
+			level = 1
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = -2 y = 2 }
+		}
+		
+		path = {
+			leads_to_tech = industrial_expansion_tech_2
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1.5
+		start_year = 1936
+	}
+	
+	industrial_expansion_tech_2 = {
+		enable_building = {
+			building = industrial_expansion
+			level = 2
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = -2 y = 4 }
+		}
+		
+		path = {
+			leads_to_tech = industrial_expansion_tech_3
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1.5
+		start_year = 1937
+	}
+	
+	industrial_expansion_tech_3 = {
+		enable_building = {
+			building = industrial_expansion
+			level = 3
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = -2 y = 6 }
+		}
+		
+		path = {
+			leads_to_tech = industrial_expansion_tech_4
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1.5
+		start_year = 1939
+	}
+	
+	industrial_expansion_tech_4 = {
+		enable_building = {
+			building = industrial_expansion
+			level = 4
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = -2 y = 8 }
+		}
+		
+		path = {
+			leads_to_tech = industrial_expansion_tech_5
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1.5
+		start_year = 1941
+	}
+	
+	industrial_expansion_tech_5 = {
+		enable_building = {
+			building = industrial_expansion
+			level = 5
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = -2 y = 10 }
+		}
+		
+		path = {
+			leads_to_tech = industrial_expansion_tech_6
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1.5
+		start_year = 1943
+	}
+	industrial_expansion_tech_6 = {
+		enable_building = {
+			building = industrial_expansion
+			level = 6
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = -2 y = 12 }
+		}
+		
+		path = {
+			leads_to_tech = industrial_expansion_tech_7
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1.5
+		start_year = 1945
+	}
+	industrial_expansion_tech_7 = {
+		enable_building = {
+			building = industrial_expansion
+			level = 7
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = -2 y = 14 }
+		}
+		
+		path = {
+			leads_to_tech = industrial_expansion_tech_8
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1.5
+		start_year = 1950
+	}
+	industrial_expansion_tech_8 = {
+		enable_building = {
+			building = industrial_expansion
+			level = 8
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = -2 y = 16 }
+		}
+		
+		path = {
+			leads_to_tech = industrial_expansion_tech_9
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1.5
+		start_year = 1955
+	}
+	industrial_expansion_tech_9 = {
+		enable_building = {
+			building = industrial_expansion
+			level = 9
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = -2 y = 18 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1.5
+		start_year = 1960
+	}
+
+	resource_expansion_tech_1 = {
+		allow_branch = {
+			has_game_rule = {
+				rule = rule_resource_expansion
+				option = ENABLED
+			}
+		}
+		
+		enable_building = {
+			building = resource_expansion_steel
+			level = 5
+		}
+		
+		enable_building = {
+			building = resource_expansion_aluminium
+			level = 5
+		}
+		
+		enable_building = {
+			building = resource_expansion_tungsten
+			level = 5
+		}
+		
+		enable_building = {
+			building = resource_expansion_chromium
+			level = 5
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		path = {
+			leads_to_tech = resource_expansion_tech_2
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1
+		start_year = 1936
+	}
+	
+	resource_expansion_tech_2 = {
+		on_research_complete = {
+			modify_building_resources = {
+				building = resource_expansion_steel
+				resource = steel
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_aluminium
+				resource = aluminium
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_tungsten
+				resource = tungsten
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_chromium
+				resource = chromium
+				amount = 1
+			}
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		path = {
+			leads_to_tech = resource_expansion_tech_3
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1
+		start_year = 1937
+		
+		show_effect_as_desc = yes
+	}
+	
+	resource_expansion_tech_3 = {
+		on_research_complete = {
+			modify_building_resources = {
+				building = resource_expansion_steel
+				resource = steel
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_aluminium
+				resource = aluminium
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_tungsten
+				resource = tungsten
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_chromium
+				resource = chromium
+				amount = 1
+			}
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 4 }
+		}
+		
+		path = {
+			leads_to_tech = resource_expansion_tech_4
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1
+		start_year = 1939
+		
+		show_effect_as_desc = yes
+	}
+	
+	resource_expansion_tech_4 = {
+		on_research_complete = {
+			modify_building_resources = {
+				building = resource_expansion_steel
+				resource = steel
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_aluminium
+				resource = aluminium
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_tungsten
+				resource = tungsten
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_chromium
+				resource = chromium
+				amount = 1
+			}
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 6 }
+		}
+		
+		path = {
+			leads_to_tech = resource_expansion_tech_5
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1
+		start_year = 1941
+		
+		show_effect_as_desc = yes
+	}
+	
+	resource_expansion_tech_5 = {
+		on_research_complete = {
+			modify_building_resources = {
+				building = resource_expansion_steel
+				resource = steel
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_aluminium
+				resource = aluminium
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_tungsten
+				resource = tungsten
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_chromium
+				resource = chromium
+				amount = 1
+			}
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 8 }
+		}
+
+		path = {
+			leads_to_tech = resource_expansion_tech_6
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1
+		start_year = 1943
+		
+		show_effect_as_desc = yes
+	}
+
+	resource_expansion_tech_6 = {
+		on_research_complete = {
+			modify_building_resources = {
+				building = resource_expansion_steel
+				resource = steel
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_aluminium
+				resource = aluminium
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_tungsten
+				resource = tungsten
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_chromium
+				resource = chromium
+				amount = 1
+			}
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 10 }
+		}
+		path = {
+			leads_to_tech = resource_expansion_tech_7
+			research_cost_coeff = 1
+		}
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1
+		start_year = 1945
+		
+		show_effect_as_desc = yes
+	}
+
+	resource_expansion_tech_7 = {
+		on_research_complete = {
+			modify_building_resources = {
+				building = resource_expansion_steel
+				resource = steel
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_aluminium
+				resource = aluminium
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_tungsten
+				resource = tungsten
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_chromium
+				resource = chromium
+				amount = 1
+			}
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 12 }
+		}
+		path = {
+			leads_to_tech = resource_expansion_tech_8
+			research_cost_coeff = 1
+		}
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1
+		start_year = 1950
+		
+		show_effect_as_desc = yes
+	}
+
+	resource_expansion_tech_8 = {
+		on_research_complete = {
+			modify_building_resources = {
+				building = resource_expansion_steel
+				resource = steel
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_aluminium
+				resource = aluminium
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_tungsten
+				resource = tungsten
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_chromium
+				resource = chromium
+				amount = 1
+			}
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 14 }
+		}
+		path = {
+			leads_to_tech = resource_expansion_tech_9
+			research_cost_coeff = 1
+		}
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1
+		start_year = 1955
+		
+		show_effect_as_desc = yes
+	}
+
+	resource_expansion_tech_9 = {
+		on_research_complete = {
+			modify_building_resources = {
+				building = resource_expansion_steel
+				resource = steel
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_aluminium
+				resource = aluminium
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_tungsten
+				resource = tungsten
+				amount = 1
+			}
+			
+			modify_building_resources = {
+				building = resource_expansion_chromium
+				resource = chromium
+				amount = 1
+			}
+		}
+		
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 16 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1			
+		}
+		
+		research_cost = 1
+		start_year = 1960
+		
+		show_effect_as_desc = yes
 	}
 }
