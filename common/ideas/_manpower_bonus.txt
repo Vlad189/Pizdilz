@@ -17,7 +17,7 @@ ideas = {
 			}
 
 			modifier = {
-				modifier_life_level = 0.06
+				
 			}
 
 		}
@@ -37,7 +37,7 @@ ideas = {
 			}
 
 			modifier = {
-				modifier_life_level = 0.04
+				
 			}
 
 			
@@ -58,7 +58,7 @@ ideas = {
 			}
 
 			modifier = {
-				modifier_life_level = 0.02
+				
 			}
 
 		}
@@ -76,9 +76,16 @@ ideas = {
 					has_idea = scraping_the_barrel_economy
 				}
 			}
-
+			
+			traits = { #MODDED
+				SC_cap_90_percent
+			}
+			on_add = { #MODDED
+				custom_effect_tooltip = SC_cap_90_percent_tt
+			} #MODDED
+			
 			modifier = {
-				modifier_life_level = 0
+				
 			}
 		}
 
@@ -96,9 +103,15 @@ ideas = {
 					has_idea = scraping_the_barrel_economy
 				}
 			}
-
+			#MODDEDv
+			traits = {
+				SC_cap_80_percent
+			}
+			on_add = {
+				custom_effect_tooltip = SC_cap_80_percent_tt
+			}
 			modifier = {
-					modifier_life_level = -0.02
+					
 			}
 
 			
@@ -118,9 +131,16 @@ ideas = {
 					has_idea = scraping_the_barrel_economy
 				}
 			}
-
+			#MODDEDv
+			traits = {
+				SC_cap_70_percent
+			}
+			on_add = {
+				custom_effect_tooltip = SC_cap_70_percent_tt
+			}
+			
 			modifier = {
-				modifier_life_level = -0.05
+				
 			}
 
 			
@@ -139,9 +159,15 @@ ideas = {
 					has_idea = all_adults_serve_economy
 				}
 			}
-
+			#MODDED
+			traits = {
+				SC_cap_60_percent
+			}
+			on_add = {
+				custom_effect_tooltip = SC_cap_60_percent_tt
+			}
 			modifier = {
-				modifier_life_level = -0.1
+				
 			}
 
 		}

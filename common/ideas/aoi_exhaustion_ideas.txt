@@ -9,6 +9,8 @@ ideas= {
 				drift_defence_factor = -0.15
 				war_support_weekly = -0.002
 				ai_join_ally_desire_factor = -10
+				stability_weekly = -0.001  # Slight reduction in stability for low exhaustion.
+				consumer_goods_factor = 0.02  # Small increase in consumer goods needed.
 			}
 		}
 
@@ -21,6 +23,8 @@ ideas= {
 				drift_defence_factor = -0.3
 				war_support_weekly = -0.004
 				ai_join_ally_desire_factor = -20
+				stability_weekly = -0.003  # Moderate reduction in stability.
+				consumer_goods_factor = 0.04  # Increase in consumer goods due to war pressures.
 			}
 		}
 
@@ -33,6 +37,8 @@ ideas= {
 				drift_defence_factor = -0.45
 				war_support_weekly = -0.006
 				ai_join_ally_desire_factor = -30
+				stability_weekly = -0.005  # Significant reduction in stability.
+				consumer_goods_factor = 0.06  # Higher civilian demand due to war strains.
 			}
 		}
 		
@@ -45,6 +51,8 @@ ideas= {
 				drift_defence_factor = -0.6
 				war_support_weekly = -0.008
 				ai_join_ally_desire_factor = -40
+				stability_weekly = -0.007  # Extreme loss of stability.
+				consumer_goods_factor = 0.08  # Significantly higher civilian demand.
 			}
 		}
 		
@@ -57,6 +65,8 @@ ideas= {
 				drift_defence_factor = -0.75
 				war_support_weekly = -0.010
 				ai_join_ally_desire_factor = -50
+				stability_weekly = -0.009  # Near-collapse in stability.
+				consumer_goods_factor = 0.10  # Maximum civilian demand, economy is strained.
 			}
 		}
 	}

@@ -16,8 +16,7 @@ hidden_ideas = {
 			}
 
 		modifier = {
-			modifier_life_level = 0.05
-			modifier_economy_power = 0.05
+			
 		}
 	}
 
@@ -36,8 +35,7 @@ hidden_ideas = {
 			}
 			
 		modifier = {
-			modifier_life_level = 0.05
-			modifier_economy_power = 0.05
+			
 		}
 	}
 
@@ -54,10 +52,12 @@ hidden_ideas = {
 					has_idea = total_economic_economy
 				}
 			}
-		
+		on_add = {#MODDEDV
+				custom_effect_tooltip = civilian_economy_TT
+			}#MODDEDV
+			
 		modifier = {
-			modifier_life_level = 0.05
-			modifier_economy_power = 0.05
+			
 		}
 	}
 
@@ -74,10 +74,20 @@ hidden_ideas = {
 					has_idea = total_economic_economy
 				}
 			}
-
+			on_add = {
+				#MODDEDV
+				custom_effect_tooltip = low_economic_mobilisation_TT
+				if = {
+					limit = {
+						tag = USA
+						has_completed_focus = USA_limited_intervention
+						has_defensive_war = no
+					}
+					USA_congress_large_opposition = yes
+				}
+			}
 		modifier = {
-			modifier_life_level = 0.02
-			modifier_economy_power = 0.02
+			
 		}
 	}
 
@@ -94,10 +104,20 @@ hidden_ideas = {
 					has_idea = total_economic_economy
 				}
 			}
-
+		on_add = {
+				#MODDEDV
+				custom_effect_tooltip = partial_economic_mobilisation_TT
+				if = {
+					limit = {
+						tag = USA
+						has_completed_focus = USA_limited_intervention
+						has_defensive_war = no
+					}
+					USA_congress_large_opposition = yes
+				}
+			}
 		modifier = {
-			modifier_life_level = 0
-			modifier_economy_power = 0
+			
 		}
 	}
 
@@ -115,10 +135,19 @@ hidden_ideas = {
 					has_idea = total_economic_economy
 				}
 			}
-
+		on_add = {#MODDEDV
+				custom_effect_tooltip = war_economy_TT		#MODDED
+				if = {
+					limit = {
+						tag = USA
+						has_completed_focus = USA_limited_intervention
+						has_defensive_war = no
+					}
+					USA_congress_large_opposition = yes
+				}
+			}
 		modifier = {
-			modifier_life_level = -0.02
-			modifier_economy_power = -0.02
+			
 		}
 	}
 
@@ -136,10 +165,21 @@ hidden_ideas = {
 					has_idea = low_economic_economy
 				}
 			}
-
+		on_add = {
+				#MODDEDV
+				custom_effect_tooltip = tot_economic_mobilisation_TT
+				if = {
+					limit = {
+						tag = USA
+						has_completed_focus = USA_limited_intervention
+						has_defensive_war = no
+					}
+					USA_congress_large_opposition = yes
+				}
+			}
+			
 		modifier = {
-			modifier_life_level = -0.05
-			modifier_economy_power = -0.05
+			
 		}
 	}
 	
@@ -159,8 +199,7 @@ hidden_ideas = {
 			}
 
 		modifier = {
-			modifier_economy_power = 0.05
-			modifier_enegy_eq = 0.05
+			
 		}
 	}
 
@@ -175,10 +214,15 @@ hidden_ideas = {
 					has_idea = closed_economy_economy
 				}
 			}
-
+		traits = {
+				low_inflation_risk
+			}
+			on_add = {
+				custom_effect_tooltip = low_inflation_risk_tt
+			}		#MODDED
+			
 		modifier = {
-			modifier_economy_power = 0.05
-			modifier_enegy_eq = 0.05
+			
 		}
 	}
 
@@ -193,10 +237,14 @@ hidden_ideas = {
 					has_idea = closed_economy_economy
 				}
 			}
-			
+			traits = {
+				moderate_inflation_risk
+			}
+			on_add = {
+				custom_effect_tooltip = moderate_inflation_risk_tt
+			}		#MODDED
 		modifier = {
-			modifier_economy_power = 0.02
-			modifier_enegy_eq = 0.02
+			
 		}
 	}
 
@@ -210,10 +258,16 @@ hidden_ideas = {
 					has_idea = closed_economy_economy
 				}
 			}
-
+		#MODDED = {
+			traits = {
+				considerable_inflation_risk 
+			}
+			on_add = {
+				custom_effect_tooltip = considerable_inflation_risk_tt
+			}		#MODDED
+			
 		modifier = {
-			modifier_economy_power = 0
-			modifier_enegy_eq = 0
+			
 		}
 	}
 
@@ -228,10 +282,16 @@ hidden_ideas = {
 					has_idea = limited_exports_economy
 				}
 			}
-
+		#MODDED
+			traits = {
+				high_inflation_risk
+			}		#MODDED
+		on_add = {				
+				custom_effect_tooltip = closed_economy_TT
+				custom_effect_tooltip = high_inflation_risk_tt		#MODDED
+			}
 		modifier = {
-			modifier_economy_power = -0.05
-			modifier_enegy_eq = -0.05
+			
 		}
 	}
 }
