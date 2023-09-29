@@ -1,0 +1,20 @@
+buildings = {
+
+	# show_on_map:
+	#    if provincial = yes, then show_on_map = X is amount per each province
+	#    if provincial = no, then show_on_map = X is amount per state
+
+	trench = {
+		show_on_map = 1
+		base_cost = 250
+		per_level_extra_cost = 100
+		provincial = yes
+		disabled_in_dmz = yes
+		icon_frame = 18
+		max_level = 3
+		value = 1
+		land_fort = 1
+		damage_factor = 2.0
+	}
+	
+}
