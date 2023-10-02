@@ -1,0 +1,97 @@
+#Titles
+defined_text = {
+    name = get_super_event_title
+	
+    text = {
+        trigger = {
+            has_global_flag = gavrilov_putch
+        }
+        localization_key = "sp_event_gavrilovputch"
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = vtorzhenee
+        }
+        localization_key = "sp_event_vtorzhenee"
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = POV_Rostov_Taken
+        }
+        localization_key = "sp_event_POV_Rostov_Taken"
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = POV_Vangergrad_Taken
+        }
+        localization_key = "sp_event_POV_Vangergrad_Taken"
+    }
+	
+}
+
+defined_text = {
+    name = get_super_event_remark
+	
+	text = {
+        trigger = {
+            has_global_flag = gavrilov_putch
+        }
+        localization_key = "sp_event_gavrilovputch_REMARK"
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = vtorzhenee
+        }
+        localization_key = "sp_event_vtorzhenee_REMARK"
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = POV_Rostov_Taken
+        }
+        localization_key = "sp_event_POV_Rostov_Taken_REMARK"
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = POV_Vangergrad_Taken
+        }
+        localization_key = "sp_event_POV_Vangergrad_Taken_REMARK"
+    }
+}
+
+defined_text = {
+    name = get_super_event_quote
+	
+	text = {
+        trigger = {
+            has_global_flag = gavrilov_putch
+        }
+        localization_key = "sp_event_gavrilovputch_QUOTE"
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = vtorzhenee
+        }
+        localization_key = "sp_event_vtorzhenee_QUOTE"
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = POV_Rostov_Taken
+        }
+        localization_key = "sp_event_POV_Rostov_Taken_QUOTE"
+    }
+	
+	text = {
+        trigger = {
+            has_global_flag = POV_Vangergrad_Taken
+        }
+        localization_key = "sp_event_POV_Vangergrad_Taken_QUOTE"
+    }
+}

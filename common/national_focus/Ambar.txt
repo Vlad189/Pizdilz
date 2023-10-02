@@ -1,0 +1,78 @@
+focus_tree = {
+	id = Ambar_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AMB
+		}
+	}
+		default = yes
+	reset_on_civilwar = no
+	focus = {
+		id = AMB_Osel
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		x = 6
+		y = 0
+				completion_reward = {
+						add_political_power = 500
+						add_command_power = 100
+						add_command_xp = 20
+					}
+
+
+	}
+	focus = {
+		id = AMB_Lit
+		icon = GFX_goal_generic_territory_or_war
+		cost = 0
+		prerequisite = {
+			focus = AMB_Osel
+		}
+		x = 6
+		y = 1
+		completion_reward = {
+		annex_country = {  target = LIT  transfer_troops = yes }
+		}
+
+
+	}
+	focus = {
+		id = AMB_Lat
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 0
+		prerequisite = {
+			focus = AMB_Lit
+		}
+		mutually_exclusive = {
+			focus = AMB_Est
+		}
+		x = 8
+		y = 2
+
+		completion_reward = {
+		declare_war_on = {  target = Lat  type = annex_everything }
+		}
+
+
+	}
+	focus = {
+		id = AMB_Est
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 0
+		prerequisite = {
+			focus = AMB_Lit
+		}
+		mutually_exclusive = {
+			focus = AMB_Lat
+		}
+		x = 4
+		y = 2
+
+		completion_reward = {
+		declare_war_on = {  target = Est  type = annex_everything }
+		}
+
+	}
+}

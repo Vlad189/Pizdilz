@@ -1,0 +1,455 @@
+focus_tree = {
+	id = Chelyabinsk
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ARS
+		}
+	}
+	default = no
+	focus = {
+		id = ARS_1
+		icon = GFX_goal_generic_defence
+		cost = 0
+		x = 10
+		y = 0
+				completion_reward = {
+						add_political_power = 50
+						add_manpower = 10000
+					}
+
+
+	}
+	focus = {
+		id = ARS_Prom1
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 0
+		mutually_exclusive = {
+			focus = ARS_Prom3
+		}
+		x = 26
+		y = 0
+			completion_reward = {
+
+572 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes
+}
+}
+
+			}
+
+	}
+	focus = {
+		id = ARS_Prom2
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 0
+		mutually_exclusive = {
+			focus = ARS_Prom3
+		}
+		x = 20
+		y = 0
+
+			completion_reward = {
+
+572 = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = industrial_complex
+level = 3
+instant_build = yes
+}
+}
+
+			}
+
+	}
+	focus = {
+		id = ARS_Prom3
+		icon = GFX_goal_generic_construct_civilian
+		cost = 0
+		mutually_exclusive = {
+			focus = ARS_Prom2
+			focus = ARS_Prom1
+		}
+		x = 23
+		y = 0
+completion_reward = {
+
+572 = {
+
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes
+}
+}
+
+572 = {
+
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes
+}
+
+}
+
+}
+
+}
+
+	focus = {
+		id = ARS_2
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 0
+		prerequisite = {
+			focus = ARS_1
+		}
+		x = 6
+		y = 1
+				completion_reward = {
+						add_political_power = 50
+						hidden_effect = {
+								division_template = {
+										name = "ImperialGuardsDivision"
+										priority = 2
+										division_names_group = ARS_INF_01
+										regiments = {
+												infantry = {
+														x = 0
+														y = 0
+													}
+												infantry = {
+														x = 0
+														y = 1
+													}
+												infantry = {
+														x = 0
+														y = 2
+													}
+												infantry = {
+														x = 1
+														y = 0
+													}
+												infantry = {
+														x = 1
+														y = 1
+													}
+												infantry = {
+														x = 1
+														y = 2
+													}
+												infantry = {
+														x = 2
+														y = 0
+													}
+												artillery_brigade = {
+														x = 2
+														y = 1
+													}
+												artillery_brigade = {
+														x = 2
+														y = 2
+													}
+											}
+									}
+								random_owned_controlled_state = {
+										limit = {
+												ROOT = {
+														has_full_control_of_state = PREV
+													}
+											}
+										prioritize = {
+											}
+										create_unit = {
+												division = "name=\"1.ImperialGuardsDivision\"division_template=\"ImperialGuardsDivision\"start_experience_factor=1.0"
+												owner = ARS
+											}
+										create_unit = {
+												division = "name=\"2.ImperialGuardsDivision\"division_template=\"ImperialGuardsDivision\"start_experience_factor=1.0"
+												owner = ARS
+											}
+										create_unit = {
+												division = "name=\"3.ImperialGuardsDivision\"division_template=\"ImperialGuardsDivision\"start_experience_factor=1.0"
+												owner = ARS
+											}
+										create_unit = {
+												division = "name=\"4.ImperialGuardsDivision\"division_template=\"ImperialGuardsDivision\"start_experience_factor=1.0"
+												owner = ARS
+											}
+									}
+							}
+					}
+
+
+	}
+	focus = {
+		id = ARS_3
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 0
+		prerequisite = {
+			focus = ARS_1
+		}
+		x = 14
+		y = 1
+				completion_reward = {
+						add_political_power = 50
+						hidden_effect = {
+								division_template = {
+										name = "ImperialGuardsDivision"
+										priority = 2
+										division_names_group = ARS_INF_01
+										regiments = {
+												infantry = {
+														x = 0
+														y = 0
+													}
+												infantry = {
+														x = 0
+														y = 1
+													}
+												infantry = {
+														x = 0
+														y = 2
+													}
+												infantry = {
+														x = 1
+														y = 0
+													}
+												infantry = {
+														x = 1
+														y = 1
+													}
+												infantry = {
+														x = 1
+														y = 2
+													}
+												infantry = {
+														x = 2
+														y = 0
+													}
+												artillery_brigade = {
+														x = 2
+														y = 1
+													}
+												artillery_brigade = {
+														x = 2
+														y = 2
+													}
+											}
+									}
+								random_owned_controlled_state = {
+										limit = {
+												ROOT = {
+														has_full_control_of_state = PREV
+													}
+											}
+										prioritize = {
+											}
+										create_unit = {
+												division = "name=\"1.ImperialGuardsDivision\"division_template=\"ImperialGuardsDivision\"start_experience_factor=1.0"
+												owner = ARS
+											}
+										create_unit = {
+												division = "name=\"2.ImperialGuardsDivision\"division_template=\"ImperialGuardsDivision\"start_experience_factor=1.0"
+												owner = ARS
+											}
+										create_unit = {
+												division = "name=\"3.ImperialGuardsDivision\"division_template=\"ImperialGuardsDivision\"start_experience_factor=1.0"
+												owner = ARS
+											}
+										create_unit = {
+												division = "name=\"4.ImperialGuardsDivision\"division_template=\"ImperialGuardsDivision\"start_experience_factor=1.0"
+												owner = ARS
+											}
+									}
+							}
+					}
+
+
+	}
+	focus = {
+		id = ARS_Arty
+		icon = GFX_goal_generic_army_artillery2
+		cost = 15
+		prerequisite = {
+			focus = ARS_2
+			focus = ARS_3
+		}
+		x = 10
+		y = 4
+				completion_reward = {
+						hidden_effect = {
+								division_template = {
+										name = "ArtilleryRegiment"
+										priority = 2
+										division_names_group = ARS_INF_01
+										regiments = {
+												infantry = {
+														x = 0
+														y = 0
+													}
+												artillery_brigade = {
+														x = 0
+														y = 1
+													}
+												artillery_brigade = {
+														x = 0
+														y = 2
+													}
+												infantry = {
+														x = 1
+														y = 0
+													}
+												artillery_brigade = {
+														x = 1
+														y = 1
+													}
+												artillery_brigade = {
+														x = 1
+														y = 2
+													}
+												infantry = {
+														x = 2
+														y = 0
+													}
+												artillery_brigade = {
+														x = 2
+														y = 1
+													}
+												artillery_brigade = {
+														x = 2
+														y = 2
+													}
+											}
+									}
+								random_owned_controlled_state = {
+										limit = {
+												ROOT = {
+														has_full_control_of_state = PREV
+													}
+											}
+										prioritize = {
+											}
+										create_unit = {
+												division = "name=\"1.ArtilleryRegiment\"division_template=\"ArtilleryRegiment\"start_experience_factor=1.0"
+												owner = ARS
+											}
+										create_unit = {
+												division = "name=\"2.ArtilleryRegiment\"division_template=\"ArtilleryRegiment\"start_experience_factor=1.0"
+												owner = ARS
+											}
+										create_unit = {
+												division = "name=\"3.ArtilleryRegiment\"division_template=\"ArtilleryRegiment\"start_experience_factor=1.0"
+												owner = ARS
+											}
+										create_unit = {
+												division = "name=\"4.ArtilleryRegiment\"division_template=\"ArtilleryRegiment\"start_experience_factor=1.0"
+												owner = ARS
+											}
+									}
+							}
+					}
+
+
+	}
+	focus = {
+		id = ARS_Prom4
+		icon = GFX_goal_generic_construct_civilian
+		cost = 0
+		prerequisite = {
+			focus = ARS_Prom3
+			focus = ARS_Prom2
+		}
+		x = 20
+		y = 2
+
+	completion_reward = {
+
+572 = {
+
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+
+
+
+}
+
+	}
+	focus = {
+		id = ARS_Prom5
+		icon = GFX_goal_generic_construct_civilian
+		cost = 0
+		prerequisite = {
+			focus = ARS_Prom1
+			focus = ARS_Prom3
+		}
+		x = 26
+		y = 2
+
+	completion_reward = {
+
+572 = {
+
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+
+
+
+}
+
+	}
+	focus = {
+		id = ARS_Prom6
+		icon = GFX_goal_generic_air_production
+		cost = 0
+		prerequisite = {
+			focus = ARS_Prom5
+			focus = ARS_Prom4
+		}
+		x = 23
+		y = 3
+
+	completion_reward = {
+
+572 = {
+
+add_building_construction = {
+type = infrastructure
+level = 4
+instant_build = yes
+}
+}
+
+
+
+}
+
+	}
+	focus = {
+		id = ARS_MegaBynker
+		icon = GFX_goal_generic_fortify_city
+		cost = 0
+		prerequisite = {
+			focus = ARS_Prom6
+		}
+		x = 23
+		y = 5
+
+	}
+}

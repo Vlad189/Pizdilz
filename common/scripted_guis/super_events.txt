@@ -1,0 +1,73 @@
+scripted_gui = {
+
+	sp_event_window = {
+		window_name = "sp_event_window"
+		context_type = player_context
+
+		visible = {
+			has_global_flag = Super_Event_Visible
+		}
+		
+		triggers = {
+			Super_Event_Image_gavrilovputch_visible = {
+				has_global_flag = gavrilov_putch
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_vtorzhenee_visible = {
+				 has_global_flag = vtorzhenee
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_POV_Rostov_Taken_visible = {
+				has_global_flag = POV_Rostov_Taken
+			}
+		}
+		
+		triggers = {
+			Super_Event_Image_POV_Vangergrad_Taken_visible = {
+				has_global_flag = POV_Vangergrad_Taken
+			}
+		}
+		
+		############
+		###BUTTON###
+		############
+		
+		effects = {
+			sp_event_close_button_click = {
+				clr_global_flag = Super_Event_Visible
+				
+				if = {
+					limit = {
+						has_global_flag = gavrilov_putch
+					}
+					clr_global_flag = gavrilov_putch
+				}
+				
+				if = {
+					limit = {
+						has_global_flag = vtorzhenee
+					}
+					clr_global_flag = vtorzhenee
+				}
+				
+				if = {
+					limit = {
+						has_global_flag = POV_Rostov_Taken
+					}
+					clr_global_flag = POV_Rostov_Taken
+				}
+				
+				if = {
+					limit = {
+						has_global_flag = POV_Vangergrad_Taken
+					}
+					clr_global_flag = POV_Vangergrad_Taken
+				}
+			}
+		}
+	}
+}

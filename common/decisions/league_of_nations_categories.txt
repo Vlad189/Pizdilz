@@ -1,0 +1,35 @@
+league_of_nations_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_league_of_nations_icon
+
+	visible = {
+		NOT = { has_global_flag = league_of_nations_dissolved }
+		OR = {
+			NOT = { league_of_nations_exists = yes }
+			AND = {
+				is_league_of_nations_leader = yes
+				NOT = { has_global_flag = league_of_nations_rule_reforms_disabled }
+			}
+		}
+	}
+
+	priority = 100
+}
+
+league_of_nations_overlord_category = {
+
+	icon = generic_formable_nations
+
+	visible = {
+		NOT = { has_global_flag = league_of_nations_dissolved }
+		league_of_nations_exists = yes
+		NOT = { is_league_of_nations_leader = yes }
+		var:global.league_of_nations_leader = {
+			is_subject_of = ROOT
+		}
+		set_temp_variable = { reform_id = 6 }
+		has_completed_league_of_nations_reform = yes
+	}
+}

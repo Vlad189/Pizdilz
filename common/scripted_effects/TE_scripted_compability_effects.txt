@@ -1,0 +1,347 @@
+##### Spanish Civil War - Replicating the on_state_control_changed 
+
+TE_get_post_spanish_civil_war_effects = {
+
+	# ROOT is Peace Target Country... So have to change all FROM to ROOT
+	set_variable = { TE_spanish_loser = FROM.id }
+
+#IN ORIGINAL ONM ACTION ROOT is winner #FROM gets annexed - This fires just before FROM gets annexed, meaning the country and everything it owns still exists. It will also fire on_annex and on_civil_war_end
+	##### PARTIAL VICTORY
+	# SPB = Carlists
+	if = { # Carlists Defeated, civil war not over
+		
+		limit = {
+			var:TE_spanish_loser = {
+				tag = SPB
+				has_completed_focus = SPA_supremacy_of_the_communion
+			}
+			original_tag = SPR
+			SPR_scw_in_progress = yes
+			
+			count_triggers = {
+				amount = 2
+				SPA = { exists = yes }
+				#SPB = { exists = yes }
+				SPC = { exists = yes }
+				SPD = { exists = yes }
+			}
+		
+		}
+		# FIX   - need to send to winning country  
+		every_country = {
+			limit = {
+				original_tag = SPR
+				NOT = { tag = SPB }
+			}
+			country_event = lar_spain.11
+		}
+	}
+	if = { # Fascists Defeated, civil war not over
+		limit = {
+			var:TE_spanish_loser = {
+				tag = SPA
+				has_completed_focus = SPA_the_phalanx_ascendant
+			}
+			original_tag = SPR
+			SPR_scw_in_progress = yes
+			count_triggers = {
+				amount = 2
+				#SPA = { exists = yes }
+				SPB = { exists = yes }
+				SPC = { exists = yes }
+				SPD = { exists = yes }
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = SPR
+				NOT = { tag = SPA }
+			}
+			country_event = lar_spain.12
+		}
+	}
+	if = { # Franco Defeated, civil war not over
+		limit = {
+			var:TE_spanish_loser = {
+				tag = SPA
+				has_completed_focus = SPA_unify_the_nationalist_front
+			}
+			original_tag = SPR
+			SPR_scw_in_progress = yes
+			count_triggers = {
+				amount = 2
+				#SPA = { exists = yes }
+				SPB = { exists = yes }
+				SPC = { exists = yes }
+				SPD = { exists = yes }
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = SPR
+				NOT = { tag = SPA }
+			}
+			country_event = lar_spain.13
+		}
+	}
+	if = { # Anarchists Defeated, civil war not over
+		limit = {
+			var:TE_spanish_loser = {
+				tag = SPC
+				has_completed_focus = SPR_regional_defense_council_of_aragon
+			}
+			original_tag = SPR
+			SPR_scw_in_progress = yes
+			count_triggers = {
+				amount = 2
+				SPA = { exists = yes }
+				SPB = { exists = yes }
+				#SPC = { exists = yes }
+				SPD = { exists = yes }
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = SPR
+				NOT = { tag = SPC }
+			}
+			country_event = lar_spain.14
+		}
+	}
+	if = { # Independent Communist Defeated, civil war not over
+		limit = {
+			var:TE_spanish_loser = {
+				tag = SPC
+				has_completed_focus = SPR_the_anti_fascist_workers_revolution
+			}
+			original_tag = SPR
+			SPR_scw_in_progress = yes
+			count_triggers = {
+				amount = 2
+				SPA = { exists = yes }
+				SPB = { exists = yes }
+				#SPC = { exists = yes }
+				SPD = { exists = yes }
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = SPR
+				NOT = { tag = SPC }
+			}
+			country_event = lar_spain.15
+		}
+	}
+	if = { # Democrats Defeated, civil war not over
+		limit = {
+			var:TE_spanish_loser = {
+				tag = SPD
+				has_completed_focus = SPR_maintain_the_second_republic
+			}
+			original_tag = SPR
+			SPR_scw_in_progress = yes
+			count_triggers = {
+				amount = 2
+				SPA = { exists = yes }
+				SPB = { exists = yes }
+				SPC = { exists = yes }
+				#SPD = { exists = yes }
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = SPR
+				NOT = { tag = SPD }
+			}
+			country_event = lar_spain.16
+		}
+	}
+	if = { # Stalinist Communists Defeated, civil war not over
+		limit = {
+			var:TE_spanish_loser = {
+				tag = SPD
+				has_completed_focus = SPR_the_anti_fascist_workers_revolution
+			}
+			original_tag = SPR
+			SPR_scw_in_progress = yes
+			count_triggers = {
+				amount = 2
+				SPA = { exists = yes }
+				SPB = { exists = yes }
+				SPC = { exists = yes }
+				#SPD = { exists = yes }
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = SPR
+				NOT = { tag = SPD }
+			}
+			country_event = lar_spain.17
+		}
+	}
+	
+	
+	##### FINAL VICTORY 
+	
+	if = { # Nationalist victory SCW
+		limit = {
+			var:TE_spanish_loser = {
+				original_tag = SPR
+			}
+			any_country = {
+				has_completed_focus = SPA_a_great_spain
+				NOT = { tag = var:TE_spanish_loser}
+				SPR_scw_in_progress = yes
+				NOT = {
+					has_global_flag = SPR_carlist_uprising_flag
+					has_completed_focus = SPA_fuse_the_parties
+				}
+			}			
+			count_triggers = {
+				amount = 2
+				SPA = { exists = no }
+				SPB = { exists = no }
+				SPC = { exists = no }
+				SPD = { exists = no }
+			}
+		}
+		random_country = {
+			limit = { 
+				original_tag = SPR 
+				exists = yes 
+				NOT = { TAG = var:TE_spanish_loser }
+			}
+			country_event = { id = lar_news.28 }
+		}
+	}
+	if = { # Republican victory SCW
+		limit = {
+			var:TE_spanish_loser = {
+				original_tag = SPR
+			}
+			any_country = {
+				has_completed_focus = SPR_the_popular_front
+				NOT = { tag = var:TE_spanish_loser}
+				SPR_scw_in_progress = yes
+				NOT = { has_global_flag = SPR_anarchist_uprising_flag }
+			}			
+			count_triggers = {
+				amount = 2
+				SPA = { exists = no }
+				SPB = { exists = no }
+				SPC = { exists = no }
+				SPD = { exists = no }
+			}
+		}
+		random_country = {
+			limit = { 
+				original_tag = SPR 
+				exists = yes 
+				NOT = { TAG = var:TE_spanish_loser }
+			}
+			country_event = { id = lar_news.29 }
+		}
+	}
+	if = { # Nationalist victory SCW
+		limit = {
+			var:TE_spanish_loser = {
+				original_tag = SPR
+			}
+			any_country = {
+				has_completed_focus = SPA_a_great_spain
+				NOT = { tag = var:TE_spanish_loser}
+				SPR_scw_in_progress = yes
+				OR = {
+					has_global_flag = SPR_carlist_uprising_flag
+					has_completed_focus = SPA_fuse_the_parties
+				}
+			}			
+			count_triggers = {
+				amount = 2
+				SPA = { exists = no }
+				SPB = { exists = no }
+				SPC = { exists = no }
+				SPD = { exists = no }
+			}
+		}
+		random_country = {
+			limit = { 
+				original_tag = SPR 
+				exists = yes 
+				NOT = { TAG = var:TE_spanish_loser }
+			}
+			country_event = { id = lar_news.1 }
+		}
+		set_global_flag = nationalist_victory
+		set_global_flag = scw_over
+	}
+	if = { # Republican victory SCW
+		limit = {
+			var:TE_spanish_loser = {
+				original_tag = SPR
+			}
+			any_country = {
+				has_completed_focus = SPR_the_popular_front
+				SPR_scw_in_progress = yes
+				NOT = { tag = var:TE_spanish_loser}
+				has_global_flag = SPR_anarchist_uprising_flag
+			}			
+			count_triggers = {
+				amount = 2
+				SPA = { exists = no }
+				SPB = { exists = no }
+				SPC = { exists = no }
+				SPD = { exists = no }
+			}
+		}
+		random_country = {
+			limit = { 
+				original_tag = SPR 
+				exists = yes 
+				NOT = { TAG = var:TE_spanish_loser }
+			}
+			country_event = { id = lar_news.2 }
+		}
+		set_global_flag = republican_victory
+		set_global_flag = scw_over
+		if = { #If SPD has Portuguese mutineers, send them back
+			limit = {
+				any_country = {
+					exists = yes
+					NOT = { tag = var:TE_spanish_loser }
+					tag = SPD
+					has_country_flag = POR_got_portuguese_mutineers_flag
+				}
+			}
+			POR = { country_event = { id = lar_portugal_navy_mutiny.5 days = 5 random_days = 3 } }
+		}
+	}
+	if = { # Remove Portuguese "Volunteers in the War" National Spirit
+		limit = { 
+			var:TE_spanish_loser = { original_tag = SPR }
+			has_global_flag = scw_over
+		}
+		POR = {
+			if = {
+				limit = {
+					has_idea = POR_volunteers_in_the_war_nationalist
+				}
+				remove_ideas = POR_volunteers_in_the_war_nationalist
+			}
+			else_if = {
+				limit = {
+					has_idea = POR_volunteers_in_the_war_republican
+				}
+				remove_ideas = POR_volunteers_in_the_war_republican
+			}
+			else_if = {
+				limit = {
+					has_idea = POR_volunteers_in_the_war_carlist
+				}
+				remove_ideas = POR_volunteers_in_the_war_carlist
+			}
+		}
+	}
+	
+}
