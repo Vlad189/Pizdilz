@@ -1,0 +1,17 @@
+﻿l_russian:
+Unit_Limiter:0 "[Unit_Limiter_Text]"
+#Unit_Limiter:0 "[num_of_factories]"
+Unit_Limiter_Green:0 "§G[?THIS.GetUnitLimit]§!"
+Unit_Limiter_Yellow:0 "§Y[?THIS.GetUnitLimit]§!"
+Unit_Limiter_Red:0 "§R[?THIS.GetUnitLimit]§!"
+
+Unit_Limiter_TT:0 "[Unit_Limiter_TT_Text]"
+Unit_Limiter_TT_1:0 "§GВы находитесь на уровне менее 80% от предельной стоимости единицы продукции§!"
+Unit_Limiter_TT_2:0 "§YВы находитесь в диапазоне от 80% до 100% от предельного значения§!"
+Unit_Limiter_TT_3:0 "§RУ вас слишком много единиц!§!"
+
+Unit_Limiter_Icon:0 "Это графический интерфейс Unit Limiter. Следите за тем, чтобы не превысить отображаемую величину."
+Unit_Limiter_Alert_TT:0 "Ограничьте количество дивизионов!"
+#Unit_Limiter_Icon:0 "[ROOT.max_manpower_k]"
+
+Unit_Limiter_Intel:0 "Максимальное количество единиц: §Y[?THIS.GetUnitLimit]§!"

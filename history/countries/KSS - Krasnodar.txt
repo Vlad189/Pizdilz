@@ -1,0 +1,48 @@
+capital = 234 ##Наша столица
+
+oob = "KSS_1936" ##GEG - Тег, заменить
+
+set_research_slots = 3 #Количество ячеек исследования
+
+recruit_character = KSS_Dirlivang
+
+# Технологии, какие будут открыты при старте
+set_technology = {
+	infantry_weapons = 2
+	infantry_weapons1 = 2
+	tech_recon = 3
+	tech_support = 2		
+	tech_engineers = 2
+	tech_military_police = 1
+        gw_artillery = 1
+        interwar_antitank = 1
+        interwar_antiair = 1
+        aa_lmg = 1
+        engines_1 = 1
+        early_bombs = 1
+        photo_reconnaisance = 1
+        iw_small_airframe = 1
+        iw_medium_airframe = 1
+        support_weapons = 1
+        support_weapons2 = 1
+        motorised_infantry = 1
+
+}
+
+set_politics = {
+	ruling_party = fascism ##Рулевая партия
+	last_election = "1936.1.1" ##Последние выборы (если есть)
+	election_frequency = 48 ##Через сколько проводят выборы
+	elections_allowed = no ##Есть ли выборы
+}
+
+set_popularities = {
+	democratic = 0  ##Демократия
+	neutrality = 5 ##Нейтралитет
+	communism = 5 ##Коммунизм
+	fascism = 90 ##Фашизм
+}
+ 
+
+
+}

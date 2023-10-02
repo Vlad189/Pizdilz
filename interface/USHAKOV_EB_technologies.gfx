@@ -1,0 +1,129 @@
+spriteTypes = {
+
+
+	SpriteType = {
+		name = "GFX_metal_processing_plants_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/metal_processing_factories.dds"
+		legacy_lazy_load = no
+	}
+	
+	
+	
+	SpriteType = {
+		name = "GFX_steel_factory_tech_1_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/steel_factories_1.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_steel_factory_tech_2_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/steel_factories_2.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_steel_factory_tech_3_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/steel_factories_3.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_steel_factory_tech_4_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/steel_factories_4.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_steel_factory_tech_5_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/steel_factories_5.dds"
+		legacy_lazy_load = no
+	}
+	
+	
+	
+	
+	SpriteType = {
+		name = "GFX_aluminium_factory_tech_1_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/aluminium_factories_1.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_aluminium_factory_tech_2_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/aluminium_factories_2.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_aluminium_factory_tech_3_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/aluminium_factories_3.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_aluminium_factory_tech_4_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/aluminium_factories_4.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_aluminium_factory_tech_5_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/aluminium_factories_5.dds"
+		legacy_lazy_load = no
+	}
+	
+	
+	
+	
+	SpriteType = {
+		name = "GFX_tungsten_factory_tech_1_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/tungsten_factories_1.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_tungsten_factory_tech_2_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/tungsten_factories_2.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_tungsten_factory_tech_3_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/tungsten_factories_3.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_tungsten_factory_tech_4_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/tungsten_factories_4.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_tungsten_factory_tech_5_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/tungsten_factories_5.dds"
+		legacy_lazy_load = no
+	}
+	
+	
+	
+	
+	SpriteType = {
+		name = "GFX_chromium_factory_tech_1_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/chromium_factories_1.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_chromium_factory_tech_2_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/chromium_factories_2.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_chromium_factory_tech_3_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/chromium_factories_3.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_chromium_factory_tech_4_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/chromium_factories_4.dds"
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_chromium_factory_tech_5_medium"
+		texturefile = "gfx/interface/technologies/GENERIC/OTHER/chromium_factories_5.dds"
+		legacy_lazy_load = no
+	}
+	
+	
+	
+	
+	
+}	#END

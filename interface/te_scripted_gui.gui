@@ -1,0 +1,1348 @@
+
+guiTypes = {
+	
+	containerWindowType = {  
+		name = "TE_shield"
+		position = {x=-450 y=0}   
+		orientation = UPPER_RIGHT
+		size = { width=25 height = 25}
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		
+		
+		iconType = {
+			name = "TE_icon"    
+			position = {x=0 y=5}	
+			spriteType = "GFX_TE_icon"
+			pdx_tooltip = "TE_ICON_tt"   
+			scale = 1
+			
+		}
+	}
+	
+	containerWindowType = {  
+		name = "TE_selected_terms_window"
+		position = {x=-1300 y=50}   
+		orientation = UPPER_RIGHT
+		size = { width=350 height = 700}
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background_selected"
+			spriteType = "GFX_TE_selected_terms_background_bg"  
+		}
+		instantTextboxType = {
+			name = "selected_country_title"   
+			position = {x=30 y=30} 
+			font = "hoi_24header"
+			text = "TE_SELECTEDCOUNTRY_TITLE"   
+			maxWidth = 290
+			maxHeight = 26
+			format = left
+		}
+		
+		instantTextboxType = { 
+			name = "selected_terms_heading"
+			position = {x=30 y=430}   
+			font = "hoi_24header"
+			text = "TE_selected_terms_header"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		}
+		instantTextboxType = { 
+			name = "government_text"
+			position = {x=30 y=460}   
+			font = "hoi_16mbs"
+			text = "[TE_GET_GOVERNMENT_TERMS]"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		} 
+		
+		instantTextboxType = { 
+			name = "reparations_text"
+			position = {x=30 y=480}   
+			font = "hoi_16mbs"
+			text = "[TE_GET_REPARATIONS_TERMS]"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		} 
+		
+		instantTextboxType = { 
+			name = "military_industry_text"
+			position = {x=30 y=500}   
+			font = "hoi_16mbs"
+			text = "[TE_GET_MILITARY_INDUSTRY_TERMS]"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		} 
+		
+		instantTextboxType = { 
+			name = "naval_industry_text"
+			position = {x=30 y=520}   
+			font = "hoi_16mbs"
+			text = "[TE_GET_NAVAL_INDUSTRY_TERMS]"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		} 
+		
+		instantTextboxType = { 
+			name = "navy_text"
+			position = {x=30 y=540}   
+			font = "hoi_16mbs"
+			text = "[TE_GET_NAVY_TERMS]"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		} 
+		
+		instantTextboxType = { 
+			name = "number_states_text"
+			position = {x=30 y=560}   
+			font = "hoi_16mbs"
+			text = "[TE_GET_NUMBER_STATES_TERMS]"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		} 
+		instantTextboxType = { 
+			name = "number_states_resources_text"
+			position = {x=30 y=580}   
+			font = "hoi_16mbs"
+			text = "[TE_GET_NUMBER_STATES_RESOURCES_TERMS]"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		} 
+		instantTextboxType = { 
+			name = "number_states_demil_text"
+			position = {x=30 y=600}   
+			font = "hoi_16mbs"
+			text = "[TE_GET_NUMBER_STATES_DEMIL_TERMS]"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		} 
+		
+		#
+		instantTextboxType = { 
+			name = "number_states_revoke_core_text"
+			position = {x=30 y=620}   
+			font = "hoi_16mbs"
+			text = "[TE_GET_NUMBER_STATES_REVOKE_CORES_TERMS]"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		} 
+		instantTextboxType = { 
+			name = "number_states_revoke_claimed_text"
+			position = {x=30 y=640}   
+			font = "hoi_16mbs"
+			text = "[TE_GET_NUMBER_STATES_REVOKE_CLAIMS_TERMS]"    
+			maxWidth = 290 
+			maxHeight = 36
+			format = left 
+		} 
+		
+	}
+	#### TARGET COUNTRY TERMS WINDOW 
+	containerWindowType = { 
+		name = "TE_target_country_window" 
+		#position = {x=50 y=170}       
+		position = {x=0 y=20}       
+		size = { width=350 height=120 }  
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		#background = {
+		#	name = "Background"
+		#	spriteType = "GFX_TE_selected_state_bg"  
+		#}
+		
+		
+		instantTextboxType = {
+			name = "selected_country_name"    
+			position = {x=30 y=40} 
+			font = "hoi_24mbs"
+			text = "TE_SELECTEDCOUNTRY_NAME"       
+			maxWidth = 290
+			maxHeight = 26
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "selected_country_status"   
+			position = {x=30 y=70} 
+			font = "hoi_16mbs"
+			text = "[TE_GET_SELECTED_COUNTRY_STATUS]"      
+			maxWidth = 290
+			maxHeight = 26
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "selected_country_gov"   
+			position = {x=30 y=90}  
+			font = "hoi_16mbs"
+			text = "TE_GOVERNMENT_IDEOLOGY_TEXT"      
+			maxWidth = 290
+			maxHeight = 26
+			format = left  
+		}
+		instantTextboxType = {
+			name = "selected_state_is_puppet" 
+			position = {x=30 y=110}  
+			font = "hoi_16mbs"
+			text = "[TE_GET_STATE_OWNER_PUPPET_TEXT]" 
+			maxWidth = 290
+			maxHeight = 22
+			format = center   
+		}
+	} 
+	
+	
+	#### CURRENTLY SELECTED STATE
+	containerWindowType = { 
+		name = "TE_selected_state_window" 
+		#position = {x=530 y=220}      
+		position = {x=0 y=150}      
+		size = { width=350 height=240 }  
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no 
+		#background = {
+		#	name = "Background"
+		#	spriteType = "GFX_TE_selected_state_bg"  
+		#}
+		
+		instantTextboxType = {
+			name = "selected_state_title"   
+			position = {x=30 y=20} 
+			font = "hoi_24header"
+			text = "TE_SELECTEDSTATE_TITLE"  
+			maxWidth = 290
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "selected_state_name"   
+			position = {x=30 y=50}  
+			font = "hoi_16mbs"
+			text = "TE_SELECTEDSTATE_NAME" 
+			maxWidth = 290
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "selected_state_info"
+			position = {x=30 y=70} 
+			font = "hoi_16mbs"
+			text = "[TE_GET_SELECTED_STATE_TEXT]"
+			maxWidth = 290
+			maxHeight = 48
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "selected_state_demand"
+			position = {x=30 y=102} 
+			font = "hoi_16mbs"
+			text = "[TE_GET_DEMANDED_STATE_TEXT]"
+			maxWidth = 290
+			maxHeight = 22
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "selected_state_control"
+			position = {x=30 y=134}  
+			font = "hoi_16mbs"
+			text = "[TE_GET_CONTROLLED_STATE_TEXT]"
+			maxWidth = 270
+			maxHeight = 22
+			format = left
+		} 
+		 
+		instantTextboxType = {
+			name = "selected_state_has_oil" 
+			position = {x=30 y=186}  
+			font = "hoi_16mbs"
+			text = "[TE_GET_STATE_OIL_TEXT]"  
+			maxWidth = 290
+			maxHeight = 22
+			format = left   
+		} 
+		buttonType = {
+			name = "TE_assume_control_btn"     
+			position = {x=40 y=150}	  
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_ASSUME_CONTROL_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_ASSUME_CONTROL_BTN_tt"   
+			scale = 1.0
+			clicksound = select_focus
+		}
+	
+	}
+	
+	
+	containerWindowType = { 
+		name = "TE_peace_terms_window"  
+		position = {x=-900 y=20}
+		orientation = UPPER_RIGHT
+		size = { width=880 height=1032 } # is 1200
+		 
+
+		fade_time = 300 
+		fade_type = linear
+		moveable = yes
+		#verticalScrollbar = "right_vertical_slider"
+		#margin = { top = 14 bottom = 14}	
+		background = {
+			name = "Background"
+			spriteType = "GFX_TE_peace_terms_background_bg"  
+		}
+		#background = {
+		#	name = "Background"		
+		#	quadTextureSprite ="GFX_tiled_bg_1_scrollbar"   
+		#}
+		
+		
+		instantTextboxType = {
+			name = "header"
+			position = {x=0 y=32}
+			font = "hoi_18mbs"  
+			text = "TE_PEACE_TERMS_HEADER"    
+			maxWidth = 880
+			maxHeight = 46
+			format = center  
+		}
+
+		instantTextboxType = { 
+			name = "title"
+			position = {x=59 y=98} 
+			font = "hoi_18mbs"
+			text = "TE_TREATY_TERMS_HEADER" 
+			maxWidth = 800 
+			maxHeight = 36
+			format = left 
+		}
+		instantTextboxType = { 
+			name = "surrender_text"
+			position = {x=59 y=138}  
+			font = "hoi_18mbs"
+			text = "TE_PEACE_TYPE"  
+			maxWidth = 450 
+			maxHeight = 36
+			format = left 
+		}
+		instantTextboxType = { 
+			name = "war_scale_text"
+			position = {x=360 y=138} 
+			font = "hoi_18mbs"
+			text = "TE_SCALE_OF_CONFLICT"  
+			maxWidth = 450 
+			maxHeight = 36
+			format = left 
+		}
+		
+		
+		instantTextboxType = { 
+			name = "points"
+			position = {x=59 y=120} 
+			font = "hoi_16mbs"
+			text = "TE_TREATY_POINTS"  
+			maxWidth = 380
+			maxHeight = 23
+			format = left
+		}
+		buttonType = {
+			name = "send_peace_btn" 
+			position = {x=340 y=970}	 
+			quadTextureSprite = "GFX_button_123x34"
+			buttonText = "TE_SEND_BTN"
+			buttonFont = "hoi_20b"
+			clicksound = select_focus
+			shortcut = "ENTER"
+			tooltip = "TE_SEND_BTN_tt"
+		}
+		#buttonType ={
+		#	name ="TE_total_pts"
+		#	spriteType = "GFX_TE_points_total_icon"
+		#	position = {x=505 y=100 }    
+		#	buttonText = "TE_TOTAL_PTS_BTN"
+		#	pdx_tooltip = "TE_TOTAL_PTS_BTN_tt" 
+		#	buttonFont = "hoi_18mbs"
+		#	scale = 1.0  
+		#}  
+		buttonType ={
+			name ="TE_used_pts"
+			spriteType = "GFX_TE_points_used_icon"
+			position = {x=615 y=100 }   
+			buttonText = "TE_USED_PTS_BTN"
+			buttonFont = "hoi_18mbs"
+			pdx_tooltip = "TE_USED_PTS_BTN_tt"
+			scale = 1.0  
+		}
+		buttonType ={
+			name ="TE_available_pts"
+			spriteType = "GFX_TE_points_available_icon"
+			position = {x=560 y=100 }   
+			buttonText = "TE_AVAILABLE_PTS_BTN" 
+			buttonFont = "hoi_18mbs"
+			pdx_tooltip = "TE_AVAILABLE_PTS_BTN_tt"
+			scale = 1.0  
+		}
+		
+		instantTextboxType = { 
+			name = "political_title"
+			position = {x=30 y=175} 
+			font = "hoi_18mbs"
+			text = "TE_POLITICAL_TERMS_HEADER" 
+			maxWidth = 380
+			maxHeight = 23
+			format = left 
+		}
+		instantTextboxType = {
+			name = "Territorial_title"
+			position = {x=320 y=175} 
+			font = "hoi_18mbs"
+			text = "TE_TERRITORIAL_TERMS_HEADER"  
+			maxWidth = 380
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "Industrial_title"
+			position = {x=610 y=175} 
+			font = "hoi_18mbs"
+			text = "TE_INDUSTRIAL_TERMS_HEADER" 
+			maxWidth = 380
+			maxHeight = 23
+			format = left 
+		}
+		instantTextboxType = {
+			name = "naval_title"
+			position = {x=30 y=630}     
+			font = "hoi_18mbs"
+			text = "TE_NAVAL_TERMS_HEADER" 
+			maxWidth = 380
+			maxHeight = 23
+			format = left 
+		}
+		instantTextboxType = {
+			name = "security_title"
+			position = {x=320 y=630}     
+			font = "hoi_18mbs"
+			text = "TE_SECURITY_TERMS_HEADER" 
+			maxWidth = 380
+			maxHeight = 23
+			format = left 
+		}
+		instantTextboxType = {
+			name = "diplomatic_title"
+			position = {x = 610 y=630}     
+			font = "hoi_18mbs"
+			text = "TE_DIPLOMATIC_TERMS_HEADER"  
+			maxWidth = 380
+			maxHeight = 23
+			format = left 
+		}
+		
+	
+	}
+	
+	
+	
+	
+	### Scroll container 
+	containerWindowType = {
+		name = "TE_scroll_window"
+		position = {x=9 y=400} 
+		size = { width=860 height = 180} 
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		verticalScrollbar = "right_vertical_slider"
+		margin = { top = 14 bottom = 14}				
+	
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_bg_1_scrollbar"   
+		}
+		
+	}
+	
+	containerWindowType = {
+		name = "TE_political_terms_window" 
+		position = {x=10 y=190} 
+		size = { width=290 height=430 } 
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		
+		verticalScrollbar = "right_vertical_slider"
+		margin = { top = 14 bottom = 14}				
+	
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_bg_1_scrollbar"   
+		}
+		
+		buttonType = {
+			name = "TE_dissolve_btn"    
+			position = {x=80 y=11}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_DISSOLVE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_DISSOLVE_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={ 
+			name ="TE_dissolve_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=0}
+			buttonText = "[TE_GET_DISSOLVE_PTS_CLR]"   
+			buttonFont = "hoi_16mbs"  
+			scale = 1.0   
+		}
+		buttonType ={ 
+			name ="TE_dissolve_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=0}
+			buttonFont = "hoi_16mbs"  
+			scale = 1.0   
+		}
+		
+		buttonType = {   
+			name = "TE_get_recog_btn"     
+			position = {x=80 y=66}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_GET_RECOG_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_GET_RECOG_tt"  
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType ={
+			name ="TE_get_recog_pts" 
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=55}
+			buttonText = "[TE_GET_RECOG_PTS_CLR]"    
+			buttonFont = "hoi_16mbs"  
+			scale = 1.0   
+		}
+		buttonType ={ 
+			name ="TE_get_recog_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=55}
+			scale = 1.0   
+		}
+		
+		
+		buttonType = {
+			name = "TE_Change_Government_btn"    
+			position = {x=80 y=121}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_CHANGE_GOVERNMENT_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_CHANGE_GOVERNMENT_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_change_gov_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=110}
+			buttonText = "[TE_GET_HANGE_GOV_PTS_CLR]"  
+			buttonFont = "hoi_16mbs"  
+			scale = 1.0  
+		}
+		buttonType ={ 
+			name ="TE_change_gov_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=110} 
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_install_puppet_btn"     
+			position = {x=80 y=176}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_INSTALL_PUPPET_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_INSTALL_PUPPET_BTN_tt"     
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType ={
+			name ="TE_install_puppet_pts" 
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=165}
+			buttonText = "[TE_GET_INST_PUP_PTS_CLR]" 
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_install_puppet_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=165}
+			scale = 1.0   
+		}
+		
+		
+		buttonType = { 
+			name = "TE_release_pup_btn"    
+			position = {x=80 y=231}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_RELEASE_PUP_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_RELEASE_PUP_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_release_pup_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=220}
+			buttonText = "[TE_GET_RELEASE_PUP_PTS_CLR]"  
+			buttonFont = "hoi_16mbs"  
+			scale = 1.0   
+		}
+		buttonType ={ 
+			name ="TE_release_pup_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=220}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_trans_pup_btn"     
+			position = {x=80 y=286}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_TRANS_PUP_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_TRANS_PUP_BTN_tt"     
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType ={
+			name ="TE_trans_pup_pts" 
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=275}
+			buttonText = "[TE_GET_TRANS_PUP_PTS_CLR]"  
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_trans_pup_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=275} 
+			scale = 1.0   
+		}
+		
+		instantTextboxType = {
+			name = "title"
+			position = {x=25 y=330}   
+			font = "hoi_16mbs"
+			text = "TE_CONQUERED_COUNTRIES_HEADER"  
+			maxWidth = 380 
+			maxHeight = 23 
+			format = left 
+		}
+		
+		buttonType = {
+			name = "TE_lib_conq_btn"       
+			position = {x=80 y=361}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_LIB_CONQ_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_LIB_CONQ_BTN_tt"    
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_lib_conq_pts" 
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=350}
+			buttonText = "[TE_GET_LIB_CONQ_PTS_CLR]"
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_lib_conq_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=350}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_pup_conq_btn"     
+			position = {x=80 y=416}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_PUP_CONQ_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_PUP_CONQ_BTN_tt"    
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_pup_conq_pts" 
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=405}
+			buttonText = "[TE_GET_PUP_CONQ_PTS_CLR]"
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_pup_conq_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=405} 
+			scale = 1.0   
+		}
+
+	
+	}
+	
+	#### CONQ MINORS WINDOW
+	containerWindowType = { 
+		name = "TE_conquered_countries_window" 
+		position = {x=0 y=330}
+		size = { width=527 height=150 } 
+		
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		
+		
+		
+		
+	}
+	
+	##### TERRITORIAL TERMS WINDOW
+	containerWindowType = { 
+		name = "TE_territorial_terms_window"
+		position = {x=294 y=190} 
+		size = { width=290 height=430 } 
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		
+		verticalScrollbar = "right_vertical_slider"
+		margin = { top = 14 bottom = 14}				
+	
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_bg_1_scrollbar"   
+		}
+		
+		
+		
+		buttonType = {
+			name = "TE_annex_btn"   
+			position = {x=80 y=11}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_ANNEX_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_ANNEX_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_annex_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=0}
+			buttonText = "[TE_GET_ANNEX_PTS_CLR]"
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_annex_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=0}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_take_core_btn"   
+			position = {x=80 y=66}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_TAKE_CORE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_TAKE_CORE_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		
+		buttonType ={
+			name ="TE_take_core_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=55}
+			buttonText = "[TE_GET_TAKE_CORE_PTS_CLR]"  
+			buttonFont = "hoi_16mbs"
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_take_core_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=55}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_take_claimed_btn"   
+			position = {x=80 y=121}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_TAKE_CLAIMED_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_TAKE_CLAIMED_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		
+		buttonType ={
+			name ="TE_take_claimed_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=110}
+			buttonText = "[TE_GET_TAKE_CLAIMED_PTS_CLR]"
+			buttonFont = "hoi_16mbs"
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_take_claimed_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=110}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_take_border_state_btn"   
+			position = {x=80 y=176}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_TAKE_BORDER_STATE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_TAKE_BORDER_STATE_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		
+		buttonType ={
+			name ="TE_take_border_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=165}
+			buttonText = "[TE_GET_TAKE_BORDER_PTS_CLR]" 
+			buttonFont = "hoi_16mbs"
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_take_border_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=165}
+			scale = 1.0   
+		}
+		
+		buttonType = { 
+			name = "TE_take_port_btn"   
+			position = {x=80 y=231}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_TAKE_PORT_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_TAKE_PORT_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		
+		
+		buttonType ={
+			name ="TE_take_port_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=220} 
+			buttonText = "[TE_GET_TAKE_PORT_PTS_CLR]" 
+			buttonFont = "hoi_16mbs"
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_take_port_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=220} 
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_take_island_btn"   
+			position = {x=80 y=286}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_TAKE_ISLAND_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_TAKE_ISLAND_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_take_island_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=275}
+			buttonText = "[TE_GET_TAKE_ISLAND_PTS_CLR]" 
+			buttonFont = "hoi_16mbs"
+			scale = 1.0  
+		}
+		buttonType ={ 
+			name ="TE_take_island_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=275}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_take_colony_btn"    
+			position = {x=80 y=341}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_TAKE_COLONY_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_TAKE_COLONY_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_take_colony_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=330}
+			buttonText = "[TE_GET_TAKE_COLONY_PTS_CLR]" 
+			buttonFont = "hoi_16mbs"
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_take_colony_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=330}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_take_other_btn"   
+			position = {x=80 y=396}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_TAKE_OTHER_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_TAKE_OTHER_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_take_other_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=385}
+			buttonText = "[TE_GET_TAKE_OTHER_PTS_CLR]"  
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0  
+		}
+		buttonType ={ 
+			name ="TE_take_other_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=385}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_give_to_ally_btn"   
+			position = {x=80 y=451}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_GIVE_TO_ALLY_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_GIVE_TO_ALLY_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_give_to_ally_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=440}
+			buttonText = "[TE_GET_GIVE_TO_ALLY_PTS_CLR]"  
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0  
+		}
+		buttonType ={ 
+			name ="TE_give_to_ally_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=440}
+			scale = 1.0   
+		}
+	
+	
+	}
+	
+	
+	#### INDUSTRIAL AND FINANCIAL TERMS WINDOW
+	containerWindowType = { 
+		name = "TE_financial_industrial_terms_window"
+		position = {x=578 y=190}  
+		size = { width=290 height=430 } 
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		
+		verticalScrollbar = "right_vertical_slider"
+		margin = { top = 14 bottom = 14}				
+	
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_bg_1_scrollbar"   
+		}
+		
+		
+		
+		buttonType = {
+			name = "TE_war_rep_btn"   
+			position = {x=80 y=11}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_WAR_REP_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_WAR_REP_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_war_rep_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=0}
+			buttonText = "[TE_GET_WAR_REP_PTS_CLR]"   
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_war_rep_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=0}
+			scale = 1.0   
+		}
+		buttonType = {
+			name = "TE_oil_rights_btn"   
+			position = {x=80 y=66}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_OIL_RIGHTS_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_OIL_RIGHTS_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_oil_rights_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=55}
+			buttonText = "[TE_GET_OIL_RIGHTS_PTS_CLR]"  
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_oil_rights_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=55}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_reduce_mil_btn"   
+			position = {x=80 y=121}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_REDUCE_MIL_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_REDUCE_MIL_BTN_tt"  
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_reduce_mil_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=110}
+			buttonText = "[TE_GET_REDUCE_MIL_PTS_CLR]" 
+			buttonFont = "hoi_16mbs"
+			scale = 1.0  
+		}
+		buttonType ={ 
+			name ="TE_reduce_mil_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=110}
+			scale = 1.0   
+		}
+		
+	
+	}
+	
+	#### NAVAL TERMS WINDOW
+	containerWindowType = { 
+		name = "TE_naval_terms_window"
+		position = {x=10 y=645} 
+		size = { width=290 height=310 } 
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		
+		verticalScrollbar = "right_vertical_slider"
+		margin = { top = 14 bottom = 14}				
+	
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_bg_1_scrollbar"   
+		}
+		
+		
+		
+		buttonType = {
+			name = "TE_reduce_naval_btn"   
+			position = {x=80 y=11}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_REDUCE_NAVAL_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_REDUCE_NAVAL_BTN_tt"   
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_reduce_naval_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=0}
+			buttonText = "[TE_GET_REDUCE_NAVAL_PTS_CLR]"     
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_reduce_naval_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=0}
+			scale = 1.0   
+		}
+		buttonType = {
+			name = "TE_reduce_navy_btn"   
+			position = {x=80 y=66}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_REDUCE_NAVY_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_REDUCE_NAVY_BTN_tt"    
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_reduce_navy_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=55}
+			buttonText = "[TE_GET_REDUCE_NAVY_PTS_CLR]"    
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0  
+		}
+		buttonType ={ 
+			name ="TE_reduce_navy_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=55}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_transfer_navy_btn"   
+			position = {x=80 y=121}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_TRANSFER_NAVY_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_TRANSFER_NAVY_BTN_tt"    
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_transfer_navy_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=110}
+			buttonText = "[TE_GET_TRANSFER_NAVY_PTS_CLR]"    
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0  
+		}
+		buttonType ={ 
+			name ="TE_transfer_navy_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=110}
+			scale = 1.0   
+		}
+	
+	}
+	
+	#### SECURITY TERMS WINDOW 
+	containerWindowType = { 
+		name = "TE_security_terms_window"  
+		position = {x=294 y=645} 
+		size = { width=290 height=310 } 
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		
+		verticalScrollbar = "right_vertical_slider"
+		margin = { top = 14 bottom = 14}				
+	
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_bg_1_scrollbar"   
+		} 
+		
+		buttonType = {
+			name = "TE_set_demil_btn"    
+			position = {x=80 y=11}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_SET_DEMIL_BTN" 
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_SET_DEMIL_BTN_tt"   
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_set_demil_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=0} 
+			buttonText = "[TE_GET_SET_DEMIL_PTS_CLR]"      
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_set_demil_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=0} 
+			scale = 1.0   
+		}
+		buttonType = {
+			name = "TE_limit_military_btn"   
+			position = {x=80 y=66}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_LIMIT_MILITARY_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_LIMIT_MILITARY_BTN_tt"    
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_limit_military_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=55}
+			buttonText = "[TE_GET_LIMIT_MILITARY_PTS_CLR]"    
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0  
+		}
+		buttonType ={ 
+			name ="TE_limit_military_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=55}
+			scale = 1.0   
+		}
+		
+	} 
+	#### DIPLOMATIC TERMS WINDOW 
+	containerWindowType = { 
+		name = "TE_diplomatic_terms_window"  
+		position = {x=578 y=645} 
+		size = { width=290 height=310 } 
+
+		fade_time = 300
+		fade_type = linear
+		moveable = no
+		
+		verticalScrollbar = "right_vertical_slider"
+		margin = { top = 14 bottom = 14}				
+	
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_bg_1_scrollbar"   
+		} 
+		
+		buttonType = {
+			name = "TE_revoke_core_btn"    
+			position = {x=80 y=11}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_REVOKE_CORE_BTN" 
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_REVOKE_CORE_BTN_tt"   
+			scale = 1.0
+			clicksound = select_focus 
+		}
+		buttonType ={
+			name ="TE_revoke_core_pts"
+			spriteType = "GFX_TE_points_cost_icon" 
+			position = {x=25 y=0} 
+			buttonText = "[TE_GET_REVOKE_CORE_PTS_CLR]"       
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0 
+		}
+		buttonType ={ 
+			name ="TE_revoke_core_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=0} 
+			scale = 1.0   
+		}
+		buttonType = {
+			name = "TE_revoke_claim_btn"   
+			position = {x=80 y=66}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_REVOKE_CLAIM_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_REVOKE_CLAIM_BTN_tt"    
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_revoke_claim_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=55}
+			buttonText = "[TE_GET_REVOKE_CLAIM_PTS_CLR]"    
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0  
+		}
+		buttonType ={ 
+			name ="TE_revoke_claim_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=55}
+			scale = 1.0   
+		}
+		
+		buttonType = {
+			name = "TE_return_core_btn"   
+			position = {x=80 y=121}	
+			spriteType = "GFX_TE_peace_select_button"
+			buttonText = "TE_RETURN_CORE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "TE_RETURN_CORE_BTN_tt"    
+			scale = 1.0
+			clicksound = select_focus
+		}
+		buttonType ={
+			name ="TE_return_core_pts"
+			spriteType = "GFX_TE_points_cost_icon"
+			position = {x=25 y=110}
+			buttonText = "[TE_GET_RETURN_CORE_PTS_CLR]"    
+			buttonFont = "hoi_16mbs" 
+			scale = 1.0  
+		}
+		buttonType ={ 
+			name ="TE_return_core_pts_chk"
+			spriteType = "GFX_TE_checkmark_icon"
+			position = {x=25 y=110}
+			scale = 1.0   
+		}
+
+	} 
+	
+	
+}

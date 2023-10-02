@@ -1,0 +1,22 @@
+state={
+	id=923
+	name="STATE_923"
+	manpower = 61371
+	
+	state_category = city
+	history={
+		owner = KSS
+		victory_points = {
+			735 1
+		}
+		buildings = {
+		}
+		add_core_of = KSS
+	}
+
+	provinces={
+		 735 11681 9709 6781 3765 6768
+	}
+
+	local_supplies=9.0 
+}

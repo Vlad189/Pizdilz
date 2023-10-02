@@ -1,0 +1,26 @@
+state={
+	id=943
+	name="STATE_943" # Ternopil
+	manpower = 1041916
+	
+	state_category = city
+	
+	history={
+		owner = POL
+		victory_points = {
+			3483 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		add_core_of = POL
+		add_core_of = UKR
+	}
+
+	provinces={
+		491 3483 9454 11427 438 3562
+	}
+
+	local_supplies=0.0 
+}
