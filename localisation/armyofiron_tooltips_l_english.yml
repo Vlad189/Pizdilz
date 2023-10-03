@@ -1,0 +1,65 @@
+﻿l_english:
+ #Integrating Territories/Formables
+ cancel_forming_nation_tt:0 "§RThe forming of the Nation will be cancelled if you are no longer independent or lose control over any territory that is to be cored!§!"
+ integrating_territory:0 "Integrating Territory"
+ reintegrate_german_territories_flag:0 "Reintegrated German Territories"
+ reintegrated_polish_territories_flag:0 "Reintegrated Polish Territories"
+ integrated_sudetenland_flag:0 "Integrated Sudetenland"
+ reintegrated_south_jutland_flag:0 "Reintegrated South Jutland"
+ reintegrated_memel_flag:0 "Reintegrated Memel"
+ integrated_austria_flag:0 "Integrated Austria"
+ form_greater_german_reich_switzerland_coring_states_tt:0 "Gain core on §YSwiss§! states.\n"
+
+ #Decision Tooltips
+ aluminium_company_of_canada_established:0 "Aluminium Company of Canada established"
+ turney_valley_oilfield_developed:0 "Turney Valley Oilfield developed"
+ CAN_develop_resources:0 "Resource Development Initiatives"
+ 
+ aiding_industrial_development:0 "Aiding Industrial Development"
+ 
+ propose_union_tt:0 "Increases the chance of France wanting to form a Franco-British Union."
+ britain_proposed_union_flag:0 "Britain proposed Union"
+ generic_national_visit:0 "National Visit by Overlord"
+ 
+ #Focus/Event Tooltips
+ deposed_hitler_flag:0 "Deposed Hitler"
+ GER_tech_slot_limit:0 "§YYou will not receive an additional Research Slot if you already have 6. You will receive the following instead:§!\n"
+ GER_depose_hitler_mefo_bills:0 "Remove National Spirit §YMEFO Bills§!.\n§RCompanies will demand payment if they have not been paid yet.§!\n"
+ USA_war_powers_act_tt:0 "Set the rule: £trigger_yes£Can justify and declare war on country with the same ideology group."
+ ITA_defeatinETH_effect:0 "§RThis will impact Stability, War Support and Party Popularity in case of future territorial claims or political defeats.§!"
+ GER_reichsverteidigung_vienna_aa:0 "Owning Vienna will also build defenses there."
+ SOV_fourth_five_year_plan_in_effect:0 "Fourth Five Year Plan has just been started"
+ GER_combined_arms_warfare_improvement_tooltip:0 "This focus will further improve the effects of Combined Arms Warfare."
+ SOV_expand_tankograd_factories_tt:0 "Adds §G1§! Building Slot and §Y1 Military Factory§! in every state where the Development of Tankograd added factories."
+
+ #Exhaustion
+ WAR_EXHAUSTION_TOOLTIP:0 "You have §R[?war_exhaustion_variable]§! days of §HExhaustion.§!\n\nBased upon your current economy law you gain §R[?war_exhaustion_daily]§! §HExhaustion§! while at war and §Y[?peace_exhaustion_daily]§! §HExhaustion§! while at peace."
+ WAR_EXHAUSTION_TOOLTIP_DELAYED:0 "§YExhaustion§! is based upon your current §YEconomy Law§!. Being at war or enacting higher mobilization laws can increase your §YExhaustion§!. In peacetime enact lower-level mobilization laws to reduce existing Exhaustion. Every 1000 days worth of Exhaustion you will get increasing §RPenalties§! to Stability, War Support and Ideology Drift Defence. §YExhaustion§! is capped at 6000."
+ undisturbed_isolation_war_exhaustion_tt:0 "Increases §YExhaustion§! by §R2§! during §YWartime§! and decreases by §G0§! during §YPeacetime§!.\n"
+ isolation_war_exhaustion_tt:0 "Increases §YExhaustion§! by §R1§! during §YWartime§! and decreases by §G0§! during §YPeacetime§!.\n"
+ civilian_economy_war_exhaustion_tt:0 "Increases §YExhaustion§! by §R1§! during §YWartime§! and decreases by §G2§! during §YPeacetime§!.\n"
+ low_economic_mobilisation_war_exhaustion_tt:0 "Increases §YExhaustion§! by §R1§! during §YWartime§! and decreases by §G1§! during §YPeacetime§!.\n"
+ partial_economic_mobilisation_war_exhaustion_tt:0 "Increases §YExhaustion§! by §R1§! during §YWartime§! and decreases by §G0§! during §YPeacetime§!.\n"
+ war_economy_war_exhaustion_tt:0 "Increases §YExhaustion§! by §R1§! during §YWartime§! and increases by §R1§! during §YPeacetime§!.\n"
+ tot_economic_mobilisation_war_exhaustion_tt:0 "Increases §YExhaustion§! by §R2§! during §YWartime§! and increases by §R2§! during §YPeacetime§!.\n"
+ new_economic_policy_war_exhaustion_tt:0 "Increases §YExhaustion§! by §R1§! during §YWartime§! and decreases by §G1§! during §YPeacetime§!.\n"
+ SPR_collectivized_society_war_exhaustion_tt:0 "Continually decreases §YExhaustion§! by §G1§!.\n"
+ 
+ #Unit Leader Traits
+ fighting_with_at_least_1_unit:0 "Controlling at least §H1§! army"
+ has_trait_organizer:0 "Has trait §HOrganizer§!"
+
+ #Interface
+ BUILDING_REMOVE_BUTTON_AIR_BASE:0 "Remove §Yone level§! of §YAir Base§! in this state."
+ BUILDING_REMOVE_BUTTON_ANTI_AIR:0 "Remove §Yone level§! of §YAnti Air§! in this state."
+ BUILDING_REMOVE_BUTTON_RADAR:0 "Remove §Yall levels§! of §YRadar§! in this state."
+ BUILDING_REMOVE_BUTTON_30days:0 "You can remove more after 30 days."
+
+ #Misc
+ AOI_CREDITS:0 "Army of Iron Mods and Credits"
+
+low_war_exhauxtion_gui:0 "Low War Exhaustion"
+medium_war_exhaustion_gui:0 "Medium War Exhaustion"
+heavy_war_exhaustion_gui:0 "Heavy War Exhaustion"
+extreme_war_exhaustion_gui:0 "Extreme War Exhaustion"
+total_war_exhaustion_gui:0 "Total War Exhaustion"

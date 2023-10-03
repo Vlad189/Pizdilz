@@ -1,0 +1,56 @@
+﻿l_english:
+
+ #tooltips
+ 
+
+
+ 
+ check_decisions_1:0 "§GCheck your Decisions tab for ways to mitigate war exhaustion.§!"
+ check_decisions_2:0 "§YCheck your Decisions tab for ways to mitigate war exhaustion.§!"
+ check_decisions_3:0 "§RCheck your Decisions tab for ways to mitigate war exhaustion.§!"
+
+ exhaustion_lowered:0 "§GYour country's war exhaustion has been lowered.§!"
+
+ warning_elections:0 "§4Elections will be held.§!\n§RWARNING! BE CAREFUL AS OTHER IDEOLOGIES MAY WIN THE ELECTION!§!"
+ taken_last_stand:0 "§YCountry has been called for final stand§!"
+ replaces_war_exhaustion:0 "§YReplaces any current War Exhaustion spirits.§!"
+ mission_warning_final_stand:0 "§RYou will have 180 days to go on the offensive.§!"
+
+ lower_by_5:0 "§GWar Exhaustion will be lowered by 5%§!"
+ lower_by_10:0 "§GWar Exhaustion will be lowered by 100 days§!"
+ lower_by_15:0 "§GWar Exhaustion will be lowered by 150 days§!"
+ lower_by_20:0 "§GWar Exhaustion will be lowered by 300 days§!"
+ lower_by_25:0 "§GWar Exhaustion will be lowered by 25%§!"
+ lower_by_30:0 "§GWar Exhaustion will be lowered by 30%§!"
+ lower_by_50:0 "§GWar Exhaustion will be lowered by 400 days§!" 
+ 
+ 
+ raise_by_5:0 "§RWar Exhaustion will be raised by 5%§!"
+ raise_by_10:0 "§RWar Exhaustion will be raised by 100 days§!"
+ raise_by_15:0 "§RWar Exhaustion will be raised by 15%§!"
+ raise_by_20:0 "§RWar Exhaustion will be raised by 300 days§!"
+ raise_by_25:0 "§RWar Exhaustion will be raised by 25%§!"
+ raise_by_30:0 "§RWar Exhaustion will be raised by 30%§!"
+ raise_by_35:0 "§RWar Exhaustion will be raised by 500 days§!"
+ raise_by_50:0 "§RWar Exhaustion will be raised by 50%§!"
+ raise_by_60:0 "§gWar Exhaustion will be raised by 60%§!"
+ raise_by_75:0 "§gWar Exhaustion will be raised by 75%§!"
+
+ populace_nuked:0 "§RThe populace will be incredibly demoralized and disorganized and refuse to work for some time.§!"
+
+#decisions
+
+war_exhaustion:0 "War Exhaustion Management"
+ war_exhaustion_desc:0 "Our nation is plagued by war exhaustion, and it is affecting our populace and military. There are manys ways we can fight this effect. \n\nAvoiding needless casualties may reduce the rate that war exhaustion goes up, and we can also use our political power for some campaigns to boost the populace.\n\nOf course, the best way would be just to seek out peace.\n\n§4Developer's note - Exhaustion national spirits are updated at the start of every month, so if you don't see effects immediatly, don't worry. Also the rst of the decisions will load up once at war§!"
+
+consumer_support:0 "Allocate Factories to Civillian Needs"
+supress_protests:0 "Supress Anti-War Protests"
+accede_to_protests:0 "Accede to Protestors' Demands"
+defense_propaganda:0 "Homeland Defense Propaganda"
+conscription_law_small:0 "Additional Recruitment Law"
+conscription_law_large:0 "Extensive Recruitment Law"
+increase_factory_light:0 "Increase Factory Worker Hours"
+increase_factory_heavy:0 "Heavily Increase Factory Worker Hours"
+liberation_propaganda:0 "Ethnic Liberation Propaganda"
+martial_law_start:0 "Declare Martial Law"
+hold_emergency_election:0 "Hold Emergency Elections"
