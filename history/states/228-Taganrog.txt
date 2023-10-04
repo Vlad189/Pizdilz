@@ -2,7 +2,7 @@
 state={
 	id=228
 	name="STATE_228" # Luhansk
-	manpower = 4167411
+	manpower = 2167411
 	
 	state_category = large_city
 
