@@ -2,14 +2,14 @@
 state={
 	id=241
 	name="STATE_241" 
-	manpower = 743422
+	manpower = 1743422
 	
-	state_category = rural
+	state_category = large_city
 
 	history={
 		owner = UKR
 		victory_points = {
-			9288 10 
+			9288 20 
 		}
 		buildings = {
 			infrastructure = 2 

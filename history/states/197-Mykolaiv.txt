@@ -4,7 +4,7 @@ state={
 	name="STATE_197"
 	manpower = 1986311
 	
-	state_category = city
+	state_category = large_city
 
 	history={
 		owner = UKR
@@ -16,7 +16,7 @@ state={
 			}
 		}
 		victory_points = {
-			11683 10
+			11683 20
 		}
 		victory_points = {
 			6597 2

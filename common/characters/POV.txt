@@ -76,5 +76,5 @@ POV_Stolip = {
         }
        traits = {reformator}
 	}
-     }
+ }
 }

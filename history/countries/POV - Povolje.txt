@@ -104,6 +104,16 @@ create_field_marshal = {
 	planning_skill = 5
 	logistics_skill = 5
 }
+create_field_marshal = {
+	name = " Felix Nye Tours "
+	picture = "felix.dds"
+	traits = {attack_doctrine}
+	skill = 5
+	attack_skill = 5
+	defense_skill = 4
+	planning_skill = 5
+	logistics_skill = 5
+}
 
 create_corps_commander = {
 	name = " Sergey Dushkin "

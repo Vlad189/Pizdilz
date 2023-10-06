@@ -4,7 +4,7 @@ oob = "lip_1936" ##GEG - Тег, заменить
 
 set_research_slots = 3 #Количество ячеек исследования
 
-recruit_character = LIP_Levt
+recruit_character = LIP_Konstantin
 
 # Технологии, какие будут открыты при старте
 set_technology = {
@@ -28,7 +28,7 @@ set_popularities = {
 	democratic = 0  ##Демократия
 	neutrality = 0 ##Нейтралитет
 	miliritary = 85 ##Коммунизм военный
-	fascism = 15 ##Фашизм
+	trozkism = 15 ##Революционный марксизм (Троцкизм)
 }
 
 
