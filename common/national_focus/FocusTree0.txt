@@ -593,10 +593,12 @@ focus_tree = {
 		y = 3
 		
 		completion_reward = {
+                                remove_ideas = recent_peace_treaty
 				declare_war_on = {
 						target = KSS
 						type = take_claimed_state
 				}
+                    
                     country_event = {
 					       id = super.2
 						hours = 2
