@@ -1,0 +1,32 @@
+
+state={
+	id=937
+	name="STATE_937"
+	manpower = 912830
+	
+	state_category = large_town
+
+	history={
+		owner = NOW
+		victory_points = {
+			9272 3
+		}
+		buildings = {
+			infrastructure = 3 #was: 5
+			industrial_complex = 1
+
+		}
+		add_core_of = NOW
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 2
+			}
+		}
+	}
+
+	provinces={
+		9382 9272 3279 11384 335 11254 9318 
+	}
+
+	local_supplies=0.0 
+}

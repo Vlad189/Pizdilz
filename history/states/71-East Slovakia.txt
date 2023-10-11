@@ -1,0 +1,28 @@
+state={
+	id=71
+	name="STATE_71"
+	manpower = 575800
+	
+	state_category = rural
+	
+	history={
+		owner = CZE
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		add_core_of = CZE
+
+		1939.3.14 = {
+			owner = SLO
+			controller = SLO
+			add_core_of = SLO
+		}
+	}
+
+	provinces={
+		555 581 3550 11554 3581
+	}
+
+	local_supplies=0.0 
+}
