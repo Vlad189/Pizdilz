@@ -11,6 +11,55 @@
 #
 # The 'name' property is how you refer to the rule in adjacencies.csv
 
+#Volga-Don Canal
+adjacency_rule = 
+{
+	name = "VOLGA_DON_CANAL" # Mod addition
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 9417 11418 449 3478 3489 9474 6527 498 3487 3461 9440 11579 9735 11706 6758 }
+
+	is_disabled = {
+		has_global_flag = VOLGA_DON_NOT_BUILT
+		#OR = {
+			#has_global_flag = SUEZ_CANAL_BLOCKED
+			#has_country_flag = SUEZ_CANAL_BLOCKED_FOR_COUNTRY
+		#}
+		tooltip = Volga_don_blocked_tt
+	}
+	
+	icon = 9417
+	offset = { 1 0 -6 }
+}
+
 #Suez Canal
 adjacency_rule =
 {
@@ -98,46 +147,6 @@ adjacency_rule =
 	
 	icon = 5407	
 	offset = { -31.0 0.0 -2.0 }
-}
-
-#Kerch Strait
-adjacency_rule =
-{
-	name = "KERCH_STRAIT"
-
-	contested =
-	{
-		army = no
-		navy = no
-		submarine = yes
-		trade = no
-	}
-	enemy =
-	{
-		army = no
-		navy = no
-		submarine = yes
-		trade = no
-	}
-	friend =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	neutral =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	
-	required_provinces = { 9680 }
-	
-	icon = 9680	
-	offset = { 5.0 0.0 -1.0 }
 }
 
 #Øresund - (Østersøen <-> Kattegat/Skagerak/Nordsøen)
@@ -234,15 +243,7 @@ adjacency_rule =
 	name = "BOSPHORUS_STRAIT"
 
 	is_friend = {
-		hidden_trigger = {
-			OR = {
-				AND = {
-					has_country_flag = UKR_has_access_for_black_sea_straits
-					NOT = { has_war_with = TUR }
-				} 
-				TUR_is_friend_for_bosphorus = yes
-			}
-		}
+		TUR_is_friend_for_bosphorus = yes
 	}
 	contested =
 	{
@@ -290,15 +291,7 @@ adjacency_rule =
 	name = "DARDANELLES_STRAIT"
 
 	is_friend = {
-		hidden_trigger = {
-			OR = {
-			AND = {
-					has_country_flag = UKR_has_access_for_black_sea_straits
-				NOT = { has_war_with = TUR }
-				} 
-				TUR_is_friend_for_dardanelles = yes
-			}
-		}
+		TUR_is_friend_for_dardanelles = yes
 	}
 
 	contested =
@@ -418,47 +411,6 @@ adjacency_rule =
 		
 	icon = 10904
 	offset = { 2 0 12 }
-}
-
-
-#Volga don canal
-adjacency_rule =
-{
-	name = "VOLGA_DON_CANAL"
-
-	contested =
-	{
-		army = no
-		navy = no
-		submarine = no
-		trade = no
-	}
-	enemy =
-	{
-		army = no
-		navy = no
-		submarine = no
-		trade = no
-	}
-	friend =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	neutral =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	
-	required_provinces = { 6527 }
-		
-	icon = 10905
-	offset = { 2 0 13 }
 }
 
 #Strait of Otranto #TODO_Manu: TEST THIS OUT AND REMOVE IF NOT SATISFACTORY
