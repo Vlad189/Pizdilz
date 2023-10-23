@@ -1,0 +1,2067 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+
+MIO_tank_organization = {
+    icon = GFX_idea_generic_license_production
+
+    allowed = {	
+		has_dlc = "Arms Against Tyranny"
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+	
+
+    tree_header_text = {
+		text = "Armor"
+		x = 0
+	}
+
+	tree_header_text = {
+		text = "Light"
+		x = 3
+	}
+
+	tree_header_text = {
+		text = "Medium & Heavy"
+		x = 5
+	}
+
+	tree_header_text = {
+		text = "Tech & Production"
+		x = 8
+	}
+
+    equipment_type = {  
+        
+        mio_cat_eq_all_light_tank
+        mio_cat_eq_all_medium_tank
+        mio_cat_eq_all_heavy_tank
+        armor
+		railway_gun_equipment
+    }
+
+    research_categories = { 
+        
+        mio_cat_eq_all_light_tank
+        mio_cat_eq_all_medium_tank
+        mio_cat_eq_all_heavy_tank
+        armor
+		train_tech
+    }
+
+    initial_trait = {
+		name = better_mio_initial_trait_standardized_production
+		
+        limit_to_equipment_type = { 
+			armor
+		}
+
+		equipment_bonus = {
+			armor_value = 0.1
+			defense = 0.1
+			build_cost_ic = -0.1
+            reliability = 0.1
+            breakthrough = 0.1
+            soft_attack = 0.1
+			hard_attack = 0.1
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_a1
+		name = better_mio_trait_a1
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=0 }
+		
+		limit_to_equipment_type = { 
+			armor
+		}
+
+		equipment_bonus = {
+			reliability = 0.15
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_a2
+		name = better_mio_trait_a2
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_a1
+		any_parent = { better_mio_trait_a1 }
+		
+		limit_to_equipment_type = { 
+			armor
+		}
+
+		equipment_bonus = {
+			defense = 0.15
+		}
+		
+	}
+
+	trait = {
+		token = better_mio_trait_a3
+		name = better_mio_trait_a3
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_a2
+		any_parent = { better_mio_trait_a2 }
+		
+		limit_to_equipment_type = { 
+			armor
+		}
+
+		equipment_bonus = {
+			breakthrough = 0.15
+			maximum_speed = 0.15
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_a4
+		name = better_mio_trait_a4
+		icon = GFX_generic_mio_department_icon_tank_general_technology
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_a3
+		any_parent = { better_mio_trait_a3 }
+		
+		limit_to_equipment_type = { 
+			armor
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.15
+			production_resource_need_factor = -0.15
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_a5
+		name = better_mio_trait_a5
+		icon = GFX_generic_mio_department_icon_tank_general_line_efficiency
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_a4
+		any_parent = { better_mio_trait_a4 }
+		
+		limit_to_equipment_type = { 
+			armor
+		}
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.2
+			production_resource_penalty_factor = -0.3
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_l1
+		name = better_mio_trait_l1
+		icon = GFX_generic_mio_department_icon_tank_light_tank_weapons
+
+		position = { x=3 y=0 }
+		relative_position_id = better_mio_trait_a1
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			armor_value = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_l2
+		name = better_mio_trait_l2
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_l1
+		any_parent = { better_mio_trait_l1 }
+
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		
+		equipment_bonus = {
+			maximum_speed = 0.2
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_l3
+		name = better_mio_trait_l3
+		icon = GFX_generic_mio_department_icon_tank_light_tank_armor
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_l2
+		any_parent = { better_mio_trait_l2 }
+
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+		
+		equipment_bonus = {
+			reliability = 0.10
+			defense = 0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_l4
+		name = better_mio_trait_l4
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_l3
+		any_parent = { better_mio_trait_l3 }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+
+		equipment_bonus = {
+			maximum_speed = 0.1
+			breakthrough = 0.1
+			lg_attack = 0.15
+			lg_armor_piercing = 0.15
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_l5
+		name = better_mio_trait_l5
+		icon = GFX_generic_mio_department_icon_tank_general_technology
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_l4
+		any_parent = { better_mio_trait_l4 }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_light_tank }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+			production_efficiency_gain_factor = 0.1
+		}
+
+		equipment_bonus = {
+			ap_attack = 0.05
+			hard_attack = 0.05
+			hg_attack = 0.15
+			hg_armor_piercing = 0.15
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_m1
+		name = better_mio_trait_m1
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=5 y=0 }
+		relative_position_id = better_mio_trait_a1
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank mio_cat_eq_all_heavy_tank}
+
+
+		equipment_bonus = {
+			breakthrough = 0.1
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_m2
+		name = better_mio_trait_m2
+		icon = GFX_generic_mio_trait_icon_hard_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_m1
+		any_parent = { better_mio_trait_m1 }
+		
+		equipment_bonus = {			
+			hard_attack = 0.15
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_m3
+		name = better_mio_trait_m3
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_m2
+		any_parent = { better_mio_trait_m2 }
+		
+		equipment_bonus = {
+			maximum_speed = 0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_m4
+		name = better_mio_trait_m4
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_m3
+		any_parent = { better_mio_trait_m3 }
+		
+		equipment_bonus = {
+			soft_attack = 0.15
+			ap_attack = 0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_m5
+		name = better_mio_trait_m5
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_m4
+		any_parent = { better_mio_trait_m4 }
+		
+		equipment_bonus = {			
+			hard_attack = 0.05
+			armor_value = 0.05
+			defense = 0.05
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_h1
+		name = better_mio_trait_h1
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=8 y=0 }
+		relative_position_id = better_mio_trait_a1
+		
+		limit_to_equipment_type = { armor }
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.2
+			military_industrial_organization_funds_gain = 0.25
+		}
+
+	}
+
+	trait = {
+		token = better_mio_trait_h2
+		name = better_mio_trait_h2
+		icon = GFX_generic_mio_trait_icon_hardness
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_h1
+		any_parent = { better_mio_trait_h1 }
+		
+		equipment_bonus = {
+			hardness = 0.05
+		}
+
+		production_bonus = {
+			production_resource_need_factor = -0.2
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_h3
+		name = better_mio_trait_h3
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_h2
+		any_parent = { better_mio_trait_h2 }
+		
+		equipment_bonus = {
+			fuel_consumption = -0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_h4
+		name = better_mio_trait_h4
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_h3
+		any_parent = { better_mio_trait_h3 }
+		
+		equipment_bonus = {
+			armor_value = 0.1
+			defense = 0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_h5
+		name = better_mio_trait_h5
+		icon = GFX_generic_mio_department_icon_tank_general_technology
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_h4
+		any_parent = { better_mio_trait_h4 }
+		
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+	}    
+}
+
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+MIO_ship_organization = {
+    icon = GFX_idea_generic_sea_focused_navy
+    allowed = {	
+		has_dlc = "Arms Against Tyranny"
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+
+    tree_header_text = {
+		text = "Ships"
+		x = 0
+	}
+
+	tree_header_text = {
+		text = "Carriers & Submarines"
+		x = 3
+	}
+
+	tree_header_text = {
+		text = "Battleships & Cruisers"
+		x = 5
+	}
+
+	tree_header_text = {
+		text = "Tech & Production"
+		x = 8
+	}
+
+    equipment_type = {  
+        
+        mio_cat_eq_all_carrier
+		mio_cat_eq_all_cruiser
+		mio_cat_eq_all_destroyer
+		mio_cat_eq_all_battleship
+
+		capital_ship
+		screen_ship
+		ship_hull_submarine
+		submarine
+    }
+
+    research_categories = { 
+        mio_cat_tech_all_carrier_and_modules
+		mio_cat_tech_all_cruiser_and_modules
+		mio_cat_tech_all_destroyer_and_modules
+		mio_cat_tech_all_capital_ship_and_modules
+		mio_cat_tech_all_submarine_and_modules		
+    }
+
+    initial_trait = {
+		name = better_mio_initial_trait_ship_production
+		
+        limit_to_equipment_type = { 
+		}
+
+		equipment_bonus = {
+			anti_air_attack = 0.1
+			armor_value = 0.1
+			max_strength = 0.1
+			maximum_speed = 0.1
+			naval_range = 0.1
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_ship_a1
+		name = better_mio_trait_ship_a1
+		icon = GFX_generic_mio_trait_icon_naval_range
+
+		position = { x=0 y=0 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			naval_range = 0.05
+			fuel_consumption = -0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_a2
+		name = better_mio_trait_ship_a2
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_a1
+		any_parent = { better_mio_trait_ship_a1 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			armor_value = 0.05
+		}
+		
+	}
+
+	trait = {
+		token = better_mio_trait_ship_a3
+		name = better_mio_trait_ship_a3
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_a2
+		any_parent = { better_mio_trait_ship_a2 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			naval_speed = 0.05
+			fuel_consumption = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_a4
+		name = better_mio_trait_ship_a4
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_a3
+		any_parent = { better_mio_trait_ship_a3 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			anti_air_attack = 0.05
+			naval_light_gun_hit_chance_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_a5
+		name = better_mio_trait_ship_a5
+		icon = GFX_generic_mio_department_icon_ship_general_production
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_a4
+		any_parent = { better_mio_trait_ship_a4 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_efficiency_cap_factor = 0.2
+			production_resource_penalty_factor = -0.3
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	trait = {
+		token = better_mio_trait_ship_l1
+		name = better_mio_trait_ship_l1
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+
+		position = { x=3 y=0 }
+		relative_position_id = better_mio_trait_ship_a1
+		
+		limit_to_equipment_type = { screen_ship submarine ship_hull_submarine mio_cat_eq_all_carrier}
+
+		equipment_bonus = {
+			anti_air_attack = 0.05
+			naval_light_gun_hit_chance_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_l2
+		name = better_mio_trait_ship_l2
+		icon = GFX_generic_mio_department_icon_ship_carrier_offense
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_l1
+		any_parent = { better_mio_trait_ship_l1 }
+
+		limit_to_equipment_type = { screen_ship submarine ship_hull_submarine mio_cat_eq_all_carrier}
+		
+		equipment_bonus = {
+			anti_air_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_l3
+		name = better_mio_trait_ship_l3
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_engine
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_l2
+		any_parent = { better_mio_trait_ship_l2 }
+
+		limit_to_equipment_type = { screen_ship submarine ship_hull_submarine mio_cat_eq_all_carrier}
+		
+		equipment_bonus = {
+			naval_range = 0.05
+			naval_speed = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_l4
+		name = better_mio_trait_ship_l4
+		icon = GFX_generic_mio_trait_icon_torpedo_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_l3
+		any_parent = { better_mio_trait_ship_l3 }
+		
+		limit_to_equipment_type = { screen_ship submarine ship_hull_submarine mio_cat_eq_all_carrier}
+
+		equipment_bonus = {
+			torpedo_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_l5
+		name = better_mio_trait_ship_l5
+		icon = GFX_generic_mio_department_icon_ship_submarine_survivability
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_l4
+		any_parent = { better_mio_trait_ship_l4 }
+		
+		limit_to_equipment_type = { screen_ship submarine ship_hull_submarine mio_cat_eq_all_carrier}
+
+		equipment_bonus = {
+			surface_visibility = -0.05
+			sub_visibility = -0.05
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_ship_m1
+		name = better_mio_trait_ship_m1
+		icon = GFX_generic_mio_trait_icon_lg_attack
+
+		position = { x=5 y=0 }
+		relative_position_id = better_mio_trait_ship_a1
+		
+		limit_to_equipment_type = { capital_ship ship_hull_cruiser}
+
+
+		equipment_bonus = {
+			lg_armor_piercing = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_m2
+		name = better_mio_trait_ship_m2
+		icon = GFX_generic_mio_department_icon_ship_capital_screen_weapons
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_m1
+		any_parent = { better_mio_trait_ship_m1 }
+		
+		limit_to_equipment_type = { capital_ship ship_hull_cruiser}
+
+		equipment_bonus = {			
+			lg_attack = 0.01
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_m3
+		name = better_mio_trait_ship_m3
+		icon = GFX_generic_mio_trait_icon_hg_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_m2
+		any_parent = { better_mio_trait_ship_m2 }
+
+		limit_to_equipment_type = { capital_ship ship_hull_cruiser}
+		
+		equipment_bonus = {
+			hg_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_m4
+		name = better_mio_trait_ship_m4
+		icon = GFX_generic_mio_department_icon_ship_capital_screen_armor
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_m3
+		any_parent = { better_mio_trait_ship_m3 }
+
+		limit_to_equipment_type = { capital_ship ship_hull_cruiser}
+		
+		equipment_bonus = {
+			anti_air_attack = 0.06
+			naval_range = 0.1
+			armor_value = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_m5
+		name = better_mio_trait_ship_m5
+		icon = GFX_generic_mio_department_icon_ship_capital_ship_armor
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_m4
+		any_parent = { better_mio_trait_ship_m4 }
+
+		limit_to_equipment_type = { capital_ship ship_hull_cruiser}
+		
+		equipment_bonus = {			
+			anti_air_attack = 0.05
+			armor_value = 0.05
+			lg_attack = 0.05
+			naval_range = 0.05
+			maximum_speed = 0.05
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_ship_h1
+		name = better_mio_trait_ship_h1
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=8 y=0 }
+		relative_position_id = better_mio_trait_ship_a1		
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.2
+			military_industrial_organization_funds_gain = 0.25
+		}
+
+	}
+
+	trait = {
+		token = better_mio_trait_ship_h2
+		name = better_mio_trait_ship_h2
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_h1
+		any_parent = { better_mio_trait_ship_h1 }
+		
+		equipment_bonus = {
+			max_strength = 0.05
+		}
+
+		production_bonus = {
+			production_resource_need_factor = -0.2
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_h3
+		name = better_mio_trait_ship_h3
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_h2
+		any_parent = { better_mio_trait_ship_h2 }
+		
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_h4
+		name = better_mio_trait_ship_h4
+		icon = GFX_generic_mio_department_icon_ship_submarine_survivability
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_h3
+		any_parent = { better_mio_trait_ship_h3 }
+		
+		equipment_bonus = {
+			sub_visibility = -0.05
+			surface_detection = 0.05
+			build_cost_ic = -0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_ship_h5
+		name = better_mio_trait_ship_h5
+		icon = GFX_generic_mio_department_icon_ship_general_engine
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_ship_h4
+		any_parent = { better_mio_trait_ship_h4 }
+		
+		equipment_bonus = {
+			naval_range = 0.05
+			naval_speed = 0.05
+			fuel_consumption = 0.05
+		}
+
+	}
+}
+
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+
+MIO_plane_organization = {
+    icon = GFX_idea_generic_fighter_production_diverted
+    allowed = {	
+		has_dlc = "Arms Against Tyranny"
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+
+    tree_header_text = {
+		text = "Planes"
+		x = 0
+	}
+
+	tree_header_text = {
+		text = "Light Aviation"
+		x = 3
+	}
+
+	tree_header_text = {
+		text = "Heavy Aviation"
+		x = 5
+	}
+
+	tree_header_text = {
+		text = "Tech & Production"
+		x = 8
+	}
+
+    equipment_type = {          
+        mio_cat_eq_all_small_plane
+		mio_cat_eq_all_medium_plane
+		mio_cat_eq_all_large_plane
+		transport_plane_equipment
+    }
+
+    research_categories = {    
+		air_equipment 
+
+
+        mio_cat_all_medium_aircraft_and_modules
+		mio_cat_all_light_fighter_and_modules
+		mio_cat_all_cas_and_modules
+		mio_cat_all_naval_bomber_and_modules
+    }
+
+    initial_trait = {
+		name = better_mio_initial_trait_plane_production
+		
+        limit_to_equipment_type = { 
+		}
+
+		equipment_bonus = {
+			reliability = 0.1
+			air_range = 0.1
+			maximum_speed = 0.1
+			air_agility = 0.1
+			air_defence = 0.1
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_plane_a1
+		name = better_mio_trait_plane_a1
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=0 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_a2
+		name = better_mio_trait_plane_a2
+		icon = GFX_generic_mio_department_icon_plane_cv_naval_bomber_engine
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_a1
+		any_parent = { better_mio_trait_plane_a1 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			air_range = 0.1
+		}
+		
+	}
+
+	trait = {
+		token = better_mio_trait_plane_a3
+		name = better_mio_trait_plane_a3
+		icon = GFX_generic_mio_trait_icon_surface_detection
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_a2
+		any_parent = { better_mio_trait_plane_a2 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			surface_detection = 0.05
+			air_agility = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_a4
+		name = better_mio_trait_plane_a4
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_a3
+		any_parent = { better_mio_trait_plane_a3 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			reliability = 0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_a5
+		name = better_mio_trait_plane_a5
+		icon = GFX_generic_mio_department_icon_plane_cv_naval_bomber_production
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_a4
+		any_parent = { better_mio_trait_plane_a4 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_efficiency_cap_factor = 0.2
+			production_resource_penalty_factor = -0.3
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	trait = {
+		token = better_mio_trait_plane_l1
+		name = better_mio_trait_plane_l1
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=3 y=0 }
+		relative_position_id = better_mio_trait_plane_a1
+		
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane}
+
+		equipment_bonus = {
+			air_defence = 0.1
+			reliability = 0.1
+			naval_strike_attack = 0.1
+			naval_strike_targetting = 0.1
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_l2
+		name = better_mio_trait_plane_l2
+		icon = GFX_generic_mio_trait_icon_naval_range
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_l1
+		any_parent = { better_mio_trait_plane_l1 }
+
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane}
+		
+		equipment_bonus = {
+			air_range = 0.1
+			maximum_speed = 0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_l3
+		name = better_mio_trait_plane_l3
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_l2
+		any_parent = { better_mio_trait_plane_l2 }
+
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane}
+		
+		equipment_bonus = {
+			air_defence = 0.1
+			air_agility = 0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_l4
+		name = better_mio_trait_plane_l4
+		icon = GFX_generic_mio_department_icon_plane_light_combat
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_l3
+		any_parent = { better_mio_trait_plane_l3 }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane}
+
+		equipment_bonus = {
+			air_ground_attack = 0.1
+			air_attack = 0.1
+			naval_strike_attack = 0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_l5
+		name = better_mio_trait_plane_l5
+		icon = GFX_generic_mio_department_icon_plane_light_line_efficiency
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_l4
+		any_parent = { better_mio_trait_plane_l4 }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_plane_m1
+		name = better_mio_trait_plane_m1
+		icon = GFX_generic_mio_department_icon_plane_medium_line_efficiency
+
+		position = { x=5 y=0 }
+		relative_position_id = better_mio_trait_plane_a1
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_plane transport_plane_equipment}
+
+
+		equipment_bonus = {
+			air_defence = 0.15
+			air_bombing = 0.15
+		}		
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+
+		
+	}
+
+	trait = {
+		token = better_mio_trait_plane_m2
+		name = better_mio_trait_plane_m2
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_m1
+		any_parent = { better_mio_trait_plane_m1 }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_plane transport_plane_equipment}
+
+		equipment_bonus = {			
+			maximum_speed = 0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_m3
+		name = better_mio_trait_plane_m3
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_m2
+		any_parent = { better_mio_trait_plane_m2 }
+
+		limit_to_equipment_type = { mio_cat_eq_all_medium_plane transport_plane_equipment}
+		
+		equipment_bonus = {
+			air_agility = 0.15
+			air_range = 0.15
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_m4
+		name = better_mio_trait_plane_m4
+		icon = GFX_generic_mio_trait_icon_air_ground_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_m3
+		any_parent = { better_mio_trait_plane_m3 }
+
+		limit_to_equipment_type = { mio_cat_eq_all_medium_plane transport_plane_equipment}
+		
+		equipment_bonus = {
+			air_ground_attack = 0.15
+			build_cost_ic = -0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_m5
+		name = better_mio_trait_plane_m5
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_m4
+		any_parent = { better_mio_trait_plane_m4 }
+
+		limit_to_equipment_type = { mio_cat_eq_all_medium_plane transport_plane_equipment}
+		
+		production_bonus = {
+			production_capacity_factor = 0.1
+			production_efficiency_gain_factor = 0.1
+			production_resource_penalty_factor = -0.15
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_plane_h1
+		name = better_mio_trait_plane_h1
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=8 y=0 }
+		relative_position_id = better_mio_trait_plane_a1
+		
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.2
+			military_industrial_organization_funds_gain = 0.25
+		}
+
+	}
+
+	trait = {
+		token = better_mio_trait_plane_h2
+		name = better_mio_trait_plane_h2
+		icon = GFX_generic_mio_trait_icon_strategic_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_h1
+		any_parent = { better_mio_trait_plane_h1 }
+		
+		equipment_bonus = {
+			air_bombing = 0.15
+			air_range = 0.10
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_h3
+		name = better_mio_trait_plane_h3
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_h2
+		any_parent = { better_mio_trait_plane_h2 }
+		
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_h4
+		name = better_mio_trait_plane_h4
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_h3
+		any_parent = { better_mio_trait_plane_h3 }
+		
+		equipment_bonus = {
+			air_attack = 0.10
+			air_range = 0.10
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_plane_h5
+		name = better_mio_trait_plane_h5
+		icon = GFX_generic_mio_department_icon_plane_light_engine
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_plane_h4
+		any_parent = { better_mio_trait_plane_h4 }
+		
+		equipment_bonus = {
+			air_range = 0.15
+			air_agility = 0.15
+			maximum_speed = 0.10
+		}
+
+	}
+}
+
+
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+###################################
+
+MIO_materiel_organization = {
+    icon = GFX_idea_generic_artillery_regiments
+    allowed = {	
+		has_dlc = "Arms Against Tyranny"
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+
+    tree_header_text = {
+		text = "Design and Production"
+		x = 0
+	}
+
+	tree_header_text = {
+		text = "Equipment"
+		x = 3
+	}
+
+	tree_header_text = {
+		text = "Artillery"
+		x = 5
+	}
+
+	tree_header_text = {
+		text = "Moto and Mech"
+		x = 8
+	}
+
+    equipment_type = {   
+		support_equipment     
+        artillery_equipment
+		motorized_equipment
+		mechanized_equipment
+
+		anti_tank_equipment
+		anti_air_equipment
+		rocket_artillery_equipment
+		motorized_rocket_equipment
+		armored_car_equipment
+		infantry_equipment
+    }
+
+    research_categories = {         
+        mio_cat_all_artillery_equipment
+		support_tech
+		motorized_equipment
+		mot_rockets
+		cat_armored_cars
+		infantry_weapons
+    }
+
+    initial_trait = {
+		name = better_mio_initial_trait_materiel_production
+		
+        limit_to_equipment_type = { 
+		}
+
+		equipment_bonus = {
+			
+			soft_attack = 0.1
+			hard_attack = 0.1
+			air_attack = 0.1
+			ap_attack = 0.1
+			breakthrough = 0.1
+			defense = 0.1
+			reliability = 0.1
+			build_cost_ic = -0.05
+			fuel_consumption = -0.05
+			maximum_speed = 0.05
+			hardness = 0.05
+			armor_value = 0.05
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.2
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_materiel_a1
+		name = better_mio_trait_materiel_a1
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=0 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			breakthrough = 0.1
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_a2
+		name = better_mio_trait_materiel_a2
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_a1
+		any_parent = { better_mio_trait_materiel_a1 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			defense = 0.05
+			reliability = 0.05
+		}
+		
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_a3
+		name = better_mio_trait_materiel_a3
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_a2
+		any_parent = { better_mio_trait_materiel_a2 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			breakthrough = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_a4
+		name = better_mio_trait_materiel_a4
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_a3
+		any_parent = { better_mio_trait_materiel_a3 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		equipment_bonus = {
+			reliability = 0.1
+			build_cost_ic = -0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_a5
+		name = better_mio_trait_materiel_a5
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_a4
+		any_parent = { better_mio_trait_materiel_a4 }
+		
+		limit_to_equipment_type = { 
+			
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_efficiency_cap_factor = 0.2
+			production_resource_penalty_factor = -0.3
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	trait = {
+		token = better_mio_trait_materiel_l1
+		name = better_mio_trait_materiel_l1
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=3 y=0 }
+		relative_position_id = better_mio_trait_materiel_a1
+		
+		limit_to_equipment_type = { infantry_equipment support_equipment}
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_l2
+		name = better_mio_trait_materiel_l2
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_l1
+		any_parent = { better_mio_trait_materiel_l1 }
+
+		limit_to_equipment_type = { infantry_equipment support_equipment}
+		
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_l3
+		name = better_mio_trait_materiel_l3
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_l2
+		any_parent = { better_mio_trait_materiel_l2 }
+
+		limit_to_equipment_type = { infantry_equipment support_equipment}
+		
+		equipment_bonus = {
+			hard_attack = 0.1
+			ap_attack = 0.15
+			build_cost_ic = -0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_l4
+		name = better_mio_trait_materiel_l4
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_l3
+		any_parent = { better_mio_trait_materiel_l3 }
+		
+		limit_to_equipment_type = { infantry_equipment support_equipment}
+
+		equipment_bonus = {
+			defense = 0.1
+			soft_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_l5
+		name = better_mio_trait_materiel_l5
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_l4
+		any_parent = { better_mio_trait_materiel_l4 }
+		
+		limit_to_equipment_type = { infantry_equipment support_equipment}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.1
+			production_resource_need_factor = -0.1
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_materiel_m1
+		name = better_mio_trait_materiel_m1
+		icon = GFX_generic_mio_department_icon_artillery_production
+
+		position = { x=5 y=0 }
+		relative_position_id = better_mio_trait_materiel_a1
+		
+		limit_to_equipment_type = { 
+			artillery_equipment
+			anti_tank_equipment
+			anti_air_equipment
+			rocket_artillery_equipment
+		}
+
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			build_cost_ic = -0.05
+		}		
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.25
+		}
+
+		
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_m2
+		name = better_mio_trait_materiel_m2
+		icon = GFX_generic_mio_department_icon_artillery_production
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_m1
+		any_parent = { better_mio_trait_materiel_m1 }
+		
+		limit_to_equipment_type = { 
+			artillery_equipment
+			anti_tank_equipment
+			anti_air_equipment
+			rocket_artillery_equipment
+		}
+
+		equipment_bonus = {	
+			soft_attack = 0.05
+			breakthrough = 0.05	
+			air_attack = 0.15
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_m3
+		name = better_mio_trait_materiel_m3
+		icon = GFX_generic_mio_department_icon_anti_tank
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_m2
+		any_parent = { better_mio_trait_materiel_m2 }
+
+		limit_to_equipment_type = { 
+			artillery_equipment
+			anti_tank_equipment
+			anti_air_equipment
+			rocket_artillery_equipment
+		}
+		
+		equipment_bonus = {
+			hard_attack = 0.2
+			ap_attack = 0.05
+			breakthrough = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_m4
+		name = better_mio_trait_materiel_m4
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_m3
+		any_parent = { better_mio_trait_materiel_m3 }
+
+		limit_to_equipment_type = { 
+			artillery_equipment
+			anti_tank_equipment
+			anti_air_equipment
+			rocket_artillery_equipment
+		}
+		
+		equipment_bonus = {
+			breakthrough = 0.05
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_m5
+		name = better_mio_trait_materiel_m5
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_m4
+		any_parent = { better_mio_trait_materiel_m4 }
+
+		limit_to_equipment_type = { 
+			artillery_equipment
+			anti_tank_equipment
+			anti_air_equipment
+			rocket_artillery_equipment
+		}
+		
+		production_bonus = {
+			production_capacity_factor = 0.1
+			production_efficiency_gain_factor = 0.1
+			production_resource_penalty_factor = -0.15
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	trait = {
+		token = better_mio_trait_materiel_h1
+		name = better_mio_trait_materiel_h1
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=8 y=0 }
+		relative_position_id = better_mio_trait_materiel_a1
+		
+		limit_to_equipment_type = { 
+			motorized_equipment
+			motorized_rocket_equipment
+			mechanized_equipment
+			armored_car_equipment
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.2
+			military_industrial_organization_funds_gain = 0.25
+		}
+
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_h2
+		name = better_mio_trait_materiel_h2
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_h1
+		any_parent = { better_mio_trait_materiel_h1 }
+		
+		limit_to_equipment_type = { 
+			motorized_equipment
+			motorized_rocket_equipment
+			mechanized_equipment
+			armored_car_equipment
+		}
+
+		equipment_bonus = {
+			fuel_consumption = -0.05
+			maximum_speed = 0.2
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_h3
+		name = better_mio_trait_materiel_h3
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_h2
+		any_parent = { better_mio_trait_materiel_h2 }
+		
+		limit_to_equipment_type = { 
+			motorized_equipment
+			motorized_rocket_equipment
+			mechanized_equipment
+			armored_car_equipment
+		}
+
+		equipment_bonus = {
+			breakthrough = 0.05
+			hardness = 0.05
+			ap_attack = 0.1
+			hard_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_h4
+		name = better_mio_trait_materiel_h4
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_h3
+		any_parent = { better_mio_trait_materiel_h3 }
+		
+		limit_to_equipment_type = { 
+			motorized_equipment
+			motorized_rocket_equipment
+			mechanized_equipment
+			armored_car_equipment
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			defense = 0.05
+			armor_value = 0.05
+			build_cost_ic = -0.05
+		}
+	}
+
+	trait = {
+		token = better_mio_trait_materiel_h5
+		name = better_mio_trait_materiel_h5
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=0 y=1 }
+		relative_position_id = better_mio_trait_materiel_h4
+		any_parent = { better_mio_trait_materiel_h4 }
+		
+		limit_to_equipment_type = { 
+			motorized_equipment
+			motorized_rocket_equipment
+			mechanized_equipment
+			armored_car_equipment
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+			production_efficiency_gain_factor = 0.1
+			production_resource_penalty_factor = -0.15
+		}
+
+	}
+}
+
+

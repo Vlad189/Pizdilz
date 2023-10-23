@@ -1,0 +1,123 @@
+﻿l_russian:
+ MIO_tank_organization:0 "Bastion Armory"
+ better_mio_initial_trait_standardized_production:0 "Armored Vehicles Manufacturer"
+ 
+ better_mio_trait_a1:0 "Improved Ventilation"
+ better_mio_trait_a2:0 "Sloped Side Armor"
+ better_mio_trait_a3:0 "Improved Tracks and Suspension"
+ better_mio_trait_a4:0 "Armor Steel-Working"
+ better_mio_trait_a5:0 "Standardized Secondary Armament"
+
+ better_mio_trait_l1:0 "Mobile Tank Manufacturer"
+ better_mio_trait_l2:0 "Fast Tanks Designer"
+ better_mio_trait_l3:0 "Engine Optimization"
+ better_mio_trait_l4:0 "Lighter Materials"
+ better_mio_trait_l5:0 "Streamlined Production"
+
+ better_mio_trait_m1:0 "Heavy Duty Machine Tools"
+ better_mio_trait_m2:0 "High-Explosive Shells"
+ better_mio_trait_m3:0 "Improved Engine Output"
+ better_mio_trait_m4:0 "Fully Cast Turret"
+ better_mio_trait_m5:0 "Reinforced Construction"
+
+ better_mio_trait_h1:0 "Multi-Plant Cooperation"
+ better_mio_trait_h2:0 "Armor Steel-Working"
+ better_mio_trait_h3:0 "Reduced Fuel Usage"
+ better_mio_trait_h4:0 "Fully Cast Turret"
+ better_mio_trait_h5:0 "Simplified Transmission System"
+
+ better_mio_trait_h6:0 "GFX_idea_generic_tank_manufacturer_1"
+
+
+
+
+ MIO_ship_organization:0 "ArmadaCraft Shipbuilding"
+ better_mio_initial_trait_ship_production:0 "Warship Forge International Manufacturer"
+ 
+ better_mio_trait_ship_a1:0 "Task Force Ship Manufacturer"
+ better_mio_trait_ship_a2:0 "External Armor Belt"
+ better_mio_trait_ship_a3:0 "Efficient Fuel Engines"
+ better_mio_trait_ship_a4:0 "Anti-Air Ships"
+ better_mio_trait_ship_a5:0 "Mass Production"
+
+ better_mio_trait_ship_l1:0 "Fleet Escorts"
+ better_mio_trait_ship_l2:0 "Anti-Air Ships"
+ better_mio_trait_ship_l3:0 "Long Range Raiding"
+ better_mio_trait_ship_l4:0 "Submarine Designer"
+ better_mio_trait_ship_l5:0 "Advanced Sonar"
+
+ better_mio_trait_ship_m1:0 "Deck Guns"
+ better_mio_trait_ship_m2:0 "Long Range Engagement Ethos"
+ better_mio_trait_ship_m3:0 "Improved Light Gun Mounting"
+ better_mio_trait_ship_m4:0 "Large Torpedo Banks"
+ better_mio_trait_ship_m5:0 "Mass Production"
+
+ better_mio_trait_ship_h1:0 "Battle Line Ship Builders"
+ better_mio_trait_ship_h2:0 "Advanced Hydrodynamic Design"
+ better_mio_trait_ship_h3:0 "Battle Line Ship Manufacturer"
+ better_mio_trait_ship_h4:0 "Combat Information Center"
+ better_mio_trait_ship_h5:0 "Long Range Fleet"
+
+
+
+
+
+
+
+ MIO_plane_organization:0 "Warhawk Dynamics"
+ better_mio_initial_trait_plane_production:0 "International Aerospace Manufacturer"
+ 
+ better_mio_trait_plane_a1:0 "General Aircraft Manufacturer"            
+ better_mio_trait_plane_a2:0 "Refined Engines"            
+ better_mio_trait_plane_a3:0 "Multi-Purpose Aircraft"          
+ better_mio_trait_plane_a4:0 "Mixed Material Construction"       
+ better_mio_trait_plane_a5:0 "Ongoing Developmental Upgrades" 
+
+ better_mio_trait_plane_l1:0 "Water Injection"           
+ better_mio_trait_plane_l2:0 "Patrol Fuel Tanks"           
+ better_mio_trait_plane_l3:0 "Agility Wing Design"           
+ better_mio_trait_plane_l4:0 "Air Brakes"            
+ better_mio_trait_plane_l5:0 "Selectional Construction" 
+
+ better_mio_trait_plane_m1:0 "Multi-Role Aircraft Manufacturer"            
+ better_mio_trait_plane_m2:0 "Upgraded Engines"            
+ better_mio_trait_plane_m3:0 "Lengthened Wings"            
+ better_mio_trait_plane_m4:0 "Tactical Bombers"            
+ better_mio_trait_plane_m5:0 "Advanced Production Techniques" 
+
+ better_mio_trait_plane_h1:0 "Multi-Role Aircraft Designer"            
+ better_mio_trait_plane_h2:0 "Range Focused Aircraft Manufacturer"            
+ better_mio_trait_plane_h3:0 "Integrated Armor Designs"            
+ better_mio_trait_plane_h4:0 "Patrol Fuel Tanks"            
+ better_mio_trait_plane_h5:0 "Stiffened Wings"
+
+             
+
+
+ MIO_materiel_organization:0 "Vanguard Armament Co." 
+ better_mio_initial_trait_materiel_production:0 "International Armament Manufacturer"
+ 
+ better_mio_trait_materiel_a1:0 "Infantry Equipment Manufacturer"          
+ better_mio_trait_materiel_a2:0 "Quality Materials"         
+ better_mio_trait_materiel_a3:0 "Improved Rifle Recoil"        
+ better_mio_trait_materiel_a4:0 "Medium Machine Guns Production"    
+ better_mio_trait_materiel_a5:0 "Infantry Weapons Manufacturer"
+
+ better_mio_trait_materiel_l1:0 "Improved Small Arms Bullet Design"         
+ better_mio_trait_materiel_l2:0 "Private Tenders"        
+ better_mio_trait_materiel_l3:0 "Anti-Tank Rifle"         
+ better_mio_trait_materiel_l4:0 "Light Mortar"         
+ better_mio_trait_materiel_l5:0 "Efficient Scale-up"
+
+ better_mio_trait_materiel_m1:0 "Artillery Manufacturer"           
+ better_mio_trait_materiel_m2:0 "Big Guns"           
+ better_mio_trait_materiel_m3:0 "Advanced Trajectory Calculations"            
+ better_mio_trait_materiel_m4:0 "Rapid Fire"            
+ better_mio_trait_materiel_m5:0 "Efficient Scale-up" 
+
+ better_mio_trait_materiel_h1:0 "Motorized Manufacturer"           
+ better_mio_trait_materiel_h2:0 "All Wheel Drive"         
+ better_mio_trait_materiel_h3:0 "Mounted Light Anti-Tank Gun"          
+ better_mio_trait_materiel_h4:0 "Heavy Mounted Machine Gun"         
+ better_mio_trait_materiel_h5:0 "Efficient Scale-up"
+
