@@ -6,7 +6,4 @@ tags={
 name="PisDils"
 replace_path="events"
 replace_path="gfx/loadingscreens"
-replace_path="history/countries"
-replace_path="history/states"
-replace_path="history/general"
 supported_version="1.13.*"

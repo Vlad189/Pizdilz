@@ -1,9 +1,0 @@
-spriteTypes = {	
-	spriteType = {
-		name = "GFX_command_power_icon_small"
-		texturefile = "gfx/texticons/command_power.dds"
-		legacy_lazy_load = no	
-	}	
-
-
-}
