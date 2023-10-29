@@ -1,0 +1,19 @@
+state = { # Jan Mayen
+	id = 914
+	name = "STATE_914"
+	manpower = 10
+	state_category = city
+	history = {
+		owner = CZE
+		
+		add_core_of = CZE
+		
+	}
+
+
+	provinces = {
+		13272
+	}
+	
+	local_supplies=0.000
+}

@@ -1,0 +1,59 @@
+CRI_operation_tur_islamic_revolution = { 
+	icon = GFX_operation_turkish_cv
+	map_icon = GFX_coup_government_map
+	name = operation_tur_islamic_revolution
+	desc = operation_tur_islamic_revolution_desc
+	priority = 15
+
+	days = 65
+	network_strength = 50
+
+	allowed = {
+		original_tag = CRI
+	}
+	available = { 
+		NOT = { is_in_faction_with = TUR }
+		network_strength = {
+			target = TUR
+			value > 50
+		}
+	}
+	visible = {
+		FROM = {
+			tag = TUR
+		}
+		NOT = {
+		hidden_trigger = {
+		has_country_flag = turkey_revolt
+		}
+		}
+		has_completed_focus = CRI_turkey_revolution
+	}
+
+	operatives = 1
+
+	equipment = {
+		infantry_equipment = 1000
+		support_equipment = 100
+	}
+
+	risk_chance = 0
+	experience = 1
+	cost_multiplier = 0
+	#outcome_extra_chance = 0.25
+
+	outcome_execute = {
+				CRI = { country_event = crimea.56 }
+	}
+
+
+	phases = { #infiltration 
+		cri_preparation_1 = { base = 100 }
+	}
+	phases = { 
+		cri_preparation_2 = { base = 100 }
+	}
+	phases = { 
+		cri_preparation_3 = { base = 100 }
+	}
+}

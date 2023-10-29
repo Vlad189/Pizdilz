@@ -1,0 +1,2895 @@
+CRI_liberate_north_caucasus = {
+	CRI_liberate_north_caucasus = {
+	icon = generic_prepare_civil_war
+	fire_only_once = yes
+	cost = 0
+	days_remove = 0
+	available = { controls_state = 230 controls_state = 229 controls_state = 231 controls_state = 826 controls_state = 232 controls_state = 821 controls_state = 828 controls_state = 827 controls_state = 927 controls_state = 231}
+	complete_effect = {
+	CRI = {
+	set_autonomy = {
+						target = GEO
+						autonomy_state = autonomy_puppet
+					}
+	}
+	GEO = {
+	set_cosmetic_tag = GEO_khganate
+	transfer_state = 231 transfer_state = 230 transfer_state = 229 transfer_state = 232 transfer_state = 821 transfer_state = 828 transfer_state = 827 transfer_state = 927 transfer_state = 826
+	}
+	231 = {add_core_of = GEO} 230 = {add_core_of = GEO} 229 = {add_core_of = GEO} 232 = {add_core_of = GEO} 821 = {add_core_of = GEO} 828 = {add_core_of = GEO} 827 = {add_core_of = GEO} 927 = {add_core_of = GEO} 826 = {add_core_of = GEO}
+	}
+	}
+}
+CRI_prepare_turkish_civil_war = {
+	CRI_propagand_of_osmans = {
+	icon = eng_propaganda_campaigns
+	fire_only_once = no
+	cost = 40
+	days_remove = 15
+	days_re_enable = 25
+	visible = {
+	
+		}
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+	available = {
+	NOT = {
+	has_country_flag = osman_propaganda
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = osman_propaganda
+	}
+	remove_effect = {
+	add_to_variable = { cri_osman_support_var = 5 }
+	custom_effect_tooltip = add_5_osman_support_tt 
+	clr_country_flag = osman_propaganda
+	
+	}
+	}
+	CRI_give_money_for_protests = {
+	icon = generic_political_rally
+	fire_only_once = no
+	cost = 50
+	days_remove = 45
+	days_re_enable = 35
+	visible = {
+	
+		}
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+	available = {
+	NOT = {
+	has_country_flag = osman_propaganda
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = osman_propaganda
+	}
+	remove_effect = {
+	add_to_variable = { cri_osman_support_var = 15 }
+	custom_effect_tooltip = add_15_osman_support_tt 
+	clr_country_flag = osman_propaganda
+	
+	}
+	}
+	CRI_support_kurds_tur = {
+	icon = generic_disband_irregulars
+	fire_only_once = no
+	cost = 30
+	days_remove = 25
+	days_re_enable = 25
+	visible = {
+	
+		}
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+	available = {
+	NOT = {
+	has_country_flag = osman_propaganda
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = osman_propaganda
+	}
+	remove_effect = {
+	add_to_variable = { cri_osman_support_var = 12 }
+	custom_effect_tooltip = add_12_osman_support_tt 
+	clr_country_flag = osman_propaganda
+	
+	}
+	}
+	CRI_support_opposition = {
+	icon = generic_civil_support
+	fire_only_once = no
+	cost = 65
+	days_remove = 50
+	days_re_enable = 45
+	visible = {
+	
+		}
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+	available = {
+	NOT = {
+	has_country_flag = osman_propaganda
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = osman_propaganda
+	}
+	remove_effect = {
+	add_to_variable = { cri_osman_support_var = 20 }
+	custom_effect_tooltip = add_20_osman_support_tt  
+	clr_country_flag = osman_propaganda
+	
+	}
+	}
+	CRI_speek_to_warrioirs = {
+	icon = generic_prepare_civil_war
+	fire_only_once = no
+	cost = 25
+	days_remove = 20
+	days_re_enable = 20
+	visible = {
+	
+		}
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+	available = {
+	NOT = {
+	has_country_flag = osman_propaganda
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = osman_propaganda
+	}
+	remove_effect = {
+	add_to_variable = { cri_osman_support_var = 7 }
+	custom_effect_tooltip = add_7_osman_support_tt  
+	clr_country_flag = osman_propaganda
+	
+	}
+	}
+	CRI_discriditate_ataturk = {
+	icon = generic_political_discourse
+	fire_only_once = no
+	cost = 40
+	days_remove = 35
+	days_re_enable = 30
+	visible = {
+	
+		}
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+	available = {
+	NOT = {
+	has_country_flag = osman_propaganda
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = osman_propaganda
+	}
+	remove_effect = {
+	add_to_variable = { cri_osman_support_var = 16 }  
+	custom_effect_tooltip = add_16_osman_support_tt  
+	clr_country_flag = osman_propaganda
+	
+	}
+	}
+	CRI_turkish_propaganda = {
+		
+
+		icon = GFX_decision_eng_blackshirt_speech
+		
+		available = {
+			always = no
+			
+		}
+
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+		visible = {
+		hidden_trigger = {
+		NOT = {
+		has_country_flag = first_step
+		}
+		}
+		}
+		days_mission_timeout = 55
+		fire_only_once = yes
+
+		activation = {
+			has_completed_focus = CRI_turkish_kolabortionism
+		}
+		
+		cancel_if_not_visible = yes
+
+		is_good = yes
+
+		complete_effect = {
+		}
+
+		timeout_effect = {
+			add_to_variable = { cri_osman_support_var = -20 }
+			custom_effect_tooltip = clr_20_osman_support_tt 
+			set_country_flag = first_step
+		}
+	}
+	CRI_arest_of_our_friends = {
+		
+
+		icon = GFX_decision_generic_arrest
+		
+		available = {
+			always = no
+			
+		}
+
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+		visible = {
+		hidden_trigger = {
+		NOT = {
+		has_country_flag = second_step
+		}
+		}
+		}
+		days_mission_timeout = 45
+		fire_only_once = yes
+
+		activation = {
+			has_country_flag = first_step
+		}
+		
+		cancel_if_not_visible = yes
+
+		is_good = yes
+
+		complete_effect = {
+		}
+
+		timeout_effect = {
+			add_to_variable = { cri_osman_support_var = -18 }
+			custom_effect_tooltip = clr_18_osman_support_tt 
+			set_country_flag = second_step
+		}
+	}
+	CRI_baned_our_propaganda = {
+		
+
+		icon = GFX_decision_eng_trade_unions_demand
+		
+		available = {
+			always = no
+			
+		}
+
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+		visible = {
+		hidden_trigger = {
+		NOT = {
+		has_country_flag = third_step
+		}
+		}
+		}
+		days_mission_timeout = 70
+		fire_only_once = yes
+
+		activation = {
+			has_country_flag = second_step
+		}
+		
+		cancel_if_not_visible = yes
+
+		is_good = yes
+
+		complete_effect = {
+		}
+
+		timeout_effect = {
+			add_to_variable = { cri_osman_support_var = -27 }
+			custom_effect_tooltip = clr_27_osman_support_tt 
+			set_country_flag = third_step
+		}
+	}
+	CRI_discridict_mudgahamed = {
+		
+
+		icon = GFX_decision_generic_prepare_civil_war
+		
+		available = {
+			always = no
+			
+		}
+
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+		visible = {
+		hidden_trigger = {
+		NOT = {
+		has_country_flag = fourth_step
+		}
+		}
+		}
+		days_mission_timeout = 40
+		fire_only_once = yes
+
+		activation = {
+			has_country_flag = third_step
+		}
+		
+		cancel_if_not_visible = yes
+
+		is_good = yes
+
+		complete_effect = {
+		}
+
+		timeout_effect = {
+			add_to_variable = { cri_osman_support_var = -15 }
+			custom_effect_tooltip = clr_15_osman_support_tt 
+			set_country_flag = fourth_step
+		}
+	}
+	CRI_turks_mitting = {
+		
+
+		icon = GFX_decision_generic_political_rally
+		
+		available = {
+			always = no
+			
+		}
+
+		cancel_trigger = {
+			has_completed_focus = CRI_destroy_turkey
+		}
+		visible = {
+		hidden_trigger = {
+		NOT = {
+		has_country_flag = fivth_step
+		}
+		}
+		}
+		days_mission_timeout = 60
+		fire_only_once = yes
+
+		activation = {
+			has_country_flag = fourth_step
+		}
+		
+		cancel_if_not_visible = yes
+
+		is_good = yes
+
+		complete_effect = {
+		}
+
+		timeout_effect = {
+			add_to_variable = { cri_osman_support_var = -23 }
+			custom_effect_tooltip = clr_23_osman_support_tt 
+			set_country_flag = fivth_step
+		}
+	}
+}
+CRI_buy_german_weapons_decision = {
+CRI_buy_german_guns = {
+	icon = ger_military_buildup
+	fire_only_once = no
+	cost = 75
+	days_remove = 50
+	days_re_enable = 35
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = vermacht_buy}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = vermacht_buy
+	}
+	remove_effect = {
+	clr_country_flag = vermacht_buy
+	add_equipment_to_stockpile = {
+          type = infantry_equipment_1
+          amount = 750
+          producer = GER
+      }
+	}
+	}
+	CRI_buy_german_artillery = {
+	icon = generic_prepare_civil_war
+	fire_only_once = no
+	cost = 90
+	days_remove = 50
+	days_re_enable = 40
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = vermacht_buy}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = vermacht_buy
+	}
+	remove_effect = {
+	clr_country_flag = vermacht_buy
+	add_equipment_to_stockpile = {
+          type = artillery_equipment_1
+          amount = 100
+          producer = GER
+      }
+	}
+	}
+	CRI_buy_german_tanks = {
+	icon = generic_tank
+	fire_only_once = no
+	cost = 80
+	days_remove = 45
+	days_re_enable = 25
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = vermacht_buy}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = vermacht_buy
+	}
+	remove_effect = {
+	clr_country_flag = vermacht_buy
+	add_equipment_to_stockpile = {
+          type = light_tank_chassis_1
+          amount = 70
+          producer = GER
+          variant_name = "Panzer I Ausf. A"
+      }
+	}
+	}
+	CRI_buy_german_planes = {  
+	icon = generic_air
+	fire_only_once = no
+	cost = 100
+	days_remove = 50
+	days_re_enable = 60
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = vermacht_buy}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = vermacht_buy
+	}
+	remove_effect = {
+	clr_country_flag = vermacht_buy
+	add_equipment_to_stockpile = {
+          type = small_plane_airframe_1
+          amount = 50
+          producer = GER
+          variant_name = "Bf 109 D"
+      }
+	}
+	}
+}
+CRI_bunt_against_khan_war = {
+	CRI_siege_of_jankoe = {
+	icon = generic_prepare_civil_war
+	fire_only_once = yes
+	cost = 50
+	visible = {hidden_trigger = {NOT = {has_country_flag = sucses_sabotage}}}
+	days_remove = 35
+	highlight_states = {
+ highlight_state_targets = {
+			state = 939
+		} 
+		}
+	
+		
+	available = {
+	NOT = {has_country_flag = attack_on_khan}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = attack_on_khan
+	}
+	remove_effect = {
+	clr_country_flag = attack_on_khan
+	custom_effect_tooltip = siege_of_jankoe_tt
+	hidden_effect = {
+	country_event = crimea.41
+	}
+	}
+	}
+	CRI_sabotage_of_jankoe = {
+	icon = generic_ignite_civil_war
+	fire_only_once = yes
+	cost = 45
+	days_remove = 40
+	highlight_states = {
+ highlight_state_targets = {
+			state = 939
+		} 
+		}
+	
+		
+	available = {
+	NOT = {has_country_flag = attack_on_khan}
+	}
+	visible = {hidden_trigger = {NOT = {has_country_flag = sucses_sabotage}}}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = attack_on_khan
+	}
+	remove_effect = {
+	clr_country_flag = attack_on_khan
+	custom_effect_tooltip = sabotage_of_jankoe_tt
+	hidden_effect = {
+	country_event = crimea.42
+	}
+	}
+	}
+	CRI_attack_kerch = {
+	icon = infiltrate_state
+	fire_only_once = yes
+	cost = 60
+	days_remove = 50
+	
+	highlight_states = {
+ highlight_state_targets = {
+			state = 137
+		} 
+		}
+		visible = {NOT = {has_country_flag = sucses_sturm}}
+	available = {
+	NOT = {has_country_flag = attack_on_khan}
+	939 = {is_demilitarized_zone = yes}
+	}
+
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = attack_on_khan
+	}
+	remove_effect = {
+	clr_country_flag = attack_on_khan
+	custom_effect_tooltip = attacking_kerch_tt
+	hidden_effect = {
+	country_event = crimea.43
+	}
+	}
+	}
+	CRI_bomb_port_kerch = {
+	icon = generic_scorched_earth
+	fire_only_once = yes
+	cost = 50
+	days_remove = 40
+	highlight_states = {
+ highlight_state_targets = {
+			state = 137
+		} 
+		}
+	
+		visible = {NOT = {has_country_flag = sucses_sturm}}
+	available = {
+	NOT = {has_country_flag = attack_on_khan}
+	939 = {is_demilitarized_zone = yes}
+	}
+
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = attack_on_khan
+	}
+	remove_effect = {
+	clr_country_flag = attack_on_khan
+	custom_effect_tooltip = bomb_kerch_tt
+	hidden_effect = {
+	country_event = crimea.44
+	}
+	}
+	}
+	CRI_go_to_sea_sevastopol = {
+	icon = generic_naval
+	fire_only_once = yes
+	cost = 75
+	days_remove = 50
+	highlight_states = {
+ highlight_state_targets = {
+			state = 930
+		} 
+		}
+	
+		visible = {NOT = {has_country_flag = stop_civil_war}}
+	available = {
+	NOT = {has_country_flag = attack_on_khan}
+	137 = {is_demilitarized_zone = yes}
+	}
+
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = attack_on_khan
+	}
+	remove_effect = {
+	clr_country_flag = attack_on_khan
+	custom_effect_tooltip = go_to_sea_sevastopol_tt
+	hidden_effect = {
+	country_event = crimea.45
+	}
+	}
+	}
+	CRI_kill_girey = {
+	icon = oppression
+	fire_only_once = yes
+	cost = 65
+	days_remove = 45 
+	highlight_states = {
+ highlight_state_targets = {
+			state = 930
+		} 
+		}
+	
+		visible = {NOT = {has_country_flag = stop_civil_war}}
+	available = {
+	NOT = {has_country_flag = attack_on_khan}
+	137 = {is_demilitarized_zone = yes}
+	}
+
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = attack_on_khan
+	}
+	remove_effect = {
+	clr_country_flag = attack_on_khan
+	custom_effect_tooltip = kill_girey_tt
+	hidden_effect = {
+	country_event = crimea.46
+	}
+	}
+	}
+}
+CRI_balance_of_power_category = {
+	CRI_propagand_of_stalinists = { 
+
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 35
+		days_remove = 35
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_power_balance
+				value = 0.1
+			}
+			
+		}
+		
+		days_re_enable = 30
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_anarchist_discriditation = { 
+
+		icon = GFX_decision_eng_trade_unions_demand
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 30
+		days_remove = 25
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_power_balance
+				value = 0.05
+			}
+			
+		}
+		
+		days_re_enable = 20
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_control_smi = { 
+
+		icon = GFX_decision_generic_civil_support
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 25
+		days_remove = 40
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		modifier = {political_power_gain = -0.02}
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_power_balance
+				value = 0.1
+			}
+			
+		}
+		
+		days_re_enable = 40
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_anarchists_repressions = { 
+
+		icon = GFX_decision_generic_assassination
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+			power_balance_value = {
+				id = CRI_power_balance
+				value > 0.25
+			}
+		}
+		
+		fire_only_once = no
+		cost = 55
+		days_remove = 45
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_power_balance
+				value = 0.15
+			}
+			
+		}
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_anarchist_marches = { 
+
+		icon = GFX_decision_eng_blackshirt_march
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions } 
+			
+		}
+		
+		fire_only_once = no
+		cost = 40
+		days_remove = 35
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_power_balance
+				value = -0.1
+			}
+			
+		}
+		
+		days_re_enable = 35
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_anarchist_on_radio = { 
+
+		icon = GFX_decision_generic_speech
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions } 
+			
+		}
+		
+		fire_only_once = no
+		cost = 50
+		days_remove = 50
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_power_balance
+				value = -0.15
+			}
+			
+		}
+		
+		days_re_enable = 40
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_agitation_of_social_freedom = { 
+
+		icon = GFX_decision_generic_political_rally
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions } 
+			
+		}
+		
+		fire_only_once = no
+		cost = 20
+		days_remove = 25
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_power_balance
+				value = -0.05
+			}
+			
+		}
+		
+		days_re_enable = 20
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_invite_anarchists_to_council = { 
+
+		icon = GFX_decision_generic_political_discourse
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }  
+			
+		}
+		
+		fire_only_once = no
+		cost = 25
+		days_remove = 30
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_power_balance
+				value = -0.07
+			}
+			
+		}
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+CRI_industrial_balance_of_power_category = {
+	CRI_agree_industrial_works = { 
+
+		icon = GFX_decision_generic_political_discourse
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }  
+			
+		}
+		
+		fire_only_once = no
+		cost = 25
+		days_remove = 30
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_anarcho_stalinist_power_balance
+				value = 0.05
+			}
+			
+		}
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_help_with_industrializaation = { 
+
+		icon = GFX_decision_generic_merge_plant_materiel
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }  
+			
+		}
+		
+		fire_only_once = no
+		cost = 50
+		days_remove = 50
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		modifier = {consumer_goods_factor = 0.05}
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_anarcho_stalinist_power_balance
+				value = 0.15
+			}
+			
+		}
+		
+		days_re_enable = 75
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_new_worckcraft_stanki = { 
+
+		icon = GFX_decision_generic_fundraising
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }  
+			
+		}
+		
+		fire_only_once = no
+		cost = 40
+		days_remove = 45
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_anarcho_stalinist_power_balance
+				value = 0.07
+			}
+			
+		}
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_mor_money_for_workers = { 
+
+		icon = GFX_decision_hol_attract_foreign_investors
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }  
+			
+		}
+		
+		fire_only_once = no
+		cost = 50
+		days_remove = 55
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		modifier = {political_power_gain = -0.05}
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_anarcho_stalinist_power_balance
+				value = 0.1
+			}
+			
+		}
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_prom_industrialization_centr = { 
+
+		icon = GFX_decision_generic_industry
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }   
+			
+		}
+		
+		fire_only_once = no
+		cost = 65
+		days_remove = 60
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		modifier = {consumer_goods_factor = -0.05}
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_anarcho_stalinist_power_balance
+				value = 0.12
+			}
+			
+		}
+		
+		days_re_enable = 80
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_support_agrarians = {  
+
+		icon = GFX_decision_POL_looming_peasants_strike
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }   
+			
+		}
+		
+		fire_only_once = no
+		cost = 40
+		days_remove = 30
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+	
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_anarcho_stalinist_power_balance
+				value = -0.05
+			}
+			
+		}
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_buy_new_sheet = {  
+
+		icon = GFX_decision_gre_investment_decisions
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }   
+			
+		}
+		
+		fire_only_once = no
+		cost = 55
+		days_remove = 40
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+	
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_anarcho_stalinist_power_balance
+				value = -0.08
+			}
+			
+		}
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_more_money_for_farmers = {  
+
+		icon = GFX_decision_eng_trade_unions_support
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }   
+			
+		}
+		
+		fire_only_once = no
+		cost = 65
+		days_remove = 70
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		modifier = {political_power_gain = -0.05}
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_anarcho_stalinist_power_balance
+				value = -0.15
+			}
+			
+		}
+		
+		days_re_enable = 100
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_not_support_industry = {  
+
+		icon = GFX_decision_generic_speech
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }    
+			
+		}
+		
+		fire_only_once = no
+		cost = 25
+		days_remove = 35
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		modifier = {political_power_gain = -0.02}
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRI_anarcho_stalinist_power_balance
+				value = -0.05
+			}
+			
+		}
+		
+		days_re_enable = 40
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+CRI_anarchism_world = {
+	CRI_declare_war_on_europe = {
+	icon = GFX_decision_generic_prepare_civil_war
+
+		visible = {
+		}
+
+		available = {
+			
+		}
+		
+		fire_only_once = yes
+		cost = 100
+		days_remove = 120
+		complete_effect = {
+			
+		}
+		modifier = {political_power_gain = -0.02}
+		remove_effect = {
+		custom_effect_tooltip = european_anarchist_tt 
+		hidden_effect = {
+		every_other_country = {
+					limit = {
+						capital_scope = {
+							is_on_continent = europe
+							
+						}
+						
+					}
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+		
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_integrate_europe = {
+	icon = GFX_decision_generic_form_nation
+
+		visible = {
+		}
+
+		available = {
+			controls_state = 10
+			controls_state = 219
+			controls_state = 64
+			controls_state = 16
+			controls_state = 2
+			controls_state = 126
+			controls_state = 41
+			has_war = no
+		}
+		
+		fire_only_once = yes
+		cost = 120
+
+		complete_effect = {
+			
+		}
+	
+		remove_effect = {
+		every_state = {limit = {is_on_continent = europe} add_core_of = CRI}
+		set_cosmetic_tag = CRI_eu_anarchisti
+		set_country_flag = eu_anarchism
+		hidden_effect = {country_event = {id = getnews.14 days = 1.5}}
+		}
+		
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_declare_war_on_asia = {
+	icon = GFX_decision_generic_prepare_civil_war
+
+		visible = {
+		}
+
+		available = {
+			
+		}
+		
+		fire_only_once = yes
+		cost = 100
+		days_remove = 120
+		complete_effect = {
+			
+		}
+		modifier = {political_power_gain = -0.02} 
+		remove_effect = {
+		custom_effect_tooltip = asian_anarchist_tt 
+		hidden_effect = {
+		every_other_country = {
+					limit = {
+						capital_scope = {
+							is_on_continent = asia
+							
+						}
+						
+					}
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+		
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_integrate_eurasia = {
+	icon = GFX_decision_generic_form_nation
+
+		visible = {
+		}
+
+		available = {
+			controls_state = 49
+			controls_state = 266
+			controls_state = 613
+			controls_state = 282
+			controls_state = 330
+			controls_state = 408
+			controls_state = 291
+			has_country_flag = eu_anarchism
+			has_war = no
+		}
+		
+		fire_only_once = yes
+		cost = 120
+
+		complete_effect = {
+			
+		}
+	
+		remove_effect = {
+		every_state = {limit = {is_on_continent = asia} add_core_of = CRI}
+		set_cosmetic_tag = CRI_as_anarchisti
+		set_country_flag = asian_anarchist_flag
+		}
+		
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_declare_war_on_world = {
+	icon = GFX_decision_generic_prepare_civil_war
+
+		visible = {
+		}
+
+		available = {
+			has_country_flag = asian_anarchist_flag
+		}
+		
+		fire_only_once = yes
+		cost = 100
+		days_remove = 120
+		complete_effect = {
+			
+		}
+		modifier = {political_power_gain = -0.02} 
+		remove_effect = {
+		custom_effect_tooltip = every_country_tt
+		hidden_effect = {
+		every_other_country = {
+					limit = {
+						capital_scope = {
+							is_on_continent = north_america
+						}
+						
+					}
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+					every_other_country = {
+					limit = {
+						capital_scope = {
+							is_on_continent = south_america
+						}
+						
+					}
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+					every_other_country = {
+					limit = {
+						capital_scope = {
+							is_on_continent = africa
+						}
+						
+					}
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+			}
+		
+		
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRI_integrate_world = {
+	icon = GFX_decision_generic_form_nation 
+
+		visible = {
+		}
+
+		available = {
+			controls_state = 271
+			controls_state = 298
+			controls_state = 500
+			controls_state = 277
+			controls_state = 361
+			controls_state = 378
+			controls_state = 276
+			has_country_flag = asian_anarchist_flag
+			has_war = no
+		}
+		
+		fire_only_once = yes
+		cost = 120
+
+		complete_effect = {
+			
+		}
+	
+		remove_effect = {
+		every_state = {limit = {is_on_continent = africa} add_core_of = CRI}
+		every_state = {limit = {is_on_continent = north_america} add_core_of = CRI}
+		every_state = {limit = {is_on_continent = south_america} add_core_of = CRI}
+		set_cosmetic_tag = CRI_world_anarchisti
+		}
+		
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+CRI_soviet_guns_shop = {
+	CRI_buy_soviet_guns = {
+	icon = ger_military_buildup
+	fire_only_once = no
+	cost = 75
+	days_remove = 50
+	days_re_enable = 35
+	visible = {
+	
+		}
+		cancel_trigger = {
+	hidden_trigger = {has_war_with = SOV}
+	}
+	available = {
+	NOT = {has_country_flag = soviet_buy}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = soviet_buy
+	}
+	remove_effect = {
+	clr_country_flag = soviet_buy
+	add_equipment_to_stockpile = {
+          type = infantry_equipment_1
+          amount = 750
+          producer = SOV
+      }
+	}
+	}
+	CRI_buy_soviet_artillery = {
+	icon = generic_prepare_civil_war
+	fire_only_once = no
+	cost = 90
+	days_remove = 50
+	days_re_enable = 40
+	visible = {
+	
+		}
+		cancel_trigger = {
+	hidden_trigger = {has_war_with = SOV}
+	}
+	available = {
+	NOT = {has_country_flag = soviet_buy}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = soviet_buy
+	}
+	cancel_trigger = {
+	hidden_trigger = {has_war_with = SOV}
+	}
+	remove_effect = {
+	clr_country_flag = soviet_buy
+	add_equipment_to_stockpile = {
+          type = artillery_equipment_1
+          amount = 100
+          producer = SOV
+      }
+	}
+	}
+	CRI_buy_soviet_tanks = {
+	icon = generic_tank
+	fire_only_once = no
+	cost = 80
+	days_remove = 45
+	days_re_enable = 25
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = soviet_buy}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = soviet_buy
+	}
+	cancel_trigger = {
+	hidden_trigger = {has_war_with = SOV}
+	}
+	remove_effect = {
+	clr_country_flag = soviet_buy
+	add_equipment_to_stockpile = {
+          type = light_tank_chassis_1
+          amount = 120
+          producer = SOV
+          variant_name = "BT-5"
+      }
+	}
+	}
+	CRI_buy_soviet_planes = {  
+	icon = generic_air
+	fire_only_once = no
+	cost = 100
+	days_remove = 50
+	days_re_enable = 60
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = soviet_buy}
+	} 
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = soviet_buy 
+	}
+	cancel_trigger = {
+	hidden_trigger = {has_war_with = SOV}
+	}
+	remove_effect = {
+	clr_country_flag = soviet_buy
+	add_equipment_to_stockpile = {
+          type = small_plane_airframe_1
+          amount = 70
+          producer = SOV
+          variant_name = "I-16"
+      }
+	}
+	}
+}
+CRI_soviet_guns_shop1 = {
+CRI_reform_economic_bulb = {
+	icon = generic_fundraising
+	fire_only_once = no
+	cost = 100
+	days_remove = 75
+	days_re_enable = 25
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = economic_reformation}
+	} 
+		modifier = {
+		consumer_goods_factor = 0.05
+		}
+		complete_effect = {
+		set_country_flag = economic_reformation
+	}
+	cancel_trigger = {
+	
+	}
+	remove_effect = {
+	clr_country_flag = economic_reformation
+	custom_effect_tooltip = can_destroy_tt
+	hidden_effect = {
+	CRI_economical_bulb_level_up = yes
+	}
+	}
+	}
+	CRI_autobans_in_northen_crimea = { 
+	icon = generic_construction
+	fire_only_once = yes
+	cost = 50
+	days_remove = 50
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = economic_reformation}
+	controls_state = 939
+	} 
+		modifier = {
+	
+		}
+		complete_effect = {
+		set_country_flag = economic_reformation
+	}
+	cancel_trigger = {
+	
+	}
+	remove_effect = {
+	939 = {
+	add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+	}
+	}
+	}
+	CRI_kerch_naval_base = {  
+	icon = generic_industry
+	fire_only_once = yes
+	cost = 35
+	days_remove = 35
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = economic_reformation}
+	controls_state = 137
+	} 
+		modifier = {
+	
+		}
+		complete_effect = {
+		set_country_flag = economic_reformation
+	}
+	cancel_trigger = {
+	
+	}
+	remove_effect = {
+	137 = {
+	add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+				}
+	}
+	}
+	}
+	CRI_sevastopol_war_factory = {  
+	icon = generic_merge_plant_materiel
+	fire_only_once = yes
+	cost = 50
+	days_remove = 40
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = economic_reformation}
+	controls_state = 930
+	} 
+		modifier = {
+	
+		}
+		complete_effect = {
+		set_country_flag = economic_reformation 
+	}
+	cancel_trigger = {
+	
+	}
+	remove_effect = {
+	930 = {
+	add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+	}
+	}
+	}
+	CRI_civilian_facotry_in_kerch = {  
+	icon = generic_wreckers
+	fire_only_once = yes
+	cost = 50
+	days_remove = 40
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = economic_reformation} 
+	controls_state = 137
+	} 
+		modifier = {
+	
+		}
+		complete_effect = {
+		set_country_flag = economic_reformation 
+	}
+	cancel_trigger = {
+	
+	}
+	remove_effect = {
+	137 = {
+	add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+	}
+	}
+	}
+}
+CRI_support_afganistan_islamists = {
+CRI_sponsor_islamic_marches = {
+	icon = eng_blackshirt_march
+	fire_only_once = no
+	cost = 35
+	days_remove = 30
+	days_re_enable = 35
+	visible = {
+	
+		}
+		cancel_trigger = {
+			AFG = {is_subject_of = CRI}
+		}
+	available = {
+	hidden_trigger = {NOT = {
+	has_country_flag = islam_propaganda12
+	}
+	}}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = islam_propaganda12
+	}
+	remove_effect = {
+	add_to_variable = { cri_islam_support_var = 8 }
+	custom_effect_tooltip = add_8_islam_support_tt 
+	clr_country_flag = islam_propaganda12
+	}
+	}
+CRI_religius_propaganda = {
+	icon = eng_propaganda_campaigns
+	fire_only_once = no
+	cost = 25
+	days_remove = 20
+	days_re_enable = 20
+	visible = {
+	
+		}
+		cancel_trigger = {
+			AFG = {is_subject_of = CRI}
+		}
+	available = {
+	NOT = {
+	has_country_flag = islam_propaganda12
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = islam_propaganda12
+	}
+	remove_effect = {
+	add_to_variable = { cri_islam_support_var = 5 }
+	custom_effect_tooltip = add_5_islam_support_tt  
+	clr_country_flag = islam_propaganda12
+	}
+	}
+	CRI_discriditate_pravoslavic = {
+	icon = generic_political_discourse 
+	fire_only_once = no
+	cost = 45
+	days_remove = 35
+	days_re_enable = 35
+	visible = {
+	
+		}
+		cancel_trigger = {
+			AFG = {is_subject_of = CRI}
+		}
+	available = {
+	NOT = {
+	has_country_flag = islam_propaganda12
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = islam_propaganda12
+	}
+	remove_effect = {
+	add_to_variable = { cri_islam_support_var = 10 }
+	custom_effect_tooltip = add_10_islam_support_tt  
+	clr_country_flag = islam_propaganda12
+	}
+	}
+	CRI_speech_with_goverment = {
+	icon = hol_exchange_intelligence_data
+	fire_only_once = no
+	cost = 55
+	days_remove = 40
+	days_re_enable = 40
+	visible = {
+	
+		}
+		cancel_trigger = {
+			AFG = {is_subject_of = CRI}
+		}
+	available = {
+	NOT = {
+	has_country_flag = islam_propaganda12
+	}
+	custom_trigger_tooltip = {
+				tooltip = 20_islamic_support_tt
+	check_variable = { cri_islam_support_var > 20 }  
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = islam_propaganda12
+	}
+	remove_effect = {
+	add_to_variable = { cri_islam_support_var = 12 }
+	custom_effect_tooltip = add_12_islam_support_tt 
+	clr_country_flag = islam_propaganda12
+	
+	}
+	}
+	
+}
+CRI_islamic_integration = {
+	CRI_integrate_maghreb = {
+	icon = infiltrate_state
+	fire_only_once = yes
+	cost = 90
+	days_remove = 120
+	visible = {
+	
+		}
+		
+	available = {
+	controls_state = 663
+	controls_state = 451
+	controls_state = 450
+	controls_state = 662
+	controls_state = 273
+	controls_state = 449
+	controls_state = 661
+	controls_state = 448
+	controls_state = 665
+	controls_state = 458
+	controls_state = 460
+	controls_state = 513
+	controls_state = 459
+	controls_state = 514
+	controls_state = 462
+	controls_state = 461
+	controls_state = 290
+	controls_state = 699
+	controls_state = 786
+	controls_state = 782
+	controls_state = 515
+	controls_state = 775
+	controls_state = 557
+	controls_state = 272
+	controls_state = 701
+	controls_state = 889
+	controls_state = 898
+	controls_state = 781
+	controls_state = 902
+	controls_state = 558
+	controls_state = 776
+	controls_state = 777
+	controls_state = 778
+	controls_state = 274
+	controls_state = 779
+	controls_state = 298
+	controls_state = 700
+	controls_state = 296
+	controls_state = 780
+	controls_state = 556
+	controls_state = 899
+	NOT = {
+	has_country_flag = islam_integration
+	}
+	}
+		modifier = {
+		political_power_gain = -0.02
+		}
+		complete_effect = {
+		set_country_flag = islam_integration
+	}
+	remove_effect = {
+	clr_country_flag = islam_integration
+		add_state_core = 663
+	add_state_core = 451
+	add_state_core = 450
+	add_state_core = 662
+	add_state_core = 273
+	add_state_core = 449
+	add_state_core = 661
+	add_state_core = 448
+	add_state_core = 665
+	add_state_core = 458
+	add_state_core = 460
+	add_state_core = 513
+	add_state_core = 459
+	add_state_core = 514
+	add_state_core = 462
+	add_state_core = 461
+	add_state_core = 290
+	add_state_core = 699
+	add_state_core = 786
+	add_state_core = 782
+	add_state_core = 515
+	add_state_core = 775
+	add_state_core = 557
+	add_state_core = 272
+	add_state_core = 701
+	add_state_core = 889
+	add_state_core = 898
+	add_state_core = 781
+	add_state_core = 902
+	add_state_core = 558
+	add_state_core = 776
+	add_state_core = 777
+	add_state_core = 778
+	add_state_core = 274
+	add_state_core = 779
+	add_state_core = 298
+	add_state_core = 700
+	add_state_core = 296
+	add_state_core = 780
+	add_state_core = 556
+	add_state_core = 899
+	}
+	}
+	CRI_al_andalus = {
+	icon = infiltrate_state
+	fire_only_once = yes
+	cost = 90
+	days_remove = 120
+	visible = {
+	
+		}
+		
+	available = {
+	controls_state = 118
+	controls_state = 173
+	controls_state = 169
+	controls_state = 179
+	controls_state = 789
+	controls_state = 168
+	controls_state = 795
+	controls_state = 112
+	controls_state = 181
+	controls_state = 180
+	controls_state = 175
+	controls_state = 170
+	controls_state = 788
+	controls_state = 174
+	controls_state = 171
+	controls_state = 790
+	controls_state = 792
+	controls_state = 176
+	controls_state = 166
+	controls_state = 794
+	controls_state = 165
+	controls_state = 167
+	controls_state = 177
+	controls_state = 41
+	controls_state = 172
+	controls_state = 793
+	controls_state = 791
+	NOT = {
+	has_country_flag = islam_integration
+	}
+	}
+		modifier = {
+		political_power_gain = -0.02
+		}
+		complete_effect = {
+		set_country_flag = islam_integration
+	}
+	remove_effect = {
+	clr_country_flag = islam_integration
+	add_state_core = 118
+	add_state_core = 173
+	add_state_core = 169
+	add_state_core = 179
+	add_state_core = 789
+	add_state_core = 168
+	add_state_core = 795
+	add_state_core = 112
+	add_state_core = 181
+	add_state_core = 180
+	add_state_core = 175
+	add_state_core = 170
+	add_state_core = 788
+	add_state_core = 174
+	add_state_core = 171
+	add_state_core = 790
+	add_state_core = 792
+	add_state_core = 176
+	add_state_core = 166
+	add_state_core = 794
+	add_state_core = 165
+	add_state_core = 167
+	add_state_core = 177
+	add_state_core = 41
+	add_state_core = 172
+	add_state_core = 793
+	add_state_core = 791
+	}
+	}
+	CRI_integrate_land_of_habasha = {
+	icon = infiltrate_state
+	fire_only_once = yes
+	cost = 90
+	days_remove = 120
+	visible = {
+	
+		}
+		
+	available = {
+	controls_state = 767
+	controls_state = 551
+	controls_state = 883
+	controls_state = 550
+	controls_state = 841
+	controls_state = 842
+	controls_state = 886
+	controls_state = 908
+	controls_state = 843
+	controls_state = 840
+	controls_state = 271
+	controls_state = 839
+	controls_state = 838
+	controls_state = 837
+	controls_state = 836
+	controls_state = 835
+	controls_state = 268
+	controls_state = 269
+	controls_state = 559
+	controls_state = 906
+	controls_state = 844
+	controls_state = 903
+	controls_state = 547
+	controls_state = 884
+	controls_state = 549
+	controls_state = 885
+	controls_state = 884
+	controls_state = 904
+	controls_state = 548
+	controls_state = 718
+	controls_state = 885
+	controls_state = 887
+	controls_state = 774
+	controls_state = 660
+	controls_state = 538
+	controls_state = 772
+	controls_state = 539
+	controls_state = 297
+	controls_state = 773
+	controls_state = 900
+	controls_state = 901
+	NOT = {
+	has_country_flag = islam_integration
+	}
+	}
+		modifier = {
+		political_power_gain = -0.02
+		}
+		complete_effect = {
+		set_country_flag = islam_integration
+	}
+	remove_effect = {
+	clr_country_flag = islam_integration
+	add_state_core = 767
+	add_state_core = 551
+	add_state_core = 883
+	add_state_core = 550
+	add_state_core = 841
+	add_state_core = 842
+	add_state_core = 886
+	add_state_core = 908
+	add_state_core = 843
+	add_state_core = 840
+	add_state_core = 271
+	add_state_core = 839
+	add_state_core = 838
+	add_state_core = 837
+	add_state_core = 836
+	add_state_core = 835
+	add_state_core = 268
+	add_state_core = 269
+	add_state_core = 559
+	add_state_core = 906
+	add_state_core = 844
+	add_state_core = 903
+	add_state_core = 547
+	add_state_core = 884
+	add_state_core = 549
+	add_state_core = 885
+	add_state_core = 884
+	add_state_core = 904
+	add_state_core = 548
+	add_state_core = 718
+	add_state_core = 885
+	add_state_core = 887
+	add_state_core = 774
+	add_state_core = 660
+	add_state_core = 538
+	add_state_core = 772
+	add_state_core = 539
+	add_state_core = 297
+	add_state_core = 773
+	add_state_core = 900
+	add_state_core = 901
+	}
+	}
+	CRI_integrate_balkans = {
+	icon = infiltrate_state
+	fire_only_once = yes
+	cost = 90
+	days_remove = 120
+	visible = {
+	
+		}
+		
+	available = {
+	controls_state = 183
+	controls_state = 182
+	controls_state = 164
+	controls_state = 186
+	controls_state = 187
+	controls_state = 47
+	controls_state = 185
+	controls_state = 731
+	controls_state = 184
+	controls_state = 805
+	controls_state = 44
+	controls_state = 106
+	controls_state = 212
+	controls_state = 211
+	controls_state = 48
+	controls_state = 801
+	controls_state = 803
+	controls_state = 77
+	controls_state = 924
+	controls_state = 802
+	controls_state = 108
+	controls_state = 105
+	controls_state = 107
+	controls_state = 764
+	controls_state = 45
+	controls_state = 109
+	controls_state = 104
+	controls_state = 804
+	controls_state = 103
+	controls_state = 163
+	controls_state = 852
+	controls_state = 736
+	controls_state = 853
+	controls_state = 102
+	controls_state = 4
+	controls_state = 152
+	controls_state = 153
+	controls_state = 848
+	controls_state = 155
+	controls_state = 154
+	controls_state = 43
+	controls_state = 82
+	controls_state = 81
+	controls_state = 46
+	controls_state = 84
+	controls_state = 83
+	controls_state = 76
+	controls_state = 936
+	controls_state = 933
+	controls_state = 79
+	controls_state = 935
+	controls_state = 80
+	controls_state = 766
+	controls_state = 78
+	controls_state = 915
+	controls_state = 921
+	controls_state = 934
+	NOT = {
+	has_country_flag = islam_integration
+	}
+	}
+		modifier = {
+		political_power_gain = -0.02
+		}
+		complete_effect = {
+		set_country_flag = islam_integration
+	}
+	remove_effect = {
+	clr_country_flag = islam_integration
+	add_state_core = 183
+	add_state_core = 182
+	add_state_core = 164
+	add_state_core = 186
+	add_state_core = 187
+	add_state_core = 47
+	add_state_core = 185
+	add_state_core = 731
+	add_state_core = 184
+	add_state_core = 805
+	add_state_core = 44
+	add_state_core = 106
+	add_state_core = 212
+	add_state_core = 211
+	add_state_core = 48
+	add_state_core = 801
+	add_state_core = 803
+	add_state_core = 77
+	add_state_core = 924
+	add_state_core = 802
+	add_state_core = 108
+	add_state_core = 105
+	add_state_core = 107
+	add_state_core = 764
+	add_state_core = 45
+	add_state_core = 109
+	add_state_core = 104
+	add_state_core = 804
+	add_state_core = 103
+	add_state_core = 163
+	add_state_core = 852
+	add_state_core = 736
+	add_state_core = 853
+	add_state_core = 102
+	add_state_core = 4
+	add_state_core = 152
+	add_state_core = 153
+	add_state_core = 848
+	add_state_core = 155
+	add_state_core = 154
+	add_state_core = 43
+	add_state_core = 82
+	add_state_core = 81
+	add_state_core = 46
+	add_state_core = 84
+	add_state_core = 83
+	add_state_core = 76
+	add_state_core = 936
+	add_state_core = 933
+	add_state_core = 79
+	add_state_core = 935
+	add_state_core = 80
+	add_state_core = 766
+	add_state_core = 78
+	add_state_core = 915
+	add_state_core = 921
+	add_state_core = 934
+	}
+	}
+	CRI_integrate_quqaz = {
+	icon = infiltrate_state
+	fire_only_once = yes
+	cost = 90
+	days_remove = 120
+	visible = {
+	
+		}
+		
+	available = {
+	controls_state = 230
+	controls_state = 229
+	controls_state = 231
+	controls_state = 826
+	controls_state = 232
+	controls_state = 821
+	controls_state = 828
+	controls_state = 827
+	controls_state = 235
+	controls_state = 927
+	controls_state = 912
+	controls_state = 233
+	controls_state = 926
+	controls_state = 234
+	controls_state = 923
+	controls_state = 939
+	controls_state = 237
+	controls_state = 238
+	controls_state = 218
+	controls_state = 916
+	controls_state = 925
+	NOT = {
+	has_country_flag = islam_integration
+	}
+	}
+		modifier = {
+		political_power_gain = -0.02
+		}
+		complete_effect = {
+		set_country_flag = islam_integration
+	}
+	remove_effect = {
+	clr_country_flag = islam_integration
+	add_state_core = 230
+	add_state_core = 229
+	add_state_core = 231
+	add_state_core = 826
+	add_state_core = 232
+	add_state_core = 821
+	add_state_core = 828
+	add_state_core = 827
+	add_state_core = 235
+	add_state_core = 927
+	add_state_core = 912
+	add_state_core = 233
+	add_state_core = 926
+	add_state_core = 234
+	add_state_core = 923
+	add_state_core = 939
+	add_state_core = 237
+	add_state_core = 238
+	add_state_core = 218
+	add_state_core = 916
+	add_state_core = 925
+	}
+	}
+	CRI_integrate_horasan = {
+	icon = infiltrate_state
+	fire_only_once = yes
+	cost = 90
+	days_remove = 120
+	visible = {
+	
+		}
+		
+	available = {
+	controls_state = 444
+	controls_state = 445
+	controls_state = 442
+	controls_state = 440
+	controls_state = 443
+	controls_state = 433
+	controls_state = 428
+	controls_state = 439
+	controls_state = 441
+	controls_state = 787
+	controls_state = 758
+	controls_state = 619
+	controls_state = 415
+	controls_state = 267
+	controls_state = 742
+	controls_state = 584
+	controls_state = 830
+	controls_state = 732
+	controls_state = 405
+	controls_state = 404
+	controls_state = 585
+	controls_state = 823
+	controls_state = 831
+	controls_state = 587
+	controls_state = 832
+	controls_state = 402
+	controls_state = 881
+	controls_state = 589
+	controls_state = 586
+	controls_state = 583
+	controls_state = 590
+	controls_state = 407
+	controls_state = 406
+	controls_state = 588
+	controls_state = 287
+	controls_state = 617
+	controls_state = 618
+	controls_state = 760
+	controls_state = 759
+	NOT = {
+	has_country_flag = islam_integration
+	}
+	}
+		modifier = {
+		political_power_gain = -0.02
+		}
+		complete_effect = {
+		set_country_flag = islam_integration
+	}
+	remove_effect = {
+	clr_country_flag = islam_integration
+	add_state_core = 444
+	add_state_core = 445
+	add_state_core = 442
+	add_state_core = 440
+	add_state_core = 443
+	add_state_core = 433
+	add_state_core = 428
+	add_state_core = 439
+	add_state_core = 441
+	add_state_core = 787
+	add_state_core = 758
+	add_state_core = 619
+	add_state_core = 415
+	add_state_core = 267
+	add_state_core = 742
+	add_state_core = 584
+	add_state_core = 830
+	add_state_core = 732
+	add_state_core = 405
+	add_state_core = 404
+	add_state_core = 585
+	add_state_core = 823
+	add_state_core = 831
+	add_state_core = 587
+	add_state_core = 832
+	add_state_core = 402
+	add_state_core = 881
+	add_state_core = 589
+	add_state_core = 586
+	add_state_core = 583
+	add_state_core = 590
+	add_state_core = 407
+	add_state_core = 406
+	add_state_core = 588
+	add_state_core = 287
+	add_state_core = 617
+	add_state_core = 618
+	add_state_core = 760
+	add_state_core = 759
+	}
+	}
+}
+CRI_islam_support = {
+	CRI_sponsor_islamic_marches_crimea = {
+	icon = eng_blackshirt_march
+	fire_only_once = no
+	cost = 25
+	days_remove = 30
+	days_re_enable = 10
+	visible = {
+	
+		}
+		cancel_trigger = {
+			has_completed_focus = CRI_islamist_revolution
+		}
+	available = { 
+	NOT = {
+	has_country_flag = islam_propaganda
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = islam_propaganda
+	}
+	remove_effect = {
+	add_to_variable = { cri_islamic_support_var = 8 }
+	custom_effect_tooltip = add_8_islam_support_tt 
+	clr_country_flag = islam_propaganda
+	}
+	}
+CRI_religius_propaganda_cr = {
+	icon = eng_propaganda_campaigns
+	fire_only_once = no
+	cost = 20
+	days_remove = 15
+	days_re_enable = 15
+	visible = {
+	
+		}
+		cancel_trigger = {
+			has_completed_focus = CRI_islamist_revolution
+		}
+	available = {
+	NOT = {
+has_country_flag = islam_propaganda
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = islam_propaganda
+	}
+	remove_effect = {
+	add_to_variable = { cri_islamic_support_var = 5 }
+	custom_effect_tooltip = add_5_islam_support_tt  
+	clr_country_flag = islam_propaganda
+	}
+	}
+	CRI_discriditate_pravoslavic_cr = {
+	icon = generic_political_discourse 
+	fire_only_once = no
+	cost = 45
+	days_remove = 35
+	days_re_enable = 40
+	visible = {
+	
+		}
+		cancel_trigger = {
+			 has_completed_focus = CRI_islamist_revolution
+		}
+	available = {
+	NOT = {
+	has_country_flag = islam_propaganda
+	}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = islam_propaganda
+	}
+	remove_effect = {
+	add_to_variable = { cri_islamic_support_var = 10 }
+	custom_effect_tooltip = add_10_islam_support_tt   
+	clr_country_flag = islam_propaganda
+	}
+	}
+}
+CRI_russian_entente_found = {
+	CRI_invite_finland = {
+	icon = eng_trade_unions_support 
+	fire_only_once = yes
+	cost = 50
+	days_remove = 40
+
+	targets = {FIN}
+	visible = {
+	FIN = {is_in_faction = no is_subject = no exists = yes} 
+		}
+		cancel_trigger = {
+			FIN = {is_in_faction = yes}
+		}
+	available = {
+	NOT = {
+	FIN = {has_government = communism}
+	has_country_flag = invitation
+	}
+	}
+		modifier = {
+		political_power_gain = -0.05
+		}
+		complete_effect = {
+		set_country_flag = invitation
+	}
+	remove_effect = {
+	FIN = {country_event = crimea.75}
+	clr_country_flag = invitation
+	}
+	}
+	CRI_invite_turkey = {
+	icon = eng_trade_unions_support 
+	fire_only_once = yes
+	cost = 50
+	days_remove = 40
+
+	targets = {TUR}
+	visible = {
+	TUR = {is_in_faction = no is_subject = no exists = yes} 
+		}
+		cancel_trigger = {
+			TUR = {is_in_faction = yes}
+		}
+	available = {
+	NOT = {
+	TUR = {has_government = communism}
+	has_country_flag = invitation
+	}
+	}
+		modifier = {
+		political_power_gain = -0.05
+		}
+		complete_effect = {
+		set_country_flag = invitation
+	}
+	remove_effect = {
+	TUR = {country_event = crimea.75}
+	clr_country_flag = invitation
+	}
+	}
+	CRI_invite_bulgaria = {
+	icon = eng_trade_unions_support 
+	fire_only_once = yes
+	cost = 50
+	days_remove = 40
+
+	targets = {BUL}
+	visible = {
+	BUL = {is_in_faction = no is_subject = no exists = yes} 
+		}
+		cancel_trigger = {
+			BUL = {is_in_faction = yes}
+		}
+	available = {
+	NOT = {
+	BUL = {has_government = communism}
+	has_country_flag = invitation
+	}
+	}
+		modifier = {
+		political_power_gain = -0.05
+		}
+		complete_effect = {
+		set_country_flag = invitation
+	}
+	remove_effect = {
+	BUL = {country_event = crimea.75}
+	clr_country_flag = invitation
+	}
+	}
+	CRI_invite_estonia = {
+	icon = eng_trade_unions_support 
+	fire_only_once = yes
+	cost = 35
+	days_remove = 20
+
+	targets = {EST}
+	visible = {
+	EST = {is_in_faction = no is_subject = no exists = yes} 
+		}
+		cancel_trigger = {
+			EST = {is_in_faction = yes}
+		}
+	available = {
+	NOT = {
+	EST = {has_government = communism}
+	has_country_flag = invitation
+	}
+	}
+		modifier = {
+		political_power_gain = -0.05
+		}
+		complete_effect = {
+		set_country_flag = invitation
+	}
+	remove_effect = {
+	EST = {country_event = crimea.75}
+	clr_country_flag = invitation
+	}
+	}
+	CRI_invite_latvia = {
+	icon = eng_trade_unions_support 
+	fire_only_once = yes
+	cost = 35
+	days_remove = 20
+
+	targets = {LAT}
+	visible = {
+	LAT = {is_in_faction = no is_subject = no exists = yes} 
+		}
+		cancel_trigger = {
+			LAT = {is_in_faction = yes}
+		}
+	available = {
+	NOT = {
+	LAT = {has_government = communism}
+	has_country_flag = invitation
+	}
+	}
+		modifier = {
+		political_power_gain = -0.05
+		}
+		complete_effect = {
+		set_country_flag = invitation
+	}
+	remove_effect = {
+	LAT = {country_event = crimea.75}
+	clr_country_flag = invitation
+	}
+	}
+	CRI_invite_lithuania = {
+	icon = eng_trade_unions_support 
+	fire_only_once = yes
+	cost = 35
+	days_remove = 20
+
+	targets = {LIT}
+	visible = {
+	LIT = {is_in_faction = no is_subject = no exists = yes} 
+		}
+		cancel_trigger = {
+			LIT = {is_in_faction = yes}
+		}
+	available = {
+	NOT = {
+	LIT = {has_government = communism}
+	has_country_flag = invitation
+	}
+	}
+		modifier = {
+		political_power_gain = -0.05
+		}
+		complete_effect = {
+		set_country_flag = invitation
+	}
+	remove_effect = {
+	LIT = {country_event = crimea.75}
+	clr_country_flag = invitation
+	}
+	}
+	CRI_invite_iran = {
+	icon = eng_trade_unions_support 
+	fire_only_once = yes
+	cost = 50
+	days_remove = 40
+
+	targets = {PER}
+	visible = {
+	PER = {is_in_faction = no is_subject = no exists = yes} 
+		}
+		cancel_trigger = {
+			PER = {is_in_faction = yes}
+		}
+	available = {
+	NOT = {
+	PER = {has_government = communism}
+	has_country_flag = invitation
+	}
+	}
+		modifier = {
+		political_power_gain = -0.05
+		}
+		complete_effect = {
+		set_country_flag = invitation
+	}
+	remove_effect = {
+	PER = {country_event = crimea.75}
+	clr_country_flag = invitation
+	}
+	}
+}

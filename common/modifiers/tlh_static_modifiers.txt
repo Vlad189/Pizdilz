@@ -1,0 +1,8 @@
+UKR_compliance_in_exussr = {
+	valid_relation_trigger = {
+		ROOT = {
+			has_government = democratic		
+		}
+	}
+	compliance_gain = 0.15
+}

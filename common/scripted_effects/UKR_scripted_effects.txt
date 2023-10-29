@@ -1,0 +1,157 @@
+UKR_ukranian_smi_level_up = { 
+	if = {
+		limit = { has_idea = UKR_ukranian_smi }
+		swap_ideas = {
+			remove_idea = UKR_ukranian_smi
+			add_idea = UKR_ukranian_smi_1
+		}
+	}
+	else_if = {
+	limit = { has_idea = UKR_ukranian_smi_1 }
+		swap_ideas = {
+			remove_idea = UKR_ukranian_smi_1
+			add_idea = UKR_ukranian_smi_2
+		}
+	}
+}
+UKR_green_army_level_up = { 
+	if = {
+		limit = { has_idea = UKR_green_army }
+		swap_ideas = {
+			remove_idea = UKR_green_army
+			add_idea = UKR_green_army_1
+		}
+	}
+}
+UKR_active_foreign_politics_level_up = { 
+	if = {
+		limit = { has_idea = UKR_active_foreign_politics }
+		swap_ideas = {
+			remove_idea = UKR_active_foreign_politics
+			add_idea = UKR_active_foreign_politics_1
+		}
+	}
+}
+UKR_genstab_level_up = { 
+	if = {
+		limit = { has_idea = idea_UKR_genstab }
+		swap_ideas = {
+			remove_idea = idea_UKR_genstab
+			add_idea = idea_UKR_genstab_1 
+		}
+	}
+	else_if = {
+	limit = { has_idea = idea_UKR_genstab_1 }
+		swap_ideas = {
+			remove_idea = idea_UKR_genstab_1
+			add_idea = idea_UKR_genstab_2
+		}
+	}
+}
+UKR_army_level_up = { 
+	if = {
+		limit = { has_idea = idea_UKR_army }
+		swap_ideas = {
+			remove_idea = idea_UKR_army
+			add_idea = idea_UKR_army_1
+		}
+	}
+	else_if = {
+	limit = { has_idea = idea_UKR_army_1 }
+		swap_ideas = {
+			remove_idea = idea_UKR_army_1
+			add_idea = idea_UKR_army_2
+		}
+	}
+	else_if = {
+	limit = { has_idea = idea_UKR_army_2 }
+		swap_ideas = {
+			remove_idea = idea_UKR_army_2
+			add_idea = idea_UKR_army_3
+		}
+	}
+}
+UKR_hrivna_level_up = { 
+	if = {
+		limit = { has_idea = UKR_hrivna }
+		swap_ideas = {
+			remove_idea = UKR_hrivna
+			add_idea = UKR_hrivna_1
+		}
+	}
+	else_if = {
+	limit = { has_idea = UKR_hrivna_1 }
+		swap_ideas = {
+			remove_idea = UKR_hrivna_1
+			add_idea = UKR_hrivna_2
+		}
+	}
+	else_if = {
+	limit = { has_idea = UKR_hrivna_2 }
+		swap_ideas = {
+			remove_idea = UKR_hrivna_2
+			add_idea = UKR_hrivna_3
+		}
+	}
+	else_if = {
+	limit = { has_idea = UKR_hrivna_3 }
+		swap_ideas = {
+			remove_idea = UKR_hrivna_3
+			add_idea = UKR_hrivna_4
+		}
+	}
+	else_if = {
+	limit = { has_idea = UKR_hrivna_4 }
+		swap_ideas = {
+			remove_idea = UKR_hrivna_4
+			add_idea = UKR_hrivna_5
+		}
+	}
+}
+UKR_market_economy_level_up = { 
+	if = {
+		limit = { has_idea = UKR_market_economy }
+		swap_ideas = {
+			remove_idea = UKR_market_economy
+			add_idea = UKR_market_economy_1
+		}
+	}
+}
+UKR_ukraine_for_ukranians_level_up = { 
+	if = {
+		limit = { has_idea = UKR_ukraine_for_ukranians }
+		swap_ideas = {
+			remove_idea = UKR_ukraine_for_ukranians
+			add_idea = UKR_ukraine_for_ukranians_1
+		}
+	}
+	else_if = {
+	limit = { has_idea = UKR_ukraine_for_ukranians_1 }
+		swap_ideas = {
+			remove_idea = UKR_ukraine_for_ukranians_1
+			add_idea = UKR_ukraine_for_ukranians_2
+		}
+	}
+}
+UKR_economy_level_up = { 
+	if = {
+		limit = { has_idea = idea_UKR_economy }
+		swap_ideas = {
+			remove_idea = idea_UKR_economy
+			add_idea = idea_UKR_economy_1
+		}
+	}
+}
+UKR_annex_west = { 
+	transfer_state = 91
+	transfer_state = 973
+	transfer_state = 972
+	transfer_state = 974
+	transfer_state = 975
+	transfer_state = 89
+	transfer_state = 969
+	transfer_state = 968
+	transfer_state = 957
+	transfer_state = 199
+	transfer_state = 93
+}

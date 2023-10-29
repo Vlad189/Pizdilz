@@ -1,0 +1,2397 @@
+on_actions = {
+on_startup = {
+		effect = {
+		UKR = {country_event = ukraine.309
+		add_to_variable = { ukr_primorie_var = 30 }
+		add_to_variable = { ukr_crimea_var = 30 }
+		add_to_variable = { ukr_volyn_var = 30 }
+		add_to_variable = { ukr_transkurzonia_var = 30 }
+		add_to_variable = { ukr_lublin_var = 30 }
+		add_to_variable = { ukr_carpats_var = 30 }
+		add_to_variable = { ukr_mram_var = 30 }
+		add_to_variable = { ukr_besarabia_var = 30 }
+		add_to_variable = { ukr_podillia_var = 30 }
+		add_to_variable = { ukr_westslob_var = 30 }
+		add_to_variable = { ukr_lowslob_var = 30 }
+		add_to_variable = { ukr_donbass_var = 30 }
+		add_to_variable = { ukr_sloboda_var = 30 }
+		add_to_variable = { ukr_kuban_var = 30 }
+		add_to_variable = { ukr_don_var = 30 }
+		add_to_variable = { ukr_terek_var = 30 } 
+		add_to_variable = { ukr_kalmikia_var = 30 }
+		add_to_variable = { ukr_bucovina_var = 30 }
+		add_to_variable = { ukr_galicia_var = 30 }
+		add_to_variable = { ukr_podneprovie_var = 30 }
+		add_to_variable = { ukr_kiev_var = 30 }
+		add_to_variable = { ukr_polissa_var = 30 }
+		}
+		CRI = {country_event = ukraine.309}
+		MOL = {country_event = ukraine.309}
+		}
+		}
+on_daily_UKR = {
+
+		effect = {
+		IF = {
+		limit = {
+		check_variable = { ukr_podneprovie_var > 65 } 
+		UKR = {controls_state = 203 controls_state = 935 controls_state = 226}
+		}
+		203 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				226 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				935 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_podneprovie_var < 65 } 
+		UKR = {controls_state = 203 controls_state = 935 controls_state = 226}
+		}
+		203 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				226 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				935 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_podneprovie_var < 25 } 
+		UKR = {controls_state = 203 controls_state = 935 controls_state = 226}
+		}
+		203 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				226 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				935 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_podneprovie_var > 25 } 
+		UKR = {controls_state = 203 controls_state = 935 controls_state = 226}
+		}
+		203 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				226 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				935 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_primorie_var > 65 } 	
+		UKR = {controls_state = 192 controls_state = 197}
+		}
+		192 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				197 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_primorie_var < 65 } 	
+		UKR = {controls_state = 192 controls_state = 197}
+		}
+		192 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				197 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_primorie_var < 25 } 	
+		UKR = {controls_state = 192 controls_state = 197}
+		}
+		192 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				197 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_primorie_var > 25 } 	
+		UKR = {controls_state = 192 controls_state = 197}
+		}
+		192 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				197 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		IF = {
+		imit = {
+		check_variable = { ukr_kiev_var > 65 } 	
+		UKR = {controls_state = 955 controls_state = 202}
+		}
+		202 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				955 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_kiev_var < 65 } 	
+		UKR = {controls_state = 955 controls_state = 202}
+		}
+		202 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				955 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_kiev_var < 25 } 	
+		UKR = {controls_state = 955 controls_state = 202}
+		}
+		202 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				955 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_kiev_var > 25 } 	
+		UKR = {controls_state = 955 controls_state = 202}
+		}
+		202 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				955 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_polissa_var > 65 } 	
+		UKR = {controls_state = 198 controls_state = 201 controls_state = 194}
+		}
+		198 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				201 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				194 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_polissa_var < 65 } 	
+		UKR = {controls_state = 198 controls_state = 201 controls_state = 194}
+		}
+		198 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				201 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				194 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_polissa_var < 25 } 	
+		UKR = {controls_state = 198 controls_state = 201 controls_state = 194}
+		}
+		198 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				201 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				194 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_polissa_var > 25 } 	
+		UKR = {controls_state = 198 controls_state = 201 controls_state = 194}
+		}
+		198 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				201 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				194 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_crimea_var > 65 } 	
+		UKR = {controls_state = 137 controls_state = 939 controls_state = 956 controls_state = 196 controls_state = 200}
+		}
+		137 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				939 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				956 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				200 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				196 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_crimea_var < 65 } 	
+		UKR = {controls_state = 137 controls_state = 939 controls_state = 956 controls_state = 196 controls_state = 200}
+		}
+		137 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				939 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				956 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				200 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				196 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_crimea_var < 25 } 	
+		UKR = {controls_state = 137 controls_state = 939 controls_state = 956 controls_state = 196 controls_state = 200}
+		}
+		137 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				939 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				956 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				200 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				196 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_crimea_var > 25 } 	
+		UKR = {controls_state = 137 controls_state = 939 controls_state = 956 controls_state = 196 controls_state = 200}
+		}
+		137 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				939 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				956 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				200 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				196 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_galicia_var > 65 } 	
+		UKR = {controls_state = 91
+				controls_state = 969
+				controls_state = 199
+				controls_state = 89
+				controls_state = 973
+				controls_state = 972
+				controls_state = 974
+				controls_state = 975}
+		}
+		91 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				969 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				199 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				89 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				973 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				972 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				974 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				975 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_galicia_var < 65 } 	
+		UKR = {controls_state = 91
+				controls_state = 969
+				controls_state = 199
+				controls_state = 89
+				controls_state = 973
+				controls_state = 972
+				controls_state = 974
+				controls_state = 975}
+		}
+		91 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				969 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				199 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				89 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				973 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				972 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				974 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				975 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_galicia_var < 25 } 	
+		UKR = {controls_state = 91
+				controls_state = 969
+				controls_state = 199
+				controls_state = 89
+				controls_state = 973
+				controls_state = 972
+				controls_state = 974
+				controls_state = 975}
+		}
+		91 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				969 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				199 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				89 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				973 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				972 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				974 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				975 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_galicia_var > 25 } 	
+		UKR = {controls_state = 91
+				controls_state = 969
+				controls_state = 199
+				controls_state = 89
+				controls_state = 973
+				controls_state = 972
+				controls_state = 974
+				controls_state = 975}
+		}
+		91 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				969 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				199 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				83 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				973 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				972 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				974 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				975 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_volyn_var > 65 } 	
+		UKR = {controls_state = 968
+				controls_state = 93
+				controls_state = 957
+				controls_state = 94}
+		}
+		968 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				93 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				957 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				94 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_volyn_var < 65 } 	
+		UKR = {controls_state = 968
+				controls_state = 93
+				controls_state = 957
+				controls_state = 94}
+		}
+		968 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				93 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				957 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				94 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_volyn_var < 25 } 	
+		UKR = {controls_state = 968
+				controls_state = 93
+				controls_state = 957
+				controls_state = 94}
+		}
+		968 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				93 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				957 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				94 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_volyn_var > 25 } 	
+		UKR = {controls_state = 968
+				controls_state = 93
+				controls_state = 957
+				controls_state = 94}
+		}
+		968 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				93 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				957 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				94 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_transkurzonia_var > 65 } 	
+		UKR = {controls_state = 834
+				controls_state = 970
+				controls_state = 971}
+		}
+		834 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				970 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				971 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_transkurzonia_var < 65 } 	
+		UKR = {controls_state = 834
+				controls_state = 970
+				controls_state = 971}
+		}
+		834 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				970 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				971 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_transkurzonia_var < 25 } 	
+		UKR = {controls_state = 834
+				controls_state = 970
+				controls_state = 971}
+		}
+		834 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				970 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				971 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_transkurzonia_var > 25 } 	
+		UKR = {controls_state = 834
+				controls_state = 970
+				controls_state = 971}
+		}
+		834 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				970 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				971 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_lublin_var > 65 } 	
+		UKR = {controls_state = 958
+				controls_state = 92
+				controls_state = 954
+		}
+		}
+		958 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				92 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				954 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_lublin_var < 65 } 	
+		UKR = {controls_state = 958
+				controls_state = 92
+				controls_state = 954}
+		}
+		958 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				92 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				954 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_lublin_var < 25 } 	
+		UKR = {controls_state = 958
+				controls_state = 92
+				controls_state = 954}
+		}
+		958 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				92 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				954 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_lublin_var > 25 } 	
+		UKR = {controls_state = 958
+				controls_state = 92
+				controls_state = 954}
+		}
+		958 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				92 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				954 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_carpats_var > 65 } 	
+		UKR = {controls_state = 73
+				controls_state = 976
+				controls_state = 978
+				controls_state = 977
+				controls_state = 937
+		}
+		}
+		73 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				976 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				978 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				977 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				937 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_carpats_var < 65 } 	
+		UKR = {controls_state = 73
+				controls_state = 976
+				controls_state = 978
+				controls_state = 977
+				controls_state = 937}
+		}
+		73 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				976 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				978 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				977 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				937 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_carpats_var < 25 } 	
+		UKR = {controls_state = 73
+				controls_state = 976
+				controls_state = 978
+				controls_state = 977
+				controls_state = 937}
+		}
+		73 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				976 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				978 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				977 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				937 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_carpats_var > 25 } 	
+		UKR = {controls_state = 73
+				controls_state = 976
+				controls_state = 978
+				controls_state = 977
+				controls_state = 937}
+		}
+		73 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				976 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				978 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				977 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				937 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_mram_var > 65 } 	
+		UKR = {controls_state = 962
+				controls_state = 959
+				controls_state = 960
+		}
+		}
+		962 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				959 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				960 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_mram_var < 65 } 	
+		UKR = {controls_state = 962
+				controls_state = 959
+				controls_state = 960}
+		}
+		962 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				959 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				960 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_mram_var < 25 } 	
+		UKR = {controls_state = 962
+				controls_state = 959
+				controls_state = 960}
+		}
+		962 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				959 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				960 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_mram_var > 25 } 	
+		UKR = {controls_state = 962
+				controls_state = 959
+				controls_state = 960}
+		}
+		962 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				959 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				960 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_bucovina_var > 65 } 	
+		UKR = {controls_state = 80
+				controls_state = 961
+		}
+		}
+		80 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				961 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_bucovina_var < 65 } 	
+		UKR = {controls_state = 80
+				controls_state = 961}
+		}
+		80 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				961 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_bucovina_var < 25 } 	
+		UKR = {controls_state = 80
+				controls_state = 961}
+		}
+		80 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				961 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_bucovina_var > 25 } 	
+		UKR = {controls_state = 80
+				controls_state = 961}
+		}
+		80 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				961 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_besarabia_var > 65 } 	
+		UKR = {controls_state = 766
+				controls_state = 78
+				controls_state = 941
+				controls_state = 947
+		}
+		}
+		766 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				78 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				941 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				947 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_besarabia_var < 65 } 	
+		UKR = {controls_state = 766
+				controls_state = 78
+				controls_state = 941
+				controls_state = 947}
+		}
+		766 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				78 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				941 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				947 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_besarabia_var < 25 } 	
+		UKR = {controls_state = 766
+				controls_state = 78
+				controls_state = 941
+				controls_state = 947}
+		}
+		766 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				78 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				941 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				947 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_besarabia_var > 25 } 	
+		UKR = {controls_state = 766
+				controls_state = 78
+				controls_state = 941
+				controls_state = 947}
+		}
+		766 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				78 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				941 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				947 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_podillia_var > 65 } 	
+		UKR = {controls_state = 193
+				controls_state = 936
+				controls_state = 979
+				controls_state = 241
+				controls_state = 943
+		}
+		}
+		193 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				936 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				979 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				241 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				943 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_podillia_var < 65 } 	
+		UKR = {controls_state = 193
+				controls_state = 936
+				controls_state = 979
+				controls_state = 241
+				controls_state = 943}
+		}
+		193 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				936 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				979 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				241 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				943 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+			
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_podillia_var < 25 } 	
+		UKR = {controls_state = 193
+				controls_state = 936
+				controls_state = 979
+				controls_state = 241
+				controls_state = 943}
+		}
+		193 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				936 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				979 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				241 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				943 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_podillia_var > 25 } 	
+		UKR = {controls_state = 193
+				controls_state = 936
+				controls_state = 979
+				controls_state = 241
+				controls_state = 943}
+		}
+		193 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				936 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				979 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				241 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				943 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_westslob_var > 65 } 	
+		UKR = {controls_state = 945
+				controls_state = 946
+				controls_state = 225
+				controls_state = 259
+		}
+		}
+		945 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				946 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				225 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				259 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_westslob_var < 65 } 	
+		UKR = {controls_state = 945
+				controls_state = 946
+				controls_state = 225
+				controls_state = 259}
+		}
+		945 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				946 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				225 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				259 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_westslob_var < 25 } 	
+		UKR = {controls_state = 945
+				controls_state = 946
+				controls_state = 225
+				controls_state = 259}
+		}
+		945 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				946 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				225 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				259 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_westslob_var > 25 } 	
+		UKR = {controls_state = 945
+				controls_state = 946
+				controls_state = 225
+				controls_state = 259}
+		}
+		945 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				946 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				225 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				259 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+		}
+		
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_lowslob_var > 65 } 	
+		UKR = {controls_state = 940
+				controls_state = 240
+				controls_state = 221
+				controls_state = 967
+		}
+		}
+		940 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				240 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				221 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				967 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_lowslob_var < 65 } 	
+		UKR = {controls_state = 940
+				controls_state = 240
+				controls_state = 221
+				controls_state = 967}
+		}
+		940 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				240 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				221 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				967 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_lowslob_var < 25 } 	
+		UKR = {controls_state = 940
+				controls_state = 240
+				controls_state = 221
+				controls_state = 967}
+		}
+		940 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				240 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				221 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				967 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_lowslob_var > 25 } 	
+		UKR = {controls_state = 940
+				controls_state = 240
+				controls_state = 221
+				controls_state = 967}
+		}
+		940 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				240 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				221 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				967 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+		}
+		
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_donbass_var > 65 } 	
+		UKR = {controls_state = 227
+				controls_state = 228
+				controls_state = 951
+				controls_state = 942
+				controls_state = 218
+		}
+		}
+		227 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				228 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				951 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				942 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				218 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_donbass_var < 65 } 	
+		UKR = {controls_state = 227
+				controls_state = 228
+				controls_state = 951
+				controls_state = 942
+				controls_state = 218}
+		}
+		227 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				228 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				951 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				942 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				218 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_donbass_var < 25 } 	
+		UKR = {controls_state = 227
+				controls_state = 228
+				controls_state = 951
+				controls_state = 942
+				controls_state = 218}
+		}
+		227 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				228 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				951 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				942 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				218 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_donbass_var > 25 } 	
+		UKR = {controls_state = 227
+				controls_state = 228
+				controls_state = 951
+				controls_state = 942
+				controls_state = 218}
+		}
+		227 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				228 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				951 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				942 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				218 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_sloboda_var > 65 } 	
+		UKR = {controls_state = 220
+				controls_state = 948
+				controls_state = 966
+				controls_state = 260
+		}
+		}
+		220 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				948 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				966 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				260 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_sloboda_var < 65 } 	
+		UKR = {controls_state = 220
+				controls_state = 948
+				controls_state = 966
+				controls_state = 260}
+		}
+		220 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				948 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				966 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				260 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_sloboda_var < 25 } 	
+		UKR = {controls_state = 220
+				controls_state = 948
+				controls_state = 966
+				controls_state = 260}
+		}
+		220 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				948 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				966 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				260 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_sloboda_var > 25 } 	
+		UKR = {controls_state = 220
+				controls_state = 948
+				controls_state = 966
+				controls_state = 260}
+		}
+		220 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				948 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				966 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				260 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_kuban_var > 65 } 	
+		UKR = {controls_state = 234
+				controls_state = 949
+				controls_state = 965
+				controls_state = 952
+				controls_state = 938
+				controls_state = 233
+		}
+		}
+		234 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				949 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				965 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				252 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				938 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				233 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_kuban_var < 65 } 	
+		UKR = {controls_state = 234
+				controls_state = 949
+				controls_state = 965
+				controls_state = 952
+				controls_state = 938
+				controls_state = 233}
+		}
+		234 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				949 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				965 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				952 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				938 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				233 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_kuban_var < 25 } 	
+		UKR = {controls_state = 234
+				controls_state = 949
+				controls_state = 965
+				controls_state = 952
+				controls_state = 938
+				controls_state = 233}
+		}
+		234 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				949 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				965 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				952 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				938 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				233 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_kuban_var > 25 } 	
+		UKR = {controls_state = 234
+				controls_state = 949
+				controls_state = 965
+				controls_state = 952
+				controls_state = 938
+				controls_state = 233}
+		}
+		234 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				949 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				965 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				952 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				938 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				233 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+			
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_don_var > 65 } 	
+		UKR = {controls_state = 964
+				controls_state = 245
+				controls_state = 238
+				controls_state = 217
+				controls_state = 265
+		}
+		}
+		964 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				245 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				238 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				217 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				265 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_don_var < 65 } 	
+		UKR = {controls_state = 964
+				controls_state = 245
+				controls_state = 238
+				controls_state = 217
+				controls_state = 265}
+		}
+		964 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				245 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				238 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				217 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				265 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_don_var < 25 } 	
+		UKR = {controls_state = 964
+				controls_state = 245
+				controls_state = 238
+				controls_state = 217
+				controls_state = 265}
+		}
+		964 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				245 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				238 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				217 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				265 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+			
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_don_var > 25 } 	
+		UKR = {controls_state = 964
+				controls_state = 245
+				controls_state = 238
+				controls_state = 217
+				controls_state = 265}
+		}
+		964 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				245 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				238 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				217 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				265 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_kalmikia_var > 65 } 	
+		UKR = {controls_state = 237
+				controls_state = 236
+		}
+		}
+		237 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				236 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+				
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_kalmikia_var < 65 } 	
+		UKR = {controls_state = 237
+				controls_state = 236}
+		}
+		237 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				236 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_kalmikia_var < 25 } 	
+		UKR = {controls_state = 237
+				controls_state = 236}
+		}
+		237 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				236 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+				
+			
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_kalmikia_var > 25 } 	
+		UKR = {controls_state = 237
+				controls_state = 236}
+		}
+		237 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				236 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+				
+		}
+		
+		
+		IF = {
+		limit = {
+		check_variable = { ukr_terek_var > 65 } 	
+		UKR = {controls_state = 235
+				controls_state = 232
+				controls_state = 821
+				controls_state = 828
+				controls_state = 827
+				controls_state = 953
+		}
+		}
+		235 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				232 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				821 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				828 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				827 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				953 = {
+					
+					add_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_terek_var < 65 } 	
+		UKR = {controls_state = 235
+				controls_state = 232
+				controls_state = 821
+				controls_state = 828
+				controls_state = 827
+				controls_state = 953}
+		}
+		235 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				232 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				821 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				828 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				827 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				953 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_dksr_military_devastation }
+				}
+				
+				
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_terek_var < 25 } 	
+		UKR = {controls_state = 235
+				controls_state = 232
+				controls_state = 821
+				controls_state = 828
+				controls_state = 827
+				controls_state = 953}
+		}
+		235 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				232 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				821 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				828 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				827 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				953 = {
+					
+					add_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+				
+			
+			
+		}
+		IF = {
+		limit = {
+		check_variable = { ukr_terek_var > 25 } 	
+		UKR = {controls_state = 235
+				controls_state = 232
+				controls_state = 821
+				controls_state = 828
+				controls_state = 827
+				controls_state = 953}
+		}
+		235 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				232 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				821 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				828 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				827 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				953 = {
+					
+					remove_dynamic_modifier = { modifier = UKR_state_bad_relation }
+				}
+				
+				
+		}
+		}
+}

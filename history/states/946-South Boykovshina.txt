@@ -1,0 +1,26 @@
+state={
+	id=972
+	name="STATE_946" # s boykovshina
+	manpower = 98818
+	
+	state_category = rural
+	
+	history={
+		victory_points = {
+			13268 1
+		}
+		owner = POL
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = POL
+add_core_of = UKR
+add_claim_by = CRS
+	}
+
+	provinces={
+	 13268 13269
+	}
+
+	local_supplies=0.0 
+}

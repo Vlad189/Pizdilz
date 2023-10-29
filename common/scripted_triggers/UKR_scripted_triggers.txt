@@ -1,0 +1,9 @@
+kiev_green = {
+	IF = {
+		limit = { 
+		tag = UKR
+			UKR = {controls_state = 202}
+			
+		}
+	}
+}

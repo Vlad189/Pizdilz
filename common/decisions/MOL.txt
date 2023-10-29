@@ -1,0 +1,599 @@
+MOL_prepare_war_with_romania = { 
+
+	MOL_allign_bucovina  = {
+
+		icon = GFX_decision_generic_civil_support
+
+		ai_will_do = {
+			base = 8
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 80
+}
+}
+		available = {
+			NOT = {has_country_flag = mol_separs_prepare}
+		}
+		cancel_trigger = {
+		has_war_with = ROM
+		}
+		visible = {
+		ROM = {controls_state = 80}
+		}
+
+		days_remove = 50
+
+
+		cost = 50
+
+		complete_effect = {
+			set_country_flag = mol_separs_prepare
+			
+		}
+		fire_only_once = yes
+		remove_effect = {
+		clr_country_flag = mol_separs_prepare
+			80 = {set_state_flag = mol_separs}
+		}
+	}
+	MOL_allign_botoshani  = {
+
+		icon = GFX_decision_generic_civil_support
+
+		ai_will_do = {
+			base = 8
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 961
+}
+}
+		available = {
+			NOT = {has_country_flag = mol_separs_prepare}
+		}
+		cancel_trigger = {
+		has_war_with = ROM
+		}
+		visible = {
+		ROM = {controls_state = 961}
+		}
+
+		days_remove = 50
+
+
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = mol_separs_prepare
+			
+		}
+
+		remove_effect = {
+		clr_country_flag = mol_separs_prepare
+		961 = {set_state_flag = mol_separs}
+		}
+	}
+	MOL_allign_moldova  = {
+
+		icon = GFX_decision_generic_civil_support
+		fire_only_once = yes
+		ai_will_do = {
+			base = 10
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 79
+}
+}
+		available = {
+			NOT = {has_country_flag = mol_separs_prepare}
+		}
+		cancel_trigger = {
+		has_war_with = ROM
+		}
+		visible = {
+		ROM = {controls_state = 79}
+		}
+
+		days_remove = 50
+
+
+		cost = 50
+
+		complete_effect = {
+			set_country_flag = mol_separs_prepare
+			
+		}
+
+		remove_effect = {
+		clr_country_flag = mol_separs_prepare
+		79 = {set_state_flag = mol_separs}
+		}
+	}
+}
+MOL_english_land_lease = {
+	MOL_buy_british_guns = {
+	icon = ger_military_buildup
+	fire_only_once = no
+	cost = 60
+	days_remove = 50
+	days_re_enable = 50
+	visible = {
+	
+		}
+		cancel_trigger = {
+	hidden_trigger = {has_war_with = ENG}
+	}
+	available = {
+	NOT = {has_country_flag = british_buy}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = british_buy
+	}
+	remove_effect = {
+	clr_country_flag = british_buy
+	add_equipment_to_stockpile = {
+          type = infantry_equipment_1
+          amount = 850
+          producer = ENG
+      }
+	}
+	}
+	MOL_buy_british_tanks = {
+	icon = generic_tank
+	fire_only_once = no
+	cost = 70
+	days_remove = 45
+	days_re_enable = 50
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = british_buy}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = british_buy
+	}
+	cancel_trigger = {
+	hidden_trigger = {has_war_with = ENG}
+	}
+	remove_effect = {
+	clr_country_flag = british_buy
+	add_equipment_to_stockpile = {
+          type = light_tank_chassis_1
+          amount = 120
+          producer = ENG
+          variant_name = "Light Tank Mk. IV"
+      }
+	}
+	}
+	MOL_buy_british_planes = {  
+	icon = generic_air
+	fire_only_once = no
+	cost = 100
+	days_remove = 50
+	days_re_enable = 60
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = british_buy }
+	} 
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = british_buy 
+	}
+	cancel_trigger = {
+	hidden_trigger = {has_war_with = ENG}
+	}
+	remove_effect = {
+	clr_country_flag = british_buy 
+	add_equipment_to_stockpile = {
+          type = small_plane_airframe_1
+          amount = 70
+          producer = ENG
+          variant_name = "Bristol Blenheim IF"
+      }
+	}
+	}
+	MOL_buy_british_artillery = {
+	icon = generic_prepare_civil_war
+	fire_only_once = no
+	cost = 75
+	days_remove = 50
+	days_re_enable = 65
+	visible = {
+	
+		}
+		
+	available = {
+	NOT = {has_country_flag = british_buy} 
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = british_buy
+	}
+	cancel_trigger = {
+	hidden_trigger = {has_war_with = ENG}
+	}
+	remove_effect = {
+	clr_country_flag = british_buy
+	add_equipment_to_stockpile = {
+          type = artillery_equipment_1
+          amount = 200
+          producer = ENG
+      }
+	}
+	}
+}
+MOL_busines_question = {
+	MOL_integrate_kishenev_prom = {
+	icon = generic_factory
+	fire_only_once = yes
+	cost = 50
+	days_remove = 50
+	visible = {
+	
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 78
+}
+}
+		
+	available = {
+	NOT = {has_country_flag = prom_integration} 
+	controls_state = 78
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = prom_integration
+	}
+	cancel_trigger = {
+	NOT = {controls_state = 78}
+	}
+	remove_effect = {
+	clr_country_flag = prom_integration
+	78 = {
+	add_extra_state_shared_building_slots = 2
+	add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+	}
+	}
+	}
+	MOL_integrate_ismail_prom = {
+	icon = generic_factory
+	fire_only_once = yes
+	cost = 40
+	days_remove = 35
+	visible = {
+	
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 766
+}
+}
+		
+	available = {
+	NOT = {has_country_flag = prom_integration} 
+	controls_state = 766
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = prom_integration
+	}
+	cancel_trigger = {
+	NOT = {controls_state = 766}
+	}
+	remove_effect = {
+	clr_country_flag = prom_integration
+	766 = {
+	add_extra_state_shared_building_slots = 2
+	add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+	}
+	}
+	}
+	MOL_integrate_belci_prom = {
+	icon = generic_factory
+	fire_only_once = yes
+	cost = 50
+	days_remove = 50
+	visible = {
+	
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 915
+}
+}
+		
+	available = {
+	NOT = {has_country_flag = prom_integration} 
+	controls_state = 915
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = prom_integration
+	}
+	cancel_trigger = {
+	NOT = {controls_state = 915}
+	}
+	remove_effect = {
+	clr_country_flag = prom_integration
+	915 = {
+	add_extra_state_shared_building_slots = 2
+	add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+	}
+	}
+	}
+	MOL_integrate_transnistria_prom = {  
+	icon = generic_factory
+	fire_only_once = yes
+	cost = 30
+	days_remove = 30
+	visible = {
+	
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 921
+}
+}
+		
+	available = {
+	NOT = {has_country_flag = prom_integration} 
+	controls_state = 921
+	921 = {is_demilitarized_zone = no}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = prom_integration
+	}
+	cancel_trigger = {
+	NOT = {controls_state = 921}
+	}
+	remove_effect = {
+	clr_country_flag = prom_integration
+	921 = {
+	add_extra_state_shared_building_slots = 1
+	add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+	}
+	}
+	}
+}
+MOL_kishenev_pact_allience = {
+	MOL_yougoslavia_coup = {
+	targets = {YUG} 
+	icon = generic_ignite_civil_war
+	fire_only_once = yes
+	custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+		}
+		custom_cost_text = decision_cost_ie_1000
+	days_remove = 35
+	visible = {
+	NOT = {YUG = {has_government = communism}}
+		}
+		
+		
+	available = {
+	NOT = {is_in_faction_with = YUG} 
+	NOT = {has_country_flag = communist_uprising_mol}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = communist_uprising_mol
+	}
+	cancel_trigger = {
+	YUG = {has_government = communism}
+	}
+	remove_effect = {
+	YUG = {set_politics = {ruling_party = communism}start_civil_war = {ideology = neutrality size = 0.4}
+	clr_country_flag = communist_uprising_mol
+	}
+	}
+}
+MOL_invite_yougoslavia = {
+	targets = {YUG} 
+	icon = eng_trade_unions_support
+	fire_only_once = yes
+	cost = 30
+	days_remove = 0
+	visible = {
+	YUG = {has_government = communism}
+	}
+		
+		
+	available = {
+	NOT = {has_country_flag = communist_uprising_mol}
+	YUG = {has_civil_war = no}
+	is_faction_leader = yes
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = communist_uprising_mol 
+	}
+	cancel_trigger = {
+
+	}
+	remove_effect = {
+	YUG = {country_event = {days = 1 id = moldova.20}}
+	clr_country_flag = communist_uprising_mol
+	}
+	
+}
+MOL_bulgaria_coup = {
+	targets = {BUL} 
+	icon = generic_ignite_civil_war
+	fire_only_once = yes
+	custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+		}
+		custom_cost_text = decision_cost_ie_1000
+	days_remove = 35
+	visible = {
+	NOT = {BUL = {has_government = communism}}
+	has_completed_focus = MOL_join_bulgaria
+		}
+		
+		
+	available = {
+	NOT = {is_in_faction_with = BUL} 
+	NOT = {has_country_flag = communist_uprising_mol}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = communist_uprising_mol
+	}
+	cancel_trigger = {
+	BUL = {has_government = communism}
+	}
+	remove_effect = {
+	clr_country_flag = communist_uprising_mol
+	BUL = {set_politics = {ruling_party = communism}start_civil_war = {ideology = neutrality size = 0.4}
+	}
+	}
+}
+MOL_invite_bulgaria = {
+	targets = {BUL} 
+	icon = eng_trade_unions_support
+	fire_only_once = yes
+	cost = 30
+	days_remove = 0
+	visible = {
+	BUL = {has_government = communism}
+		has_completed_focus = MOL_join_bulgaria
+	}
+		
+	available = {
+	NOT = {has_country_flag = communist_uprising_mol}
+	BUL = {has_civil_war = no}
+	is_faction_leader = yes
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = communist_uprising_mol
+	}
+	cancel_trigger = {
+
+	}
+	remove_effect = {
+	BUL = {country_event = {days = 1 id = moldova.20}}
+	clr_country_flag = communist_uprising_mol
+	}
+	}
+MOL_hungary_coup = {
+	targets = {HUN} 
+	icon = generic_ignite_civil_war
+	fire_only_once = yes
+	custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+		}
+		custom_cost_text = decision_cost_ie_1000
+	days_remove = 0
+	visible = {
+	NOT = {HUN = {has_government = communism}}
+	has_completed_focus = MOL_allign_rokoshi
+		}
+		
+		
+	available = {
+	NOT = {is_in_faction_with = HUN} 
+	NOT = {has_country_flag = communist_uprising_mol}
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = communist_uprising_mol
+	}
+	cancel_trigger = {
+	HUN = {has_government = communism}
+	}
+	remove_effect = {
+	clr_country_flag = communist_uprising_mol
+	HUN = {set_politics = {ruling_party = communism}start_civil_war = {ideology = neutrality size = 0.4}
+	}
+	}
+}
+MOL_invite_hungary = {
+	targets = {HUN} 
+	icon = eng_trade_unions_support
+	fire_only_once = yes
+	cost = 30
+	days_remove = 0
+	visible = {
+	HUN = {has_government = communism}
+	has_completed_focus = MOL_allign_rokoshi 
+	}
+		
+	available = {
+	NOT = {has_country_flag = communist_uprising_mol}
+	HUN = {has_civil_war = no}
+	is_faction_leader = yes
+	}
+		modifier = {
+		
+		}
+		complete_effect = {
+		set_country_flag = communist_uprising_mol
+	}
+	cancel_trigger = {
+
+	}
+	remove_effect = {
+	clr_country_flag = communist_uprising_mol
+	HUN = {country_event = {days = 1 id = moldova.20}}
+	}
+	}
+}

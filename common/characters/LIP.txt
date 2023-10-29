@@ -1,0 +1,33 @@
+characters = {
+	LIP_Konstantin = {
+		name= Konstantin
+		portraits = {
+			civilian={
+				large = GFX_portrait_LIP_Konstantin
+			}
+		}
+		country_leader = {
+
+			ideology = military_socialism
+			traits = { Veteran_Communist }
+			expire = "1995.1.1.1"
+		
+		}
+	}
+	LIP_Levt = {
+		name= LevTrotskiy
+		portraits = {
+			civilian={
+				large = GFX_portrait_LIP_Levt
+			}
+		}
+		country_leader = {
+
+			ideology = trozkism1
+			traits = { Veteran_Communist }
+			expire = "1995.1.1.1"
+		
+		}
+	}
+	
+	}

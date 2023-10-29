@@ -1,0 +1,38 @@
+state={
+	id=978
+	name="STATE_952" # Verhovina
+	manpower = 90258
+	
+	state_category = rural
+	
+	history={
+		victory_points = {
+			 13263 2
+		}
+		victory_points = {
+			13261 1
+		}
+		buildings = {
+		arms_factory = 1
+		}
+		1939.3.14 = {
+			owner = HUN
+			controller = HUN
+			remove_claim_by = HUN
+			add_core_of = HUN
+		}
+		owner = CRS
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = CRS
+		add_claim_by = HUN
+
+	}
+
+	provinces={
+	13263 13261
+	}
+
+	local_supplies=0.0 
+}

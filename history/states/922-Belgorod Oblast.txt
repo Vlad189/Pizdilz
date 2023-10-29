@@ -1,0 +1,30 @@
+state={
+	id=948
+	name="STATE_957" 
+	manpower = 164537
+	
+	state_category = town
+
+	history={
+		victory_points = {
+			534 2
+		}
+		
+		owner = LIP
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = LIP
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 1
+			}
+		}
+	}
+
+	provinces={
+		 534 6577 9489 9518 11500 
+	}
+
+	local_supplies=0.0 
+}

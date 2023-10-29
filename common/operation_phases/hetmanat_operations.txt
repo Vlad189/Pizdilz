@@ -1,0 +1,43 @@
+ukr_find_skoropadsky = {
+	name = ukr_find_skoropadsky
+	desc = ukr_find_skoropadsky_desc
+	outcome = ukr_find_skoropadsky
+	icon = "GFX_phase_infiltration_diplomatic_small"
+	picture = "GFX_phase_fake_intel_deliberate_leaks"
+}
+ukr_invite_skoropadsky = {
+	name = ukr_invite_skoropadsky
+	desc = ukr_invite_skoropadsky_desc
+	outcome = ukr_invite_skoropadsk
+	icon = "GFX_phase_targeted_sabotage_plant_explosives_small"
+	picture = "GFX_phase_collaboration_government_contact_military_officers"
+}
+ukr_kills_skoropadsky = {
+	name = ukr_kills_skoropadsky
+	desc = ukr_kills_skoropadsky_desc
+	outcome = ukr_kills_skoropadsky
+	icon = "GFX_phase_capture_tito_attack_small"
+	picture = "GFX_phase_capture_tito_attack"
+}
+
+cri_preparation_1 = {
+	name = cri_preparation_1
+	desc = cri_preparation_1_desc
+	outcome = cri_preparation_1
+	icon = "GFX_phase_infiltration_diplomatic_small"
+	picture = "GFX_phase_fake_intel_deliberate_leaks"
+}
+cri_preparation_2 = {
+	name = cri_preparation_2
+	desc = cri_preparation_2_desc
+	outcome = cri_preparation_2
+	icon = "GFX_phase_targeted_sabotage_plant_explosives_small"
+	picture = "GFX_phase_collaboration_government_contact_military_officers"
+}
+cri_preparation_3 = {
+	name = cri_preparation_3
+	desc = cri_preparation_3_desc
+	outcome = cri_preparation_3
+	icon = "GFX_phase_capture_tito_attack_small"
+	picture = "GFX_phase_capture_tito_attack"
+}

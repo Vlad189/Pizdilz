@@ -1,0 +1,63 @@
+UKR_operation_kill_scoropsdaky = { 
+	icon = GFX_operations_targeted_sabotage
+	map_icon = GFX_targeted_sabotage_map
+	name = operation_kill_scoropsdaky
+	desc = operation_kill_scoropsdaky_desc
+	priority = 10
+
+	days = 35
+	network_strength = 20
+
+	allowed = {
+		original_tag = UKR
+	}
+	available = { 
+		NOT = { has_war_with = POL }
+		NOT = { is_in_faction_with = POL }
+		network_strength = {
+			target = POL
+			#state = 90
+			value > 20
+		}
+	}
+	visible = {
+		FROM = {
+			tag = POL
+		}
+		NOT = {
+		has_country_flag = UKR_danilo_death
+		}
+		has_completed_focus = UKR_danil
+		10 = { is_owned_and_controlled_by = POL }
+		90 = { is_owned_and_controlled_by = POL }
+		88 = { is_owned_and_controlled_by = POL }
+	}
+
+	operatives = 1
+
+	equipment = {
+		infantry_equipment = 100
+		support_equipment = 25
+	}
+
+	risk_chance = 0
+	experience = 1
+	cost_multiplier = 0
+	#outcome_extra_chance = 0.25
+
+	outcome_execute = {
+				UKR = { country_event = ukraine.56 }
+				
+	}
+
+
+	phases = { #infiltration 
+		ukr_find_skoropadsky = { base = 100 }
+	}
+	phases = { 
+		ukr_invite_skoropadsky = { base = 100 }
+	}
+	phases = { 
+		ukr_kills_skoropadsky = { base = 100 }
+	}
+}

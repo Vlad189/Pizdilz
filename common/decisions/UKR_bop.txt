@@ -1,0 +1,958 @@
+UKR_balance_of_power_category = {
+	UKR_bop_support_nation = {
+
+		icon = GFX_decision_generic_political_discourse
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 25
+
+		#modifier = {
+		#	consumer_goods_factor = 0.03
+		#}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_power_balance
+				value = 0.1
+			}
+		}
+		days_remove = 20
+		days_re_enable = 70
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_support_petlura = { 
+
+		icon = GFX_decision_hol_radio_oranje
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 75
+
+		#modifier = {
+		#	consumer_goods_factor = 0.03
+		#}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_power_balance
+				value = 0.2
+			}
+		}
+		days_remove = 50
+		days_re_enable = 150
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_expand_rights_of_nation = {
+
+		icon = GFX_decision_eng_puppet_usa
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 50
+
+		#modifier = {
+		#	consumer_goods_factor = 0.03
+		#}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_power_balance
+				value = 0.15
+			}
+		}
+		days_remove = 35
+		days_re_enable = 90
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_support_vozhd = {
+
+		icon = GFX_decision_eng_blackshirt_speech
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 25
+
+		#modifier = {
+		#	consumer_goods_factor = 0.03
+		#}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_power_balance
+				value = -0.1
+			}
+		}
+		
+		days_remove = 20
+		days_re_enable = 70
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+UKR_bop_support_mihnovsky = {
+
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 50
+
+		#modifier = {
+		#	consumer_goods_factor = 0.03
+		#}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_power_balance
+				value = -0.2
+			}
+		}
+		
+		days_remove = 50
+		days_re_enable = 100
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_kritics_of_petlura = { 
+
+		icon = GFX_decision_generic_political_rally
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 25 
+
+		#modifier = {
+		#	consumer_goods_factor = 0.03
+		#}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_power_balance
+				value = -0.05
+			}
+		}
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	UKR_kill_old = { 
+
+		icon = GFX_decision_generic_fundraising
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+			has_country_flag = mazepa_will_be
+		}
+		
+		fire_only_once = yes
+		cost = 100
+
+		
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			country_event = ukraine.324
+		}
+		days_remove = 15
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+}
+UKR_petlura_balance_of_power_category = {
+UKR_bop_meet_politicans = {
+
+		icon = GFX_decision_generic_political_discourse
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 50
+
+		#modifier = {
+		#	consumer_goods_factor = 0.03
+		#}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = 0.15
+			}
+		}
+		days_remove = 40
+		days_re_enable = 90
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_meet_politican_persons = {
+
+		icon = GFX_decision_generic_operation
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 30
+
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = 0.1
+			}
+		}
+		days_remove = 25
+		days_re_enable = 75
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_newspaper_news = {
+
+		icon = GFX_decision_SWI_dismiss_council
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 25
+		modifier = {
+		political_power_gain = -0.05
+		}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = 0.1
+			}
+		}
+		days_remove = 30
+		days_re_enable = 75
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_socialist_compromis = {
+
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = yes
+		cost = 40
+
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = 0.05
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+				}
+		}
+
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_right_compromis = {
+
+		icon = GFX_decision_hol_war_on_pacifism
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = yes
+		cost = 40
+
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = 0.05
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+				}
+			add_stability = -0.02
+		}
+
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_parliament_speech = {
+
+		icon = GFX_decision_generic_speech
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 25
+		modifier = {
+		
+		}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = 0.1
+			}
+		}
+		days_remove = 65
+		days_re_enable = 100
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_new_laws = {
+
+		icon = GFX_decision_eng_trade_unions_support
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = yes
+		cost = 40
+
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = -0.1
+			}
+		}
+
+days_re_enable = 200
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_radio_speech = {
+
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 50
+		modifier = {
+		
+		}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = -0.15
+			}
+		}
+		days_remove = 50
+		days_re_enable = 110
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_kritical_speeches = {
+
+		icon = GFX_decision_eng_blackshirt_march
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 30
+		modifier = {
+		
+		}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = -0.1
+			}
+		}
+		days_remove = 25
+		days_re_enable = 90
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_big_buisnes = { 
+
+		icon = GFX_decision_generic_construction
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 65
+		modifier = {
+		
+		}
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = -0.15
+			}
+		}
+		days_remove = 65
+		days_re_enable = 150
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_kritics_of_petlura1 = { 
+
+		icon = GFX_decision_SOV_place_hq
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 25 
+
+		
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_petlura_power_balance
+				value = -0.05 
+			}
+		}
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+UKR_mihnovsky_balance_of_power_category = {
+	UKR_bop_kritics_of_mihnovsky = { 
+
+		icon = GFX_decision_generic_political_rally
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 25 
+
+		
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_mihnovsky_power_balance
+				value = -0.1
+			}
+			add_popularity = {
+			ideology = fascism
+			popularity = -0.05
+			}
+		}
+		
+		days_re_enable = 100
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_radio_kritics_of_mihnovsky = { 
+
+		icon = GFX_decision_hol_radio_oranje
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 50
+
+		
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_mihnovsky_power_balance
+				value = -0.15
+			}
+			
+		}
+		days_remove = 35
+		days_re_enable = 120
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_block_mihnovsky_decisions = { 
+
+		icon = GFX_decision_generic_civil_support
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+			power_balance_value = {
+				id = UKR_mihnovsky_power_balance
+				value < -0.4
+			}
+		}
+		
+		fire_only_once = no
+		cost = 30
+
+		
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_mihnovsky_power_balance
+				value = -0.1
+			}
+			
+		}
+		days_re_enable = 90
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_bop_new_anti_laws = { 
+
+		icon = GFX_decision_eng_trade_unions_demand
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 30
+
+		
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_mihnovsky_power_balance
+				value = -0.15
+			}
+			
+		}
+		days_remove = 50
+		days_re_enable = 200
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_people_in_ministrs = { 
+
+		icon = GFX_decision_generic_political_discourse
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 60
+
+		
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_mihnovsky_power_balance
+				value = 0.15
+			}
+			
+		}
+		days_remove = 50
+		days_re_enable = 150
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_kritic_ministrs = { 
+
+		icon = GFX_decision_generic_speech
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 25
+
+		
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_mihnovsky_power_balance
+				value = 0.05
+			}
+			
+		}
+	
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_kritic_chinovniks = { 
+
+		icon = GFX_decision_oppression
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 50
+
+		
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_mihnovsky_power_balance
+				value = 0.1
+			}
+			
+		}
+		days_remove = 15
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	UKR_treaty_with_busines = { 
+
+		icon = GFX_decision_eng_puppet_usa
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = yes
+		cost = 50
+
+		
+		
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = UKR_mihnovsky_power_balance
+				value = 0.15
+			}
+			
+		}
+		days_remove = 50
+
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+}

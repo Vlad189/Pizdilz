@@ -1,0 +1,26 @@
+state={
+	id=971
+	name="STATE_945" #Lemkivshina
+	manpower = 132301
+	
+	state_category = rural
+	
+	history={
+		victory_points = {
+			13267 1
+		}
+		owner = POL
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = POL
+add_core_of = UKR
+add_claim_by = CRS
+	}
+
+	provinces={
+		13270 13267 
+	}
+
+	local_supplies=0.0 
+}

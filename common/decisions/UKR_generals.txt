@@ -1,0 +1,348 @@
+UKR_generals_election = { 
+
+	###
+	
+	UKR_procossack_speech  = {
+
+		icon = GFX_decision_gre_investment_decisions
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+		}
+
+		days_remove = 15
+
+		days_re_enable = 40
+
+		cost = 30
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			add_to_variable = { ukr_cossack_support_var = 8 }
+			add_to_variable = { ukr_writers_support_var = -4 }
+			add_to_variable = { ukr_prorussian_support_var = -4 }
+			custom_effect_tooltip = add_8_cossack_support_tt
+			add_war_support = 0.02
+		}
+	}
+	UKR_praise_the_cossacks  = {
+
+		icon = GFX_decision_gre_paying_ifc_debt
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+		}
+
+		days_remove = 20
+
+		days_re_enable = 20
+
+		cost = 35
+
+		complete_effect = {
+		
+		}
+
+		remove_effect = { 
+			add_to_variable = { ukr_cossack_support_var = 4 }
+			add_to_variable = { ukr_writers_support_var = -2 }
+			add_to_variable = { ukr_prorussian_support_var = -2 }
+			custom_effect_tooltip = add_4_cossack_support_tt
+			add_war_support = 0.03
+			hidden_effect = {
+			random_list = {
+					50 = {
+						country_event = {id = ukraine.145 days = 21}
+					}
+					25 = {
+					country_event = {id = ukraine.146 days = 21}   
+					}
+					25 = {
+					country_event = {id = ukraine.147 days = 21}   
+					}
+				}
+			}
+		}
+	}
+	
+
+	### WRITERS
+
+	UKR_prowriters_speech  = {
+
+		icon = GFX_decision_hol_attract_foreign_investors
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+		}
+
+		days_remove = 15
+
+		days_re_enable = 40
+
+		cost = 30
+
+	
+		remove_effect = {
+			add_to_variable = { ukr_writers_support_var = 8 }
+			add_to_variable = { ukr_cossack_support_var = -4 }
+			add_to_variable = { ukr_prorussian_support_var = -4 }
+			custom_effect_tooltip = add_8_writers_support_tt
+			add_stability = 0.02
+		}
+	}
+	UKR_praise_the_writers  = {
+
+		icon = GFX_decision_generic_speech
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+		}
+
+		days_remove = 15
+
+		days_re_enable = 20
+
+		cost = 35
+
+		complete_effect = {
+			set_country_flag = KUB_internal_affairs_ongoing_flag
+		}
+
+		remove_effect = {
+			add_to_variable = { ukr_writers_support_var = 4 }
+			add_to_variable = { ukr_cossack_support_var = -2 }
+			add_to_variable = { ukr_prorussian_support_var = -2 }
+			custom_effect_tooltip = add_4_writers_support_tt
+			add_stability = 0.03
+			hidden_effect = {
+			random_list = {
+					25 = {
+						country_event = {id = ukraine.145 days = 21}
+					}
+					50 = {
+					country_event = {id = ukraine.146 days = 21}   
+					}
+					25 = {
+					country_event = {id = ukraine.147 days = 21}    
+					}
+				}
+			}
+		}
+	}
+	
+
+
+
+	UKR_prorussians_speech  = {
+
+		icon = GFX_decision_generic_political_discourse
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+		}
+
+		days_remove = 7
+
+		days_re_enable = 40
+
+		cost = 15
+
+		complete_effect = {
+	
+		}
+
+		remove_effect = {
+			add_to_variable = { ukr_prorussian_support_var = 8 }
+			add_to_variable = { ukr_cossack_support_var = -4 }
+			add_to_variable = { ukr_writers_support_var = -4 }
+			custom_effect_tooltip = add_8_prorussians_support_tt
+			add_command_power = 5
+		}
+	}
+	UKR_praise_the_prorussians  = {
+
+		icon = GFX_decision_SWI_dismiss_council   
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+		}
+
+		visible = {
+		}
+
+		days_remove = 7
+
+		days_re_enable = 20
+
+		cost = 10
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			add_to_variable = { ukr_prorussian_support_var = 4 }
+			add_to_variable = { ukr_cossack_support_var = -2 }
+			add_to_variable = { ukr_writers_support_var = -2 }
+			custom_effect_tooltip = add_4_prorussian_support_tt
+			add_command_power = 5
+			hidden_effect = {
+			random_list = {
+					25 = {
+						country_event = {id = ukraine.145 days = 21}
+					}
+					25 = {
+					country_event = {id = ukraine.146 days = 21}   
+					}
+					50 = {
+					country_event = {id = ukraine.147 days = 21}    
+					}
+				}
+			}
+		}
+	}
+	UKR_oppose_the_prorussians  = {
+
+		icon = GFX_decision_hol_war_on_pacifism
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+		}
+
+		visible = {
+		}
+
+		days_remove = 7
+
+		days_re_enable = 20
+
+		cost = 10
+
+		complete_effect = {
+		
+		}
+
+		remove_effect = {
+			add_to_variable = { ukr_prorussian_support_var = -4 }
+			add_to_variable = { ukr_cossack_support_var = 2 }
+			add_to_variable = { ukr_writers_support_var = 2 }
+			custom_effect_tooltip = add_minus_4_prorussians_support_tt
+			custom_effect_tooltip = add_2_cossack_support_tt
+			custom_effect_tooltip = add_2_writers_support_tt
+			add_command_power = -7
+		}
+	}
+	UKR_oppose_the_cossacks  = {
+
+		icon = GFX_decision_generic_political_rally
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+		}
+
+		days_remove = 7
+
+		days_re_enable = 20
+
+		cost = 20
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			add_to_variable = { ukr_cossack_support_var = -4 }
+			add_to_variable = { ukr_writers_support_var = 2 }
+			add_to_variable = { ukr_prorussian_support_var = 2 }
+			custom_effect_tooltip = add_minus_4_cossack_support_tt
+			custom_effect_tooltip = add_2_writers_support_tt
+			custom_effect_tooltip = add_2_prorussian_support_tt
+			add_war_support = -0.03
+		}
+	}
+	UKR_oppose_the_writers = {
+
+		icon = GFX_decision_SWI_consolidate_council_power  
+
+		ai_will_do = {
+			base = 2
+		}
+
+		available = {
+		}
+
+		visible = {
+		}
+
+		days_remove = 7
+
+		days_re_enable = 20
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = KUB_internal_affairs_ongoing_flag
+		}
+
+		remove_effect = {
+			add_to_variable = { ukr_writers_support_var = -4 }
+			add_to_variable = { ukr_cossack_support_var = 2 }
+			add_to_variable = { ukr_prorussian_support_var = 2 }
+			custom_effect_tooltip = add_minus_4_writers_support_tt
+			custom_effect_tooltip = add_2_cossack_support_tt
+			custom_effect_tooltip = add_2_prorussian_support_tt
+			add_stability = -0.03
+		}
+	}
+}

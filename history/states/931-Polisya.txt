@@ -1,0 +1,25 @@
+state={
+	id=957
+	name="STATE_931"
+
+	history={
+		owner = POL
+		
+		buildings = {
+			infrastructure = 3
+			
+		}
+		add_core_of = POL
+		add_core_of = UKR
+
+	}
+
+	provinces={
+		9520 3496 11503 535 6579 
+	}
+	manpower=585600
+	buildings_max_level_factor=1.000
+	state_category=town
+
+	local_supplies=0.0 
+}

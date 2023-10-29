@@ -1,0 +1,40 @@
+
+state={
+	id=228
+	name="STATE_228" # Luhansk
+	manpower = 2167411
+	
+	state_category = town
+
+	resources={
+		steel=8
+	}
+
+	history={
+		owner = SOV
+		victory_points = {
+			9461 5
+		}
+		victory_points = {
+			11487 1
+		}
+		victory_points = {
+			6519 2
+		}
+		victory_points = {
+			9446 1
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		add_core_of = SOV
+		add_core_of = UKR
+	}
+
+	provinces={
+		523 570 6505 6519 9461 9476 11513 9446 11487
+	}
+
+	local_supplies=0.0 
+}

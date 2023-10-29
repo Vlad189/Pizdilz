@@ -1,0 +1,58 @@
+MOL_prepare_war_with_romania = {
+icon = GFX_decision_category_border_war
+  allowed = {
+    tag = MOL
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = MOL_support_moldavian_organizations
+	NOT = {has_war_with = ROM}
+  }
+}
+MOL_english_land_lease = {
+icon = GFX_decision_category_generic_democracy
+  allowed = {
+    tag = MOL
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = MOL_oil_for_guns
+	NOT = {has_war_with = ENG}
+  }
+}
+MOL_busines_question = {
+icon = GFX_decision_category_gre_investment_decisions
+  allowed = {
+    tag = MOL
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_country_flag = big_busines_question
+  }
+}
+MOL_kishenev_pact_allience = {
+icon = GFX_decision_category_generic_formable_nations
+  allowed = {
+    tag = MOL
+  }
+
+  priority = {
+    base = 20
+  }
+  
+    visible = { 
+	has_completed_focus = MOL_allign_tito
+  }
+}

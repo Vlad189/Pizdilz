@@ -1,0 +1,187 @@
+focus_tree = {
+	id = FocusTree0
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = 
+		}
+	}
+	default = no
+	focus = {
+		id = FIN_1
+		icon = GFX_goal_generic_CAS
+		cost = 0
+		x = 7
+		y = 0
+
+	}
+	focus = {
+		id = FIN_13
+		icon = GFX_goal_generic_construction
+		cost = 0
+		x = 16
+		y = 1
+
+	}
+	focus = {
+		id = FIN_2
+		icon = GFX_goal_generic_attack_allies
+		cost = 0
+		prerequisite = {
+			focus = FIN_1
+		}
+		x = 7
+		y = 1
+
+	}
+	focus = {
+		id = FIN_3
+		icon = GFX_goal_generic_air_fighter
+		cost = 0
+		prerequisite = {
+			focus = FIN_2
+		}
+		x = 7
+		y = 2
+
+	}
+	focus = {
+		id = FIN_4
+		icon = GFX_goal_generic_military_deal
+		cost = 0
+		prerequisite = {
+			focus = FIN_3
+		}
+		x = 1
+		y = 2
+
+	}
+	focus = {
+		id = FIN_5
+		icon = GFX_goal_generic_military_deal
+		cost = 0
+		prerequisite = {
+			focus = FIN_3
+		}
+		x = 4
+		y = 2
+
+	}
+	focus = {
+		id = FIN_10
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 0
+		prerequisite = {
+			focus = FIN_3
+		}
+		x = 7
+		y = 3
+
+	}
+	focus = {
+		id = FIN_6
+		icon = GFX_goal_generic_military_sphere
+		cost = 0
+		prerequisite = {
+			focus = FIN_5
+		}
+		x = 4
+		y = 3
+
+	}
+	focus = {
+		id = FIN_7
+		icon = GFX_goal_generic_military_sphere
+		cost = 0
+		prerequisite = {
+			focus = FIN_4
+		}
+		x = 1
+		y = 3
+
+	}
+	focus = {
+		id = FIN_8
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 0
+		prerequisite = {
+			focus = FIN_7
+		}
+		mutually_exclusive = {
+			focus = FIN_9
+		}
+		x = 1
+		y = 4
+
+	}
+	focus = {
+		id = FIN_9
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 0
+		prerequisite = {
+			focus = FIN_6
+		}
+		mutually_exclusive = {
+			focus = FIN_8
+		}
+		x = 4
+		y = 4
+
+	}
+	focus = {
+		id = FIN_11
+		icon = GFX_goal_generic_position_armies
+		cost = 0
+		prerequisite = {
+			focus = FIN_10
+		}
+		x = 9
+		y = 4
+
+	}
+	focus = {
+		id = FIN_12
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 0
+		prerequisite = {
+			focus = FIN_10
+		}
+		x = 7
+		y = 4
+
+	}
+	focus = {
+		id = FIN_14
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 0
+		prerequisite = {
+			focus = FIN_13
+		}
+		x = 16
+		y = 2
+
+	}
+	focus = {
+		id = FIN_15
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 0
+		prerequisite = {
+			focus = FIN_14
+		}
+		x = 16
+		y = 3
+
+	}
+	focus = {
+		id = FIN_16
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 0
+		prerequisite = {
+			focus = FIN_15
+		}
+		x = 16
+		y = 4
+
+	}
+}

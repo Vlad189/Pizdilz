@@ -1,0 +1,32 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_sp_event_window"
+		textureFile = "/gfx/Super_Event_Window.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_sp_event_close_button"
+		textureFile = "/gfx/Super_Event_Close_Button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_sp_event_underlay"
+		textureFile = "/gfx/Super_Event_Underlay.dds"
+	}
+	spriteType = {
+		name = "GFX_sp_event_gavrilovputch"
+		textureFile = "/gfx/sp_events/gavrilovputch.dds"
+	}
+	spriteType = {
+		name = "GFX_sp_event_vtorzhenee"
+		textureFile = "/gfx/sp_events/vtorzhenee.dds"
+	}
+spriteType = {
+		name = "GFX_sp_event_POV_Rostov_Taken"
+		textureFile = "/gfx/sp_events/vzityerostova.dds"
+	}
+spriteType = {
+		name = "GFX_sp_event_POV_Vangergrad_Taken"
+		textureFile = "/gfx/sp_events/vzitievangergrada.dds"
+	}
+}

@@ -1,0 +1,41 @@
+state=
+{
+	id=947
+	name="Transnistria"
+	manpower = 235913
+	
+	state_category = town
+	
+	history=
+	{
+	victory_points = {
+	13257 5
+	}
+		owner = MOL
+		buildings = {
+			air_base = 1
+		}
+		buildings = {
+			infrastructure = 2
+			13258 = {
+				bunker = 1
+
+			}
+			13259 = {
+				bunker = 1
+
+			}
+			13257 = {
+				bunker = 2
+
+			}
+		}
+		add_core_of = MOL
+		add_core_of = UKR
+	}
+	provinces=
+	{
+	13258 13259 13257}
+
+	local_supplies=4.0 
+}

@@ -1,0 +1,17 @@
+characters={
+
+	PNF_Vladimir = { 
+		name = Vladimir
+		portraits = {
+			civilian = {
+				large = GFX_portrait_PNF_Vladimir
+			}
+		}
+		country_leader = {
+			ideology = absolute_monarchy
+			traits = {divisive_absolute_monarch}
+			expire = "1995.1.1.1"
+
+		}
+	}
+	}

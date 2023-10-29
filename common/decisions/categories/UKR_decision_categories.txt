@@ -1,0 +1,686 @@
+UKR_integrate = {
+
+	icon = border_war
+
+	
+	allowed = {
+		tag = UKR
+	}
+
+	priority = {
+		base = 6
+	}
+
+	visible = {
+		has_completed_focus = UKR_mol
+		is_subject = no 
+	}
+}
+UKR_west_ukraine = {
+
+	icon = border_war
+
+	
+	allowed = {
+		tag = UKR
+	}
+
+	priority = {
+		base = 6
+	}
+
+	visible = {
+		GER = {controls_state = 91}
+	}
+}
+UKR_crimea = {
+
+	icon = UKR_crimea
+
+	
+	allowed = {
+		tag = UKR
+	}
+
+	priority = {
+		base = 10
+	}
+
+	visible = {
+		has_completed_focus = UKR_finish_with_crimea
+		is_subject = no 
+	}
+}
+UKR_ally = {
+icon = UKR_allience
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 8
+  }
+  
+    visible = {
+    has_completed_focus = UKR_allience
+    is_faction_leader = yes 
+  }
+}
+UKR_moldavian_question = {
+icon = moldavian_question
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 9
+  }
+  
+    visible = {
+    has_completed_focus = UKR_coup
+	MOL = {
+	exists = yes
+	}
+  }
+}
+UKR_crimsov = {
+icon = border_war
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 5
+  }
+  
+    visible = {
+	OR = {
+    has_completed_focus = UKR_warcri
+	has_completed_focus = UKR_crispeach
+	}
+  }
+}
+UKR_polcom = {
+icon = border_conflicts
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 5
+  }
+  
+    visible = {
+	POL = {
+	exists = yes
+	}
+	is_subject = no
+    has_completed_focus = UKR_polcoup
+  }
+}
+UKR_factories = {
+icon = SOV_permanent_revolution
+picture = GFX_decision_cat_UKR_factory
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 12
+  }
+  
+    visible = {
+	is_subject = no
+    has_completed_focus = UKR_workers
+  }
+}
+UKR_western = {
+icon = border_conflicts
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 12
+  }
+  
+    visible = {
+	is_subject = no
+    has_completed_focus = UKR_WKR
+  }
+}
+UKR_war_sov = {
+icon = ger_reichskommissariats
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 12
+  }
+  
+    visible = {
+    has_completed_focus = UKR_prepare_rebbils
+  }
+}
+UKR_kievan_rus = {
+icon = GFX_decision_category_generic_formable_nations
+picture = GFX_decision_cat_UKR_kiev
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+    has_completed_focus = UKR_panslavic_politics
+  }
+}
+UKR_austrian_guarantees = {
+icon = GFX_decision_cat_austrian_protection  
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 16
+  }
+  
+    visible = {
+    has_completed_focus = UKR_international_support
+  }
+}
+UKR_czecoslovacian_crisis = {
+icon = GFX_decision_category_border_war
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 20
+  }
+  
+    visible = {
+	NOT = { HUN = {controls_state = 73}}
+	NOT = { UKR = {controls_state = 73}}
+	NOT = { AUS = {controls_state = 73}}
+    GER = {
+	has_completed_focus = GER_demand_sudetenland
+	}
+	UKR = {controls_state = 89}
+  }
+}
+UKR_karpatian_integration = {
+icon = GFX_decision_category_generic_political_actions
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	controls_state = 73
+  }
+}
+UKR_balance_of_power_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = UKR
+	}
+	
+	priority = 90
+	
+	visible = {
+		has_completed_focus = UKR_petlura
+		NOT = {has_completed_focus = UKR_new_constitution}
+		NOT = {has_completed_focus = UKR_new_president}
+	}
+}
+UKR_petlura_balance_of_power_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = UKR
+	}
+	
+	priority = 95
+	
+	visible = {
+		has_completed_focus = UKR_new_constitution
+	}
+}
+UKR_mihnovsky_balance_of_power_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = UKR
+	}
+	
+	priority = 96
+	
+	visible = {
+		has_completed_focus = UKR_new_president
+	}
+}
+UKR_nonagr_pact = {
+icon = GFX_decision_category_generic_political_actions
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 15
+  }
+  
+   visible = {
+	NOT = {has_war_with = SOV}
+	OR = {
+	SOV = {
+          is_justifying_wargoal_against = UKR
+		  }
+		  SOV = {
+		  has_wargoal_against = UKR
+		  }
+        }
+	}
+}
+UKR_christian_mobilization = {
+icon = GFX_decision_category_usa_intervention_mandate
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = UKR_christian_nationalism
+  }
+}
+UKR_teritory_integration = {
+icon = GFX_decision_category_border_war
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 22
+  }
+  
+    visible = {
+	
+  }
+}
+UKR_hisotry = {
+icon = GFX_decision_category_generic_formable_nations
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 35
+  }
+  
+    visible = {
+	NOT = {has_country_flag = ukr_cancel_hist}
+  }
+}
+UKR_personal_war_comapies = {
+icon = GFX_decision_cat_ankap_factories
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 14
+  }
+  
+    visible = {
+	has_completed_focus = UKR_personal_war_comapies
+  }
+}
+UKR_war_with_partisans = {
+icon = GFX_decision_category_SOV_permanent_revolution
+  allowed = {
+    tag = UKR
+  }
+
+  priority = {
+    base = 21
+  }
+  
+    visible = {
+	has_completed_focus = UKR_war_with_partisans
+  }
+}
+UKR_generals_election = {
+	icon = GFX_decision_cat_leader_question   
+  allowed = {
+    tag = UKR
+  }
+	picture = GFX_decision_cat_generals_fight
+  priority = {
+    base = 21
+  }
+  
+    visible = {
+	has_completed_focus = UKR_new_better_ukraine
+	NOT = {
+	has_completed_focus = UKR_tytynnik_in_power
+	has_completed_focus = UKR_shuckhevich_konstitution
+	has_completed_focus = UKR_bolbochan_konstitution
+	}
+  }
+}
+UKR_hrivna_reformations = {
+	icon = GFX_decision_category_gre_investment_decisions 
+	picture = GFX_decision_cat_nacbank
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 21
+  }
+  
+    visible = {
+	has_completed_focus = UKR_hrivna_reforms
+	NOT = {
+	has_idea = UKR_hrivna_5
+	has_country_flag = UKR_reform_plan_finished
+	}
+  }
+}
+UKR_social_liberal_department = {
+	icon = GFX_decision_category_SWI_federal_council
+
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 30
+  }
+  
+    visible = {
+	has_completed_focus = UKR_dpsd
+	NOT = {
+	check_variable = { ukr_jorgism_support_var > 99 }  
+	}
+  }
+}
+UKR_integrate_upa = {
+	icon = GFX_decision_category_saf_anti_colonialist_crusade
+
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 30
+  }
+  
+    visible = {
+	has_completed_focus = UKR_defeat_banderovci
+  }
+}
+UKR_promote_bandera = {
+	icon = GFX_decision_category_generic_foreign_policy
+
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 30
+  }
+  
+    visible = {
+	has_completed_focus = UKR_upa_integration
+	NOT = {
+	has_country_flag = bandera_enabled
+	}
+  }
+}
+UKR_soviet_war_with_finland = {
+	icon = GFX_decision_category_border_war
+	picture = GFX_decision_cat_UKR_winter_war
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	FIN = {has_war_with = SOV}
+	NOT = {is_in_faction_with = SOV}
+  }
+}
+UKR_anarchist_civil_war = {
+	icon = GFX_decision_category_generic_crisis
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = UKR_anarchists
+	has_civil_war = yes
+  }
+}
+UKR_volunteers_fire = {
+	icon = GFX_decision_category_ger_military_buildup
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = UKR_dsho
+  }
+}
+UKR_reintegration = {
+	icon = GFX_decision_category_border_war
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = UKR_demilitarize_other_lands
+  }
+}
+UKR_cosmic_programm = {
+	icon = GFX_decision_category_hol_war_on_pacifism
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 15
+  }
+  scripted_gui = GFX_communist_batle                                                          
+    visible = {
+	has_country_flag = very_fat_dick
+  }
+}
+UKR_war_with_usr = {
+	icon = GFX_decision_category_SOV_civil_war
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 10
+  }
+                                                         
+    visible = {
+	has_completed_focus = UKR_liberation_ukrainian_people
+	NOT = {USR = {exists = yes}}
+	NOT = {has_war_with = USR}
+	NOT = {controls_state = 221}   
+  }
+}
+UKR_usr_annexation = {
+	icon = GFX_decision_category_SOV_paranoia
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 10
+  }
+                                                         
+    visible = {
+	USR = {exists = yes}
+	has_completed_focus = UKR_liberation_ukrainian_people
+	NOT = {has_war_with = USR}
+  }
+}
+SOV_usr_annexation = {
+	icon = GFX_decision_category_SOV_paranoia
+  allowed = {
+    tag = SOV
+  }
+	
+  priority = {
+    base = 10
+  }
+                                                         
+    visible = {
+	USR = {exists = yes}
+	UKR = {has_completed_focus = UKR_liberation_ukrainian_people}
+	NOT = {UKR = {has_war_with = USR}
+  }
+}
+}
+UKR_communist_bop = {
+	icon = GFX_decision_category_SOV_paranoia
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 10
+  }
+                                                         
+    visible = {
+	has_completed_focus = UKR_workers
+  }
+}
+UKR_fascist_bop = {
+	icon = GFX_decision_category_SOV_paranoia
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 10
+  }
+                                                         
+    visible = {
+	has_completed_focus = UKR_reichcomissariat_ukraine
+  }
+}
+UKR_take_ss = {
+	icon = GFX_decision_category_generic_fascism
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 10
+  }
+                                                         
+    visible = {
+	has_completed_focus = UKR_ss_state_doctrine
+  }
+}
+UKR_german_investitions_decision = {
+	icon = GFX_decision_category_SOV_merge_designers
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 15
+  }
+                                                         
+    visible = {
+	has_completed_focus = UKR_german_lebensraum
+  }
+}
+UKR_german_civil_war = {
+	icon = GFX_decision_category_power_struggle
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 21
+  }
+                                                         
+    visible = {
+	has_completed_focus = UKR_connect_with_vilhelm_III
+	NOT = {has_completed_focus = UKR_destroy_germany}
+  }
+}
+UKR_war_with_nkvd1= {
+	icon = GFX_decision_category_SOV_paranoia
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 21
+  }
+                                                         
+    visible = {
+	has_idea = idea_UKR_nkvd
+  }
+}
+UKR_auctions= {
+	icon = GFX_decision_category_SOV_merge_designers
+  allowed = {
+    tag = UKR
+  }
+	
+  priority = {
+    base = 25
+  }
+                                                         
+    visible = {
+	has_completed_focus = UKR_auctions_rassledovanie
+  }
+}
+UKR_federalization_decisions = {
+	icon = GFX_decision_category_SOV_merge_designers       
+	
+  allowed = {
+    tag = UKR
+  }
+	
+                                     
+    scripted_gui = TNO_Ukraine_GUI_Main     
+	priority = 100
+    visible = {
+	 has_completed_focus = UKR_make_federalization
+  }
+}

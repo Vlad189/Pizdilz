@@ -1,0 +1,46 @@
+CRS_autonomy_bop = {
+icon = GFX_decision_category_border_war
+  allowed = {
+    tag = CRS
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	NOT = {has_completed_focus = CRS_stabilize_government}
+	NOT = {has_country_flag = crs_reload_focus}
+  }
+}
+CRS_czech_investitions_decision = {
+icon = GFX_decision_category_gre_investment_decisions
+  allowed = {
+    tag = CRS
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = CRS_czech_investments
+	is_subject_of = CZE
+
+  }
+}
+CRS_ukrainization_programm1 = {
+icon = GFX_decision_category_SOV_propaganda
+  allowed = {
+    tag = CRS
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = CRS_ukrainization_programm
+	is_subject_of = CZE
+  }
+}

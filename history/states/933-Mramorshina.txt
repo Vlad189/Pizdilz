@@ -1,0 +1,21 @@
+
+state={
+	id=959
+	name="STATE_933"
+	manpower=252700
+	
+	state_category = town
+	
+	history={
+		owner = ROM
+		add_core_of = ROM
+		add_core_of = TRA
+		add_claim_by = CRS
+	}
+
+	provinces={
+		9704 746
+	}
+
+	local_supplies=9.0 
+}

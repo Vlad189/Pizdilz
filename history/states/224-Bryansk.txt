@@ -1,0 +1,26 @@
+
+state={
+	id=224
+	name="STATE_224"
+	manpower = 1257567
+	
+	state_category = town
+
+	history={
+		owner = LIP
+		victory_points = {
+			3335 10
+		}
+		buildings = {
+			infrastructure = 3
+			air_base = 2
+		}
+		add_core_of = LIP
+	}
+
+	provinces={
+		  3226 3306 3335 3390 6305 6386 6411
+	}
+
+	local_supplies=0.0 
+}

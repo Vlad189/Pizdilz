@@ -1,0 +1,31 @@
+state={
+	id=937
+	name="STATE_937"
+	manpower = 622000
+	
+	state_category = rural
+	
+	history={
+		victory_points = {
+			6604 3
+		}
+		owner = CZE
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		add_core_of = CRS
+
+		1939.3.14 = {
+			owner = SLO
+			controller = SLO
+			add_core_of = SLO
+		}
+	}
+
+	provinces={
+		 6604 6586 13271 
+	}
+
+	local_supplies=0.0 
+}

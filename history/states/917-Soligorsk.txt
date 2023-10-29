@@ -1,0 +1,25 @@
+state={
+	id=943
+	name="Saligorsk" 
+	manpower = 541084
+	
+	state_category = rural
+
+	history={
+		victory_points = {
+			 3203 1
+		}
+		owner = SOV
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = SOV
+		add_core_of = BLR
+	}
+
+	provinces={
+		 215 3203 3507 9249 
+	}
+
+	local_supplies=0.0 
+}

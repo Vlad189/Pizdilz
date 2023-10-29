@@ -1,0 +1,20 @@
+UKR_dksr_military_devastation = {
+	enable = { always = yes }
+
+	icon = GFX_region_level_up
+	
+	recruitable_population_factor = 0.35
+	state_resources_factor = 0.5
+	state_production_speed_buildings_factor = 0.25
+	local_factories = 0.50
+}
+UKR_state_bad_relation = {
+	enable = { always = yes }
+
+	icon = GFX_state_down
+	
+	recruitable_population_factor = -0.35
+	state_resources_factor = -0.5
+	state_production_speed_buildings_factor = -0.25
+	local_factories = -0.50
+}

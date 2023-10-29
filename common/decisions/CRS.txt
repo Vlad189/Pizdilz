@@ -1,0 +1,815 @@
+CRS_autonomy_bop = { 
+CRS_critics_cibere = { 
+
+		icon = GFX_decision_generic_political_discourse
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 40
+		days_remove = 30
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRS_power_balance
+				value = 0.1
+			}
+			
+		}
+		
+		days_re_enable = 30
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	CRS_lesorub_strikes = { 
+
+		icon = GFX_decision_generic_political_rally
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 45
+		days_remove = 35
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRS_power_balance
+				value = 0.15
+			}
+			add_stability = -0.05
+		}
+		
+		days_re_enable = 40
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	CRS_anti_cebere_agitation = { 
+
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 20
+		days_remove = 15
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRS_power_balance
+				value = 0.05
+			}
+
+		}
+		
+		days_re_enable = 20
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	CRS_allign_one_party = { 
+
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 35
+		days_remove = 25
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRS_power_balance
+				value = 0.1
+			}
+
+		}
+		
+		days_re_enable = 35
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRS_unity_idea = { 
+
+		icon = GFX_decision_POL_organize_strike_two 
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = yes
+		cost = 75
+		days_remove = 0
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRS_power_balance
+				value = 0.15
+			}
+
+		}
+		
+	
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRS_destory_crnp = { 
+
+		icon = GFX_decision_eng_support_imperialist_coup 
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+			power_balance_value = {
+				id = CRS_power_balance
+				value > 0.49
+			}
+		}
+		
+		fire_only_once = yes
+		cost = 100
+		days_remove = 0
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			country_event = rusins.3
+		}
+		
+	
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	CRS_more_money_for_workers = { 
+
+		icon = GFX_decision_gre_investment_decisions
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 30
+		days_remove = 40
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		modifier = {consumer_goods_factor = 0.05}
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRS_power_balance
+				value = -0.1
+			}
+
+		}
+		
+		days_re_enable = 25
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	CRS_money_on_infrastructure = { 
+
+		icon = GFX_decision_generic_industry
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 35
+		days_remove = 30
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		modifier = {}
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRS_power_balance
+				value = -0.05
+			}
+			capital_scope = {
+			add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				}
+		}
+		
+		days_re_enable = 40
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	CRS_parliament_cze = { 
+
+		icon = GFX_decision_eng_trade_unions_support
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 40
+		days_remove = 35
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		modifier = {}
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRS_power_balance
+				value = -0.15
+			}
+			add_autonomy_ratio = {
+    value = -0.03
+   localization = CRS_parliament_cze
+}
+		}
+		
+		days_re_enable = 50
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	CRS_cebere_speeach = { 
+
+		icon = GFX_decision_generic_speech
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = UKR_have_active_bop_decisions }
+		}
+		
+		fire_only_once = no
+		cost = 20
+		days_remove = 15
+		complete_effect = {
+			set_country_flag = UKR_have_active_bop_decisions
+			
+		}
+		modifier = {}
+		remove_effect = {
+			clr_country_flag = UKR_have_active_bop_decisions
+			add_power_balance_value = {
+				id = CRS_power_balance
+				value = -0.05
+			}
+			
+		}
+		
+		days_re_enable = 20
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}
+CRS_czech_investitions_decision = {
+	CRS_ask_for_autonomy = { 
+
+		icon = GFX_decision_eng_trade_unions_demand
+
+		visible = {
+		}
+
+		available = {
+			NOT = { has_country_flag = investition }
+		}
+		
+		fire_only_once = no
+		cost = 20
+		days_remove = 50
+		complete_effect = {
+			set_country_flag = investition
+			
+		}
+		modifier = {consumer_goods_factor = 0.08 political_power_gain = -0.05}
+		remove_effect = {
+			clr_country_flag = investition
+			add_autonomy_ratio = {
+		value = 0.1
+   localization = CRS_ask_for_autonomy
+		}
+		}
+		
+		days_re_enable = 20
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	CRS_invest_to_mainland = { 
+
+		icon = GFX_decision_generic_construction
+
+		visible = {
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 73
+}
+}
+		available = {
+			NOT = { has_country_flag = investition }
+			controls_state = 73
+		}
+		
+		fire_only_once = yes
+		cost = 35
+		days_remove = 35
+		complete_effect = {
+			set_country_flag = investition
+			
+		}
+		modifier = {}
+		remove_effect = {
+			clr_country_flag = investition
+			73 = {
+			add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_autonomy_ratio = {
+		value = -0.02
+   localization = CRS_invest_to_mainland
+		}
+		}
+		
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	CRS_invest_to_tyachiv = { 
+
+		icon = GFX_decision_generic_construction
+
+		visible = {
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 951
+}
+}
+		available = {
+			NOT = { has_country_flag = investition }
+			controls_state = 951
+		}
+		
+		fire_only_once = yes
+		cost = 35
+		days_remove = 35
+		complete_effect = {
+			set_country_flag = investition
+			
+		}
+		modifier = {}
+		remove_effect = {
+			clr_country_flag = investition
+			951 = {
+			add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			add_autonomy_ratio = {
+		value = -0.02
+   localization = CRS_invest_to_mainland
+		}
+		}
+		
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	CRS_invest_to_verhovina = { 
+
+		icon = GFX_decision_generic_construction
+
+		visible = {
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 952
+}
+}
+		available = {
+			NOT = { has_country_flag = investition }
+			controls_state = 952
+		}
+		
+		fire_only_once = yes
+		cost = 50
+		days_remove = 45
+		complete_effect = {
+			set_country_flag = investition
+			
+		}
+		modifier = {}
+		remove_effect = {
+			clr_country_flag = investition
+			952 = {
+			add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+		add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			add_autonomy_ratio = {
+		value = -0.03
+   localization = CRS_invest_to_mainland
+		}
+		}
+		
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	CRS_invest_to_rahov = { 
+
+		icon = GFX_decision_generic_merge_plant_tank
+
+		visible = {
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 951
+}
+}
+		available = {
+			NOT = { has_country_flag = investition }
+			controls_state = 951
+		}
+		
+		fire_only_once = yes
+		cost = 45
+		days_remove = 40
+		complete_effect = {
+			set_country_flag = investition
+			
+		}
+		modifier = {}
+		remove_effect = {
+			clr_country_flag = investition
+			951 = {
+			add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+		}	
+			add_autonomy_ratio = {
+		value = -0.03
+   localization = CRS_invest_to_mainland
+		}
+		
+	}
+}
+CRS_defend_ungvar = { 
+
+		icon = GFX_decision_generic_mountain_fortification
+
+		visible = {
+		}
+		highlight_states = {
+ highlight_state_targets = {
+				state = 950
+}
+}
+		available = {
+			NOT = { has_country_flag = investition }
+			controls_state = 950
+		}
+		
+		fire_only_once = yes
+		cost = 40
+		days_remove = 35
+		complete_effect = {
+			set_country_flag = investition
+			
+		}
+		modifier = {}
+		remove_effect = {
+			clr_country_flag = investition 
+			950 = {
+		add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+				}
+		}	
+			add_autonomy_ratio = {
+		value = -0.02
+   localization = CRS_invest_to_mainland
+		}
+		
+	}
+}
+CRS_defend_ungvar = { 
+
+		icon = GFX_decision_generic_mountain_fortification
+
+		visible = {
+		}
+		
+		available = {
+			NOT = { has_country_flag = investition }
+			controls_state = 950
+		}
+		
+		fire_only_once = yes
+		cost = 40
+		days_remove = 35
+		complete_effect = {
+			set_country_flag = investition
+			
+		}
+		modifier = {}
+		remove_effect = {
+			clr_country_flag = investition 
+			950 = {
+		add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+				}
+			
+			add_autonomy_ratio = {
+		value = -0.02
+   localization = CRS_invest_to_mainland
+		}
+		}
+		
+		
+	}
+}
+CRS_carpathian_jd = { 
+
+		icon = GFX_decision_generic_industry
+
+		visible = {
+		}
+		
+		available = {
+			NOT = { has_country_flag = investition }
+			controls_state = 951
+			controls_state = 73
+		}
+		
+		fire_only_once = yes
+		cost = 40
+		days_remove = 35
+		complete_effect = {
+			set_country_flag = investition
+			
+		}
+		modifier = {}
+		remove_effect = {
+			clr_country_flag = investition 
+			build_railway = {
+				level = 2
+				start_province = 6571
+				target_province = 13262  
+
+			}
+			add_autonomy_ratio = {
+		value = -0.02
+   localization = CRS_invest_to_mainland
+		}
+		
+	
+	}
+}
+}
+CRS_ukrainization_programm1 = {
+		CRS_attack_czech_influence = {
+
+		icon = GFX_decision_generic_civil_support
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+		}
+
+		days_remove = 25
+
+		days_re_enable = 40
+
+		cost = 30
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			add_to_variable = { crs_ukraine_support_var = 8 }
+			custom_effect_tooltip = add_8_ukrainian_crs_support_tt
+			add_autonomy_ratio = {
+			value = 0.03
+			localization = CRS_attack_czech_influence
+			}
+		}
+	}
+	CRS_befriend_ukraine = {
+
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+		}
+
+		days_remove = 15
+
+		days_re_enable = 20
+
+		cost = 15
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			add_to_variable = { crs_ukraine_support_var = 5 }
+			custom_effect_tooltip = add_5_ukrainian_crs_support_tt
+			add_autonomy_ratio = {
+			value = 0.02
+			localization = CRS_attack_czech_influence
+			}
+		}
+	}
+	CRS_remove_czech_people = {
+
+		icon = GFX_decision_hol_war_on_pacifism
+
+		ai_will_do = {
+			base = 0
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+		}
+
+		days_remove = 20
+
+		days_re_enable = 50
+
+		cost = 40
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			add_to_variable = { crs_ukraine_support_var = 10 }
+			custom_effect_tooltip = add_10_ukrainian_crs_support_tt
+			capital_scope = {add_manpower = -500}
+			add_stability = -0.02
+		}
+	}
+	CRS_ultimatum_to_czechia = {
+
+		icon = GFX_decision_generic_prepare_civil_war
+
+		ai_will_do = {
+			base = 0
+		}
+		fire_only_once = yes
+		available = {
+			custom_trigger_tooltip = {tooltip = CRS_ukraine_in_authority_tt 
+				check_variable = { crs_ukraine_support_var > 59 } }
+		}
+
+		visible = {
+		}
+
+		days_remove = 0
+
+		cost = 50
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			CZE = {country_event = {id = rusins.16 days = 1.5}}
+		}
+	}
+}

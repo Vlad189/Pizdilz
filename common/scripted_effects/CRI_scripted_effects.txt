@@ -1,0 +1,71 @@
+CRI_svet_state_level_up = { 
+	if = {
+		limit = { has_idea = CRI_svet_state }
+		swap_ideas = {
+			remove_idea = CRI_svet_state
+			add_idea = CRI_svet_state_2
+		}
+	}	
+}
+CRI_svet_state_level_up1 = { 
+	if = {
+		limit = { has_idea = CRI_svet_state_3 }
+		swap_ideas = {
+			remove_idea = CRI_svet_state_3
+			add_idea = CRI_svet_state_5
+		}
+	}	
+	else_if = {
+		limit = { has_idea = CRI_svet_state_4 }
+		swap_ideas = {
+			remove_idea = CRI_svet_state_4
+			add_idea = CRI_svet_state_6
+		}
+	}	
+}
+CRI_svet_state_level_down = { 
+	if = {
+		limit = { has_idea = CRI_svet_state }
+		swap_ideas = {
+			remove_idea = CRI_svet_state
+			add_idea = CRI_svet_state_3 
+		}
+	}	
+	else_if = {
+		limit = { has_idea = CRI_svet_state_3 }
+		swap_ideas = {
+			remove_idea = CRI_svet_state_3
+			add_idea = CRI_svet_state_4 
+		}
+	}
+}
+CRI_economical_bulb_level_up = { 
+	if = {
+		limit = { has_idea = CRI_economical_bulb }
+		swap_ideas = {
+			remove_idea = CRI_economical_bulb
+			add_idea = CRI_economical_bulb_1
+		}
+	}	
+	else_if = {
+		limit = { has_idea = CRI_economical_bulb_1 }
+		swap_ideas = {
+			remove_idea = CRI_economical_bulb_1
+			add_idea = CRI_economical_bulb_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = CRI_economical_bulb_2 }
+		swap_ideas = {
+			remove_idea = CRI_economical_bulb_2
+			add_idea = CRI_economical_bulb_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = CRI_economical_bulb_3 }
+		swap_ideas = {
+			remove_idea = CRI_economical_bulb_3
+			add_idea = CRI_economical_bulb_4
+		}
+	}
+}

@@ -1,0 +1,464 @@
+CRI_liberate_north_caucasus = {
+icon = GFX_decision_category_generic_political_actions
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = CRI_liberate_north_caucasus
+  }
+}
+CRI_prepare_turkish_civil_war = {
+icon = GFX_decision_category_tur_unifying_the_country
+picture = GFX_decision_cat_cri_turkish_cv
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 21
+  }
+  
+    visible = {
+	has_completed_focus = CRI_turkish_kolabortionism
+	TUR = {exists = yes}
+	NOT = {has_war_with = TUR}
+  }
+}
+CRI_buy_german_weapons_decision = {
+icon = GFX_decision_category_generic_arms_trade
+
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 10
+  }
+  
+    visible = {
+	has_completed_focus = CRI_buy_german_weapons
+	GER = {exists = yes}
+  }
+}
+CRI_bunt_against_khan_war = {
+icon = GFX_decision_category_SOV_permanent_revolution
+picture = GFX_decision_cat_red_terror
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = CRI_khans_bunt
+	NOT = {has_country_flag = stop_civil_war has_completed_focus = CRI_crimean_soviet_republic}
+  }
+}
+CRI_balance_of_power_category = {
+icon = GFX_decision_category_SOV_permanent_revolution
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 90
+  }
+  
+    visible = {
+		has_completed_focus = CRI_crimean_soviet_republic
+		NOT = {has_completed_focus = CRI_crimean_anarcho_communism}
+		NOT = {has_completed_focus = CRI_josef_stalin_our_god}
+  }
+}
+CRI_industrial_balance_of_power_category  = {
+icon = GFX_decision_category_SOV_permanent_revolution
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 90
+  }
+  
+    visible = {
+	has_completed_focus = CRI_agrarian_reform
+
+  }
+}
+CRI_anarchism_world = {
+icon = GFX_decision_category_generic_formable_nations
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 90
+  }
+  
+    visible = {
+	has_completed_focus = CRI_anarchism_has_no_borders
+
+  }
+}
+CRI_soviet_guns_shop = {
+icon = GFX_decision_category_generic_arms_trade
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 15
+  }
+  
+    visible = {
+	has_completed_focus = CRI_buy_soviet_guns
+	NOT = {CRI = {has_war_with = SOV}}
+  }
+}
+CRI_soviet_guns_shop1 = {
+icon = GFX_decision_category_gre_paying_ifc_debt
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 29
+  }
+  
+    visible = {
+	has_completed_focus = CRI_economic_reforms
+  }
+}
+CRI_support_afganistan_islamists = {
+icon = GFX_decision_category_eng_organize_the_blackshirts
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 29
+  }
+  
+    visible = {
+	has_completed_focus = CRI_afganistan_coup
+	NOT = {AFG = {is_subject_of = CRI}}
+  }
+}
+CRI_islamic_integration = {
+icon = GFX_decision_category_generic_formable_nations
+picture = GFX_decision_cat_isis
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 35
+  }
+  on_map_area = {
+    state = 663
+	state = 451
+	state = 450
+	state = 662
+	state = 273
+	state = 449
+	state = 661
+	state = 448
+	state = 665
+	state = 458
+	state = 460
+	state = 513
+	state = 459
+	state = 514
+	state = 462
+	state = 461
+	state = 290
+	state = 699
+	state = 786
+	state = 782
+	state = 515
+	state = 775
+	state = 557
+	state = 272
+	state = 701
+	state = 889
+	state = 898
+	state = 781
+	state = 902
+	state = 558
+	state = 776
+	state = 777
+	state = 778
+	state = 274
+	state = 779
+	state = 298
+	state = 700
+	state = 296
+	state = 780
+	state = 556
+	state = 899
+    name = maghreb
+    zoom = 1200
+    target_root_trigger = {
+        tag = CRI
+    }
+}
+ on_map_area = {
+    state = 118
+	state = 173
+	state = 169
+	state = 179
+	state = 789
+	state = 168
+	state = 795
+	state = 112
+	state = 181
+	state = 180
+	state = 175
+	state = 170
+	state = 788
+	state = 174
+	state = 171
+	state = 790
+	state = 792
+	state = 176
+	state = 166
+	state = 794
+	state = 165
+	state = 167
+	state = 177
+	state = 41
+	state = 172
+	state = 793
+	state = 791
+    name = al_andalus
+    zoom = 650
+    target_root_trigger = {
+        tag = CRI
+    }
+}
+on_map_area = {
+	state = 767
+	state = 551
+	state = 883
+	state = 550
+	state = 841
+	state = 842
+	state = 886
+	state = 908
+	state = 843
+	state = 840
+	state = 271
+	state = 839
+	state = 838
+	state = 837
+	state = 836
+	state = 835
+	state = 268
+	state = 269
+	state = 559
+	state = 906
+	state = 844
+	state = 903
+	state = 547
+	state = 884
+	state = 549
+	state = 885
+	state = 884
+	state = 904
+	state = 548
+	state = 718
+	state = 885
+	state = 887
+	state = 774
+	state = 660
+	state = 538
+	state = 772
+	state = 539
+	state = 297
+	state = 773
+	state = 900
+	state = 901
+    name = habasha
+    zoom = 1000
+    target_root_trigger = {
+        tag = CRI
+    }
+}
+on_map_area = {
+	state = 183
+	state = 182
+	state = 164
+	state = 186
+	state = 187
+	state = 47
+	state = 185
+	state = 731
+	state = 184
+	state = 805
+	state = 44
+	state = 106
+	state = 212
+	state = 211
+	state = 48
+	state = 801
+	state = 803
+	state = 77
+	state = 924
+	state = 802
+	state = 108
+	state = 105
+	state = 107
+	state = 764
+	state = 45
+	state = 109
+	state = 104
+	state = 804
+	state = 103
+	state = 163
+	state = 852
+	state = 736
+	state = 853
+	state = 102
+	state = 4
+	state = 152
+	state = 153
+	state = 848
+	state = 155
+	state = 154
+	state = 43
+	state = 82
+	state = 81
+	state = 46
+	state = 84
+	state = 83
+	state = 76
+	state = 936
+	state = 933
+	state = 79
+	state = 935
+	state = 80
+	state = 766
+	state = 78
+	state = 915
+	state = 921
+	state = 934
+    name = balkans
+    zoom = 750
+    target_root_trigger = {
+        tag = CRI
+    }
+}
+on_map_area = {
+	state = 230
+	state = 229
+	state = 231
+	state = 826
+	state = 232
+	state = 821
+	state = 828
+	state = 827
+	state = 235
+	state = 927
+	state = 912
+	state = 233
+	state = 926
+	state = 234
+	state = 923
+	state = 939
+	state = 237
+	state = 238
+	state = 218
+	state = 916
+	state = 925
+    name = quqaz
+    zoom = 700
+    target_root_trigger = {
+        tag = CRI
+    }
+}
+on_map_area = {
+	state = 444
+	state = 445
+	state = 442
+	state = 440
+	state = 443
+	state = 433
+	state = 428
+	state = 439
+	state = 441
+	state = 787
+	state = 758
+	state = 619
+	state = 415
+	state = 267
+	state = 742
+	state = 584
+	state = 830
+	state = 732
+	state = 405
+	state = 404
+	state = 585
+	state = 823
+	state = 831
+	state = 587
+	state = 832
+	state = 402
+	state = 881
+	state = 589
+	state = 586
+	state = 583
+	state = 590
+	state = 407
+	state = 406
+	state = 588
+	state = 287
+	state = 617
+	state = 618
+	state = 760
+	state = 759
+    name = horasan
+    zoom = 700
+    target_root_trigger = {
+        tag = CRI
+    }
+}
+    visible = {
+	has_completed_focus = CRI_united_islamic_country
+  }
+}
+CRI_islam_support = {
+icon = GFX_decision_category_spr_the_seeds_of_revolution
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 29
+  }
+  
+    visible = {
+	has_completed_focus = CRI_islamist_path
+	NOT = {has_completed_focus = CRI_islamist_revolution}
+  }
+}
+CRI_russian_entente_found = {
+icon = GFX_decision_category_generic_foreign_policy
+  allowed = {
+    tag = CRI
+  }
+
+  priority = {
+    base = 29
+  }
+  
+    visible = {
+	has_completed_focus = CRI_russian_entente
+  }
+}
